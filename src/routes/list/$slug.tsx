@@ -6,7 +6,6 @@ import { AdSlot } from "@/components/ad-slot";
 import { Newsletter } from "@/components/newsletter";
 import { Vander20Mark } from "@/components/brand";
 import { VerifiedStamp, CrossList } from "@/components/verified-stamp";
-import { verifyOf } from "@/lib/verify";
 
 export const Route = createFileRoute("/list/$slug")({
   component: CompanyPage,
@@ -64,7 +63,7 @@ function CompanyPage() {
             <VerifiedStamp slug={company.slug} dark />
           </div>
           <div className="mt-2">
-            <CrossList slug={company.slug} dark />
+            <CrossList slug={company.slug} current="20" dark />
           </div>
         </div>
       </section>
@@ -73,6 +72,22 @@ function CompanyPage() {
         <article className="lg:col-span-8">
           <img src={company.image} alt={company.imageAlt} className="aspect-video w-full object-cover" />
           <p className="mt-6 font-body text-lg leading-relaxed text-ink">{company.profile}</p>
+          <dl className="mt-8 grid grid-cols-2 gap-4 border-y border-ink py-5 sm:grid-cols-3">
+            <div>
+              <dt className="kicker text-xs text-muted">Mesa</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{company.city}</dd>
+            </div>
+            <div>
+              <dt className="kicker text-xs text-muted">Sector</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{company.sector}</dd>
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <dt className="kicker text-xs text-muted">Verificación</dt>
+              <dd className="mt-1">
+                <VerifiedStamp slug={company.slug} />
+              </dd>
+            </div>
+          </dl>
           <p className="mt-4 font-body text-base leading-relaxed text-ink-soft">
             Ficha firmada por Team Vander. {HOUSE.credit}. El ranking no es un premio: es un argumento
             sobre cómo se siente un negocio cuando el código de casa manda.

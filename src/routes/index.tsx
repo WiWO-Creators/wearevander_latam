@@ -140,8 +140,8 @@ function Home() {
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {fiftyLead.map((c) => (
               <Link key={c.slug} to="/innovatives/$slug" params={{ slug: c.slug }} className="group block">
-                <span className="photo block aspect-[3/2]">
-                  <img src={c.image} alt="" />
+                <span className="photo block aspect-[3/2] w-full">
+                  <img src={c.image} alt={c.name} className="h-full w-full object-cover" />
                 </span>
                 <p className="mt-3 headline text-3xl tabular-nums text-innov">{String(c.rank).padStart(2, "0")}</p>
                 <h3 className="headline mt-1 text-2xl">{c.name}</h3>

@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { adjacentInnovative, getInnovative, INNOVATIVES } from "@/lib/innovatives";
 import { InnovativesMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
+import { VerifiedStamp, CrossList } from "@/components/verified-stamp";
+import { verifyOf } from "@/lib/verify";
 
 export const Route = createFileRoute("/innovatives/$slug")({
   component: InnovativeCompany,
@@ -34,6 +36,7 @@ function InnovativeCompany() {
     );
   }
   const { prev, next } = adjacentInnovative(company.slug);
+  const stamp = verifyOf(company.slug);
 
   return (
     <main>
@@ -52,6 +55,12 @@ function InnovativeCompany() {
           <p className="mt-3 kicker text-xs text-silver">
             {company.sector} · {company.city}
           </p>
+          <div className="mt-5">
+            <VerifiedStamp slug={company.slug} dark />
+          </div>
+          <div className="mt-2">
+            <CrossList slug={company.slug} current="50" dark />
+          </div>
         </div>
       </section>
       <figure className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
@@ -61,6 +70,22 @@ function InnovativeCompany() {
         <p className="kicker text-xs text-innov">Por qué entra</p>
         <p className="mt-3 font-body text-lg leading-relaxed">{company.why}</p>
         <p className="mt-5 font-body text-lg leading-relaxed text-ink-soft">{company.blurb}</p>
+        {stamp && (
+          <dl className="mt-8 grid gap-4 border-y border-ink py-5 sm:grid-cols-3">
+            <div>
+              <dt className="kicker text-xs text-muted">Fundada</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{stamp.founded}</dd>
+            </div>
+            <div>
+              <dt className="kicker text-xs text-muted">Evidencia</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{stamp.proof}</dd>
+            </div>
+            <div>
+              <dt className="kicker text-xs text-muted">Mesa</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{stamp.desk}</dd>
+            </div>
+          </dl>
+        )}
         <div className="mt-10 flex justify-between gap-4 border-t border-ink pt-6">
           {prev ? (
             <Link to="/innovatives/$slug" params={{ slug: prev.slug }} className="kicker text-xs hover:text-innov">

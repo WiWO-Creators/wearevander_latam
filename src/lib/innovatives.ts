@@ -141,10 +141,13 @@ const INNOV_ORDER = [
 
 const bySlug = Object.fromEntries(INNOVATIVES_RAW.map((c) => [c.slug, c]));
 
-export const INNOVATIVES: Innovative[] = INNOV_ORDER.map((slug, i) => ({
-  ...bySlug[slug],
-  rank: i + 1,
-}));
+export const INNOVATIVES: Innovative[] = INNOV_ORDER.map((slug, i) => {
+  const row = bySlug[slug];
+  if (!row) {
+    throw new Error(`50 Innovatives: falta ${slug}`);
+  }
+  return { ...row, rank: i + 1 };
+});
 
 export const INNOVATIVES_METHOD = [
   {

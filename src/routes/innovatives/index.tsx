@@ -4,6 +4,7 @@ import { HOUSE, ISSUE } from "@/lib/content";
 import { InnovativesMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
+import { VerifiedStamp } from "@/components/verified-stamp";
 
 export const Route = createFileRoute("/innovatives/")({
   component: InnovativesPage,
@@ -23,7 +24,8 @@ function InnovativesPage() {
           </h1>
           <p className="mt-6 max-w-2xl font-body text-lg leading-snug text-paper/75">
             Las 50 empresas más innovadoras de América Latina. No las más ruidosas: las que se pueden
-            visitar. Metodología pública. Firmado por Team Vander. {HOUSE.credit}.
+            visitar. Distinto al Vander 20: acá cuenta el gesto nuevo. Metodología pública. Cada ficha
+            tiene mesa, fecha de visita y evidencia. {HOUSE.credit}.
           </p>
         </div>
       </section>
@@ -67,6 +69,9 @@ function InnovativesPage() {
                       </p>
                     </div>
                     <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft sm:text-base">{c.blurb}</p>
+                    <div className="mt-2">
+                      <VerifiedStamp slug={c.slug} />
+                    </div>
                     <p className="mt-2 kicker text-xs text-innov sm:opacity-0 sm:transition-opacity sm:duration-200 sm:group-hover:opacity-100">
                       Por qué entra
                     </p>

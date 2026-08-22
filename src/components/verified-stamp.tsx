@@ -30,19 +30,30 @@ export function VerifiedStamp({
   );
 }
 
-export function CrossList({ slug, dark = false }: { slug: string; dark?: boolean }) {
+export function CrossList({
+  slug,
+  current,
+  dark = false,
+}: {
+  slug: string;
+  current: "20" | "50";
+  dark?: boolean;
+}) {
   const in20 = getCompany(slug);
   const in50 = getInnovative(slug);
-  if (!in20 && !in50) return null;
+  const other20 = current !== "20" && in20;
+  const other50 = current !== "50" && in50;
+  if (!other20 && !other50) return null;
   return (
     <p className={cn("kicker text-xs", dark ? "text-silver" : "text-muted")}>
-      {in20 && (
+      También en{" "}
+      {other20 && (
         <Link to="/list/$slug" params={{ slug }} className="hover:text-signal">
           Vander 20 · {String(in20.rank).padStart(2, "0")}
         </Link>
       )}
-      {in20 && in50 ? <span className="mx-2">·</span> : null}
-      {in50 && (
+      {other20 && other50 ? <span className="mx-2">·</span> : null}
+      {other50 && (
         <Link to="/innovatives/$slug" params={{ slug }} className="hover:text-innov">
           50 Innovatives · {String(in50.rank).padStart(2, "0")}
         </Link>
