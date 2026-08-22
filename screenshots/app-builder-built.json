@@ -1,0 +1,39 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "We Are Vander — We Love Business",
+      "hasCanvas": false,
+      "bodyTextLen": 3373,
+      "bodyTextHash": "8a717d240cb6caa28552b848197f3337ed38e9d6a5668c0b8c1a018a68a0abf1",
+      "bodyTextPrefix": "WE ARE VANDER WE LOVE BUSINESS IDEAS TRABAJO DISEÑO CLIMA CULTUR",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "We Are Vander — We Love Business",
+      "hasCanvas": false,
+      "bodyTextLen": 2780,
+      "bodyTextHash": "e8f5149f3149200d406e066a75b6ad5f1f817bb69eebc90e3992ca1a6859ed6a",
+      "bodyTextPrefix": "WE ARE VANDER WE LOVE BUSINESS ÚLTIMAS Santiago, el hub que no p",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text replaced (similar length, page start changed)"
+  ]
+}

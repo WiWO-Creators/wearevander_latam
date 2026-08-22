@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8080/story/cult-of-the-analog-office",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "El culto a la oficina analógica — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 4433,
+      "bodyTextHash": "39ae47c0dd4f9f3b0f703f5815c0744096257cd51a39c03fc4dce89d1c07934d",
+      "bodyTextPrefix": "WE ARE VANDER WE LOVE BUSINESS ENTRAR IDEAS TRABAJO DISEÑO CLIMA",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/story.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "El culto a la oficina analógica — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 4355,
+      "bodyTextHash": "9479992a50e875b8cec3d6b0ef7fc7a421cad869db1b675a03afc1a3009af774",
+      "bodyTextPrefix": "WE ARE VANDER WE LOVE BUSINESS ÚLTIMAS Santiago, el hub que no p",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/story-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/story.json"
+}

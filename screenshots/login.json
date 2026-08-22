@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8080/login",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Sign in — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 708,
+      "bodyTextHash": "d45df140831883d06ee65d0bfd0fe3cea0834d73a019208010956527c10a0a17",
+      "bodyTextPrefix": "SANTIAGO · NEW YORK · SEOUL VOL. III NO. 08 · AUGUST 2026 EST. M",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Sign in — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 605,
+      "bodyTextHash": "795a35da24113ae62cc3dec34b2f46dfb16f5b7b857dc11e50c925979c610f20",
+      "bodyTextPrefix": "SANTIAGO · NEW YORK · SEOUL EST. MMXXIV A MAGAZINE OF BUSINESS W",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/login.json"
+}

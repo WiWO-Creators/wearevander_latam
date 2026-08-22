@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8080/about",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Masthead — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 1951,
+      "bodyTextHash": "c584d4f9c568f6b23b69936dd08f03bf4024bd66e2f78b394f2552e1caa0eb62",
+      "bodyTextPrefix": "SANTIAGO · NEW YORK · SEOUL VOL. III NO. 08 · AUGUST 2026 EST. M",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Masthead — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 1848,
+      "bodyTextHash": "6f8f99d4b04e85f9fb31e5e5108716b78e4cb381b3f68205b161a1d6fb7e005c",
+      "bodyTextPrefix": "SANTIAGO · NEW YORK · SEOUL EST. MMXXIV A MAGAZINE OF BUSINESS W",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/about.json"
+}

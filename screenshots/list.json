@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8080/list",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Vander 20 — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 2944,
+      "bodyTextHash": "e6e22d40ee00235f8daba7dd1c59ad4f9ebda5534db78d00c0969fd6e358a07c",
+      "bodyTextPrefix": "SANTIAGO · NEW YORK · SEOUL VOL. III NO. 08 · AUGUST 2026 EST. M",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/list.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Vander 20 — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 2849,
+      "bodyTextHash": "4748f010df870f6e6fe32e1def67039eb3ce27ce05d25f3f3b7ccd729c0b6d2d",
+      "bodyTextPrefix": "SANTIAGO · NEW YORK · SEOUL EST. MMXXIV A MAGAZINE OF BUSINESS W",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/list-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/list.json"
+}
