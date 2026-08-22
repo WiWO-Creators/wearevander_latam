@@ -1,11 +1,14 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Navigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
-import { RedirectToSignIn } from "@/lib/auth/gates";
 import { askVander } from "@/lib/server/magazine";
+import { HOUSE } from "@/lib/content";
 
 export const Route = createFileRoute("/briefing")({
   component: BriefingPage,
+  validateSearch: (s: Record<string, unknown>): { topic?: string } => ({
+    topic: typeof s.topic === "string" && s.topic.length > 0 ? s.topic : undefined,
+  }),
   head: () => ({
     meta: [{ title: "Briefing — We Are Vander" }],
   }),
@@ -13,7 +16,8 @@ export const Route = createFileRoute("/briefing")({
 
 function BriefingPage() {
   const { user, isPending } = useCurrentUserState();
-  const [topic, setTopic] = useState("");
+  const { topic: initialTopic } = Route.useSearch();
+  const [topic, setTopic] = useState(initialTopic ?? "");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [text, setText] = useState("");
@@ -27,7 +31,10 @@ function BriefingPage() {
       </main>
     );
   }
-  if (!user) return <RedirectToSignIn />;
+  if (!user) {
+    const next = initialTopic ? `/briefing?topic=${encodeURIComponent(initialTopic)}` : "/briefing";
+    return <Navigate to="/login" search={{ next }} />;
+  }
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -50,12 +57,10 @@ function BriefingPage() {
     <main className="px-4 py-8 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-2xl">
         <p className="kicker text-xs text-rust">Mesa de editores</p>
-        <h1 className="mt-2 font-display text-4xl font-extrabold uppercase tracking-tight">
-          El Briefing
-        </h1>
+        <h1 className="headline mt-2 text-4xl sm:text-5xl">El Briefing</h1>
         <p className="mt-3 font-body text-base leading-relaxed text-ink-soft">
-          Nombra una compañía, una ciudad, un cambio. Armamos una nota Vander: antetítulo,
-          titular, argumento.
+          Nombra una compañía, una ciudad, un cambio. Team Vander arma la nota: antetítulo,
+          titular, argumento. {HOUSE.credit}.
         </p>
         <form onSubmit={(e) => void onSubmit(e)} className="mt-8">
           <label className="sr-only" htmlFor="topic">
@@ -66,39 +71,33 @@ function BriefingPage() {
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
             placeholder="ej. oficinas analógicas en Seúl"
-            className="h-12 w-full border-b-2 border-ink bg-transparent font-display text-xl outline-none placeholder:text-muted focus:border-rust"
+            className="h-12 w-full border-b border-ink bg-transparent font-display text-xl outline-none placeholder:text-muted focus:border-rust"
           />
           <button
             type="submit"
             disabled={busy || topic.trim().length < 3}
-            className="mt-5 h-11 bg-ink px-6 font-kicker text-xs tracking-widest text-paper uppercase hover:opacity-90 disabled:opacity-40"
+            className="press mt-5 h-11 bg-ink px-6 font-kicker text-xs tracking-widest text-paper uppercase hover:bg-rust disabled:opacity-40"
           >
             {busy ? "Filando…" : "Pedir briefing"}
           </button>
         </form>
-        {error && <p className="mt-5 font-display text-sm text-rust">{error}</p>}
+        {error && <p className="mt-5 font-sans text-sm text-rust">{error}</p>}
         {parsed && (
           <article className="mt-10 border-t border-ink pt-8">
             <p className="kicker text-xs text-rust">{parsed.kicker}</p>
-            <h2 className="mt-2 font-display text-3xl font-extrabold leading-tight tracking-tight">
-              {parsed.headline}
-            </h2>
-            {parsed.dek && (
-              <p className="mt-3 font-body text-lg text-ink-soft">{parsed.dek}</p>
-            )}
+            <h2 className="headline mt-2 text-3xl">{parsed.headline}</h2>
+            {parsed.dek && <p className="mt-3 font-body text-lg text-ink-soft">{parsed.dek}</p>}
             {parsed.body.map((p, i) => (
-              <p
-                key={i}
-                className={`mt-5 font-body text-lg leading-relaxed ${i === 0 ? "drop-cap" : ""}`}
-              >
+              <p key={i} className={`mt-5 font-body text-lg leading-relaxed ${i === 0 ? "drop-cap" : ""}`}>
                 {p}
               </p>
             ))}
             {parsed.quote && (
-              <blockquote className="mt-8 border-l-4 border-rust pl-5">
-                <p className="font-display text-2xl font-extrabold">{parsed.quote}</p>
+              <blockquote className="mt-8 border-l border-rust pl-5">
+                <p className="headline text-2xl italic">{parsed.quote}</p>
               </blockquote>
             )}
+            <p className="mt-6 kicker text-xs text-muted">Por Team Vander</p>
           </article>
         )}
         {text && !parsed && (

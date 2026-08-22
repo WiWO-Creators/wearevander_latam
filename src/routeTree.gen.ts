@@ -11,13 +11,22 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AnunciaRouteImport } from './routes/anuncia'
 import { Route as BriefingRouteImport } from './routes/briefing'
+import { Route as ContraRouteImport } from './routes/contra'
+import { Route as InnovativesRouteImport } from './routes/innovatives'
 import { Route as ListRouteImport } from './routes/list'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
+import { Route as SignalsRouteImport } from './routes/signals'
+import { Route as InnovativesIndexRouteImport } from './routes/innovatives/index'
+import { Route as InnovativesSlugRouteImport } from './routes/innovatives/$slug'
+import { Route as ListIndexRouteImport } from './routes/list/index'
+import { Route as ListSlugRouteImport } from './routes/list/$slug'
 import { Route as SectionSectionRouteImport } from './routes/section/$section'
 import { Route as StorySlugRouteImport } from './routes/story/$slug'
+import { Route as TagTagRouteImport } from './routes/tag/$tag'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -30,9 +39,24 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnunciaRoute = AnunciaRouteImport.update({
+  id: '/anuncia',
+  path: '/anuncia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BriefingRoute = BriefingRouteImport.update({
   id: '/briefing',
   path: '/briefing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContraRoute = ContraRouteImport.update({
+  id: '/contra',
+  path: '/contra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InnovativesRoute = InnovativesRouteImport.update({
+  id: '/innovatives',
+  path: '/innovatives',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ListRoute = ListRouteImport.update({
@@ -55,6 +79,31 @@ const SearchRoute = SearchRouteImport.update({
   path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SignalsRoute = SignalsRouteImport.update({
+  id: '/signals',
+  path: '/signals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InnovativesIndexRoute = InnovativesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InnovativesRoute,
+} as any)
+const InnovativesSlugRoute = InnovativesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => InnovativesRoute,
+} as any)
+const ListIndexRoute = ListIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ListRoute,
+} as any)
+const ListSlugRoute = ListSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ListRoute,
+} as any)
 const SectionSectionRoute = SectionSectionRouteImport.update({
   id: '/section/$section',
   path: '/section/$section',
@@ -63,6 +112,11 @@ const SectionSectionRoute = SectionSectionRouteImport.update({
 const StorySlugRoute = StorySlugRouteImport.update({
   id: '/story/$slug',
   path: '/story/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TagTagRoute = TagTagRouteImport.update({
+  id: '/tag/$tag',
+  path: '/tag/$tag',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
@@ -74,38 +128,63 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
-  '/list': typeof ListRoute
+  '/contra': typeof ContraRoute
+  '/innovatives': typeof InnovativesRouteWithChildren
+  '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/signals': typeof SignalsRoute
+  '/innovatives/$slug': typeof InnovativesSlugRoute
+  '/list/$slug': typeof ListSlugRoute
   '/section/$section': typeof SectionSectionRoute
   '/story/$slug': typeof StorySlugRoute
+  '/tag/$tag': typeof TagTagRoute
+  '/innovatives/': typeof InnovativesIndexRoute
+  '/list/': typeof ListIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
-  '/list': typeof ListRoute
+  '/contra': typeof ContraRoute
   '/login': typeof LoginRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/signals': typeof SignalsRoute
+  '/innovatives/$slug': typeof InnovativesSlugRoute
+  '/list/$slug': typeof ListSlugRoute
   '/section/$section': typeof SectionSectionRoute
   '/story/$slug': typeof StorySlugRoute
+  '/tag/$tag': typeof TagTagRoute
+  '/innovatives': typeof InnovativesIndexRoute
+  '/list': typeof ListIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
-  '/list': typeof ListRoute
+  '/contra': typeof ContraRoute
+  '/innovatives': typeof InnovativesRouteWithChildren
+  '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/signals': typeof SignalsRoute
+  '/innovatives/$slug': typeof InnovativesSlugRoute
+  '/list/$slug': typeof ListSlugRoute
   '/section/$section': typeof SectionSectionRoute
   '/story/$slug': typeof StorySlugRoute
+  '/tag/$tag': typeof TagTagRoute
+  '/innovatives/': typeof InnovativesIndexRoute
+  '/list/': typeof ListIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
@@ -113,50 +192,80 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/anuncia'
     | '/briefing'
+    | '/contra'
+    | '/innovatives'
     | '/list'
     | '/login'
     | '/saved'
     | '/search'
+    | '/signals'
+    | '/innovatives/$slug'
+    | '/list/$slug'
     | '/section/$section'
     | '/story/$slug'
+    | '/tag/$tag'
+    | '/innovatives/'
+    | '/list/'
     | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/anuncia'
     | '/briefing'
-    | '/list'
+    | '/contra'
     | '/login'
     | '/saved'
     | '/search'
+    | '/signals'
+    | '/innovatives/$slug'
+    | '/list/$slug'
     | '/section/$section'
     | '/story/$slug'
+    | '/tag/$tag'
+    | '/innovatives'
+    | '/list'
     | '/api/auth/$'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/anuncia'
     | '/briefing'
+    | '/contra'
+    | '/innovatives'
     | '/list'
     | '/login'
     | '/saved'
     | '/search'
+    | '/signals'
+    | '/innovatives/$slug'
+    | '/list/$slug'
     | '/section/$section'
     | '/story/$slug'
+    | '/tag/$tag'
+    | '/innovatives/'
+    | '/list/'
     | '/api/auth/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AnunciaRoute: typeof AnunciaRoute
   BriefingRoute: typeof BriefingRoute
-  ListRoute: typeof ListRoute
+  ContraRoute: typeof ContraRoute
+  InnovativesRoute: typeof InnovativesRouteWithChildren
+  ListRoute: typeof ListRouteWithChildren
   LoginRoute: typeof LoginRoute
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
+  SignalsRoute: typeof SignalsRoute
   SectionSectionRoute: typeof SectionSectionRoute
   StorySlugRoute: typeof StorySlugRoute
+  TagTagRoute: typeof TagTagRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
@@ -176,11 +285,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/anuncia': {
+      id: '/anuncia'
+      path: '/anuncia'
+      fullPath: '/anuncia'
+      preLoaderRoute: typeof AnunciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/briefing': {
       id: '/briefing'
       path: '/briefing'
       fullPath: '/briefing'
       preLoaderRoute: typeof BriefingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contra': {
+      id: '/contra'
+      path: '/contra'
+      fullPath: '/contra'
+      preLoaderRoute: typeof ContraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/innovatives': {
+      id: '/innovatives'
+      path: '/innovatives'
+      fullPath: '/innovatives'
+      preLoaderRoute: typeof InnovativesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/list': {
@@ -211,6 +341,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signals': {
+      id: '/signals'
+      path: '/signals'
+      fullPath: '/signals'
+      preLoaderRoute: typeof SignalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/innovatives/': {
+      id: '/innovatives/'
+      path: '/'
+      fullPath: '/innovatives/'
+      preLoaderRoute: typeof InnovativesIndexRouteImport
+      parentRoute: typeof InnovativesRoute
+    }
+    '/innovatives/$slug': {
+      id: '/innovatives/$slug'
+      path: '/$slug'
+      fullPath: '/innovatives/$slug'
+      preLoaderRoute: typeof InnovativesSlugRouteImport
+      parentRoute: typeof InnovativesRoute
+    }
+    '/list/': {
+      id: '/list/'
+      path: '/'
+      fullPath: '/list/'
+      preLoaderRoute: typeof ListIndexRouteImport
+      parentRoute: typeof ListRoute
+    }
+    '/list/$slug': {
+      id: '/list/$slug'
+      path: '/$slug'
+      fullPath: '/list/$slug'
+      preLoaderRoute: typeof ListSlugRouteImport
+      parentRoute: typeof ListRoute
+    }
     '/section/$section': {
       id: '/section/$section'
       path: '/section/$section'
@@ -225,6 +390,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StorySlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tag/$tag': {
+      id: '/tag/$tag'
+      path: '/tag/$tag'
+      fullPath: '/tag/$tag'
+      preLoaderRoute: typeof TagTagRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
@@ -235,16 +407,47 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface InnovativesRouteChildren {
+  InnovativesSlugRoute: typeof InnovativesSlugRoute
+  InnovativesIndexRoute: typeof InnovativesIndexRoute
+}
+
+const InnovativesRouteChildren: InnovativesRouteChildren = {
+  InnovativesSlugRoute: InnovativesSlugRoute,
+  InnovativesIndexRoute: InnovativesIndexRoute,
+}
+
+const InnovativesRouteWithChildren = InnovativesRoute._addFileChildren(
+  InnovativesRouteChildren,
+)
+
+interface ListRouteChildren {
+  ListSlugRoute: typeof ListSlugRoute
+  ListIndexRoute: typeof ListIndexRoute
+}
+
+const ListRouteChildren: ListRouteChildren = {
+  ListSlugRoute: ListSlugRoute,
+  ListIndexRoute: ListIndexRoute,
+}
+
+const ListRouteWithChildren = ListRoute._addFileChildren(ListRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AnunciaRoute: AnunciaRoute,
   BriefingRoute: BriefingRoute,
-  ListRoute: ListRoute,
+  ContraRoute: ContraRoute,
+  InnovativesRoute: InnovativesRouteWithChildren,
+  ListRoute: ListRouteWithChildren,
   LoginRoute: LoginRoute,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
+  SignalsRoute: SignalsRoute,
   SectionSectionRoute: SectionSectionRoute,
   StorySlugRoute: StorySlugRoute,
+  TagTagRoute: TagTagRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport

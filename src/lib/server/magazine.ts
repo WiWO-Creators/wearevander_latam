@@ -55,6 +55,36 @@ export const subscribeNewsletter = createServerFn({ method: "POST" })
     return { ok: true as const };
   });
 
+export const requestAdvertise = createServerFn({ method: "POST" })
+  .validator((data: { email: string; company: string; note: string }) => ({
+    email: data.email.trim().toLowerCase(),
+    company: data.company.trim().slice(0, 120),
+    note: data.note.trim().slice(0, 500),
+  }))
+  .handler(async ({ data }) => {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      return { ok: false as const, error: "Ese correo no se ve bien." };
+    }
+    const sql = await getSql();
+    await sql.query(`
+      create table if not exists advertise_leads (
+        email text not null,
+        company text,
+        note text,
+        created_at timestamptz not null default now(),
+        primary key (email)
+      )
+    `);
+    await sql`
+      insert into advertise_leads (email, company, note)
+      values (${data.email}, ${data.company || null}, ${data.note || null})
+      on conflict (email) do update set
+        company = excluded.company,
+        note = excluded.note
+    `;
+    return { ok: true as const };
+  });
+
 export const askVander = createServerFn({ method: "POST" })
   .middleware([authMiddleware])
   .validator((topic: string) => topic.trim().slice(0, 280))
@@ -81,7 +111,7 @@ export const askVander = createServerFn({ method: "POST" })
           {
             role: "system",
             content:
-              "Eres un senior writer de We Are Vander, portal de innovación empresarial en español con el ojo de Fast Company y foco en América Latina (México, Brasil, Argentina, Colombia, Chile, Perú). Escribe un briefing: antetítulo, titular, bajada de una frase y 3-5 párrafos cortos de revista. Voz: específica, periodística, nunca corporativa, nunca hype, nunca emoji. Prefiere detalles nombrados (plausibles) y un punto de vista. Si el tema es una compañía o lugar real, sé factual; si es una tendencia, argumenta. Cierra con una cita atribuida a una fuente plausible. Salida en texto plano con etiquetas: KICKER / HEADLINE / DEK / BODY / QUOTE. Todo en español.",
+              "Eres un senior writer de Team Vander, la mesa de We Are Vander, un medio de Interadia. Portal de innovación empresarial en español con el ojo de Inc y Vogue Business, foco en América Latina (México, Brasil, Argentina, Colombia, Chile, Perú). Escribe un briefing: antetítulo, titular, bajada de una frase y 3-5 párrafos cortos de revista. Voz: específica, periodística, nunca corporativa, nunca hype, nunca emoji. Firma implícita: Team Vander. Prefiere detalles nombrados (plausibles) y un punto de vista. Si el tema es una compañía o lugar real, sé factual; si es una tendencia, argumenta. Cierra con una cita atribuida a una fuente plausible. Salida en texto plano con etiquetas: KICKER / HEADLINE / DEK / BODY / QUOTE. Todo en español.",
           },
           {
             role: "user",

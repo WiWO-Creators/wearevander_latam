@@ -1,4 +1,9 @@
+import { FRANCHISE_ARTICLES } from "./franchises";
+
 export type SectionId = "ideas" | "work" | "design" | "climate" | "culture";
+export type PaceId = "rapida" | "fondo";
+export type FranchiseId = "contra" | "signals";
+export type TagKind = "industry" | "tech" | "pace";
 
 export type BodyBlock =
   | { type: "p"; text: string }
@@ -28,9 +33,22 @@ export type Article = {
   caption: string;
   featured?: boolean;
   city?: string;
+  updatedAt?: string;
+  tags?: string[];
+  pace?: PaceId;
+  franchise?: FranchiseId;
+  signedName?: string;
   pullQuote: string;
   body: BodyBlock[];
 };
+
+export const HOUSE = {
+  name: "We Are Vander",
+  team: "Team Vander",
+  publisher: "Interadia",
+  credit: "Un medio de Interadia",
+  motto: "We Love Business",
+} as const;
 
 export const ISSUE = {
   volume: "III",
@@ -65,7 +83,7 @@ export const AUTHORS: Author[] = [
     role: "Editora general",
     city: "Ciudad de México",
     image: "/authors/mira-solano.jpg",
-    bio: "Fundó We Are Vander en Santiago y mueve la mesa regional desde CDMX. Escribe compañías como sistemas: primero la tesis, después el mood.",
+    bio: "Editora general de Team Vander. Mueve la mesa regional desde CDMX. Escribe compañías como sistemas: primero la tesis, después el mood.",
   },
   {
     id: "valentina-cruz",
@@ -133,7 +151,7 @@ export const AUTHORS: Author[] = [
   },
 ];
 
-export const ARTICLES: Article[] = [
+const CORE_ARTICLES: Article[] = [
   {
     slug: "cult-of-the-analog-office",
     title: "El culto a la oficina analógica",
@@ -267,7 +285,7 @@ export const ARTICLES: Article[] = [
     body: [
       { type: "p", text: "Las casas de moda siempre supieron algo que las empresas de software siguen pagándole a McKinsey para recordar: un punto de vista es un sistema operativo. No necesitas un afiche de valores si la colección ya es los valores. Un puñado de compañías fuera de la moda empezó a tomarlo en literal." },
       { type: "p", text: "Sombra Studio, que construye software espacial para arquitectos, corre en temporadas. Hay una colección. Hay un código de casa (nada de dark mode por defecto, ninguna ilustración de personas de espaldas, ningún feature que no se pueda explicar en la mesa). Cuando publican, publican un look: un set coherente de decisiones, no un montón de tickets que coincidieron en un trimestre." },
-      { type: "quote", text: "Una casa tiene un código. Una compañía tiene un slide. Adivina cuál se recuerda.", cite: "Mira Solano" },
+      { type: "quote", text: "Una casa tiene un código. Una compañía tiene un slide. Adivina cuál se recuerda.", cite: "Team Vander" },
       { type: "h2", text: "Temporadas, no sprints" },
       { type: "p", text: "Los sprints fueron un invento humano que se volvió cinta. Las temporadas devuelven un ritmo que se siente en el cuerpo: un período de hacer, uno de mostrar, uno de descanso que no es culpa. Sombra, con 28 personas, saca cuatro colecciones al año. A los clientes, sorpresa, les gusta esperar. La escasez, cuando es honesta, es una forma de respeto." },
       { type: "p", text: "El modelo no escala a diez mil personas. Eso es un feature. Eligen un tamaño como un sastre elige un paño: por cómo se comporta, no por cómo se ve en un deck." },
@@ -568,7 +586,7 @@ export const ARTICLES: Article[] = [
     body: [
       { type: "p", text: "Un lunes en Reforma, la avenida hace lo que las avenidas de negocios siempre hicieron: mover gente hacia un edificio. Lo que cambió es quién firma el arriendo. Fondos que hace cinco años solo aterrizaban en Miami ahora tienen llave en Polanco, Itaim, Palermo, Usaquén, Providencia y San Isidro. No es turismo de founders. Es una corrección de mapa." },
       { type: "p", text: "Durante una década Latam fue el capítulo 14 de un deck: mercado emergente, población joven, mobile first. Útil. También un eufemismo para “no tenemos escritorio aquí”. En 2026 el eufemismo se acabó. Las compañías que importan en esta redacción —una línea de ensamble en Monterrey, un banco que ya no necesita parecerse a Nubank, un offtake solar en el Atacama, un estudio en Medellín que publica por temporadas— no están esperando que California las nombre." },
-      { type: "quote", text: "No somos el próximo Silicon Valley. Somos el lugar donde el P&L todavía tiene geografía.", cite: "Mira Solano" },
+      { type: "quote", text: "No somos el próximo Silicon Valley. Somos el lugar donde el P&L todavía tiene geografía.", cite: "Team Vander" },
       { type: "h2", text: "Seis mesas, un argumento" },
       { type: "p", text: "México ganó el nearshoring y ahora tiene que ganarse el criterio: no toda planta es una tesis. Brasil salió del hype fintech y se quedó con el cobro, que es más aburrido y más difícil de copiar. Chile sigue siendo un laboratorio de energía y de oficina. Argentina convierte la restricción en diseño. Colombia opera software y clima a dos mil metros. Perú mueve el Pacífico cuando nadie mira el puerto." },
       { type: "p", text: "We Are Vander nació en Santiago y se expandió porque la región se le adelantó al medio. We Love Business. No el brochure de “innovación latinoamericana”. El oficio: juntas, offtakes, turnos, metros cuadrados, una persiana que se abre mañana en seis ciudades a la vez." },
@@ -790,11 +808,13 @@ export const ARTICLES: Article[] = [
     pullQuote: "Si no se siente caro con los ojos cerrados, no está listo. Eso también vale en español.",
     body: [
       { type: "p", text: "Cuatro Paredes construye en tierra y cal. Mesa Radio imprime la grilla. Kinship Clay, que ahora fabrica una cápsula en São Paulo, sigue pesando de más a propósito. El objeto volvió porque la pantalla se volvió un commodity." },
-      { type: "quote", text: "Si no se siente caro con los ojos cerrados, no está listo. Eso también vale en español.", cite: "Asha Veld" },
+      { type: "quote", text: "Si no se siente caro con los ojos cerrados, no está listo. Eso también vale en español.", cite: "Team Vander" },
       { type: "p", text: "El diseño latinoamericano que importa en 2026 no pide permiso al MoMA. Pide que el pulgar esté de acuerdo." },
     ],
   },
 ];
+
+export const ARTICLES: Article[] = [...CORE_ARTICLES, ...(FRANCHISE_ARTICLES as unknown as Article[])];
 
 export function getSectionLabel(id: SectionId) {
   return SECTIONS.find((s) => s.id === id)?.label ?? id;
@@ -802,6 +822,12 @@ export function getSectionLabel(id: SectionId) {
 
 export function getAuthor(id: string) {
   return AUTHORS.find((a) => a.id === id);
+}
+
+export function teamByline(article: Article, withPor = true) {
+  const city = articleCity(article);
+  const who = withPor ? "Por Team Vander" : "Team Vander";
+  return city ? `${who} · ${city}` : who;
 }
 
 export function getArticle(slug: string) {
@@ -827,7 +853,20 @@ export function searchArticles(q: string) {
   if (!needle) return ARTICLES;
   return ARTICLES.filter((a) => {
     const author = getAuthor(a.authorId);
-    const hay = [a.title, a.dek, a.kicker, a.section, a.city ?? "", author?.name ?? "", ...a.body.map((b) => b.text)]
+    const hay = [
+      a.title,
+      a.dek,
+      a.kicker,
+      a.section,
+      a.city ?? "",
+      "Team Vander",
+      "Interadia",
+      a.franchise ?? "",
+      a.signedName ?? "",
+      author?.name ?? "",
+      ...articleTags(a).map((id) => getTag(id)?.label ?? id),
+      ...a.body.map((b) => b.text),
+    ]
       .join(" ")
       .toLowerCase();
     return hay.includes(needle);
@@ -844,7 +883,10 @@ export function formatIssueDate(iso: string) {
 }
 
 export function latestArticles(limit = 8) {
-  return [...ARTICLES].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1)).slice(0, limit);
+  return [...ARTICLES]
+    .filter((a) => a.franchise !== "signals")
+    .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
+    .slice(0, limit);
 }
 
 export type Brief = {
@@ -904,3 +946,99 @@ export function formatShortDate(iso: string) {
   const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
   return `${d} ${months[(m ?? 1) - 1]}`;
 }
+
+export function articlesMentioning(name: string, limit = 4) {
+  return searchArticles(name).slice(0, limit);
+}
+
+export type TagDef = { id: string; label: string; kind: TagKind };
+
+export const TAGS: TagDef[] = [
+  { id: "rapida", label: "Lectura rápida", kind: "pace" },
+  { id: "fondo", label: "De fondo", kind: "pace" },
+  { id: "fintech", label: "Fintech", kind: "industry" },
+  { id: "industria", label: "Industria", kind: "industry" },
+  { id: "energia", label: "Energía", kind: "industry" },
+  { id: "logistica", label: "Logística", kind: "industry" },
+  { id: "retail", label: "Retail", kind: "industry" },
+  { id: "trabajo", label: "Trabajo", kind: "industry" },
+  { id: "diseno", label: "Diseño", kind: "industry" },
+  { id: "agro", label: "Agro", kind: "industry" },
+  { id: "software", label: "Software", kind: "industry" },
+  { id: "moda", label: "Moda", kind: "industry" },
+  { id: "ia", label: "IA", kind: "tech" },
+  { id: "clima-tech", label: "Clima tech", kind: "tech" },
+  { id: "pagos", label: "Pagos", kind: "tech" },
+  { id: "nearshoring", label: "Nearshoring", kind: "tech" },
+  { id: "hardware", label: "Hardware", kind: "tech" },
+];
+
+const SECTION_TAGS: Record<SectionId, string[]> = {
+  ideas: ["industria"],
+  work: ["trabajo"],
+  design: ["diseno", "hardware"],
+  climate: ["energia", "clima-tech"],
+  culture: ["retail"],
+};
+
+const SLUG_TAGS: Record<string, string[]> = {
+  "latam-no-pidio-permiso": ["industria", "nearshoring"],
+  "nearshoring-despues-del-anuncio": ["industria", "nearshoring"],
+  "fintech-despues-del-hype": ["fintech", "pagos"],
+  "cult-of-the-analog-office": ["trabajo", "diseno"],
+  "el-mito-miami": ["industria", "fintech"],
+  "who-owns-climate": ["energia", "clima-tech"],
+  "triangulo-del-litio": ["energia", "clima-tech"],
+  "ia-en-la-junta": ["ia", "software"],
+  "corredor-es-pt": ["fintech", "pagos"],
+  "fast-fashion-slow-afterlife": ["moda", "retail"],
+  "machines-with-taste": ["diseno", "hardware"],
+  "el-pacifico-se-firma-en-lima": ["logistica", "nearshoring"],
+  "buenos-aires-restriccion": ["diseno", "industria"],
+};
+
+const UPDATED_AT: Record<string, string> = {
+  "latam-no-pidio-permiso": "2026-08-21",
+  "nearshoring-despues-del-anuncio": "2026-08-20",
+  "fintech-despues-del-hype": "2026-08-19",
+  "cult-of-the-analog-office": "2026-08-18",
+  "el-mito-miami": "2026-08-21",
+  "ia-en-la-junta": "2026-08-17",
+};
+
+export function getTag(id: string) {
+  return TAGS.find((t) => t.id === id);
+}
+
+export function articlePace(article: Article): PaceId {
+  if (article.pace) return article.pace;
+  if (article.franchise === "signals") return "rapida";
+  return article.readMinutes <= 6 ? "rapida" : "fondo";
+}
+
+export function articleTags(article: Article): string[] {
+  const pace = articlePace(article);
+  const rest = (article.tags ?? SLUG_TAGS[article.slug] ?? SECTION_TAGS[article.section] ?? []).filter(
+    (t) => t !== "rapida" && t !== "fondo",
+  );
+  return [...new Set([...rest, pace])];
+}
+
+export function articleUpdated(article: Article) {
+  return article.updatedAt ?? UPDATED_AT[article.slug] ?? article.publishedAt;
+}
+
+export function wasUpdated(article: Article) {
+  return articleUpdated(article) !== article.publishedAt;
+}
+
+export function articlesByTag(tag: string) {
+  return ARTICLES.filter((a) => articleTags(a).includes(tag)).sort((a, b) =>
+    a.publishedAt < b.publishedAt ? 1 : -1,
+  );
+}
+
+export function articlesByFranchise(id: FranchiseId) {
+  return ARTICLES.filter((a) => a.franchise === id).sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+}
+

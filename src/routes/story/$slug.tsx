@@ -7,11 +7,16 @@ import {
   getAuthor,
   getSectionLabel,
   relatedArticles,
+  HOUSE,
+  articleUpdated,
+  wasUpdated,
   type BodyBlock,
 } from "@/lib/content";
-import { StackedCard } from "@/components/article-card";
+import { StackedCard, TagPills, ReadMeta } from "@/components/article-card";
 import { SaveButton } from "@/components/save-button";
 import { Newsletter } from "@/components/newsletter";
+import { AdSlot } from "@/components/ad-slot";
+import { ContraMark, SignalsMark } from "@/components/brand";
 import { getSavedSlugs } from "@/lib/server/magazine";
 
 export const Route = createFileRoute("/story/$slug")({
@@ -47,9 +52,7 @@ function StoryPage() {
     return (
       <main className="mx-auto max-w-2xl px-6 py-20 text-center">
         <p className="kicker text-xs text-rust">Fuera de edición</p>
-        <h1 className="mt-3 font-display text-3xl font-extrabold uppercase">
-          Esta historia no está en el número.
-        </h1>
+        <h1 className="headline mt-3 text-3xl">Esta historia no está en el número.</h1>
         <Link to="/" className="mt-6 inline-block kicker text-xs text-ink underline">
           Volver al número
         </Link>
@@ -57,34 +60,47 @@ function StoryPage() {
     );
   }
 
-  const author = getAuthor(article.authorId);
+  const city = articleCity(article);
   const related = relatedArticles(article.slug, 3);
+  const author = article.franchise === "contra" ? getAuthor(article.authorId) : undefined;
+  const signer = article.signedName ?? author?.name;
+  const updated = wasUpdated(article);
 
   return (
     <main>
       <article>
         <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6 sm:pt-12">
+          {article.franchise === "contra" && (
+            <Link to="/contra" className="logo-mark mb-4 inline-block">
+              <ContraMark className="h-8 sm:h-10" />
+            </Link>
+          )}
+          {article.franchise === "signals" && (
+            <Link to="/signals" className="logo-mark mb-4 inline-block">
+              <SignalsMark className="h-10 sm:h-12" />
+            </Link>
+          )}
           <p className="kicker text-xs text-rust">
-            {article.kicker} · {articleCity(article) || getSectionLabel(article.section)}
+            {article.kicker} · {city || getSectionLabel(article.section)}
           </p>
-          <h1 className="headline mt-4 text-4xl sm:text-6xl lg:text-7xl">
-            {article.title}
-          </h1>
-          <p className="mt-5 font-body text-lg leading-snug text-ink-soft sm:text-2xl">
-            {article.dek}
-          </p>
-          <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-y border-ink py-3">
-            <div className="flex items-center gap-3">
-              {author && (
-                <img src={author.image} alt="" className="size-12 object-cover" />
-              )}
-              <div>
-                <p className="headline text-lg">{author?.name}</p>
-                <p className="font-kicker text-xs tracking-wider text-muted uppercase">
-                  {author?.city ? `${author.city} · ` : ""}
-                  {formatIssueDate(article.publishedAt)} · {article.readMinutes} min
+          <h1 className="headline mt-4 text-4xl sm:text-6xl lg:text-7xl">{article.title}</h1>
+          <p className="mt-5 font-body text-lg leading-snug text-ink-soft sm:text-2xl">{article.dek}</p>
+          <div className="mt-5">
+            <TagPills article={article} />
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-y border-ink py-3">
+            <div>
+              <p className="headline text-xl">{signer ?? "Team Vander"}</p>
+              <p className="font-kicker text-xs tracking-wider text-muted uppercase">
+                {article.franchise === "contra" ? "Opinión firmada" : HOUSE.credit}
+                {city ? ` · ${city}` : ""}
+              </p>
+              <ReadMeta article={article} className="mt-1" />
+              {updated && (
+                <p className="mt-1 font-kicker text-xs tracking-wider text-muted uppercase">
+                  Publicada {formatIssueDate(article.publishedAt)} · Actualizada {formatIssueDate(articleUpdated(article))}
                 </p>
-              </div>
+              )}
             </div>
             <SaveButton slug={article.slug} saved={saved} onChange={setSaved} />
           </div>
@@ -99,30 +115,51 @@ function StoryPage() {
 
         <div className="mx-auto mt-10 max-w-2xl px-4 sm:px-6">
           {article.body.map((block, i) => (
-            <Block key={i} block={block} drop={i === 0} />
+            <div key={i}>
+              <Block block={block} drop={i === 0 && article.franchise !== "signals"} />
+              {i === 1 && <AdSlot size="inread" creative="vander20" />}
+            </div>
           ))}
         </div>
 
-        {author && (
-          <aside className="mx-auto mt-14 max-w-2xl border-t-2 border-ink px-4 py-6 sm:px-6">
-            <p className="kicker text-xs text-muted">La firma</p>
-            <div className="mt-4 flex gap-4">
-              <img src={author.image} alt="" className="size-20 object-cover sm:size-24" />
-              <div>
-                <p className="headline text-2xl">{author.name}</p>
-                <p className="kicker mt-1 text-xs text-rust">
-                  {author.role} · {author.city}
-                </p>
-                <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft">{author.bio}</p>
+        <aside className="mx-auto mt-14 max-w-2xl border-t-2 border-ink px-4 py-6 sm:px-6">
+          {author && article.franchise === "contra" ? (
+            <>
+              <p className="kicker text-xs text-muted">La firma</p>
+              <div className="mt-4 flex gap-4">
+                <img src={author.image} alt="" className="size-20 object-cover sm:size-24" />
+                <div>
+                  <p className="headline text-2xl">{author.name}</p>
+                  <p className="kicker mt-1 text-xs text-rust">
+                    {author.role} · {author.city}
+                  </p>
+                  <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft">{author.bio}</p>
+                </div>
               </div>
-            </div>
-          </aside>
-        )}
+            </>
+          ) : (
+            <>
+              <p className="kicker text-xs text-muted">La firma</p>
+              <p className="headline mt-3 text-3xl">Team Vander</p>
+              <p className="kicker mt-1 text-xs text-rust">{HOUSE.credit}</p>
+              <p className="mt-3 font-body text-sm leading-relaxed text-ink-soft">
+                Team Vander es la mesa regional de Interadia. Seis ciudades, una firma, un criterio.
+              </p>
+              <Link to="/about" className="mt-3 inline-block kicker text-xs text-ink underline decoration-rust hover:text-rust">
+                La redacción
+              </Link>
+            </>
+          )}
+        </aside>
       </article>
+
+      <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
+        <AdSlot size="mpu" creative="anuncia" />
+      </div>
 
       <section className="border-t border-ink px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-7xl">
-          <h2 className="headline border-b-2 border-ink pb-2 text-2xl uppercase">Sigue leyendo</h2>
+          <h2 className="headline border-b border-ink pb-2 text-3xl">Sigue leyendo</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {related.map((a) => (
               <StackedCard key={a.slug} article={a} />

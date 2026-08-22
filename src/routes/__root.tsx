@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteChrome } from "@/components/site-chrome";
 import { AppErrorComponent } from "@/lib/error-component";
+import { HILLTOP_ZONES, HILLTOP_SERVE } from "@/lib/ads";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "We Are Vander";
@@ -16,7 +17,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "We Are Vander. We Love Business. Portal de innovación empresarial en América Latina — CDMX, São Paulo, Buenos Aires, Bogotá, Santiago, Lima.",
+          "We Are Vander. We Love Business. Un medio de Interadia. Portal de innovación empresarial en América Latina — Team Vander desde CDMX, São Paulo, Buenos Aires, Bogotá, Santiago y Lima.",
       },
       { name: "theme-color", content: "#111111" },
     ],
@@ -26,6 +27,9 @@ export const Route = createRootRoute({
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
     ],
+    scripts: HILLTOP_ZONES.popunder
+      ? [{ src: `${HILLTOP_SERVE}/${HILLTOP_ZONES.popunder}`, defer: true }]
+      : [],
   }),
   errorComponent: AppErrorComponent,
   component: RootDocument,
@@ -36,6 +40,7 @@ function RootDocument() {
     <html lang="es" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <meta name="54aa2f4cf4f47f587705966a8169135a213fe0c6" content="54aa2f4cf4f47f587705966a8169135a213fe0c6" />
       </head>
       <body className="bg-paper text-ink">
         <PreviewHostBridge />

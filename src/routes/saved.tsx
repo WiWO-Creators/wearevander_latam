@@ -42,9 +42,7 @@ function SavedPage() {
     <main className="px-4 py-8 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-3xl">
         <p className="kicker text-xs text-rust">Tu estante</p>
-        <h1 className="mt-2 font-display text-4xl font-extrabold uppercase tracking-tight">
-          Guardados
-        </h1>
+        <h1 className="headline mt-2 text-4xl sm:text-5xl">Guardados</h1>
         {slugs === null ? (
           <div className="mt-8 h-28 animate-pulse bg-dust" />
         ) : stories.length === 0 ? (

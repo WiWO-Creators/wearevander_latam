@@ -1,272 +1,404 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, Search, X } from "lucide-react";
-import { ISSUE, SECTIONS, BRIEFS, DESKS } from "@/lib/content";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
+import { HOUSE, ISSUE, SECTIONS, BRIEFS, DESKS } from "@/lib/content";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { UserButton } from "@/lib/auth/gates";
+import { Wordmark } from "@/components/brand";
+import { AdSlot } from "@/components/ad-slot";
+import { MarketsBar } from "@/components/markets-bar";
 import { cn } from "@/lib/utils";
 
+const MORE_LINKS = [
+  { to: "/signals" as const, label: "Signals" },
+  { to: "/contra" as const, label: "Contra la corriente" },
+  { to: "/briefing" as const, label: "Briefing" },
+  { to: "/about" as const, label: "Redacción" },
+  { to: "/anuncia" as const, label: "Anuncia" },
+  { to: "/saved" as const, label: "Guardados" },
+];
+
 export function SiteChrome({ children }: { children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <div className="relative min-h-screen bg-paper text-ink">
-      <Header />
-      {children}
+      <a
+        href="#contenido"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-rust focus:px-4 focus:py-2 focus:text-paper"
+      >
+        Saltar al contenido
+      </a>
+      <Header open={open} setOpen={setOpen} />
+      {open && <MobileNav onClose={() => setOpen(false)} />}
+      <div id="contenido">{children}</div>
       <Footer />
     </div>
   );
 }
 
-function Header() {
-  const [open, setOpen] = useState(false);
+function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const ticker = BRIEFS.slice(0, 6);
+  const ticker = [...BRIEFS.slice(0, 8), ...BRIEFS.slice(0, 8)];
 
   return (
     <header>
-      <div className="sticky top-0 z-50">
+      <div className="sticky top-0 z-40">
         <div className="bg-ink text-paper">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
-          <div className="flex min-w-0 items-center gap-3">
+          <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 sm:px-6">
             <button
               type="button"
-              className="grid size-11 place-items-center lg:hidden"
+              className="press grid size-11 shrink-0 place-items-center lg:hidden"
               aria-label={open ? "Cerrar menú" : "Abrir menú"}
-              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              onClick={() => setOpen(!open)}
             >
-              {open ? <X className="size-6" strokeWidth={1.75} /> : <Menu className="size-6" strokeWidth={1.75} />}
+              {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
             </button>
-            <Link to="/" className="flex min-w-0 items-baseline gap-2 sm:gap-3">
-              <span className="headline truncate text-2xl uppercase sm:text-4xl">We Are Vander</span>
-              <span className="kicker hidden text-xs text-rust sm:inline">Latam</span>
+            <Link to="/" className="logo-mark shrink-0 py-2.5">
+              <Wordmark />
+              <span className="sr-only">{HOUSE.name}</span>
             </Link>
-          </div>
-          <div className="flex items-center gap-1 sm:gap-2">
-            <a
-              href="#boletin"
-              className="kicker hidden h-11 items-center bg-rust px-4 text-xs text-paper transition-opacity duration-150 hover:opacity-80 sm:inline-flex"
-            >
-              Suscribirse
-            </a>
-            <Link to="/search" aria-label="Buscar" className="grid size-11 place-items-center">
-              <Search className="size-5" strokeWidth={1.75} />
-            </Link>
-            <AuthSlot />
-          </div>
-        </div>
-        </div>
-        <nav className="hidden border-b border-ink bg-paper lg:block">
-          <ul className="mx-auto flex max-w-7xl items-center gap-1 px-6">
-            {SECTIONS.map((s) => {
-              const href = `/section/${s.id}`;
-              const active = pathname === href || pathname.startsWith(`${href}/`);
-              return (
-                <li key={s.id}>
+            <nav className="hidden min-w-0 flex-1 lg:block" aria-label="Secciones">
+              <ul className="flex items-center">
+                {SECTIONS.map((s) => {
+                  const href = `/section/${s.id}`;
+                  const active = pathname === href || pathname.startsWith(`${href}/`);
+                  return (
+                    <li key={s.id}>
+                      <Link
+                        to="/section/$section"
+                        params={{ section: s.id }}
+                        className={cn(
+                          "nav-link inline-flex h-12 items-center px-2.5 text-xs text-paper hover:text-rust xl:px-3",
+                          active && "is-active text-rust",
+                        )}
+                      >
+                        {s.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+                <li>
                   <Link
-                    to="/section/$section"
-                    params={{ section: s.id }}
+                    to="/list"
                     className={cn(
-                      "kicker inline-flex h-11 items-center border-b-2 px-3 text-xs transition-colors duration-150 hover:text-rust",
-                      active ? "border-rust text-rust" : "border-transparent text-ink",
+                      "nav-link inline-flex h-12 items-center px-2.5 text-xs text-paper hover:text-rust xl:px-3",
+                      pathname.startsWith("/list") && "is-active",
                     )}
                   >
-                    {s.label}
+                    Vander <span className="normal-case italic text-signal">20</span>
                   </Link>
                 </li>
-              );
-            })}
-            <li>
-              <Link
-                to="/list"
-                className={cn(
-                  "kicker inline-flex h-11 items-center border-b-2 px-3 text-xs hover:text-rust",
-                  pathname === "/list" ? "border-rust text-rust" : "border-transparent text-ink",
-                )}
-              >
-                Vander 20
+                <li>
+                  <Link
+                    to="/innovatives"
+                    className={cn(
+                      "nav-link inline-flex h-12 items-center px-2.5 text-xs text-paper hover:text-innov xl:px-3",
+                      pathname.startsWith("/innovatives") && "is-active",
+                    )}
+                  >
+                    <span className="normal-case italic text-innov">50</span>
+                    <span className="ml-1 hidden xl:inline">Innovatives</span>
+                  </Link>
+                </li>
+                <MoreMenu pathname={pathname} />
+              </ul>
+            </nav>
+            <div className="ml-auto flex shrink-0 items-center gap-1">
+              <Link to="/search" aria-label="Buscar" className="press grid size-11 place-items-center">
+                <Search className="size-5" strokeWidth={1.5} />
               </Link>
-            </li>
-            <li>
-              <Link
-                to="/briefing"
-                className="kicker inline-flex h-11 items-center border-b-2 border-transparent px-3 text-xs text-ink hover:text-rust"
-              >
-                Briefing
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="kicker inline-flex h-11 items-center border-b-2 border-transparent px-3 text-xs text-ink hover:text-rust"
-              >
-                Redacción
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div className="border-b border-rule bg-paper">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 overflow-hidden px-4 py-2 sm:px-6">
-          <span className="kicker shrink-0 text-xs text-rust">Al minuto</span>
-          <p className="truncate font-display text-sm font-semibold tracking-tight">
-            {ticker.map((b) => `${b.time} ${b.title}`).join("  ·  ")}
-          </p>
-        </div>
-      </div>
-
-      {open && (
-        <nav className="border-b border-ink bg-paper px-4 py-2 lg:hidden">
-          <ul className="flex flex-col">
-            {SECTIONS.map((s) => (
-              <li key={s.id} className="border-b border-rule">
-                <Link
-                  to="/section/$section"
-                  params={{ section: s.id }}
-                  onClick={() => setOpen(false)}
-                  className="flex min-h-12 items-center headline text-2xl uppercase"
-                >
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-            <li className="border-b border-rule">
-              <Link
-                to="/list"
-                onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center headline text-2xl uppercase"
-              >
-                Vander 20
-              </Link>
-            </li>
-            <li className="border-b border-rule">
-              <Link
-                to="/briefing"
-                onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center headline text-2xl uppercase"
-              >
-                Briefing
-              </Link>
-            </li>
-            <li className="border-b border-rule">
-              <Link
-                to="/about"
-                onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center headline text-2xl uppercase"
-              >
-                Redacción
-              </Link>
-            </li>
-            <li className="border-b border-rule">
-              <Link
-                to="/saved"
-                onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center headline text-2xl uppercase"
-              >
-                Guardados
-              </Link>
-            </li>
-            <li className="border-b border-rule">
-              <Link
-                to="/login"
-                onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center headline text-2xl uppercase"
-              >
-                Entrar
-              </Link>
-            </li>
-            <li>
               <a
                 href="#boletin"
-                onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center headline text-2xl uppercase text-rust"
+                className="press kicker hidden h-11 items-center bg-rust px-4 text-xs text-paper hover:bg-paper hover:text-ink sm:inline-flex"
               >
                 Suscribirse
               </a>
-            </li>
-          </ul>
-        </nav>
+              <AuthSlot />
+            </div>
+          </div>
+        </div>
+        <MarketsBar />
+      </div>
+
+      <div className="border-b border-rule bg-paper">
+        <div className="ticker mx-auto flex max-w-7xl items-center gap-4 px-4 py-2 sm:px-6">
+          <span className="kicker shrink-0 text-xs text-rust">Al minuto</span>
+          <div className="ticker-mask min-w-0 flex-1 overflow-hidden">
+            <div className="ticker-track font-sans text-sm font-medium tracking-tight text-ink">
+              {ticker.map((b, i) => (
+                <Link
+                  key={`${b.id}-${i}`}
+                  to="/story/$slug"
+                  params={{ slug: b.slug }}
+                  className="pr-8 hover:text-rust"
+                >
+                  <span className="text-muted">{b.time}</span>
+                  <span className="mx-2 text-muted">·</span>
+                  {b.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      {pathname !== "/login" && pathname !== "/" && (
+        <div className="border-b border-rule bg-paper">
+          <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+            <AdSlot size="leaderboard" creative={pathname.startsWith("/list") ? "briefing" : "vander20"} />
+          </div>
+        </div>
       )}
     </header>
   );
 }
 
+function MoreMenu({ pathname }: { pathname: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLLIElement>(null);
+  const active = MORE_LINKS.some((i) => pathname === i.to || pathname.startsWith(`${i.to}/`));
+
+  useEffect(() => {
+    function onPointer(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  return (
+    <li ref={ref} className="relative">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((v) => !v)}
+        className={cn(
+          "nav-link inline-flex h-12 items-center gap-1 px-2.5 text-xs text-paper hover:text-rust xl:px-3",
+          (open || active) && "is-active text-rust",
+        )}
+      >
+        Más
+        <ChevronDown className={cn("size-3.5 transition-transform duration-200", open && "rotate-180")} strokeWidth={2} />
+      </button>
+      {open && (
+        <ul className="absolute left-0 top-full z-50 min-w-48 border border-ink bg-paper py-2">
+          {MORE_LINKS.map((item) => (
+            <li key={item.to}>
+              <Link
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "flex h-11 items-center px-4 font-sans text-sm font-medium text-ink hover:bg-paper-deep hover:text-rust",
+                  pathname === item.to && "text-rust",
+                )}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+}
+
+function MobileNav({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink text-paper lg:hidden">
+      <div className="sticky top-0 z-10 flex items-center justify-between bg-ink px-4 py-3">
+        <Link to="/" onClick={onClose} className="logo-mark">
+          <Wordmark className="h-7 sm:h-8" />
+        </Link>
+        <button type="button" className="press grid size-11 place-items-center" aria-label="Cerrar menú" onClick={onClose}>
+          <X className="size-6" strokeWidth={1.5} />
+        </button>
+      </div>
+      <nav className="flex flex-1 flex-col px-4 pb-10 pt-2">
+        <ul className="flex flex-col">
+          {SECTIONS.map((s) => (
+            <li key={s.id} className="menu-item border-b border-paper/15">
+              <Link
+                to="/section/$section"
+                params={{ section: s.id }}
+                onClick={onClose}
+                className="flex min-h-14 items-center headline text-4xl"
+              >
+                {s.label}
+              </Link>
+            </li>
+          ))}
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/list" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              Vander <span className="italic text-signal">20</span>
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/innovatives" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              <span className="italic text-innov">50</span>
+              <span className="ml-2">Innovatives</span>
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/signals" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              Signals
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/contra" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              Contra
+            </Link>
+          </li>
+        </ul>
+        <ul className="mt-6 flex flex-col">
+          {MORE_LINKS.map((item) => (
+            <li key={item.to} className="menu-item border-b border-paper/15">
+              <Link
+                to={item.to}
+                onClick={onClose}
+                className="flex min-h-12 items-center font-sans text-sm font-semibold uppercase tracking-widest"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+          <li className="menu-item">
+            <a
+              href="#boletin"
+              onClick={onClose}
+              className="flex min-h-12 items-center font-sans text-sm font-semibold uppercase tracking-widest text-rust"
+            >
+              Suscribirse
+            </a>
+          </li>
+        </ul>
+        <p className="kicker mt-10 text-xs text-silver">{HOUSE.credit}</p>
+      </nav>
+    </div>
+  );
+}
+
 function AuthSlot() {
   const { user, isPending } = useCurrentUserState();
-  if (isPending) return <div className="h-8 w-16 animate-pulse bg-paper/20" />;
-  if (user) {
-    return (
-      <div className="hidden items-center gap-3 sm:flex">
-        <Link to="/saved" className="kicker text-xs text-paper/80 hover:text-paper">
-          Guardados
-        </Link>
-        <div className="font-kicker text-xs text-paper [&_button]:text-paper [&_span]:text-paper">
-          <UserButton />
-        </div>
-      </div>
-    );
-  }
+  if (isPending || !user) return null;
   return (
-    <Link
-      to="/login"
-      className="kicker hidden h-11 items-center border border-paper/30 px-3 text-xs text-paper hover:bg-paper hover:text-ink sm:inline-flex"
-    >
-      Entrar
-    </Link>
+    <div className="hidden items-center gap-3 lg:flex">
+      <div className="font-kicker text-xs text-paper [&_button]:text-paper [&_span]:text-paper">
+        <UserButton />
+      </div>
+    </div>
   );
 }
 
 function Footer() {
   return (
-    <footer className="border-t border-ink bg-ink px-4 py-12 text-paper sm:px-6">
+    <footer className="border-t border-ink bg-ink px-4 py-14 text-paper sm:px-6">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="headline text-4xl uppercase">We Are Vander</p>
-          <p className="mt-2 kicker text-xs text-rust">We Love Business · Latam</p>
+          <Wordmark className="h-9 sm:h-11" />
+          <p className="mt-3 kicker text-xs text-rust">
+            {HOUSE.motto} · {ISSUE.city}
+          </p>
+          <p className="mt-2 kicker text-xs tracking-widest text-silver">{HOUSE.credit}</p>
           <p className="mt-4 max-w-sm font-body text-sm leading-relaxed text-paper/70">
-            Portal de innovación empresarial para América Latina. Negro, blanco, negocios.
-            El criterio es el producto.
+            Portal de innovación empresarial para América Latina.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8">
           <div>
             <p className="kicker text-xs text-paper/45">Secciones</p>
-            <ul className="mt-3 space-y-2 font-display text-base font-semibold">
+            <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               {SECTIONS.map((s) => (
                 <li key={s.id}>
-                  <Link to="/section/$section" params={{ section: s.id }} className="hover:text-rust">
+                  <Link to="/section/$section" params={{ section: s.id }} className="link-title">
                     {s.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/list" className="hover:text-rust">
+                <Link to="/list" className="link-title">
                   Vander 20
+                </Link>
+              </li>
+              <li>
+                <Link to="/innovatives" className="link-title">
+                  50 Innovatives
+                </Link>
+              </li>
+              <li>
+                <Link to="/signals" className="link-title">
+                  Signals
+                </Link>
+              </li>
+              <li>
+                <Link to="/contra" className="link-title">
+                  Contra la corriente
                 </Link>
               </li>
             </ul>
           </div>
           <div>
             <p className="kicker text-xs text-paper/45">La casa</p>
-            <ul className="mt-3 space-y-2 font-display text-base font-semibold">
-              <li><Link to="/about" className="hover:text-rust">Redacción</Link></li>
-              <li><Link to="/briefing" className="hover:text-rust">Briefing</Link></li>
-              <li><Link to="/saved" className="hover:text-rust">Guardados</Link></li>
-              <li><Link to="/login" className="hover:text-rust">Entrar</Link></li>
+            <ul className="mt-3 space-y-2 font-sans text-base font-medium">
+              <li>
+                <Link to="/about" className="link-title">
+                  Redacción
+                </Link>
+              </li>
+              <li>
+                <Link to="/briefing" className="link-title">
+                  Briefing
+                </Link>
+              </li>
+              <li>
+                <Link to="/saved" className="link-title">
+                  Guardados
+                </Link>
+              </li>
+              <li>
+                <Link to="/anuncia" className="link-title">
+                  Anuncia
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <p className="kicker text-xs text-paper/45">Mesas</p>
-            <ul className="mt-3 space-y-2 font-display text-base font-semibold text-paper/80">
+            <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               {DESKS.map((d) => (
-                <li key={d.id}>{d.label}</li>
+                <li key={d.id}>
+                  <Link to="/search" search={{ q: d.label }} className="link-title">
+                    {d.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-      <p className="mx-auto mt-12 max-w-7xl kicker text-xs text-paper/40">
-        © {ISSUE.date.split(" ").at(-1)} We Are Vander. {ISSUE.title}. {ISSUE.desks.join(" · ")}.
-      </p>
+      <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-paper/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="kicker text-xs text-paper/40">
+          © {ISSUE.date.split(" ").at(-1)} {HOUSE.name}. {HOUSE.credit}.
+        </p>
+        <p className="kicker text-xs text-paper/40">
+          {ISSUE.title}. {ISSUE.desks.join(" · ")}.
+        </p>
+      </div>
     </footer>
   );
 }

@@ -50,7 +50,7 @@ export function SaveButton({
       disabled={busy}
       aria-label={local ? "Sacar de guardados" : "Guardar historia"}
       className={cn(
-        "inline-flex h-11 min-w-11 items-center gap-2 text-ink transition-opacity duration-150 hover:opacity-70 disabled:opacity-50",
+        "press inline-flex h-11 min-w-11 items-center gap-2 text-ink hover:text-rust disabled:opacity-50",
         className,
       )}
     >
