@@ -21,6 +21,7 @@ export function Under40Shot({
         className,
       )}
       data-sector={person.sectorSlug}
+      data-slug={person.slug}
     >
       <img src={person.image} alt={person.name} />
       {showRank ? (

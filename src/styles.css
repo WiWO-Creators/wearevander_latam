@@ -572,6 +572,18 @@
     transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.u40-shot[data-slug="polo-diaz"] img {
+  object-position: 54% 18%;
+}
+
+.u40-shot[data-slug="melissa-munoz-flandez"] img {
+  object-position: 78% 18%;
+}
+
+.u40-shot[data-slug="carlos-aravena"] img {
+  object-position: 28% 12%;
+}
+
 .u40-shot::after {
   content: "";
   position: absolute;
