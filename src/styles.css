@@ -390,6 +390,17 @@
   height: 78px !important;
 }
 
+.channel-rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 2.5rem, #000 calc(100% - 2.5rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 2.5rem, #000 calc(100% - 2.5rem), transparent 100%);
+}
+
+.channel-rail::-webkit-scrollbar {
+  display: none;
+}
+
 .v-loader-root {
   position: fixed;
   inset: 0;
