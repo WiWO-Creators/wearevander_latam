@@ -1,4 +1,4 @@
-import { AD_FRAME, ADSTERRA, type AdSize } from "@/lib/ads";
+import { ADSTERRA, type AdSize } from "@/lib/ads";
 import { AdsterraBanner, AdsterraLeaderboard, AdsterraNative } from "@/components/adsterra";
 import { cn } from "@/lib/utils";
 
@@ -19,11 +19,9 @@ export function AdSlot({
   creative?: CreativeId;
   className?: string;
 }) {
-  const frame = AD_FRAME[size];
-
   return (
-    <aside aria-label="Publicidad" className={cn(size === "inread" && "my-8", className)}>
-      <p className="kicker mb-2 text-center text-xs text-muted">Publicidad · {frame.label}</p>
+    <aside aria-label="Publicidad externa" className={cn(size === "inread" && "my-8", className)}>
+      <p className="kicker mb-2 text-center text-xs text-muted">Publicidad externa</p>
       <div
         className={cn(
           "ad-unit mx-auto overflow-hidden border border-rule bg-paper-deep",
