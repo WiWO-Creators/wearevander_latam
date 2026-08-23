@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AnunciaRouteImport } from './routes/anuncia'
 import { Route as BriefingRouteImport } from './routes/briefing'
+import { Route as ChannelsRouteImport } from './routes/channels'
 import { Route as ContraRouteImport } from './routes/contra'
 import { Route as IndiceRouteImport } from './routes/indice'
 import { Route as InnovativesRouteImport } from './routes/innovatives'
@@ -78,6 +79,11 @@ const AnunciaRoute = AnunciaRouteImport.update({
 const BriefingRoute = BriefingRouteImport.update({
   id: '/briefing',
   path: '/briefing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChannelsRoute = ChannelsRouteImport.update({
+  id: '/channels',
+  path: '/channels',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContraRoute = ContraRouteImport.update({
@@ -316,6 +322,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
+  '/channels': typeof ChannelsRoute
   '/contra': typeof ContraRouteWithChildren
   '/indice': typeof IndiceRoute
   '/innovatives': typeof InnovativesRouteWithChildren
@@ -368,6 +375,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
+  '/channels': typeof ChannelsRoute
   '/indice': typeof IndiceRoute
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
@@ -410,6 +418,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
+  '/channels': typeof ChannelsRoute
   '/contra': typeof ContraRouteWithChildren
   '/indice': typeof IndiceRoute
   '/innovatives': typeof InnovativesRouteWithChildren
@@ -464,6 +473,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/anuncia'
     | '/briefing'
+    | '/channels'
     | '/contra'
     | '/indice'
     | '/innovatives'
@@ -516,6 +526,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/anuncia'
     | '/briefing'
+    | '/channels'
     | '/indice'
     | '/login'
     | '/obituarios'
@@ -557,6 +568,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/anuncia'
     | '/briefing'
+    | '/channels'
     | '/contra'
     | '/indice'
     | '/innovatives'
@@ -610,6 +622,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AnunciaRoute: typeof AnunciaRoute
   BriefingRoute: typeof BriefingRoute
+  ChannelsRoute: typeof ChannelsRoute
   ContraRoute: typeof ContraRouteWithChildren
   IndiceRoute: typeof IndiceRoute
   InnovativesRoute: typeof InnovativesRouteWithChildren
@@ -655,6 +668,13 @@ declare module '@tanstack/react-router' {
       path: '/briefing'
       fullPath: '/briefing'
       preLoaderRoute: typeof BriefingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/channels': {
+      id: '/channels'
+      path: '/channels'
+      fullPath: '/channels'
+      preLoaderRoute: typeof ChannelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contra': {
@@ -1164,6 +1184,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AnunciaRoute: AnunciaRoute,
   BriefingRoute: BriefingRoute,
+  ChannelsRoute: ChannelsRoute,
   ContraRoute: ContraRouteWithChildren,
   IndiceRoute: IndiceRoute,
   InnovativesRoute: InnovativesRouteWithChildren,

@@ -195,13 +195,13 @@ function DesktopNav({
       </li>
       <li>
         <Link
-          to="/piso"
+          to="/channels"
           className={cn(
             "nav-link inline-flex h-12 items-center px-3 text-xs text-paper hover:text-rust",
-            pathname.startsWith("/piso") && "is-active text-rust",
+            (pathname.startsWith("/channels") || pathname.startsWith("/piso")) && "is-active text-rust",
           )}
         >
-          Piso
+          Channels
         </Link>
       </li>
       <li>
@@ -378,8 +378,8 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/piso" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
-              Piso
+            <Link to="/channels" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
+              Channels
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
@@ -489,8 +489,8 @@ function Footer() {
             <p className="kicker text-xs text-paper/45">La casa</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               <li>
-                <Link to="/piso" className="link-title">
-                  Piso en vivo
+                <Link to="/channels" className="link-title">
+                  Channels
                 </Link>
               </li>
               <li>

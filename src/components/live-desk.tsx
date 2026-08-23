@@ -15,24 +15,24 @@ const FEEDS = [
 ] as const;
 
 function Player({ id, name, line }: (typeof FEEDS)[number]) {
+  const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1`;
   return (
-    <figure className="min-w-0">
-      <div className="aspect-video w-full overflow-hidden border border-ink bg-ink">
+    <figure className="w-[15.5rem] shrink-0 sm:w-[17.5rem]">
+      <div className="aspect-video w-full overflow-hidden border border-paper/20 bg-ink">
         <iframe
           title={`${name} en vivo`}
-          src={`https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`}
+          src={src}
           className="h-full w-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
-          loading="lazy"
         />
       </div>
-      <figcaption className="mt-2 flex items-center justify-between gap-3">
-        <span className="kicker text-xs text-muted">{line}</span>
-        <span className="inline-flex items-center gap-1.5 font-sans text-[10px] font-semibold uppercase tracking-widest text-rust">
+      <figcaption className="mt-1.5 flex items-center justify-between gap-2">
+        <span className="kicker truncate text-[10px] text-silver">{line}</span>
+        <span className="inline-flex items-center gap-1 font-sans text-[10px] font-semibold uppercase tracking-widest text-rust">
           <span className="size-1.5 animate-pulse bg-rust" />
-          En vivo
+          Mute
         </span>
       </figcaption>
     </figure>
@@ -41,32 +41,32 @@ function Player({ id, name, line }: (typeof FEEDS)[number]) {
 
 export function LiveDesk({ compact = false }: { compact?: boolean }) {
   return (
-    <section className={cn("border-y border-ink bg-ink text-paper", compact ? "px-4 py-8 sm:px-6" : "px-4 py-12 sm:px-6")}>
+    <section className={cn("border-y border-ink bg-ink text-paper", compact ? "px-4 py-5 sm:px-6" : "px-4 py-10 sm:px-6")}>
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="kicker text-xs text-rust">Piso · transmisión</p>
-            <h2 className="headline mt-1 text-3xl sm:text-5xl">
+            <p className="kicker text-xs text-rust">Channels</p>
+            <h2 className="headline mt-1 text-2xl sm:text-3xl">
               {compact ? (
-                <Link to="/piso" className="hover:text-rust">
-                  Yahoo Finance y Bloomberg
+                <Link to="/channels" className="hover:text-rust">
+                  En el aire
                 </Link>
               ) : (
-                "Yahoo Finance y Bloomberg"
+                "En el aire"
               )}
             </h2>
-            <p className="mt-2 max-w-xl font-body text-sm leading-relaxed text-paper/70">
-              Las dos señales de referencia, sin recortar. Vander no produce este aire: lo pone a
-              la vista para que la redacción y el lector vean lo mismo.
-            </p>
           </div>
           {compact ? (
-            <Link to="/piso" className="kicker text-xs text-rust hover:underline">
-              Abrir el piso
+            <Link to="/channels" className="kicker text-[10px] text-silver hover:text-rust">
+              Todos
             </Link>
-          ) : null}
+          ) : (
+            <p className="max-w-sm text-right font-body text-xs text-paper/55">
+              Yahoo Finance y Bloomberg, en mute. Vander no produce estas señales.
+            </p>
+          )}
         </div>
-        <div className="mt-6 grid gap-5 lg:grid-cols-2">
+        <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
           {FEEDS.map((f) => (
             <Player key={f.id} {...f} />
           ))}
