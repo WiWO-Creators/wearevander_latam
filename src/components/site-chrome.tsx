@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { HOUSE, ISSUE, SECTIONS, BRIEFS, DESKS } from "@/lib/content";
@@ -15,6 +15,8 @@ const MORE_LINKS = [
   { to: "/anuncia" as const, label: "Anuncia" },
   { to: "/saved" as const, label: "Guardados" },
 ];
+
+type MegaId = "secciones" | "rankings" | "casa";
 
 
 export function SiteChrome({ children }: { children: ReactNode }) {
@@ -46,11 +48,27 @@ export function SiteChrome({ children }: { children: ReactNode }) {
 function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const ticker = [...BRIEFS.slice(0, 8), ...BRIEFS.slice(0, 8)];
+  const [mega, setMega] = useState<MegaId | null>(null);
+
+  useEffect(() => {
+    setMega(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setMega(null);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <header>
       <div className="sticky top-0 z-40 pt-[env(safe-area-inset-top)]">
-        <div className="bg-ink text-paper">
+        <div
+          className="relative bg-ink text-paper"
+          onMouseLeave={() => setMega(null)}
+        >
           <div className="mx-auto flex max-w-7xl items-center gap-1 px-3 sm:gap-2 sm:px-6">
             <button
               type="button"
@@ -66,105 +84,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
               <span className="sr-only">{HOUSE.name}</span>
             </Link>
             <nav className="hidden min-w-0 flex-1 lg:block" aria-label="Secciones">
-              <ul className="flex items-center overflow-x-auto">
-                {SECTIONS.map((s) => {
-                  const href = `/section/${s.id}`;
-                  const active = pathname === href || pathname.startsWith(`${href}/`);
-                  return (
-                    <li key={s.id}>
-                      <Link
-                        to="/section/$section"
-                        params={{ section: s.id }}
-                        className={cn(
-                          "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                          active && "is-active text-rust",
-                        )}
-                      >
-                        {s.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-                <li>
-                  <Link
-                    to="/list"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                      pathname.startsWith("/list") && "is-active",
-                    )}
-                  >
-                    Vander <span className="normal-case italic text-signal">20</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/innovatives"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-innov xl:px-2.5",
-                      pathname.startsWith("/innovatives") && "is-active",
-                    )}
-                  >
-                    <span className="normal-case italic text-innov">50</span>
-                    <span className="ml-1 hidden xl:inline">Innovatives</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/signals"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                      pathname.startsWith("/signals") && "is-active",
-                    )}
-                  >
-                    Signals
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contra"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                      pathname.startsWith("/contra") && "is-active",
-                    )}
-                  >
-                    Contra
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/piso"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                      pathname.startsWith("/piso") && "is-active",
-                    )}
-                  >
-                    Piso
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/indice"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                      pathname.startsWith("/indice") && "is-active",
-                    )}
-                  >
-                    El Índice
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className={cn(
-                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
-                      pathname.startsWith("/about") && "is-active",
-                    )}
-                  >
-                    Redacción
-                  </Link>
-                </li>
-                <MoreMenu pathname={pathname} />
-              </ul>
+              <DesktopNav pathname={pathname} mega={mega} setMega={setMega} />
             </nav>
             <div className="ml-auto flex shrink-0 items-center gap-1">
               <Link to="/search" aria-label="Buscar" className="press grid size-11 place-items-center">
@@ -179,6 +99,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
               <AuthSlot />
             </div>
           </div>
+          {mega ? <MegaPanel id={mega} pathname={pathname} onClose={() => setMega(null)} /> : null}
         </div>
         <MarketsBar />
       </div>
@@ -215,60 +136,198 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
   );
 }
 
-function MoreMenu({ pathname }: { pathname: string }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLLIElement>(null);
-  const active = MORE_LINKS.some((i) => pathname === i.to || pathname.startsWith(`${i.to}/`));
-
-  useEffect(() => {
-    function onPointer(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    }
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("mousedown", onPointer);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onPointer);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, []);
+function DesktopNav({
+  pathname,
+  mega,
+  setMega,
+}: {
+  pathname: string;
+  mega: MegaId | null;
+  setMega: (id: MegaId | null) => void;
+}) {
+  const rankingsOn = pathname.startsWith("/list") || pathname.startsWith("/innovatives") || pathname.startsWith("/indice");
+  const casaOn = ["/about", "/obituarios", "/briefing", "/anuncia", "/saved"].some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`),
+  );
+  const seccionesOn = pathname.startsWith("/section/");
 
   return (
-    <li ref={ref} className="relative">
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-haspopup="true"
-        onClick={() => setOpen((v) => !v)}
-        className={cn(
-          "nav-link inline-flex h-12 items-center gap-1 px-2.5 text-xs text-paper hover:text-rust xl:px-3",
-          (open || active) && "is-active text-rust",
-        )}
-      >
-        Más
-        <ChevronDown className={cn("size-3.5 transition-transform duration-200", open && "rotate-180")} strokeWidth={2} />
-      </button>
-      {open && (
-        <ul className="absolute left-0 top-full z-50 min-w-48 border border-ink bg-paper py-2">
-          {MORE_LINKS.map((item) => (
-            <li key={item.to}>
-              <Link
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "flex h-11 items-center px-4 font-sans text-sm font-medium text-ink hover:bg-paper-deep hover:text-rust",
-                  pathname === item.to && "text-rust",
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <ul className="flex items-center justify-end overflow-visible">
+      <li>
+        <MegaTrigger
+          label="Secciones"
+          open={mega === "secciones"}
+          active={seccionesOn}
+          onOpen={() => setMega("secciones")}
+          onToggle={() => setMega(mega === "secciones" ? null : "secciones")}
+        />
+      </li>
+      <li>
+        <MegaTrigger
+          label="Rankings"
+          open={mega === "rankings"}
+          active={rankingsOn}
+          onOpen={() => setMega("rankings")}
+          onToggle={() => setMega(mega === "rankings" ? null : "rankings")}
+        />
+      </li>
+      <li>
+        <Link
+          to="/signals"
+          className={cn(
+            "nav-link inline-flex h-12 items-center px-3 text-xs text-paper hover:text-rust",
+            pathname.startsWith("/signals") && "is-active text-rust",
+          )}
+        >
+          Signals
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/contra"
+          className={cn(
+            "nav-link inline-flex h-12 items-center px-3 text-xs text-paper hover:text-rust",
+            pathname.startsWith("/contra") && "is-active text-rust",
+          )}
+        >
+          Contra
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/piso"
+          className={cn(
+            "nav-link inline-flex h-12 items-center px-3 text-xs text-paper hover:text-rust",
+            pathname.startsWith("/piso") && "is-active text-rust",
+          )}
+        >
+          Piso
+        </Link>
+      </li>
+      <li>
+        <MegaTrigger
+          label="Casa"
+          open={mega === "casa"}
+          active={casaOn}
+          onOpen={() => setMega("casa")}
+          onToggle={() => setMega(mega === "casa" ? null : "casa")}
+        />
+      </li>
+    </ul>
+  );
+}
+
+function MegaTrigger({
+  label,
+  open,
+  active,
+  onOpen,
+  onToggle,
+}: {
+  label: string;
+  open: boolean;
+  active: boolean;
+  onOpen: () => void;
+  onToggle: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      aria-expanded={open}
+      aria-haspopup="true"
+      onMouseEnter={onOpen}
+      onFocus={onOpen}
+      onClick={onToggle}
+      className={cn(
+        "nav-link inline-flex h-12 items-center gap-1 px-3 text-xs text-paper hover:text-rust",
+        (open || active) && "is-active text-rust",
       )}
-    </li>
+    >
+      {label}
+      <ChevronDown className={cn("size-3.5 transition-transform duration-200", open && "rotate-180")} strokeWidth={2} />
+    </button>
+  );
+}
+
+function MegaPanel({
+  id,
+  pathname,
+  onClose,
+}: {
+  id: MegaId;
+  pathname: string;
+  onClose: () => void;
+}) {
+  return (
+    <div className="absolute inset-x-0 top-full z-50 border-t border-paper/15 bg-paper text-ink shadow-[0_18px_40px_rgba(10,10,10,0.18)]">
+      <div className="mx-auto max-w-7xl px-6 py-8">
+        {id === "secciones" ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {SECTIONS.map((s) => (
+              <Link
+                key={s.id}
+                to="/section/$section"
+                params={{ section: s.id }}
+                onClick={onClose}
+                className="group block min-w-0"
+              >
+                <p className={cn("headline text-2xl group-hover:text-rust", pathname === `/section/${s.id}` && "text-rust")}>
+                  {s.label}
+                </p>
+                <p className="mt-2 font-body text-sm leading-snug text-muted">{s.dek}</p>
+              </Link>
+            ))}
+          </div>
+        ) : null}
+        {id === "rankings" ? (
+          <div className="grid gap-8 lg:grid-cols-3">
+            <Link to="/list" onClick={onClose} className="group block">
+              <p className="kicker text-xs text-signal">Protocolo</p>
+              <p className="headline mt-2 text-3xl group-hover:text-rust">
+                Vander <span className="italic text-signal">20</span>
+              </p>
+              <p className="mt-2 font-body text-sm leading-snug text-muted">
+                Las veinte compañías visitadas. Código de casa, no ruido.
+              </p>
+            </Link>
+            <Link to="/innovatives" onClick={onClose} className="group block">
+              <p className="kicker text-xs text-innov">Anual</p>
+              <p className="headline mt-2 text-3xl group-hover:text-rust">
+                <span className="italic text-innov">50</span> Innovatives
+              </p>
+              <p className="mt-2 font-body text-sm leading-snug text-muted">
+                El gesto nuevo. Metodología pública. Cada ficha con fecha de visita.
+              </p>
+            </Link>
+            <Link to="/indice" onClick={onClose} className="group block">
+              <p className="kicker text-xs text-rust">Data</p>
+              <p className="headline mt-2 text-3xl group-hover:text-rust">El Índice</p>
+              <p className="mt-2 font-body text-sm leading-snug text-muted">
+                Sueldos, turnos, offtakes. Lo que se puede citar.
+              </p>
+            </Link>
+          </div>
+        ) : null}
+        {id === "casa" ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { to: "/about" as const, label: "Redacción", dek: "Quién firma. Corresponsalías." },
+              { to: "/obituarios" as const, label: "Obituarios", dek: "El guiño. Lo que ya no se usa." },
+              { to: "/briefing" as const, label: "Briefing", dek: "Lo que llegó incompleto." },
+              { to: "/anuncia" as const, label: "Anuncia", dek: "Inventario y tarifas." },
+              { to: "/saved" as const, label: "Guardados", dek: "Las piezas que te quedaste." },
+            ].map((item) => (
+              <Link key={item.to} to={item.to} onClick={onClose} className="group block min-w-0">
+                <p className={cn("headline text-2xl group-hover:text-rust", pathname === item.to && "text-rust")}>
+                  {item.label}
+                </p>
+                <p className="mt-2 font-body text-sm leading-snug text-muted">{item.dek}</p>
+              </Link>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 }
 
