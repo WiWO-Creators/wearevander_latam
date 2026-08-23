@@ -15,29 +15,26 @@ export function AdSlot({
   className,
 }: {
   size: AdSize;
-  /** Reservado: relleno de casa si el fill se apaga. */
   creative?: CreativeId;
   className?: string;
 }) {
+  const mpu = size === "mpu" || size === "inread";
   return (
     <aside aria-label="Publicidad externa" className={cn(size === "inread" && "my-8", className)}>
       <p className="kicker mb-2 text-center text-xs text-muted">Publicidad externa</p>
       <div
-        className={cn(
-          "ad-unit mx-auto overflow-hidden border border-rule bg-paper-deep",
-          (size === "mpu" || size === "inread") && "max-w-[300px]",
-        )}
+        className="ad-unit mx-auto flex items-center justify-center overflow-hidden bg-paper"
         data-ad-network="adsterra"
         data-ad-size={size}
+        style={
+          mpu
+            ? { width: 300, maxWidth: "100%", minHeight: 250 }
+            : size === "leaderboard"
+              ? { width: "100%", maxWidth: 728, minHeight: 50 }
+              : { width: "100%", minHeight: 250 }
+        }
       >
-        <div
-          className={cn(
-            "flex w-full items-center justify-center",
-            size === "leaderboard" ? "min-h-[50px] sm:min-h-[90px]" : "min-h-[180px] sm:min-h-[250px]",
-          )}
-        >
-          <LiveUnit size={size} />
-        </div>
+        <LiveUnit size={size} />
       </div>
     </aside>
   );

@@ -10,7 +10,6 @@ import {
 } from "recharts";
 import { INDICE_NOTE, OFFTAKE_ROWS, PAY_ROWS, SHIFT_ROWS, TAKE_ROWS } from "@/lib/indice";
 import { Newsletter } from "@/components/newsletter";
-import { AdSlot } from "@/components/ad-slot";
 import { HOUSE, ISSUE } from "@/lib/content";
 
 export const Route = createFileRoute("/indice")({
@@ -91,10 +90,6 @@ function IndicePage() {
           </table>
         </div>
       </section>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <AdSlot size="leaderboard" creative="anuncia" />
-      </div>
 
       <section className="border-y border-ink bg-paper-deep px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-7xl">

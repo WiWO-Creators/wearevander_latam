@@ -8,7 +8,6 @@ import {
 import { HorizontalCard, TagPills } from "@/components/article-card";
 import { ContraMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
-import { AdSlot } from "@/components/ad-slot";
 import { CatChip } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/contra/")({
@@ -114,10 +113,6 @@ function ContraPage() {
           </div>
         </section>
       )}
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <AdSlot size="leaderboard" creative="anuncia" />
-      </div>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-12">
         <div className="lg:col-span-8">

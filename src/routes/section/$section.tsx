@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SECTIONS, articlesBySection, type SectionId } from "@/lib/content";
 import { HeroStory, StackedCard } from "@/components/article-card";
-import { AdSlot } from "@/components/ad-slot";
 
 export const Route = createFileRoute("/section/$section")({
   component: SectionPage,
@@ -45,9 +44,6 @@ function SectionPage() {
             <HeroStory article={lead} />
           </div>
         )}
-        <div className="my-10">
-          <AdSlot size="leaderboard" creative="vander20" />
-        </div>
         {rest.length > 0 && (
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((a) => (

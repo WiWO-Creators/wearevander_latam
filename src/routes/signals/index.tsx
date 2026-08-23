@@ -3,7 +3,6 @@ import { articlesByFranchise, franchiseTags, HOUSE } from "@/lib/content";
 import { SignalRow, TagPills } from "@/components/article-card";
 import { SignalsMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
-import { AdSlot } from "@/components/ad-slot";
 import { SignalsField } from "@/components/signals-field";
 import { CatChip } from "@/components/rank-pack";
 
@@ -105,10 +104,6 @@ function SignalsPage() {
           </div>
         </section>
       )}
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <AdSlot size="leaderboard" creative="anuncia" />
-      </div>
 
       <SignalsField>
         <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">

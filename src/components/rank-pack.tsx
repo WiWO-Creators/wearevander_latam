@@ -112,7 +112,7 @@ export function RankRow20({ company, adAfter }: { company: ListedCompany; adAfte
       </Link>
       {adAfter ? (
         <div className="py-6">
-          <AdSlot size="leaderboard" creative="anuncia" />
+          <AdSlot size="mpu" creative="anuncia" />
         </div>
       ) : null}
     </li>
@@ -144,7 +144,7 @@ export function RankRow50({ company, adAfter }: { company: Innovative; adAfter?:
       </Link>
       {adAfter ? (
         <div className="mt-6">
-          <AdSlot size="leaderboard" creative="anuncia" />
+          <AdSlot size="mpu" creative="anuncia" />
         </div>
       ) : null}
     </li>

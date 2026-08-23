@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LiveDesk } from "@/components/live-desk";
 import { Newsletter } from "@/components/newsletter";
-import { AdSlot } from "@/components/ad-slot";
 import { HOUSE, ISSUE } from "@/lib/content";
 
 export const Route = createFileRoute("/channels")({
@@ -31,9 +30,6 @@ function ChannelsPage() {
         </div>
       </section>
       <LiveDesk />
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <AdSlot size="leaderboard" />
-      </div>
       <Newsletter />
     </main>
   );

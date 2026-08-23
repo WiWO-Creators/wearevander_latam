@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesByFormat, HOUSE } from "@/lib/content";
 import { Newsletter } from "@/components/newsletter";
-import { AdSlot } from "@/components/ad-slot";
 
 export const Route = createFileRoute("/obituarios")({
   component: ObituariosPage,
@@ -24,9 +23,6 @@ function ObituariosPage() {
           </p>
         </div>
       </section>
-      <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6">
-        <AdSlot size="leaderboard" creative="anuncia" />
-      </div>
       <section className="mx-auto max-w-3xl px-4 pb-14 sm:px-6">
         {items.map((a) => (
           <article key={a.slug} className="border-t border-ink py-8 first:border-t-0 first:pt-0">

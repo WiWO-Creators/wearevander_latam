@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { searchArticles } from "@/lib/content";
 import { HorizontalCard } from "@/components/article-card";
-import { AdSlot } from "@/components/ad-slot";
+import { HOUSE } from "@/lib/content";
 
 export const Route = createFileRoute("/search")({
   component: SearchPage,
@@ -52,9 +52,6 @@ function SearchPage() {
             .
           </p>
         )}
-        <div className="mt-10">
-          <AdSlot size="leaderboard" creative="vander20" />
-        </div>
       </div>
     </main>
   );

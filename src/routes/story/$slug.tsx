@@ -164,10 +164,6 @@ function StoryPage() {
         <VanderBug className="size-5" />
       </div>
 
-      <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
-        <AdSlot size="mpu" creative="anuncia" />
-      </div>
-
       <section className="border-t border-ink px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <h2 className="headline border-b border-ink pb-2 text-2xl sm:text-3xl">Sigue leyendo</h2>
