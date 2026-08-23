@@ -12,10 +12,10 @@ export const Route = createFileRoute("/anuncia")({
 });
 
 const FORMATS = [
-  { name: "Leaderboard", size: "728 × 90", use: "HilltopAds. Bajo el ticker, todas las páginas." },
-  { name: "Billboard", size: "970 × 250", use: "HilltopAds. Entre módulos de portada." },
-  { name: "MPU", size: "300 × 250", use: "HilltopAds. Riel derecho e in-read." },
-  { name: "In-read", size: "300 × 250", use: "HilltopAds. Dentro de la nota y Signals." },
+  { name: "Leaderboard", size: "728 × 90", use: "Adsterra. Bajo el ticker, todas las páginas." },
+  { name: "Mobile banner", size: "320 × 50", use: "Adsterra. Mismo slot, viewport chico." },
+  { name: "MPU / in-read", size: "300 × 250", use: "Adsterra. Riel, ficha y dentro de la nota." },
+  { name: "Native", size: "In-feed", use: "Adsterra. Billboard de portada y módulos anchos." },
   { name: "Popunder", size: "Onclick", use: "HilltopAds. Opcional, se activa con Zone ID." },
   { name: "Branded", size: "A medida", use: "Vander 20, boletín, briefing patrocinado." },
 ];
