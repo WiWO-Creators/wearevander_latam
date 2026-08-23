@@ -22,6 +22,7 @@ import { Route as ObituariosRouteImport } from './routes/obituarios'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
+import { Route as ApiMarketsRouteImport } from './routes/api/markets'
 import { Route as ContraIndexRouteImport } from './routes/contra/index'
 import { Route as ContraAutorRouteImport } from './routes/contra/autor'
 import { Route as ContraTagRouteImport } from './routes/contra/tag'
@@ -41,6 +42,8 @@ import { Route as SignalsTagRouteImport } from './routes/signals/tag'
 import { Route as StorySlugRouteImport } from './routes/story/$slug'
 import { Route as TagTagRouteImport } from './routes/tag/$tag'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiMarketsHealthRouteImport } from './routes/api/markets.health'
+import { Route as ApiMarketsIngestRouteImport } from './routes/api/markets.ingest'
 import { Route as ContraAutorIndexRouteImport } from './routes/contra/autor/index'
 import { Route as ContraAutorAutorRouteImport } from './routes/contra/autor/$autor'
 import { Route as ContraTagIndexRouteImport } from './routes/contra/tag/index'
@@ -119,6 +122,11 @@ const SearchRoute = SearchRouteImport.update({
 const SignalsRoute = SignalsRouteImport.update({
   id: '/signals',
   path: '/signals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMarketsRoute = ApiMarketsRouteImport.update({
+  id: '/api/markets',
+  path: '/api/markets',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContraIndexRoute = ContraIndexRouteImport.update({
@@ -216,6 +224,16 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMarketsHealthRoute = ApiMarketsHealthRouteImport.update({
+  id: '/health',
+  path: '/health',
+  getParentRoute: () => ApiMarketsRoute,
+} as any)
+const ApiMarketsIngestRoute = ApiMarketsIngestRouteImport.update({
+  id: '/ingest',
+  path: '/ingest',
+  getParentRoute: () => ApiMarketsRoute,
+} as any)
 const ContraAutorIndexRoute = ContraAutorIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -301,6 +319,7 @@ export interface FileRoutesByFullPath {
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
+  '/api/markets': typeof ApiMarketsRouteWithChildren
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
@@ -320,6 +339,8 @@ export interface FileRoutesByFullPath {
   '/list/': typeof ListIndexRoute
   '/signals/': typeof SignalsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/markets/health': typeof ApiMarketsHealthRoute
+  '/api/markets/ingest': typeof ApiMarketsIngestRoute
   '/contra/autor/$autor': typeof ContraAutorAutorRoute
   '/contra/tag/$tag': typeof ContraTagTagRoute
   '/innovatives/pais/$pais': typeof InnovativesPaisPaisRoute
@@ -345,6 +366,7 @@ export interface FileRoutesByTo {
   '/obituarios': typeof ObituariosRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/api/markets': typeof ApiMarketsRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
   '/innovatives/metodologia': typeof InnovativesMetodologiaRoute
   '/list/$slug': typeof ListSlugRoute
@@ -357,6 +379,8 @@ export interface FileRoutesByTo {
   '/list': typeof ListIndexRoute
   '/signals': typeof SignalsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/markets/health': typeof ApiMarketsHealthRoute
+  '/api/markets/ingest': typeof ApiMarketsIngestRoute
   '/contra/autor/$autor': typeof ContraAutorAutorRoute
   '/contra/tag/$tag': typeof ContraTagTagRoute
   '/innovatives/pais/$pais': typeof InnovativesPaisPaisRoute
@@ -387,6 +411,7 @@ export interface FileRoutesById {
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
+  '/api/markets': typeof ApiMarketsRouteWithChildren
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
@@ -406,6 +431,8 @@ export interface FileRoutesById {
   '/list/': typeof ListIndexRoute
   '/signals/': typeof SignalsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/markets/health': typeof ApiMarketsHealthRoute
+  '/api/markets/ingest': typeof ApiMarketsIngestRoute
   '/contra/autor/$autor': typeof ContraAutorAutorRoute
   '/contra/tag/$tag': typeof ContraTagTagRoute
   '/innovatives/pais/$pais': typeof InnovativesPaisPaisRoute
@@ -437,6 +464,7 @@ export interface FileRouteTypes {
     | '/saved'
     | '/search'
     | '/signals'
+    | '/api/markets'
     | '/contra/autor'
     | '/contra/tag'
     | '/innovatives/$slug'
@@ -456,6 +484,8 @@ export interface FileRouteTypes {
     | '/list/'
     | '/signals/'
     | '/api/auth/$'
+    | '/api/markets/health'
+    | '/api/markets/ingest'
     | '/contra/autor/$autor'
     | '/contra/tag/$tag'
     | '/innovatives/pais/$pais'
@@ -481,6 +511,7 @@ export interface FileRouteTypes {
     | '/obituarios'
     | '/saved'
     | '/search'
+    | '/api/markets'
     | '/innovatives/$slug'
     | '/innovatives/metodologia'
     | '/list/$slug'
@@ -493,6 +524,8 @@ export interface FileRouteTypes {
     | '/list'
     | '/signals'
     | '/api/auth/$'
+    | '/api/markets/health'
+    | '/api/markets/ingest'
     | '/contra/autor/$autor'
     | '/contra/tag/$tag'
     | '/innovatives/pais/$pais'
@@ -522,6 +555,7 @@ export interface FileRouteTypes {
     | '/saved'
     | '/search'
     | '/signals'
+    | '/api/markets'
     | '/contra/autor'
     | '/contra/tag'
     | '/innovatives/$slug'
@@ -541,6 +575,8 @@ export interface FileRouteTypes {
     | '/list/'
     | '/signals/'
     | '/api/auth/$'
+    | '/api/markets/health'
+    | '/api/markets/ingest'
     | '/contra/autor/$autor'
     | '/contra/tag/$tag'
     | '/innovatives/pais/$pais'
@@ -571,6 +607,7 @@ export interface RootRouteChildren {
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
   SignalsRoute: typeof SignalsRouteWithChildren
+  ApiMarketsRoute: typeof ApiMarketsRouteWithChildren
   SectionSectionRoute: typeof SectionSectionRoute
   StorySlugRoute: typeof StorySlugRoute
   TagTagRoute: typeof TagTagRoute
@@ -668,6 +705,13 @@ declare module '@tanstack/react-router' {
       path: '/signals'
       fullPath: '/signals'
       preLoaderRoute: typeof SignalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/markets': {
+      id: '/api/markets'
+      path: '/api/markets'
+      fullPath: '/api/markets'
+      preLoaderRoute: typeof ApiMarketsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contra/': {
@@ -802,6 +846,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/auth/$'
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/api/markets/health': {
+      id: '/api/markets/health'
+      path: '/health'
+      fullPath: '/api/markets/health'
+      preLoaderRoute: typeof ApiMarketsHealthRouteImport
+      parentRoute: typeof ApiMarketsRoute
+    }
+    '/api/markets/ingest': {
+      id: '/api/markets/ingest'
+      path: '/ingest'
+      fullPath: '/api/markets/ingest'
+      preLoaderRoute: typeof ApiMarketsIngestRouteImport
+      parentRoute: typeof ApiMarketsRoute
     }
     '/contra/autor/': {
       id: '/contra/autor/'
@@ -1067,6 +1125,20 @@ const SignalsRouteChildren: SignalsRouteChildren = {
 const SignalsRouteWithChildren =
   SignalsRoute._addFileChildren(SignalsRouteChildren)
 
+interface ApiMarketsRouteChildren {
+  ApiMarketsHealthRoute: typeof ApiMarketsHealthRoute
+  ApiMarketsIngestRoute: typeof ApiMarketsIngestRoute
+}
+
+const ApiMarketsRouteChildren: ApiMarketsRouteChildren = {
+  ApiMarketsHealthRoute: ApiMarketsHealthRoute,
+  ApiMarketsIngestRoute: ApiMarketsIngestRoute,
+}
+
+const ApiMarketsRouteWithChildren = ApiMarketsRoute._addFileChildren(
+  ApiMarketsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -1081,6 +1153,7 @@ const rootRouteChildren: RootRouteChildren = {
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
   SignalsRoute: SignalsRouteWithChildren,
+  ApiMarketsRoute: ApiMarketsRouteWithChildren,
   SectionSectionRoute: SectionSectionRoute,
   StorySlugRoute: StorySlugRoute,
   TagTagRoute: TagTagRoute,

@@ -385,3 +385,9 @@
     filter: none;
   }
 }
+
+.tv-tape .tradingview-widget-container,
+.tv-tape .tradingview-widget-container__widget,
+.tv-tape iframe {
+  height: 78px !important;
+}
