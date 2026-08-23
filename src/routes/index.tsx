@@ -288,6 +288,7 @@ function Home() {
         </section>
       )}
 
+      {obits.length > 0 && (
       <section className="bg-ink px-4 py-12 text-paper sm:px-6">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between gap-4 border-b border-paper/20 pb-3">
@@ -318,6 +319,7 @@ function Home() {
           </div>
         </div>
       </section>
+      )}
 
       <p className="sr-only">{HOUSE.name} · {ISSUE.title}</p>
       <Newsletter />
