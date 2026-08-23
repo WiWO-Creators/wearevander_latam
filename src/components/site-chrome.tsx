@@ -132,6 +132,17 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
                 </li>
                 <li>
                   <Link
+                    to="/piso"
+                    className={cn(
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
+                      pathname.startsWith("/piso") && "is-active",
+                    )}
+                  >
+                    Piso
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/indice"
                     className={cn(
                       "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
@@ -308,6 +319,11 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
+            <Link to="/piso" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
+              Piso
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
             <Link to="/indice" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               El Índice
             </Link>
@@ -413,6 +429,11 @@ function Footer() {
           <div>
             <p className="kicker text-xs text-paper/45">La casa</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
+              <li>
+                <Link to="/piso" className="link-title">
+                  Piso en vivo
+                </Link>
+              </li>
               <li>
                 <Link to="/indice" className="link-title">
                   El Índice

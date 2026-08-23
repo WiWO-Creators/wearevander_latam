@@ -19,6 +19,7 @@ import { Route as InnovativesRouteImport } from './routes/innovatives'
 import { Route as ListRouteImport } from './routes/list'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ObituariosRouteImport } from './routes/obituarios'
+import { Route as PisoRouteImport } from './routes/piso'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
@@ -107,6 +108,11 @@ const LoginRoute = LoginRouteImport.update({
 const ObituariosRoute = ObituariosRouteImport.update({
   id: '/obituarios',
   path: '/obituarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PisoRoute = PisoRouteImport.update({
+  id: '/piso',
+  path: '/piso',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SavedRoute = SavedRouteImport.update({
@@ -316,6 +322,7 @@ export interface FileRoutesByFullPath {
   '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
+  '/piso': typeof PisoRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
@@ -364,6 +371,7 @@ export interface FileRoutesByTo {
   '/indice': typeof IndiceRoute
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
+  '/piso': typeof PisoRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/api/markets': typeof ApiMarketsRouteWithChildren
@@ -408,6 +416,7 @@ export interface FileRoutesById {
   '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
+  '/piso': typeof PisoRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
@@ -461,6 +470,7 @@ export interface FileRouteTypes {
     | '/list'
     | '/login'
     | '/obituarios'
+    | '/piso'
     | '/saved'
     | '/search'
     | '/signals'
@@ -509,6 +519,7 @@ export interface FileRouteTypes {
     | '/indice'
     | '/login'
     | '/obituarios'
+    | '/piso'
     | '/saved'
     | '/search'
     | '/api/markets'
@@ -552,6 +563,7 @@ export interface FileRouteTypes {
     | '/list'
     | '/login'
     | '/obituarios'
+    | '/piso'
     | '/saved'
     | '/search'
     | '/signals'
@@ -604,6 +616,7 @@ export interface RootRouteChildren {
   ListRoute: typeof ListRouteWithChildren
   LoginRoute: typeof LoginRoute
   ObituariosRoute: typeof ObituariosRoute
+  PisoRoute: typeof PisoRoute
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
   SignalsRoute: typeof SignalsRouteWithChildren
@@ -684,6 +697,13 @@ declare module '@tanstack/react-router' {
       path: '/obituarios'
       fullPath: '/obituarios'
       preLoaderRoute: typeof ObituariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piso': {
+      id: '/piso'
+      path: '/piso'
+      fullPath: '/piso'
+      preLoaderRoute: typeof PisoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/saved': {
@@ -1150,6 +1170,7 @@ const rootRouteChildren: RootRouteChildren = {
   ListRoute: ListRouteWithChildren,
   LoginRoute: LoginRoute,
   ObituariosRoute: ObituariosRoute,
+  PisoRoute: PisoRoute,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
   SignalsRoute: SignalsRouteWithChildren,

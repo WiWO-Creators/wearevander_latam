@@ -23,6 +23,7 @@ import { AdSlot } from "@/components/ad-slot";
 import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark } from "@/components/brand";
 import { SignalsField } from "@/components/signals-field";
 import { VerifiedStamp } from "@/components/verified-stamp";
+import { LiveDesk } from "@/components/live-desk";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -67,6 +68,8 @@ function Home() {
       <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
         <AdSlot size="leaderboard" creative="anuncia" />
       </div>
+
+      <LiveDesk compact />
 
       <section className="border-y border-ink bg-paper-deep px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-7xl">
