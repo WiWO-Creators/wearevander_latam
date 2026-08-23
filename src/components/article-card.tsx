@@ -11,6 +11,7 @@ import {
   type Brief,
 } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { VanderBug } from "@/components/brand";
 
 function Photo({
   src,
@@ -103,7 +104,10 @@ export function CoverHero({ article }: { article: Article }) {
         </Link>
         <div className="flex flex-col justify-end px-4 py-6 sm:px-8 sm:py-8 lg:col-span-5 lg:px-10 lg:py-12">
           <div className="rise">
-            <p className="kicker text-xs text-rust">Portada · {city || "Latam"}</p>
+            <p className="kicker flex items-center gap-2 text-xs text-rust">
+              <VanderBug />
+              Portada · {city || "Latam"}
+            </p>
             <h1 className="headline mt-3 max-w-xl text-[1.85rem] leading-[1.06] text-paper sm:mt-4 sm:text-6xl lg:text-6xl">
               <Link to="/story/$slug" params={{ slug: article.slug }} className="hover:text-rust">
                 {article.title}
@@ -189,7 +193,10 @@ export function StackedCard({
           alt={article.imageAlt}
           className={cn("w-full", large ? "aspect-video" : "aspect-[3/2]")}
         />
-        <p className="kicker mt-2.5 text-xs text-rust">{article.kicker}</p>
+        <p className="kicker mt-2.5 flex items-center gap-1.5 text-xs text-rust">
+          <VanderBug className="size-3" />
+          {article.kicker}
+        </p>
         <h3 className={cn("headline link-title mt-1", large ? "text-3xl sm:text-4xl" : "text-xl")}>
           {article.title}
         </h3>

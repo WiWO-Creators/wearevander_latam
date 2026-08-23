@@ -81,3 +81,13 @@ export function SignalsMark({
     />
   );
 }
+
+export function VanderBug({ className }: { className?: string }) {
+  return (
+    <img
+      src="/brand/v-rust.png"
+      alt=""
+      className={cn("inline-block size-3.5 shrink-0 object-cover align-middle", className)}
+    />
+  );
+}

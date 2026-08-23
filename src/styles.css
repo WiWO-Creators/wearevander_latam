@@ -397,18 +397,28 @@
   display: grid;
   place-items: center;
   background: #0a0a0a;
-  color: #fff;
+  pointer-events: none;
 }
 
 .v-loader-root.is-nav {
-  background: rgb(10 10 10 / 0.72);
-  backdrop-filter: blur(6px);
+  inset: auto;
+  top: 5.25rem;
+  left: 50%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%);
+  background: transparent;
 }
 
 .v-loader {
   position: relative;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.v-loader-root.is-nav .v-loader {
+  width: 2rem;
+  height: 2rem;
 }
 
 .v-loader img {
@@ -418,57 +428,62 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  animation: v-cycle 2.1s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
-.v-loader img:nth-child(1) {
+.v-loader-root.is-boot .v-loader img {
+  animation: v-appear 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.v-loader-root.is-boot .v-loader img:nth-child(1) {
   animation-delay: 0s;
 }
-.v-loader img:nth-child(2) {
-  animation-delay: 0.7s;
+.v-loader-root.is-boot .v-loader img:nth-child(2) {
+  animation-delay: 0.16s;
 }
-.v-loader img:nth-child(3) {
-  animation-delay: 1.4s;
-}
-
-.v-loader-credit {
-  position: absolute;
-  bottom: 12%;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
+.v-loader-root.is-boot .v-loader img:nth-child(3) {
+  animation-delay: 0.32s;
 }
 
-@keyframes v-cycle {
+.v-loader-root.is-nav .v-loader img:nth-child(1) {
+  animation: v-pulse 0.7s ease-in-out both;
+  opacity: 1;
+}
+
+@keyframes v-appear {
   0% {
     opacity: 0;
-    transform: scale(0.84) rotate(-8deg);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(0.55);
   }
   28% {
     opacity: 1;
-    transform: scale(1.06) rotate(0deg);
+    transform: scale(1.05);
   }
-  38% {
-    opacity: 0;
-    transform: scale(1.12) rotate(7deg);
+  55% {
+    opacity: 1;
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(1.12) rotate(7deg);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes v-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .v-loader img {
-    animation: none;
-    opacity: 0;
-  }
-  .v-loader img:first-child {
-    opacity: 1;
-    transform: none;
+  .v-loader-root {
+    display: none;
   }
 }

@@ -1,38 +1,51 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 
-const MARKS = [
-  { src: "/brand/v-rust.png", alt: "Vander" },
-  { src: "/brand/v-signal.png", alt: "" },
-  { src: "/brand/v-innov.png", alt: "" },
-] as const;
+const MARKS = ["/brand/v-rust.png", "/brand/v-signal.png", "/brand/v-innov.png"] as const;
+const BOOT_MS = 380;
+const NAV_MS = 560;
 
 export function BrandPreloader() {
-  const [boot, setBoot] = useState(true);
-  const pending = useRouterState({ select: (s) => s.status === "pending" });
+  const [boot, setBoot] = useState(false);
+  const [nav, setNav] = useState(false);
+  const armed = useRef(false);
+  const status = useRouterState({ select: (s) => s.status });
 
-  useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const t = window.setTimeout(() => setBoot(false), reduce ? 400 : 2100);
+  useLayoutEffect(() => {
+    setBoot(true);
+    const t = window.setTimeout(() => setBoot(false), BOOT_MS);
     return () => window.clearTimeout(t);
   }, []);
 
-  const show = boot || pending;
-  if (!show) return null;
+  useEffect(() => {
+    if (status === "idle") armed.current = true;
+    if (!armed.current || boot) {
+      setNav(false);
+      return;
+    }
+    if (status !== "pending") {
+      setNav(false);
+      return;
+    }
+    setNav(true);
+    const t = window.setTimeout(() => setNav(false), NAV_MS);
+    return () => window.clearTimeout(t);
+  }, [status, boot]);
+
+  if (!boot && !nav) return null;
 
   return (
     <div
       className={`v-loader-root ${boot ? "is-boot" : "is-nav"}`}
       role="status"
       aria-live="polite"
-      aria-label={boot ? "Cargando We Are Vander" : "Cargando"}
+      aria-label="Cargando"
     >
       <div className="v-loader">
-        {MARKS.map((m) => (
-          <img key={m.src} src={m.src} alt={m.alt} />
+        {MARKS.map((src) => (
+          <img key={src} src={src} alt="" />
         ))}
       </div>
-      {boot ? <p className="v-loader-credit">We Are Vander</p> : null}
     </div>
   );
 }

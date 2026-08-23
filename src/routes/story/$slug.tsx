@@ -16,7 +16,7 @@ import { StackedCard, TagPills, ReadMeta } from "@/components/article-card";
 import { SaveButton } from "@/components/save-button";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
-import { ContraMark, SignalsMark } from "@/components/brand";
+import { ContraMark, SignalsMark, VanderBug } from "@/components/brand";
 import { getSavedSlugs } from "@/lib/server/magazine";
 
 export const Route = createFileRoute("/story/$slug")({
@@ -80,7 +80,8 @@ function StoryPage() {
               <SignalsMark className="h-10 sm:h-12" />
             </Link>
           )}
-          <p className="kicker text-xs text-rust">
+          <p className="kicker flex items-center gap-2 text-xs text-rust">
+            <VanderBug />
             {article.kicker} · {city || getSectionLabel(article.section)}
           </p>
           <h1 className="headline mt-3 text-[1.85rem] leading-[1.08] sm:mt-4 sm:text-6xl lg:text-7xl">{article.title}</h1>
@@ -158,6 +159,10 @@ function StoryPage() {
           )}
         </aside>
       </article>
+
+      <div className="flex justify-center py-6">
+        <VanderBug className="size-5" />
+      </div>
 
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
         <AdSlot size="mpu" creative="anuncia" />
