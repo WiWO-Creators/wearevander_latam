@@ -91,3 +91,15 @@ export function VanderBug({ className }: { className?: string }) {
     />
   );
 }
+
+const V_MARKS = ["/brand/v-rust.png", "/brand/v-signal.png", "/brand/v-innov.png"] as const;
+
+export function VanderCycle({ className }: { className?: string }) {
+  return (
+    <span className={cn("v-cycle", className)} aria-hidden>
+      {V_MARKS.map((src) => (
+        <img key={src} src={src} alt="" />
+      ))}
+    </span>
+  );
+}

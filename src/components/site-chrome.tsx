@@ -4,7 +4,7 @@ import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { HOUSE, ISSUE, SECTIONS, BRIEFS, DESKS } from "@/lib/content";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { UserButton } from "@/lib/auth/gates";
-import { Wordmark } from "@/components/brand";
+import { Wordmark, VanderCycle } from "@/components/brand";
 import { AdSlot } from "@/components/ad-slot";
 import { MarketsBar } from "@/components/markets-bar";
 import { cn } from "@/lib/utils";
@@ -443,14 +443,9 @@ function Footer() {
     <footer className="border-t border-ink bg-ink px-4 py-14 text-paper sm:px-6">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Wordmark className="h-9 sm:h-11" />
-          <p className="mt-3 kicker text-xs text-rust">
-            {HOUSE.motto} · {ISSUE.city}
-          </p>
-          <p className="mt-2 kicker text-xs tracking-widest text-silver">{HOUSE.credit}</p>
-          <p className="mt-4 max-w-sm font-body text-sm leading-relaxed text-paper/70">
-            Portal de innovación empresarial para América Latina.
-          </p>
+          <Link to="/" aria-label={HOUSE.name} className="inline-block">
+            <VanderCycle className="size-16 sm:size-20" />
+          </Link>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8">
           <div>
