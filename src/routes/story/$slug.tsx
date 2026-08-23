@@ -84,7 +84,7 @@ function StoryPage() {
             <VanderBug />
             {article.kicker} · {city || getSectionLabel(article.section)}
           </p>
-          <h1 className="headline mt-3 text-[1.85rem] leading-[1.08] sm:mt-4 sm:text-6xl lg:text-7xl">{article.title}</h1>
+          <h1 className="headline mt-3 text-4xl leading-[1.06] sm:mt-4 sm:text-6xl lg:text-7xl">{article.title}</h1>
           <p className="mt-4 font-body text-base leading-snug text-ink-soft sm:mt-5 sm:text-2xl">{article.dek}</p>
           <div className="mt-5">
             <TagPills article={article} />
@@ -166,7 +166,7 @@ function StoryPage() {
 
       <section className="border-t border-ink px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-7xl">
-          <h2 className="headline border-b border-ink pb-2 text-2xl sm:text-3xl">Sigue leyendo</h2>
+          <h2 className="headline border-b border-ink pb-2 text-3xl sm:text-4xl">Sigue leyendo</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {related.map((a) => (
               <StackedCard key={a.slug} article={a} />
@@ -220,12 +220,12 @@ function renderBody(blocks: BodyBlock[], dropCap: boolean) {
 
 function Block({ block, drop }: { block: BodyBlock; drop: boolean }) {
   if (block.type === "h2") {
-    return <h2 className="headline mt-8 mb-3 text-2xl sm:mt-10 sm:text-3xl">{block.text}</h2>;
+    return <h2 className="headline mt-10 mb-4 text-3xl leading-[1.08] sm:mt-14 sm:text-4xl lg:text-5xl">{block.text}</h2>;
   }
   if (block.type === "quote") {
     return (
       <blockquote className="my-8 border-l-4 border-rust pl-4 sm:my-10 sm:pl-5">
-        <p className="headline text-2xl sm:text-3xl">{block.text}</p>
+        <p className="headline text-3xl leading-[1.1] sm:text-4xl">{block.text}</p>
         {block.cite && <footer className="mt-2 kicker text-xs text-muted">{block.cite}</footer>}
       </blockquote>
     );
