@@ -584,6 +584,10 @@
   object-position: 28% 12%;
 }
 
+.u40-shot[data-slug="andres-marinkovic"] img {
+  object-position: 42% 18%;
+}
+
 .u40-shot::after {
   content: "";
   position: absolute;
