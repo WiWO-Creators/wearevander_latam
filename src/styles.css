@@ -389,3 +389,86 @@
 .tv-tape iframe {
   height: 78px !important;
 }
+
+.v-loader-root {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.v-loader-root.is-nav {
+  background: rgb(10 10 10 / 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.v-loader {
+  position: relative;
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+.v-loader img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: v-cycle 2.1s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.v-loader img:nth-child(1) {
+  animation-delay: 0s;
+}
+.v-loader img:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.v-loader img:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+.v-loader-credit {
+  position: absolute;
+  bottom: 12%;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+@keyframes v-cycle {
+  0% {
+    opacity: 0;
+    transform: scale(0.84) rotate(-8deg);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  28% {
+    opacity: 1;
+    transform: scale(1.06) rotate(0deg);
+  }
+  38% {
+    opacity: 0;
+    transform: scale(1.12) rotate(7deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12) rotate(7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-loader img {
+    animation: none;
+    opacity: 0;
+  }
+  .v-loader img:first-child {
+    opacity: 1;
+    transform: none;
+  }
+}

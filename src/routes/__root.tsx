@@ -2,6 +2,7 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteChrome } from "@/components/site-chrome";
+import { BrandPreloader } from "@/components/brand-preloader";
 import { AppErrorComponent } from "@/lib/error-component";
 import { HILLTOP_ZONES, HILLTOP_SERVE } from "@/lib/ads";
 import appCss from "../styles.css?url";
@@ -19,13 +20,14 @@ export const Route = createRootRoute({
         content:
           "We Are Vander. We Love Business. Un medio de Interadia. Portal de innovación empresarial en América Latina — Team Vander desde CDMX, São Paulo, Buenos Aires, Bogotá, Santiago y Lima.",
       },
-      { name: "theme-color", content: "#111111" },
+      { name: "theme-color", content: "#ce3134" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", href: "/icon-32.png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/icon-180.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
     ],
     scripts: HILLTOP_ZONES.popunder
       ? [{ src: `${HILLTOP_SERVE}/${HILLTOP_ZONES.popunder}`, defer: true }]
@@ -44,6 +46,7 @@ function RootDocument() {
       </head>
       <body className="bg-paper text-ink">
         <PreviewHostBridge />
+        <BrandPreloader />
         <AuthProvider>
           <SiteChrome>
             <Outlet />
