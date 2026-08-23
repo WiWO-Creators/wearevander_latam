@@ -30,17 +30,17 @@ function ListMethodPage() {
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <p className="font-body text-lg leading-relaxed">
           El Vander 20 no es un premio y no es un recorte de las 50 Innovatives. Es la lista de las
-          compañías que, visitadas, todavía tienen un protocolo que se puede dejar en una mesa. La
+          compañías que, visitadas, todavía tienen un protocolo que se puede dejar escrito. La
           innovación que todavía no es hábito vive en la otra lista. Acá vive el código de casa.
         </p>
         <p className="mt-5 font-body text-lg leading-relaxed text-ink-soft">
-          Cada año, las mesas de Ciudad de México, São Paulo, Buenos Aires, Bogotá, Santiago y Lima
+          Cada año, las corresponsalías de Ciudad de México, São Paulo, Buenos Aires, Bogotá, Santiago y Lima
           proponen, visitan y cruzan. Nadie compra un puesto. El briefing comercial entra por otra
           puerta. Si una compañía no se puede caminar, no entra.
         </p>
         <MethodGrid items={VANDER_METHOD} accent="signal" />
         <p className="mt-10 font-body text-base leading-relaxed text-ink-soft">
-          Las fichas se publican con mesa, fecha de visita y evidencia. Si el argumento cambia, la
+          Las fichas se publican con ciudad, fecha de visita y evidencia. Si el argumento cambia, la
           ficha se actualiza. El ranking no.
         </p>
         <Link to="/list" className="kicker mt-8 inline-block text-xs text-signal hover:underline">

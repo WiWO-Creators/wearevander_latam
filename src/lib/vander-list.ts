@@ -262,7 +262,7 @@ export const VANDER_METHOD = [
   },
   {
     title: "Se visita",
-    text: "Una mesa de Team Vander camina la planta, la sucursal o el predio. El deck no suma. El patio, el muelle y la persiana sí.",
+    text: "Un reportero de Team Vander camina la planta, la sucursal o el predio. El deck no suma. El patio, el muelle y la persiana sí.",
   },
   {
     title: "Código de casa",
@@ -270,7 +270,7 @@ export const VANDER_METHOD = [
   },
   {
     title: "Veinte, no cincuenta",
-    text: "No es un recorte de las 50 Innovatives. Son listas distintas. Acá manda cómo se siente el negocio cuando el protocolo está en la mesa. Allá, el gesto que todavía no es hábito.",
+    text: "No es un recorte de las 50 Innovatives. Son listas distintas. Acá manda cómo se siente el negocio cuando el protocolo está escrito. Allá, el gesto que todavía no es hábito.",
   },
   {
     title: "Sin pago por aparecer",

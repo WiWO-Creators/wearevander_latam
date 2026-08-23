@@ -1,14 +1,19 @@
 import { FRANCHISE_ARTICLES } from "./franchises";
+import { FORMAT_ARTICLES } from "./formats";
 
 export type SectionId = "ideas" | "work" | "design" | "climate" | "culture";
 export type PaceId = "rapida" | "fondo";
 export type FranchiseId = "contra" | "signals";
 export type TagKind = "industry" | "tech" | "pace";
+export type FormatId = "essay" | "interview" | "flash" | "obituario" | "indice" | "visual";
 
 export type BodyBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
-  | { type: "quote"; text: string; cite?: string };
+  | { type: "quote"; text: string; cite?: string }
+  | { type: "q"; text: string }
+  | { type: "a"; text: string }
+  | { type: "stat"; value: string; label: string };
 
 export type Author = {
   id: string;
@@ -38,6 +43,8 @@ export type Article = {
   pace?: PaceId;
   franchise?: FranchiseId;
   signedName?: string;
+  format?: FormatId;
+  gallery?: { src: string; alt: string; caption: string }[];
   pullQuote: string;
   body: BodyBlock[];
 };
@@ -83,7 +90,7 @@ export const AUTHORS: Author[] = [
     role: "Editora general",
     city: "Ciudad de México",
     image: "/authors/mira-solano.jpg",
-    bio: "Editora general de Team Vander. Mueve la mesa regional desde CDMX. Escribe compañías como sistemas: primero la tesis, después el mood.",
+    bio: "Editora general de Team Vander. Coordina las seis corresponsalías desde CDMX. Escribe compañías como sistemas: primero la tesis, después el mood.",
   },
   {
     id: "valentina-cruz",
@@ -96,7 +103,7 @@ export const AUTHORS: Author[] = [
   {
     id: "diego-azevedo",
     name: "Diego Azevedo",
-    role: "Mesa Brasil",
+    role: "Corresponsal Brasil",
     city: "São Paulo",
     image: "/authors/diego-azevedo.jpg",
     bio: "Reporta fintech, retail y el P&L después del hype. Paulista es su escritorio.",
@@ -112,7 +119,7 @@ export const AUTHORS: Author[] = [
   {
     id: "andres-molina",
     name: "Andrés Molina",
-    role: "Mesa Andes",
+    role: "Corresponsal Andes",
     city: "Bogotá",
     image: "/authors/andres-molina.jpg",
     bio: "Energía, software y el trabajo a 2.600 metros. Medellín y Bogotá en la misma libreta.",
@@ -136,7 +143,7 @@ export const AUTHORS: Author[] = [
   {
     id: "rafael-quinn",
     name: "Rafael Quinn",
-    role: "Mesa de clima",
+    role: "Editor de clima",
     city: "Santiago",
     image: "/authors/rafael-quinn.jpg",
     bio: "Litio, desierto y Pacífico. Escribe energía como un problema de paisaje, capital y paciencia.",
@@ -163,7 +170,7 @@ const CORE_ARTICLES: Article[] = [
     readMinutes: 14,
     image: "/photos/analog-office.jpg",
     imageAlt: "Reunión de trabajo en una oficina contemporánea de Santiago",
-    caption: "Estudio de Northroom en Santiago. El protocolo es el producto: la mesa, no el software.",
+    caption: "Estudio de Northroom en Santiago. El protocolo es el producto: la sala, no el software.",
     city: "Santiago",
     pullQuote: "No desinstalamos internet. Dejamos de dejarlo sentarse a la cabecera.",
     body: [
@@ -176,13 +183,13 @@ const CORE_ARTICLES: Article[] = [
       { type: "p", text: "Los números, cuando aparecen, son discretamente brutales. Northroom no publica valuación. Quienes han visto los libros hablan de lista de espera a dos años y un margen de servicios que pondría colorado a un consultora. Más interesante: tres clientes corporativos recortaron asientos de ‘software de colaboración’ en más de un tercio. El software no empeoró. Las reuniones se acortaron." },
       { type: "h2", text: "Para qué sirve lo analógico" },
       { type: "p", text: "Hay una versión de esta historia que termina en una máquina de escribir. No es esa. Lo analógico, en las compañías de este número, no es un disfraz. Es una restricción. Y las restricciones son cómo sobrevive el criterio cuando una empresa escala." },
-      { type: "p", text: "Esa es la portada de este número, y el argumento debajo. El poder blando, en los negocios, solía significar marca. En 2026 significa atmósfera: la capacidad de hacer una cultura por la que alguien cruce la ciudad. We Are Vander. We Love Business. Amamos las compañías que rediseñaron la mesa." },
+      { type: "p", text: "Esa es la portada de este número, y el argumento debajo. El poder blando, en los negocios, solía significar marca. En 2026 significa atmósfera: la capacidad de hacer una cultura por la que alguien cruce la ciudad. We Are Vander. We Love Business. Amamos las compañías que rediseñaron la sala." },
     ],
   },
   {
     slug: "who-owns-climate",
     title: "Quién se queda con la próxima década del clima",
-    dek: "El Atacama no es un fondo de pantalla. Es un balance. Crónica desde el desierto donde se renegocian energía, tierra y criterio.",
+    dek: "Crónica desde Calama: offtakes a 20 años, un pueblo en el contrato y el capital que se queda.",
     kicker: "Clima",
     section: "climate",
     authorId: "rafael-quinn",
@@ -205,7 +212,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "fast-fashion-slow-afterlife",
-    title: "La vida lenta de la moda rápida",
+    title: "Cuánto cuesta una chaqueta de deadstock en Providencia",
     dek: "Una generación de sellos independientes trata el deadstock como la única materia prima honesta. El retail, después del atracón.",
     kicker: "Cultura",
     section: "culture",
@@ -227,7 +234,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "fifteen-minute-founder",
-    title: "El founder de quince minutos",
+    title: "Camila Rojas cierra los viernes a las 16:00",
     dek: "Una nueva cohorte trata el calendario como producto. Ambición, sin martirio.",
     kicker: "Trabajo",
     section: "work",
@@ -249,7 +256,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "machines-with-taste",
-    title: "Máquinas con gusto",
+    title: "Kinship Clay fabrica termostatos que pesan de más",
     dek: "Las compañías de IA interesantes no persiguen un modelo más grande. Persiguen un material. Qué pasa cuando el objeto es la interfaz.",
     kicker: "Diseño",
     section: "design",
@@ -271,7 +278,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "studio-as-strategy",
-    title: "El estudio como estrategia",
+    title: "Sombra Studio publica software como si fuera una colección",
     dek: "Las mejores compañías de este ciclo se organizan como casas de moda, no como organigramas. Una teoría del atelier aplicada a todo lo demás.",
     kicker: "Ideas",
     section: "ideas",
@@ -293,7 +300,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "return-of-the-local",
-    title: "El regreso de lo local",
+    title: "Barrio Capital solo invierte a diez cuadras del escritorio",
     dek: "Las economías de barrio se tratan, por fin, como ideas de escala. Una caminata por la cuadra como modelo de negocio.",
     kicker: "Cultura",
     section: "culture",
@@ -336,7 +343,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "night-shift",
-    title: "Turno de noche",
+    title: "20 minutos y un parlante: el handoff de Mesa Radio",
     dek: "Una compañía 24 horas es una cultura, no una planilla de husos. Qué se siente cuando el trabajo no marca salida — y cómo las buenas igual marcan.",
     kicker: "Trabajo",
     section: "work",
@@ -356,7 +363,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "the-quiet-company",
-    title: "La compañía silenciosa",
+    title: "Oro Verde no dejó entrar al fotógrafo",
     dek: "No tuitean. No levantan. Componen en salas a las que no te invitaron. Estudio de negocios que tratan el silencio como estrategia.",
     kicker: "Ideas",
     section: "ideas",
@@ -377,7 +384,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "santiago-hub",
-    title: "Santiago, el hub que no pidió permiso",
+    title: "Santiago no pidió ser hub. El capital llegó igual",
     dek: "Capital, clima y una zona horaria incómoda. Por qué la ciudad se volvió un escritorio global de negocios.",
     kicker: "Ideas",
     section: "ideas",
@@ -393,7 +400,7 @@ const CORE_ARTICLES: Article[] = [
       { type: "p", text: "Santiago nunca pidió ser un hub. Lo cual, en 2026, es precisamente por qué lo es. Fondos que hace cinco años solo aterrizaban en Miami ahora tienen llave en Providencia. Operadores que se cansaron del costo de San Francisco descubrieron una ciudad cara a escala local y barata a escala global, con fibra, Andes de fondo y una zona horaria que cubre Nueva York de mañana y Seúl de noche." },
       { type: "p", text: "La tesis no es turismo de founders. Es infraestructura: energía, talento de ingeniería, un mercado de consumo que prueba rápido y un Estado que, a trompicones, aprendió a hablar de litio y datos sin sonrojarse. “No somos el próximo Silicon Valley”, dice una GP que pidió no ser citada. “Esa es exactamente la ventaja.”" },
       { type: "quote", text: "No somos el próximo Silicon Valley. Esa es exactamente la ventaja.", cite: "Una GP en Providencia" },
-      { type: "p", text: "We Are Vander nació aquí por una razón: esta ciudad trata los negocios como oficio, no como contenido. We Love Business. El resto es la mesa." },
+      { type: "p", text: "We Are Vander nació aquí por una razón: esta ciudad trata los negocios como oficio, no como contenido. We Love Business. El resto es la redacción." },
     ],
   },
   {
@@ -418,7 +425,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "capital-paciente",
-    title: "El capital paciente vuelve a estar de moda",
+    title: "Quién firma offtakes a 20 años en el Atacama",
     dek: "Múltiplos de software para problemas de cemento. Por qué el dinero lento está ganando las apuestas largas.",
     kicker: "Clima",
     section: "climate",
@@ -437,7 +444,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "retail-algoritmo",
-    title: "Retail después del algoritmo",
+    title: "Río Abierto vende más en el piso que en Instagram",
     dek: "Cuando el feed deja de vender, vuelve la tienda. Cómo las marcas independientes están reconstruyendo el piso.",
     kicker: "Cultura",
     section: "culture",
@@ -475,7 +482,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "eighteen-minute-board",
-    title: "Juntas de dieciocho minutos",
+    title: "Juntas de 18 minutos: el recorte que compran los fondos",
     dek: "Un board en Vitacura recortó el paquete a 12 páginas y el reloj a un cuarto de hora. El voto mejoró.",
     kicker: "Ideas",
     section: "ideas",
@@ -494,7 +501,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "mill-that-waits",
-    title: "El mill que no acepta urgencias",
+    title: "Nero Paper entrega en 11 semanas. El lujo es esperar",
     dek: "Nero Paper atiende pedidos en temporadas, no en Slack. La escasez, esta vez, es el producto.",
     kicker: "Diseño",
     section: "design",
@@ -551,7 +558,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "three-meter-store",
-    title: "La tienda de tres metros",
+    title: "Casa Hilo mide tres metros y no hace drops",
     dek: "Casa Hilo cabe en un local que antes fue tintorería. El metro cuadrado, tratado como una colección.",
     kicker: "Cultura",
     section: "culture",
@@ -570,7 +577,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "latam-no-pidio-permiso",
-    title: "Latam dejó de pedir permiso",
+    title: "Dónde se firma el P&L latinoamericano en 2026",
     dek: "México fabrica. Brasil cobra. Chile genera. Argentina diseña. Colombia opera. La región que el capital trató como footnote ahora escribe el brief.",
     kicker: "Portada",
     section: "ideas",
@@ -587,14 +594,14 @@ const CORE_ARTICLES: Article[] = [
       { type: "p", text: "Un lunes en Reforma, la avenida hace lo que las avenidas de negocios siempre hicieron: mover gente hacia un edificio. Lo que cambió es quién firma el arriendo. Fondos que hace cinco años solo aterrizaban en Miami ahora tienen llave en Polanco, Itaim, Palermo, Usaquén, Providencia y San Isidro. No es turismo de founders. Es una corrección de mapa." },
       { type: "p", text: "Durante una década Latam fue el capítulo 14 de un deck: mercado emergente, población joven, mobile first. Útil. También un eufemismo para “no tenemos escritorio aquí”. En 2026 el eufemismo se acabó. Las compañías que importan en esta redacción —una línea de ensamble en Monterrey, un banco que ya no necesita parecerse a Nubank, un offtake solar en el Atacama, un estudio en Medellín que publica por temporadas— no están esperando que California las nombre." },
       { type: "quote", text: "No somos el próximo Silicon Valley. Somos el lugar donde el P&L todavía tiene geografía.", cite: "Team Vander" },
-      { type: "h2", text: "Seis mesas, un argumento" },
+      { type: "h2", text: "Seis ciudades, un argumento" },
       { type: "p", text: "México ganó el nearshoring y ahora tiene que ganarse el criterio: no toda planta es una tesis. Brasil salió del hype fintech y se quedó con el cobro, que es más aburrido y más difícil de copiar. Chile sigue siendo un laboratorio de energía y de oficina. Argentina convierte la restricción en diseño. Colombia opera software y clima a dos mil metros. Perú mueve el Pacífico cuando nadie mira el puerto." },
       { type: "p", text: "We Are Vander nació en Santiago y se expandió porque la región se le adelantó al medio. We Love Business. No el brochure de “innovación latinoamericana”. El oficio: juntas, offtakes, turnos, metros cuadrados, una persiana que se abre mañana en seis ciudades a la vez." },
     ],
   },
   {
     slug: "nearshoring-despues-del-anuncio",
-    title: "Nearshoring, después del anuncio",
+    title: "1.200 personas: el segundo turno de Sierra Line en Apodaca",
     dek: "Monterrey llenó las naves. El trabajo ahora es más aburrido y más importante: proveedores, turnos, un P&L que no cabe en un tuit.",
     kicker: "México",
     section: "work",
@@ -614,7 +621,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "fintech-despues-del-hype",
-    title: "Fintech después del hype",
+    title: "Casa Quilate publica un margen de 4,1%",
     dek: "São Paulo ya no celebra otra app de pagos. Celebra el cobro aburrido: spreads, sucursal, un banco que no necesita disfrazarse de startup.",
     kicker: "Brasil",
     section: "ideas",
@@ -634,7 +641,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "buenos-aires-restriccion",
-    title: "Buenos Aires, capital de la restricción",
+    title: "Qué diseñan en Buenos Aires cuando no llega el rollo",
     dek: "Cuando el insumo falta, el criterio sobra. Cómo las compañías argentinas convirtieron la escasez en código de casa.",
     kicker: "Argentina",
     section: "design",
@@ -654,8 +661,8 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "bogota-a-dos-mil-metros",
-    title: "Bogotá, a dos mil seiscientos metros",
-    dek: "El clima, el software y una ciudad que trabaja con el aire más delgado. Crónica de una mesa que no necesita el mar.",
+    title: "En Bogotá un ingeniero cobra 40% menos que en Austin. Y se queda",
+    dek: "El clima, el software y una ciudad que trabaja con el aire más delgado. Crónica de una redacción que no necesita el mar.",
     kicker: "Colombia",
     section: "climate",
     authorId: "andres-molina",
@@ -674,7 +681,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "el-pacifico-se-firma-en-lima",
-    title: "El Pacífico se firma en Lima",
+    title: "Un día en Callao: tres naves, un retraso, cero Slack",
     dek: "Callao no es un footnote de la ruta a Shanghái. Es el P&L de quien todavía sabe leer un contenedor.",
     kicker: "Perú",
     section: "work",
@@ -689,12 +696,12 @@ const CORE_ARTICLES: Article[] = [
     body: [
       { type: "p", text: "Tercer Turno escribe el handoff en prosa y lo pega junto al turno. El puerto no espera un Slack. Un supervisor en Callao nos mostró la grilla del día: tres naves, un retraso, cero teatro. “Si no puedes nombrar el barco, no tienes una tesis de supply.”" },
       { type: "quote", text: "Si no puedes nombrar el barco, no tienes una tesis de supply.", cite: "Un supervisor en Callao" },
-      { type: "p", text: "Lima fue tratada como escala. En 2026 es mesa. El Pacífico latinoamericano —Valparaíso, Callao, Buenaventura— está reescribiendo quién cobra el flete y quién solo lo comenta." },
+      { type: "p", text: "Lima fue tratada como escala. En 2026 es escritorio. El Pacífico latinoamericano —Valparaíso, Callao, Buenaventura— está reescribiendo quién cobra el flete y quién solo lo comenta." },
     ],
   },
   {
     slug: "medellin-sin-brochure",
-    title: "Medellín, sin brochure",
+    title: "Altura Code publica cuatro veces al año. Como una marca de ropa",
     dek: "El distrito de innovación se quedó en el tour. En el estudio, el software se publica como una colección.",
     kicker: "Colombia",
     section: "design",
@@ -714,7 +721,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "el-mito-miami",
-    title: "El mito Miami",
+    title: "Tres oficinas cierran Brickell este mes",
     dek: "Una generación abrió LLC en el sur de la Florida. Otra volvió a operar donde está el cliente. Crónica de un regreso sin comunicado.",
     kicker: "Ideas",
     section: "ideas",
@@ -734,7 +741,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "triangulo-del-litio",
-    title: "El triángulo no es un slide",
+    title: "El mapa del litio no cabe en un contrato",
     dek: "Chile, Argentina y Bolivia caben en una viñeta de litio. En el terreno, son tres P&L y cero paciencia para el brochure.",
     kicker: "Clima",
     section: "climate",
@@ -754,7 +761,7 @@ const CORE_ARTICLES: Article[] = [
   },
   {
     slug: "corredor-es-pt",
-    title: "El corredor que el inglés no vio",
+    title: "Cuánto se factura entre México y Brasil sin Delaware",
     dek: "México y Brasil ya no necesitan a California para hablarse. Un mercado de 330 millones que se factura en real y peso.",
     kicker: "Ideas",
     section: "ideas",
@@ -765,10 +772,10 @@ const CORE_ARTICLES: Article[] = [
     imageAlt: "Avenida de negocios en Ciudad de México",
     caption: "Reforma × Paulista. El idioma de trabajo es el P&L.",
     city: "São Paulo",
-    pullQuote: "El puente no pasa por Palo Alto. Pasa por un SWIFT y una mesa a las 9:00.",
+    pullQuote: "El puente no pasa por Palo Alto. Pasa por un SWIFT y un escritorio a las 9:00.",
     body: [
-      { type: "p", text: "Casa Quilate cobra en México. Sierra Line compra software en São Paulo. Sombra Studio diseña para los dos. El corredor es-pt —español y portugués, peso y real— es el mercado más grande que el capital anglosajón sigue tratando como dos footnotes. “El puente no pasa por Palo Alto. Pasa por un SWIFT y una mesa a las 9:00.”" },
-      { type: "quote", text: "El puente no pasa por Palo Alto. Pasa por un SWIFT y una mesa a las 9:00.", cite: "Marina Dutra, Casa Quilate" },
+      { type: "p", text: "Casa Quilate cobra en México. Sierra Line compra software en São Paulo. Sombra Studio diseña para los dos. El corredor es-pt —español y portugués, peso y real— es el mercado más grande que el capital anglosajón sigue tratando como dos footnotes. “El puente no pasa por Palo Alto. Pasa por un SWIFT y un escritorio a las 9:00.”" },
+      { type: "quote", text: "El puente no pasa por Palo Alto. Pasa por un SWIFT y un escritorio a las 9:00.", cite: "Marina Dutra, Casa Quilate" },
       { type: "p", text: "We Are Vander cubre ese puente porque es el negocio. No porque sea un “momento Latam”. El momento, si existió, ya se gastó en paneles. Queda el corredor." },
     ],
   },
@@ -814,7 +821,11 @@ const CORE_ARTICLES: Article[] = [
   },
 ];
 
-export const ARTICLES: Article[] = [...CORE_ARTICLES, ...(FRANCHISE_ARTICLES as unknown as Article[])];
+export const ARTICLES: Article[] = [
+  ...CORE_ARTICLES,
+  ...(FRANCHISE_ARTICLES as unknown as Article[]),
+  ...(FORMAT_ARTICLES as unknown as Article[]),
+];
 
 export function getSectionLabel(id: SectionId) {
   return SECTIONS.find((s) => s.id === id)?.label ?? id;
@@ -865,7 +876,7 @@ export function searchArticles(q: string) {
       a.signedName ?? "",
       author?.name ?? "",
       ...articleTags(a).map((id) => getTag(id)?.label ?? id),
-      ...a.body.map((b) => b.text),
+      ...a.body.map((b) => ("text" in b ? b.text : `${b.value} ${b.label}`)),
     ]
       .join(" ")
       .toLowerCase();
@@ -884,7 +895,7 @@ export function formatIssueDate(iso: string) {
 
 export function latestArticles(limit = 8) {
   return [...ARTICLES]
-    .filter((a) => a.franchise !== "signals")
+    .filter((a) => a.franchise !== "signals" && a.format !== "obituario")
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
     .slice(0, limit);
 }
@@ -898,15 +909,15 @@ export type Brief = {
 };
 
 export const BRIEFS: Brief[] = [
-  { id: "b1", time: "08:42", section: "ideas", slug: "latam-no-pidio-permiso", title: "Latam dejó de pedir permiso: seis mesas, un P&L." },
-  { id: "b2", time: "08:11", section: "work", slug: "nearshoring-despues-del-anuncio", title: "Sierra Line abre segundo turno en Apodaca. El anuncio, ya fue." },
-  { id: "b3", time: "07:38", section: "ideas", slug: "fintech-despues-del-hype", title: "Casa Quilate publica márgenes. São Paulo ya no celebra otra wallet." },
-  { id: "b4", time: "07:05", section: "design", slug: "buenos-aires-restriccion", title: "Bruma Studio corta con lo que hay. El brief llegó incompleto." },
-  { id: "b5", time: "06:50", section: "climate", slug: "bogota-a-dos-mil-metros", title: "Páramo Grid firma viento en Chapinero. Sin puerto, con red." },
-  { id: "b6", time: "Ayer", section: "work", slug: "el-pacifico-se-firma-en-lima", title: "Tercer Turno nombra el barco. Callao deja de ser escala." },
-  { id: "b7", time: "Ayer", section: "ideas", slug: "el-mito-miami", title: "Una cohorte cierra Brickell y vuelve a Paulista y Roma Norte." },
-  { id: "b8", time: "Ayer", section: "climate", slug: "triangulo-del-litio", title: "El triángulo del litio no cabe en un ticker. Nombra un pueblo." },
-  { id: "b9", time: "18 ago", section: "design", slug: "medellin-sin-brochure", title: "Altura Code publica por temporadas. El mural, afuera." },
+  { id: "b1", time: "08:42", section: "ideas", slug: "latam-no-pidio-permiso", title: "Seis corresponsalías, un P&L: el número de agosto." },
+  { id: "b2", time: "08:11", section: "work", slug: "nearshoring-despues-del-anuncio", title: "Sierra Line suma 1.200 personas al segundo turno en Apodaca." },
+  { id: "b3", time: "07:38", section: "ideas", slug: "fintech-despues-del-hype", title: "Casa Quilate publica un margen neto de 4,1%." },
+  { id: "b4", time: "07:05", section: "design", slug: "buenos-aires-restriccion", title: "Bruma Studio espera un rollo que no llega. El patrón, sí." },
+  { id: "b5", time: "06:50", section: "climate", slug: "bogota-a-dos-mil-metros", title: "Páramo Grid cierra offtake de viento a 2.600 metros." },
+  { id: "b6", time: "Ayer", section: "work", slug: "el-pacifico-se-firma-en-lima", title: "Tercer Turno escribe el handoff en prosa: tres naves, un retraso." },
+  { id: "b7", time: "Ayer", section: "ideas", slug: "el-mito-miami", title: "Tres oficinas cierran Brickell. Vuelven a Paulista y Roma Norte." },
+  { id: "b8", time: "Ayer", section: "climate", slug: "triangulo-del-litio", title: "Litio: el mapa de conferencia no cabe en un contrato." },
+  { id: "b9", time: "18 ago", section: "design", slug: "medellin-sin-brochure", title: "Altura Code saca cuatro versiones al año. El mural quedó en la calle." },
   { id: "b10", time: "17 ago", section: "ideas", slug: "corredor-es-pt", title: "México y Brasil se facturan sin pasar por Palo Alto." },
 ];
 
@@ -1013,6 +1024,7 @@ export function getTag(id: string) {
 export function articlePace(article: Article): PaceId {
   if (article.pace) return article.pace;
   if (article.franchise === "signals") return "rapida";
+  if (article.format === "flash" || article.format === "obituario" || article.format === "visual") return "rapida";
   return article.readMinutes <= 6 ? "rapida" : "fondo";
 }
 
@@ -1036,6 +1048,10 @@ export function articlesByTag(tag: string) {
   return ARTICLES.filter((a) => articleTags(a).includes(tag)).sort((a, b) =>
     a.publishedAt < b.publishedAt ? 1 : -1,
   );
+}
+
+export function articlesByFormat(id: FormatId) {
+  return ARTICLES.filter((a) => a.format === id).sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
 export function articlesByFranchise(id: FranchiseId) {

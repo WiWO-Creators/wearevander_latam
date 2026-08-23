@@ -89,7 +89,7 @@ function InnovativesPage() {
           <p className="kicker text-xs text-innov">Metodología pública</p>
           <h2 className="headline mt-2 text-3xl sm:text-4xl">Cómo entra una compañía</h2>
           <p className="mt-3 max-w-2xl font-body text-base leading-relaxed text-ink-soft">
-            El ranking es anual. La mesa visita, llama y cruza. No hay pago por aparecer. El score es
+            El ranking es anual. La redacción visita, llama y cruza. No hay pago por aparecer. El score es
             editorial: cinco criterios, publicados para que se puedan discutir.
           </p>
           <MethodGrid items={INNOVATIVES_METHOD} accent="innov" />

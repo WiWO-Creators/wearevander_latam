@@ -1,26 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ARTICLES,
-  BRIEFS,
   HOUSE,
   ISSUE,
+  articlesByFormat,
   articlesByFranchise,
   latestArticles,
-  leadByDesk,
   popularArticles,
 } from "@/lib/content";
 import { VANDER_LIST } from "@/lib/vander-list";
 import { INNOVATIVES } from "@/lib/innovatives";
+import { PAY_ROWS, SHIFT_ROWS } from "@/lib/indice";
 import {
-  BriefRow,
   CoverHero,
-  HorizontalCard,
-  MiniLead,
   NumberedItem,
   RailItem,
   SignalRow,
   StackedCard,
-  TextCard,
 } from "@/components/article-card";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
@@ -40,15 +36,15 @@ function Home() {
   const hero = ARTICLES.find((a) => a.featured) ?? ordered[0];
   const used = new Set<string>([hero.slug]);
 
-  const rail = take(ordered, used, 6);
+  const interview = articlesByFormat("interview")[0];
+  if (interview) used.add(interview.slug);
+  const rail = take(ordered, used, 5);
   const popular = popularArticles(5);
-  const mid = take(ordered, used, 2);
-  const cityLeads = leadByDesk().filter((a) => a.slug !== hero.slug);
-  cityLeads.forEach((a) => used.add(a.slug));
-  const more = take(ordered, used, 6);
-  const desk = take(ordered, used, 6);
   const signals = articlesByFranchise("signals").slice(0, 4);
   const contra = articlesByFranchise("contra")[0];
+  const obits = articlesByFormat("obituario").slice(0, 4);
+  const flash = articlesByFormat("flash")[0];
+  const visual = articlesByFormat("visual")[0];
   const fiftyLead = INNOVATIVES.slice(0, 3);
   const fiftyRest = INNOVATIVES.slice(3, 10);
 
@@ -58,7 +54,7 @@ function Home() {
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-7">
         <div className="lg:col-span-8">
-          {mid[0] && <StackedCard article={mid[0]} large />}
+          {interview && <StackedCard article={interview} large />}
         </div>
         <aside className="lg:col-span-4 lg:border-l lg:border-rule lg:pl-5">
           <p className="kicker mb-1 text-xs text-muted">En portada</p>
@@ -71,6 +67,51 @@ function Home() {
       <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
         <AdSlot size="leaderboard" creative="anuncia" />
       </div>
+
+      <section className="border-y border-ink bg-paper-deep px-4 py-10 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="kicker text-xs text-rust">Data · se cita</p>
+              <h2 className="headline mt-1 text-4xl sm:text-5xl">
+                <Link to="/indice" className="link-title">
+                  El Índice
+                </Link>
+              </h2>
+              <p className="mt-2 max-w-lg font-body text-sm text-ink-soft">
+                Sueldos, segundo turno, offtakes. Lo que Vander midió este mes — no lo que opinó.
+              </p>
+            </div>
+            <Link to="/indice" className="kicker text-xs text-rust hover:underline">
+              Ver las tablas
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+            <div>
+              <p className="kicker border-b border-ink pb-2 text-xs text-muted">Ing. senior, US$ anual</p>
+              <ul>
+                {PAY_ROWS.slice(0, 6).map((r) => (
+                  <li key={r.city} className="flex items-baseline justify-between gap-3 border-b border-rule py-2">
+                    <span className="font-sans text-sm font-semibold">{r.city}</span>
+                    <span className="tabular-nums font-sans text-sm">{r.usd.toLocaleString("es-MX")}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="kicker border-b border-ink pb-2 text-xs text-muted">Segundo turno · altas</p>
+              <ul>
+                {SHIFT_ROWS.map((r) => (
+                  <li key={r.plant} className="flex items-baseline justify-between gap-3 border-b border-rule py-2">
+                    <span className="min-w-0 truncate font-sans text-sm font-semibold">{r.plant}</span>
+                    <span className="tabular-nums font-sans text-sm">{r.added.toLocaleString("es-MX")}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <SignalsField>
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-12">
@@ -94,7 +135,7 @@ function Home() {
       </SignalsField>
 
       <section className="border-y border-ink">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-8">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <h2 className="kicker border-b border-ink pb-2 text-xs text-rust">Lo más leído</h2>
             <ol>
@@ -105,15 +146,19 @@ function Home() {
               ))}
             </ol>
           </div>
-          <div className="lg:col-span-5">
-            {mid[1] && <StackedCard article={mid[1]} />}
+          <div className="lg:col-span-8">
+            <p className="kicker border-b border-ink pb-2 text-xs text-rust">90 segundos</p>
+            {flash && (
+              <div className="pt-4">
+                <StackedCard article={flash} />
+              </div>
+            )}
+            {visual && (
+              <div className="mt-6 border-t border-rule pt-6">
+                <StackedCard article={visual} />
+              </div>
+            )}
           </div>
-          <aside className="lg:col-span-3">
-            <h2 className="kicker border-b border-ink pb-2 text-xs text-rust">Al minuto</h2>
-            {BRIEFS.slice(0, 8).map((b) => (
-              <BriefRow key={b.id} brief={b} />
-            ))}
-          </aside>
         </div>
       </section>
 
@@ -153,11 +198,7 @@ function Home() {
           <ol className="mt-8 grid gap-x-8 border-t border-paper/20 sm:grid-cols-2 lg:grid-cols-4">
             {fiftyRest.map((c) => (
               <li key={c.rank} className="border-b border-paper/20">
-                <Link
-                  to="/innovatives/$slug"
-                  params={{ slug: c.slug }}
-                  className="grid grid-cols-12 items-baseline gap-2 py-2.5"
-                >
+                <Link to="/innovatives/$slug" params={{ slug: c.slug }} className="grid grid-cols-12 items-baseline gap-2 py-2.5">
                   <span className="col-span-3 headline text-sm tabular-nums text-innov">
                     {String(c.rank).padStart(2, "0")}
                   </span>
@@ -174,20 +215,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        <div className="mb-5 flex items-end justify-between border-b border-ink pb-2">
-          <h2 className="headline text-3xl sm:text-4xl">Desde las mesas</h2>
-          <p className="kicker hidden text-xs text-muted sm:block">
-            {ISSUE.date} · {ISSUE.city}
-          </p>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cityLeads.map((a) => (
-            <MiniLead key={a.slug} article={a} />
-          ))}
-        </div>
-      </section>
-
       <section className="border-y border-ink bg-paper-deep">
         <div className="bg-ink px-4 py-10 text-paper sm:px-6">
           <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -197,7 +224,7 @@ function Home() {
                 <Vander20Mark className="h-16 sm:h-24" />
               </Link>
               <p className="mt-3 max-w-lg font-body text-sm text-paper/60">
-                No es un ranking de innovación. Es el argumento de cómo se siente un negocio cuando el protocolo manda. Cada ficha fue visitada por una mesa.
+                No es un ranking de innovación. Es el argumento de cómo se siente un negocio cuando el protocolo manda. Cada ficha fue visitada.
               </p>
             </div>
             <Link to="/list" className="kicker press text-xs text-paper hover:text-signal">
@@ -209,11 +236,7 @@ function Home() {
           <ol className="grid sm:grid-cols-2 lg:grid-cols-4">
             {VANDER_LIST.map((c) => (
               <li key={c.rank} className="border-b border-ink/15">
-                <Link
-                  to="/list/$slug"
-                  params={{ slug: c.slug }}
-                  className="grid grid-cols-12 items-baseline gap-2 py-3"
-                >
+                <Link to="/list/$slug" params={{ slug: c.slug }} className="grid grid-cols-12 items-baseline gap-2 py-3">
                   <span className="col-span-2 headline text-sm tabular-nums text-signal">
                     {String(c.rank).padStart(2, "0")}
                   </span>
@@ -262,35 +285,38 @@ function Home() {
         </section>
       )}
 
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-12">
-        <div className="lg:col-span-8">
-          <div className="mb-3 flex items-end justify-between border-b border-ink pb-2">
-            <h2 className="headline text-3xl">Más historias</h2>
-            <Link to="/section/$section" params={{ section: "ideas" }} className="kicker text-xs text-rust">
-              Ideas
+      <section className="bg-ink px-4 py-12 text-paper sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-end justify-between gap-4 border-b border-paper/20 pb-3">
+            <div>
+              <p className="kicker text-xs text-rust">We Love Business</p>
+              <h2 className="headline mt-1 text-4xl">
+                <Link to="/obituarios" className="link-title">
+                  Obituarios
+                </Link>
+              </h2>
+            </div>
+            <Link to="/obituarios" className="kicker text-xs text-silver hover:text-paper">
+              El archivo
             </Link>
           </div>
-          {more.map((a) => (
-            <HorizontalCard key={a.slug} article={a} />
-          ))}
+          <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {obits.map((a) => (
+              <article key={a.slug}>
+                <p className="kicker text-xs text-silver">Q.E.P.D.</p>
+                <h3 className="headline mt-2 text-xl">
+                  <Link to="/story/$slug" params={{ slug: a.slug }} className="link-title">
+                    {a.title}
+                  </Link>
+                </h3>
+                <p className="mt-2 font-body text-sm text-paper/60">{a.dek}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <aside className="lg:col-span-4">
-          <div className="mb-3 border-b border-ink pb-2">
-            <h2 className="headline text-3xl">El escritorio</h2>
-          </div>
-          {desk.map((a) => (
-            <TextCard key={a.slug} article={a} />
-          ))}
-          <div className="mt-5">
-            <AdSlot size="mpu" creative="briefing" />
-          </div>
-          <div className="mt-5">
-            <Newsletter compact />
-          </div>
-        </aside>
       </section>
 
-      <p className="sr-only">{HOUSE.credit}</p>
+      <p className="sr-only">{HOUSE.name} · {ISSUE.title}</p>
       <Newsletter />
     </main>
   );

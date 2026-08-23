@@ -14,9 +14,11 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AnunciaRouteImport } from './routes/anuncia'
 import { Route as BriefingRouteImport } from './routes/briefing'
 import { Route as ContraRouteImport } from './routes/contra'
+import { Route as IndiceRouteImport } from './routes/indice'
 import { Route as InnovativesRouteImport } from './routes/innovatives'
 import { Route as ListRouteImport } from './routes/list'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as ObituariosRouteImport } from './routes/obituarios'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
@@ -79,6 +81,11 @@ const ContraRoute = ContraRouteImport.update({
   path: '/contra',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndiceRoute = IndiceRouteImport.update({
+  id: '/indice',
+  path: '/indice',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InnovativesRoute = InnovativesRouteImport.update({
   id: '/innovatives',
   path: '/innovatives',
@@ -92,6 +99,11 @@ const ListRoute = ListRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObituariosRoute = ObituariosRouteImport.update({
+  id: '/obituarios',
+  path: '/obituarios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SavedRoute = SavedRouteImport.update({
@@ -281,9 +293,11 @@ export interface FileRoutesByFullPath {
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
   '/contra': typeof ContraRouteWithChildren
+  '/indice': typeof IndiceRoute
   '/innovatives': typeof InnovativesRouteWithChildren
   '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
+  '/obituarios': typeof ObituariosRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
@@ -326,7 +340,9 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
+  '/indice': typeof IndiceRoute
   '/login': typeof LoginRoute
+  '/obituarios': typeof ObituariosRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/innovatives/$slug': typeof InnovativesSlugRoute
@@ -363,9 +379,11 @@ export interface FileRoutesById {
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
   '/contra': typeof ContraRouteWithChildren
+  '/indice': typeof IndiceRoute
   '/innovatives': typeof InnovativesRouteWithChildren
   '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
+  '/obituarios': typeof ObituariosRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
@@ -411,9 +429,11 @@ export interface FileRouteTypes {
     | '/anuncia'
     | '/briefing'
     | '/contra'
+    | '/indice'
     | '/innovatives'
     | '/list'
     | '/login'
+    | '/obituarios'
     | '/saved'
     | '/search'
     | '/signals'
@@ -456,7 +476,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/anuncia'
     | '/briefing'
+    | '/indice'
     | '/login'
+    | '/obituarios'
     | '/saved'
     | '/search'
     | '/innovatives/$slug'
@@ -492,9 +514,11 @@ export interface FileRouteTypes {
     | '/anuncia'
     | '/briefing'
     | '/contra'
+    | '/indice'
     | '/innovatives'
     | '/list'
     | '/login'
+    | '/obituarios'
     | '/saved'
     | '/search'
     | '/signals'
@@ -539,9 +563,11 @@ export interface RootRouteChildren {
   AnunciaRoute: typeof AnunciaRoute
   BriefingRoute: typeof BriefingRoute
   ContraRoute: typeof ContraRouteWithChildren
+  IndiceRoute: typeof IndiceRoute
   InnovativesRoute: typeof InnovativesRouteWithChildren
   ListRoute: typeof ListRouteWithChildren
   LoginRoute: typeof LoginRoute
+  ObituariosRoute: typeof ObituariosRoute
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
   SignalsRoute: typeof SignalsRouteWithChildren
@@ -588,6 +614,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/indice': {
+      id: '/indice'
+      path: '/indice'
+      fullPath: '/indice'
+      preLoaderRoute: typeof IndiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/innovatives': {
       id: '/innovatives'
       path: '/innovatives'
@@ -607,6 +640,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obituarios': {
+      id: '/obituarios'
+      path: '/obituarios'
+      fullPath: '/obituarios'
+      preLoaderRoute: typeof ObituariosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/saved': {
@@ -1033,9 +1073,11 @@ const rootRouteChildren: RootRouteChildren = {
   AnunciaRoute: AnunciaRoute,
   BriefingRoute: BriefingRoute,
   ContraRoute: ContraRouteWithChildren,
+  IndiceRoute: IndiceRoute,
   InnovativesRoute: InnovativesRouteWithChildren,
   ListRoute: ListRouteWithChildren,
   LoginRoute: LoginRoute,
+  ObituariosRoute: ObituariosRoute,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
   SignalsRoute: SignalsRouteWithChildren,

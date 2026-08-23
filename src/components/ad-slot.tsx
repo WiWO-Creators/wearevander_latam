@@ -20,14 +20,14 @@ const CREATIVES: Record<
   boletin: {
     kicker: "Boletín",
     title: "Un mail. Cero feed.",
-    dek: "La mesa regional resume la semana: CDMX, SP, BA, BOG, SCL, LIM.",
+    dek: "La redacción resume la semana: CDMX, SP, BA, BOG, SCL, LIM.",
     cta: "Suscribirse",
     to: "/about",
     hash: "#boletin",
   },
   briefing: {
     kicker: "Briefing",
-    title: "La mesa fila por ti",
+    title: "Team Vander fila por ti",
     dek: "Nombra una compañía. Team Vander arma antetítulo, titular y argumento.",
     cta: "Pedir briefing",
     to: "/briefing",

@@ -12,9 +12,6 @@ export type MarketQuote = {
 };
 
 const UNIVERSE: { yahoo: string; label: string; region: MarketQuote["region"] }[] = [
-  { yahoo: "^IXIC", label: "NASDAQ", region: "us" },
-  { yahoo: "^GSPC", label: "S&P 500", region: "us" },
-  { yahoo: "^DJI", label: "DOW", region: "us" },
   { yahoo: "^MXX", label: "IPC MX", region: "latam" },
   { yahoo: "^BVSP", label: "BOVESPA", region: "latam" },
   { yahoo: "^IPSA", label: "IPSA", region: "latam" },
@@ -27,12 +24,12 @@ const UNIVERSE: { yahoo: string; label: string; region: MarketQuote["region"] }[
   { yahoo: "COP=X", label: "USD/COP", region: "fx" },
   { yahoo: "ARS=X", label: "USD/ARS", region: "fx" },
   { yahoo: "PEN=X", label: "USD/PEN", region: "fx" },
+  { yahoo: "^IXIC", label: "NASDAQ", region: "us" },
+  { yahoo: "^GSPC", label: "S&P 500", region: "us" },
+  { yahoo: "^DJI", label: "DOW", region: "us" },
 ];
 
 export const MARKET_SEED: MarketQuote[] = [
-  { symbol: "^IXIC", label: "NASDAQ", region: "us", price: 26180.46, prev: 26729.16, change: -548.7, changePct: -2.05, currency: "USD" },
-  { symbol: "^GSPC", label: "S&P 500", region: "us", price: 7674.37, prev: 7785.76, change: -111.39, changePct: -1.43, currency: "USD" },
-  { symbol: "^DJI", label: "DOW", region: "us", price: 53277, prev: 53732.41, change: -455.41, changePct: -0.85, currency: "USD" },
   { symbol: "^MXX", label: "IPC MX", region: "latam", price: 65729.18, prev: 64254.98, change: 1474.2, changePct: 2.29, currency: "MXN" },
   { symbol: "^BVSP", label: "BOVESPA", region: "latam", price: 171031.73, prev: 166934, change: 4097.73, changePct: 2.45, currency: "BRL" },
   { symbol: "^IPSA", label: "IPSA", region: "latam", price: 10887.72, prev: 10947.4, change: -59.68, changePct: -0.55, currency: "CLP" },
@@ -45,6 +42,9 @@ export const MARKET_SEED: MarketQuote[] = [
   { symbol: "COP=X", label: "USD/COP", region: "fx", price: 3038.2, prev: 3130.05, change: -91.85, changePct: -2.93, currency: "COP" },
   { symbol: "ARS=X", label: "USD/ARS", region: "fx", price: 1499, prev: 1489.6, change: 9.4, changePct: 0.63, currency: "ARS" },
   { symbol: "PEN=X", label: "USD/PEN", region: "fx", price: 3.352, prev: 3.2997, change: 0.0523, changePct: 1.59, currency: "PEN" },
+  { symbol: "^IXIC", label: "NASDAQ", region: "us", price: 26180.46, prev: 26729.16, change: -548.7, changePct: -2.05, currency: "USD" },
+  { symbol: "^GSPC", label: "S&P 500", region: "us", price: 7674.37, prev: 7785.76, change: -111.39, changePct: -1.43, currency: "USD" },
+  { symbol: "^DJI", label: "DOW", region: "us", price: 53277, prev: 53732.41, change: -455.41, changePct: -0.85, currency: "USD" },
 ];
 
 let cache: { at: number; quotes: MarketQuote[]; live: boolean } | null = null;

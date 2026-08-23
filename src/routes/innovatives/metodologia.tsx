@@ -34,7 +34,7 @@ function InnovMethodPage() {
           protocolo. Esta lista premia lo que se acaba de poder visitar.
         </p>
         <p className="mt-5 font-body text-lg leading-relaxed text-ink-soft">
-          La mesa propone, visita y cruza. El score es editorial. Se publica para que se pueda
+          La redacción propone, visita y cruza. El score es editorial. Se publica para que se pueda
           discutir — y se discute. Si una tesis cabe en un ticker y no en una calle, no entra.
         </p>
         <MethodGrid items={INNOVATIVES_METHOD} accent="innov" />

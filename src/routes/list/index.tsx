@@ -27,7 +27,7 @@ function ListPage() {
           </h1>
           <p className="mt-6 max-w-2xl font-body text-lg leading-snug text-paper/75">
             Las veinte compañías que reescriben cómo se siente un negocio en América Latina. No las más
-            ruidosas: las que tienen código de casa. Cada ficha fue visitada por una mesa. El Vander 20 no
+            ruidosas: las que tienen código de casa. Cada ficha fue visitada. El Vander 20 no
             es las 50 Innovatives: acá cuenta el protocolo, no el gesto nuevo.
           </p>
           <p className="mt-3 kicker text-xs text-silver">{HOUSE.credit}</p>

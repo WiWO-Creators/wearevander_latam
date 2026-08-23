@@ -1,7 +1,7 @@
 export const FRANCHISE_ARTICLES = [
   {
     slug: "el-founder-no-es-un-santo",
-    title: "El founder no es un santo. Dejen de tratarlo como uno.",
+    title: "¿Quién firma el viernes a las 16:00 si el founder no está?",
     dek: "La mitología del fundador inalcanzable es una estetización del control. El P&L no necesita un mártir.",
     kicker: "Contra la corriente",
     section: "ideas",
@@ -53,7 +53,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "la-ia-no-reemplaza-la-junta",
-    title: "La IA no reemplaza la junta. Reemplaza el acta mala.",
+    title: "Un copiloto en el directorio no vota",
     dek: "El consenso vende copilots en el directorio. El criterio sigue siendo humano, lento y con nombre.",
     kicker: "Contra la corriente",
     section: "ideas",
@@ -78,7 +78,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "escalar-ya-no-es-virtud",
-    title: "Escalar ya no es una virtud. Es una opción.",
+    title: "Northroom tiene lista de espera de 24 meses y 11 personas",
     dek: "El hype convirtió el headcount en moral. Hay compañías que ganan precisamente porque no crecen.",
     kicker: "Contra la corriente",
     section: "work",
@@ -174,7 +174,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "signal-wifi-lento",
-    title: "Wifi lento como feature, no como falla",
+    title: "Tres fondos en Vitacura pidieron wifi que se corta a las 11",
     dek: "Vitacura y Lastarria. El protocolo analógico deja de ser moodboard.",
     kicker: "Signals",
     section: "work",
@@ -266,7 +266,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "signal-callao-barco",
-    title: "Si no puedes nombrar el barco, no tienes tesis de supply",
+    title: "En Callao el handoff nombra el buque. El 3PL de Miami, no",
     dek: "Callao. El Pacífico deja de ser escala y empieza a ser contrato.",
     kicker: "Signals",
     section: "work",
@@ -312,7 +312,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "el-drop-no-es-un-calendario",
-    title: "El drop no es un calendario. Es una adicción con lookbook.",
+    title: "¿Cuántos drops aguanta una marca antes de dejar de ser tienda?",
     dek: "El consenso del retail independiente copió a Supreme y llamó a eso comunidad. Es un feed con fila.",
     kicker: "Contra la corriente",
     section: "culture",
@@ -337,7 +337,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "el-consultor-eterno",
-    title: "El consultor eterno no es onboarding. Es un impuesto.",
+    title: "Línea Ocho cierra un ERP en una tarde. El consultor tarda 18 meses",
     dek: "El consenso vende implementación de 18 meses. Las pymes que importan cierran el ERP en una tarde.",
     kicker: "Contra la corriente",
     section: "work",
@@ -362,7 +362,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "signal-copiloto-deposito",
-    title: "El copiloto que sí sirve está en el depósito, no en el directorio",
+    title: "Puerto Seco metió un modelo en el patio, no en la junta",
     dek: "Querétaro. La IA que nombra el patio adelanta a la que resume el acta.",
     kicker: "Signals",
     section: "ideas",
@@ -408,7 +408,7 @@ export const FRANCHISE_ARTICLES = [
   },
   {
     slug: "signal-mesa-jalisco",
-    title: "La mesa de diseño en Jalisco deja de ser maquila con PowerPoint",
+    title: "Andina Chip puso ingeniería en Guadalajara. El tornillo ya no es el techo",
     dek: "Guadalajara. El chip con ingeniería local adelanta al ensamble.",
     kicker: "Signals",
     section: "design",

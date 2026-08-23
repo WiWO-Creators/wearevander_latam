@@ -113,6 +113,17 @@ function StoryPage() {
           </figcaption>
         </figure>
 
+        {article.gallery && article.gallery.length > 0 && (
+          <div className="mx-auto mt-6 grid max-w-6xl gap-4 px-4 sm:grid-cols-3 sm:px-6">
+            {article.gallery.map((g) => (
+              <figure key={g.src + g.caption}>
+                <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" />
+                <figcaption className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">{g.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
+
         <div className="mx-auto mt-10 max-w-2xl px-4 sm:px-6">
           {article.body.map((block, i) => (
             <div key={i}>
@@ -143,7 +154,7 @@ function StoryPage() {
               <p className="headline mt-3 text-3xl">Team Vander</p>
               <p className="kicker mt-1 text-xs text-rust">{HOUSE.credit}</p>
               <p className="mt-3 font-body text-sm leading-relaxed text-ink-soft">
-                Team Vander es la mesa regional de Interadia. Seis ciudades, una firma, un criterio.
+                Team Vander es la redacción de Interadia en seis ciudades. Una firma, un criterio.
               </p>
               <Link to="/about" className="mt-3 inline-block kicker text-xs text-ink underline decoration-rust hover:text-rust">
                 La redacción
@@ -182,6 +193,20 @@ function Block({ block, drop }: { block: BodyBlock; drop: boolean }) {
         <p className="headline text-3xl">{block.text}</p>
         {block.cite && <footer className="mt-2 kicker text-xs text-muted">{block.cite}</footer>}
       </blockquote>
+    );
+  }
+  if (block.type === "q") {
+    return <p className="mt-8 mb-2 font-sans text-sm font-semibold tracking-tight text-rust">— {block.text}</p>;
+  }
+  if (block.type === "a") {
+    return <p className="mb-5 font-body text-lg leading-relaxed text-ink">{block.text}</p>;
+  }
+  if (block.type === "stat") {
+    return (
+      <p className="my-6 flex items-baseline justify-between gap-4 border-y border-ink py-3">
+        <span className="kicker text-xs text-muted">{block.label}</span>
+        <span className="headline text-3xl tabular-nums">{block.value}</span>
+      </p>
     );
   }
   return (

@@ -10,8 +10,8 @@ import { MarketsBar } from "@/components/markets-bar";
 import { cn } from "@/lib/utils";
 
 const MORE_LINKS = [
+  { to: "/obituarios" as const, label: "Obituarios" },
   { to: "/briefing" as const, label: "Briefing" },
-  { to: "/about" as const, label: "Redacción" },
   { to: "/anuncia" as const, label: "Anuncia" },
   { to: "/saved" as const, label: "Guardados" },
 ];
@@ -128,6 +128,28 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
                     )}
                   >
                     Contra
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/indice"
+                    className={cn(
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
+                      pathname.startsWith("/indice") && "is-active",
+                    )}
+                  >
+                    El Índice
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className={cn(
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
+                      pathname.startsWith("/about") && "is-active",
+                    )}
+                  >
+                    Redacción
                   </Link>
                 </li>
                 <MoreMenu pathname={pathname} />
@@ -285,6 +307,21 @@ function MobileNav({ onClose }: { onClose: () => void }) {
               Contra
             </Link>
           </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/indice" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              El Índice
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/about" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              Redacción
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/obituarios" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+              Obituarios
+            </Link>
+          </li>
         </ul>
         <ul className="mt-6 flex flex-col">
           {MORE_LINKS.map((item) => (
@@ -377,6 +414,16 @@ function Footer() {
             <p className="kicker text-xs text-paper/45">La casa</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               <li>
+                <Link to="/indice" className="link-title">
+                  El Índice
+                </Link>
+              </li>
+              <li>
+                <Link to="/obituarios" className="link-title">
+                  Obituarios
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className="link-title">
                   Redacción
                 </Link>
@@ -399,7 +446,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <p className="kicker text-xs text-paper/45">Mesas</p>
+            <p className="kicker text-xs text-paper/45">Corresponsalías</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               {DESKS.map((d) => (
                 <li key={d.id}>

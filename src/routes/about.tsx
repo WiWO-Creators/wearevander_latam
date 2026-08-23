@@ -24,10 +24,11 @@ function AboutPage() {
           <p className="mt-6 font-body text-lg leading-relaxed text-paper/80">
             We Are Vander es un medio de Interadia. Portal de innovación empresarial con el ojo
             de una revista y la densidad de un diario. Negro, blanco, negocios. La firma de cada
-            historia es Team Vander.
+            historia es Team Vander. We Love Business — y el guiño está en los Obituarios.
           </p>
           <p className="mt-4 font-body text-base leading-relaxed text-paper/70">
-            Seis mesas: Ciudad de México, São Paulo, Buenos Aires, Bogotá, Santiago y Lima.
+            Seis corresponsalías: Ciudad de México, São Paulo, Buenos Aires, Bogotá, Santiago y Lima.
+            Cada una es una redacción local con reportero, no un “hub” en un slide.
             {ISSUE.title} es el Volumen {ISSUE.volume}, Número {ISSUE.number}. La región es el beat,
             no el footnote.
           </p>
@@ -36,9 +37,9 @@ function AboutPage() {
       <section className="border-t border-ink px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <p className="kicker text-xs text-rust">Team Vander</p>
-          <h2 className="headline mt-2 text-4xl sm:text-5xl">La mesa</h2>
+          <h2 className="headline mt-2 text-4xl sm:text-5xl">La redacción</h2>
           <p className="mt-3 max-w-2xl font-body text-base text-ink-soft">
-            Team Vander firma cada historia. Estas son las mesas de Interadia detrás de la firma.
+            Team Vander firma cada historia. Estas son las corresponsalías de Interadia detrás de la firma.
           </p>
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {AUTHORS.map((a) => (

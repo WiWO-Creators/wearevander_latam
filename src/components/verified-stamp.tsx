@@ -24,7 +24,7 @@ export function VerifiedStamp({
       )}
     >
       Visitada {v.visited}
-      {compact ? "" : ` · Mesa ${v.desk}`}
+      {compact ? "" : ` · Desde ${v.desk}`}
       {compact ? "" : ` · ${v.proof}`}
     </p>
   );
