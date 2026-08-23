@@ -28,18 +28,27 @@ function ContraPage() {
 
   return (
     <main>
-      <section className="bg-ink px-4 py-14 text-paper sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h1>
-            <ContraMark className="h-10 sm:h-14" />
-          </h1>
-          <p className="mt-6 max-w-2xl font-body text-lg leading-snug text-paper/75">
-            Opinión abiertamente contraria al consenso. Firmada. El carácter de la casa no es el
-            equilibrio: es un no a tiempo, con nombre y apellido. {HOUSE.credit}.
-          </p>
-          <p className="mt-3 kicker text-xs text-silver">
-            {essays.length} columnas · de fondo
-          </p>
+      <section className="bg-canary px-4 py-14 text-ink sm:px-6 sm:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <img
+              src="/illustrations/contra.jpg"
+              alt="Una figura camina contra la corriente de ejecutivos idénticos"
+              className="aspect-[16/9] w-full object-cover"
+            />
+          </div>
+          <div className="lg:col-span-7">
+            <h1>
+              <ContraMark className="h-10 sm:h-14" />
+            </h1>
+            <p className="mt-6 max-w-2xl font-body text-lg leading-snug text-ink">
+              Opinión abiertamente contraria al consenso. Firmada. El carácter de la casa no es el
+              equilibrio: es un no a tiempo, con nombre y apellido. {HOUSE.credit}.
+            </p>
+            <p className="mt-3 kicker text-xs text-ink/55">
+              {essays.length} columnas · de fondo
+            </p>
+          </div>
         </div>
       </section>
 

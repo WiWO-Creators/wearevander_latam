@@ -259,30 +259,35 @@ function Home() {
       </section>
 
       {contra && (
-        <section className="border-y border-ink px-4 py-10 sm:px-6">
-          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+        <section className="border-y border-ink bg-canary px-4 py-10 sm:px-6">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-12">
+            <Link to="/contra" className="block lg:col-span-5">
+              <img
+                src="/illustrations/contra.jpg"
+                alt="Una figura camina contra la corriente de ejecutivos idénticos"
+                className="aspect-[16/9] w-full object-cover object-center"
+              />
+            </Link>
+            <div className="lg:col-span-7">
               <Link to="/contra" className="logo-mark block max-w-sm">
                 <ContraMark className="h-8 sm:h-10" />
               </Link>
-              <p className="mt-4 font-body text-sm leading-relaxed text-ink-soft">
+              <p className="mt-4 max-w-md font-body text-sm leading-relaxed text-ink">
                 Opinión firmada, abiertamente contraria al consenso. El carácter de la casa.
               </p>
-              <Link to="/contra" className="kicker mt-3 inline-block text-xs text-rust">
-                Todas las columnas
-              </Link>
-            </div>
-            <div className="lg:col-span-8">
-              <p className="kicker text-xs text-rust">{contra.signedName}</p>
-              <h2 className="headline mt-2 text-3xl sm:text-5xl">
+              <p className="kicker mt-6 text-xs text-ink">{contra.signedName}</p>
+              <h2 className="headline mt-2 text-3xl leading-[1.08] sm:text-5xl">
                 <Link to="/story/$slug" params={{ slug: contra.slug }} className="link-title">
                   {contra.title}
                 </Link>
               </h2>
-              <p className="mt-3 max-w-xl font-body text-base text-ink-soft">{contra.dek}</p>
-              <p className="mt-3 font-kicker text-xs uppercase tracking-wider text-muted">
+              <p className="mt-3 max-w-xl font-body text-base leading-snug text-ink/80">{contra.dek}</p>
+              <p className="mt-3 font-kicker text-xs uppercase tracking-wider text-ink/50">
                 {contra.readMinutes} min de lectura · De fondo
               </p>
+              <Link to="/contra" className="kicker mt-5 inline-block text-xs text-ink hover:text-rust">
+                Todas las columnas
+              </Link>
             </div>
           </div>
         </section>
