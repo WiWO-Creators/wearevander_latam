@@ -123,6 +123,56 @@ export function ChileFlag({ className }: { className?: string }) {
   );
 }
 
+export function ArgentinaFlag({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 9 6"
+      className={cn("inline-block shrink-0 overflow-hidden rounded-[1px] shadow-[0_0_0_0.5px_rgba(0,0,0,0.2)]", className)}
+      aria-hidden
+      focusable="false"
+    >
+      <rect width="9" height="2" fill="#74ACDF" />
+      <rect y="2" width="9" height="2" fill="#fff" />
+      <rect y="4" width="9" height="2" fill="#74ACDF" />
+      <circle cx="4.5" cy="3" r="0.72" fill="#F6B40E" />
+    </svg>
+  );
+}
+
+export function ColombiaFlag({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 9 6"
+      className={cn("inline-block shrink-0 overflow-hidden rounded-[1px] shadow-[0_0_0_0.5px_rgba(0,0,0,0.2)]", className)}
+      aria-hidden
+      focusable="false"
+    >
+      <rect width="9" height="3" fill="#FCD116" />
+      <rect y="3" width="9" height="1.5" fill="#003893" />
+      <rect y="4.5" width="9" height="1.5" fill="#CE1126" />
+    </svg>
+  );
+}
+
+export function CountryMark({
+  id,
+  label,
+  className,
+}: {
+  id: "cl" | "ar" | "co";
+  label?: string;
+  className?: string;
+}) {
+  const Flag = id === "cl" ? ChileFlag : id === "ar" ? ArgentinaFlag : ColombiaFlag;
+  const text = label ?? (id === "cl" ? "Solo Chile" : id === "ar" ? "Solo Argentina" : "Solo Colombia");
+  return (
+    <span className={cn("inline-flex items-center gap-1.5", className)}>
+      <Flag className="h-[0.85em] w-[1.28em]" />
+      <span>{text}</span>
+    </span>
+  );
+}
+
 export function ChileOnly({
   className,
   label = "Solo Chile",
@@ -130,10 +180,5 @@ export function ChileOnly({
   className?: string;
   label?: string;
 }) {
-  return (
-    <span className={cn("inline-flex items-center gap-1.5", className)}>
-      <ChileFlag className="h-[0.85em] w-[1.28em]" />
-      <span>{label}</span>
-    </span>
-  );
+  return <CountryMark id="cl" label={label} className={className} />;
 }

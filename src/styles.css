@@ -558,10 +558,12 @@
 
 .u40-shot {
   position: relative;
-  background: var(--color-ink);
+  background: var(--color-ivory);
 }
 
 .u40-shot img {
+  position: relative;
+  z-index: 1;
   height: 100%;
   width: 100%;
   object-fit: cover;

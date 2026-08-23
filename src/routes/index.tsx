@@ -10,7 +10,7 @@ import {
 } from "@/lib/content";
 import { VANDER_LIST } from "@/lib/vander-list";
 import { INNOVATIVES } from "@/lib/innovatives";
-import { UNDER40 } from "@/lib/under40";
+import { VOLUMES } from "@/lib/visionarios";
 import { PAY_ROWS, SHIFT_ROWS } from "@/lib/indice";
 import {
   CoverHero,
@@ -22,10 +22,9 @@ import {
 } from "@/components/article-card";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
-import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark, ChileOnly } from "@/components/brand";
+import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark, CountryMark } from "@/components/brand";
 import { SignalsField } from "@/components/signals-field";
 import { VerifiedStamp } from "@/components/verified-stamp";
-import { Under40Shot } from "@/components/under40-shot";
 import { LiveDesk } from "@/components/live-desk";
 import { JsonLd } from "@/components/json-ld";
 import { seoHead, orgSchema, websiteSchema } from "@/lib/seo";
@@ -284,29 +283,34 @@ function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="kicker inline-flex items-center gap-2 text-xs text-rust">
-                <ChileOnly /> · agosto 2026
-              </p>
+              <p className="kicker text-xs text-rust">Colección · tres países</p>
               <h2 className="headline mt-1 text-4xl sm:text-5xl">
-                <Link to="/under40" className="link-title">
+                <Link to="/visionarios" className="link-title">
                   100V Visionarios
                 </Link>
               </h2>
               <p className="mt-2 max-w-lg font-body text-sm text-ink-soft">
-                Cien fichas de Chile. Edad declarada. Prensa con enlace. Esta lista no cubre la región.
+                Un volumen por país. Chile, Argentina y Colombia no se mezclan. Edad declarada, prensa con enlace.
               </p>
             </div>
-            <Link to="/under40" className="kicker text-xs text-rust hover:underline">
-              El dossier
+            <Link to="/visionarios" className="kicker text-xs text-rust hover:underline">
+              La colección
             </Link>
           </div>
-          <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-            {UNDER40.slice(0, 8).map((p) => (
-              <li key={p.slug}>
-                <Link to="/under40/$slug" params={{ slug: p.slug }} className="group block">
-                  <Under40Shot person={p} />
-                  <p className="kicker mt-2 text-[10px] text-rust">{String(p.rank).padStart(3, "0")}</p>
-                  <p className="headline mt-0.5 text-base leading-[1.1]">{p.name}</p>
+          <ul className="mt-8 grid gap-6 sm:grid-cols-3">
+            {VOLUMES.map((v) => (
+              <li key={v.id}>
+                <Link to={v.path} className="group block">
+                  <img
+                    src={v.illustration}
+                    alt=""
+                    className="aspect-[16/9] w-full object-cover"
+                  />
+                  <p className="kicker mt-3 text-[10px] text-rust">
+                    <CountryMark id={v.id} /> · Vol. {v.volume}
+                  </p>
+                  <h3 className="headline mt-1 text-3xl group-hover:text-rust">{v.name}</h3>
+                  <p className="mt-2 line-clamp-2 font-body text-sm text-ink-soft">{v.dek}</p>
                 </Link>
               </li>
             ))}

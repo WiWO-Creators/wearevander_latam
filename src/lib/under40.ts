@@ -28,6 +28,7 @@ export type Under40Profile = {
   linkedin: string;
   trust: string;
   image: string;
+  cohort?: "sub40" | "referente";
 };
 
 export type Under40Link = {

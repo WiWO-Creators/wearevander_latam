@@ -25,6 +25,7 @@ import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
 import { Route as Under40RouteImport } from './routes/under40'
+import { Route as VisionariosRouteImport } from './routes/visionarios'
 import { Route as ApiMarketsRouteImport } from './routes/api/markets'
 import { Route as ContraIndexRouteImport } from './routes/contra/index'
 import { Route as ContraAutorRouteImport } from './routes/contra/autor'
@@ -47,6 +48,9 @@ import { Route as TagTagRouteImport } from './routes/tag/$tag'
 import { Route as Under40IndexRouteImport } from './routes/under40/index'
 import { Route as Under40SlugRouteImport } from './routes/under40/$slug'
 import { Route as Under40MetodologiaRouteImport } from './routes/under40/metodologia'
+import { Route as VisionariosIndexRouteImport } from './routes/visionarios/index'
+import { Route as VisionariosArgentinaRouteImport } from './routes/visionarios/argentina'
+import { Route as VisionariosColombiaRouteImport } from './routes/visionarios/colombia'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiMarketsHealthRouteImport } from './routes/api/markets.health'
 import { Route as ApiMarketsIngestRouteImport } from './routes/api/markets.ingest'
@@ -64,6 +68,12 @@ import { Route as ListSectorIndexRouteImport } from './routes/list/sector/index'
 import { Route as ListSectorSectorRouteImport } from './routes/list/sector/$sector'
 import { Route as SignalsTagIndexRouteImport } from './routes/signals/tag/index'
 import { Route as SignalsTagTagRouteImport } from './routes/signals/tag/$tag'
+import { Route as VisionariosArgentinaIndexRouteImport } from './routes/visionarios/argentina/index'
+import { Route as VisionariosArgentinaSlugRouteImport } from './routes/visionarios/argentina/$slug'
+import { Route as VisionariosArgentinaMetodologiaRouteImport } from './routes/visionarios/argentina/metodologia'
+import { Route as VisionariosColombiaIndexRouteImport } from './routes/visionarios/colombia/index'
+import { Route as VisionariosColombiaSlugRouteImport } from './routes/visionarios/colombia/$slug'
+import { Route as VisionariosColombiaMetodologiaRouteImport } from './routes/visionarios/colombia/metodologia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -143,6 +153,11 @@ const SignalsRoute = SignalsRouteImport.update({
 const Under40Route = Under40RouteImport.update({
   id: '/under40',
   path: '/under40',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionariosRoute = VisionariosRouteImport.update({
+  id: '/visionarios',
+  path: '/visionarios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiMarketsRoute = ApiMarketsRouteImport.update({
@@ -255,6 +270,21 @@ const Under40MetodologiaRoute = Under40MetodologiaRouteImport.update({
   path: '/metodologia',
   getParentRoute: () => Under40Route,
 } as any)
+const VisionariosIndexRoute = VisionariosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => VisionariosRoute,
+} as any)
+const VisionariosArgentinaRoute = VisionariosArgentinaRouteImport.update({
+  id: '/argentina',
+  path: '/argentina',
+  getParentRoute: () => VisionariosRoute,
+} as any)
+const VisionariosColombiaRoute = VisionariosColombiaRouteImport.update({
+  id: '/colombia',
+  path: '/colombia',
+  getParentRoute: () => VisionariosRoute,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
@@ -340,6 +370,41 @@ const SignalsTagTagRoute = SignalsTagTagRouteImport.update({
   path: '/$tag',
   getParentRoute: () => SignalsTagRoute,
 } as any)
+const VisionariosArgentinaIndexRoute =
+  VisionariosArgentinaIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => VisionariosArgentinaRoute,
+  } as any)
+const VisionariosArgentinaSlugRoute =
+  VisionariosArgentinaSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => VisionariosArgentinaRoute,
+  } as any)
+const VisionariosArgentinaMetodologiaRoute =
+  VisionariosArgentinaMetodologiaRouteImport.update({
+    id: '/metodologia',
+    path: '/metodologia',
+    getParentRoute: () => VisionariosArgentinaRoute,
+  } as any)
+const VisionariosColombiaIndexRoute =
+  VisionariosColombiaIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => VisionariosColombiaRoute,
+  } as any)
+const VisionariosColombiaSlugRoute = VisionariosColombiaSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => VisionariosColombiaRoute,
+} as any)
+const VisionariosColombiaMetodologiaRoute =
+  VisionariosColombiaMetodologiaRouteImport.update({
+    id: '/metodologia',
+    path: '/metodologia',
+    getParentRoute: () => VisionariosColombiaRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -358,6 +423,7 @@ export interface FileRoutesByFullPath {
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
   '/under40': typeof Under40RouteWithChildren
+  '/visionarios': typeof VisionariosRouteWithChildren
   '/api/markets': typeof ApiMarketsRouteWithChildren
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
@@ -375,11 +441,14 @@ export interface FileRoutesByFullPath {
   '/tag/$tag': typeof TagTagRoute
   '/under40/$slug': typeof Under40SlugRoute
   '/under40/metodologia': typeof Under40MetodologiaRoute
+  '/visionarios/argentina': typeof VisionariosArgentinaRouteWithChildren
+  '/visionarios/colombia': typeof VisionariosColombiaRouteWithChildren
   '/contra/': typeof ContraIndexRoute
   '/innovatives/': typeof InnovativesIndexRoute
   '/list/': typeof ListIndexRoute
   '/signals/': typeof SignalsIndexRoute
   '/under40/': typeof Under40IndexRoute
+  '/visionarios/': typeof VisionariosIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/markets/health': typeof ApiMarketsHealthRoute
   '/api/markets/ingest': typeof ApiMarketsIngestRoute
@@ -390,6 +459,10 @@ export interface FileRoutesByFullPath {
   '/list/ciudad/$city': typeof ListCiudadCityRoute
   '/list/sector/$sector': typeof ListSectorSectorRoute
   '/signals/tag/$tag': typeof SignalsTagTagRoute
+  '/visionarios/argentina/$slug': typeof VisionariosArgentinaSlugRoute
+  '/visionarios/argentina/metodologia': typeof VisionariosArgentinaMetodologiaRoute
+  '/visionarios/colombia/$slug': typeof VisionariosColombiaSlugRoute
+  '/visionarios/colombia/metodologia': typeof VisionariosColombiaMetodologiaRoute
   '/contra/autor/': typeof ContraAutorIndexRoute
   '/contra/tag/': typeof ContraTagIndexRoute
   '/innovatives/pais/': typeof InnovativesPaisIndexRoute
@@ -397,6 +470,8 @@ export interface FileRoutesByFullPath {
   '/list/ciudad/': typeof ListCiudadIndexRoute
   '/list/sector/': typeof ListSectorIndexRoute
   '/signals/tag/': typeof SignalsTagIndexRoute
+  '/visionarios/argentina/': typeof VisionariosArgentinaIndexRoute
+  '/visionarios/colombia/': typeof VisionariosColombiaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -425,6 +500,7 @@ export interface FileRoutesByTo {
   '/list': typeof ListIndexRoute
   '/signals': typeof SignalsIndexRoute
   '/under40': typeof Under40IndexRoute
+  '/visionarios': typeof VisionariosIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/markets/health': typeof ApiMarketsHealthRoute
   '/api/markets/ingest': typeof ApiMarketsIngestRoute
@@ -435,6 +511,10 @@ export interface FileRoutesByTo {
   '/list/ciudad/$city': typeof ListCiudadCityRoute
   '/list/sector/$sector': typeof ListSectorSectorRoute
   '/signals/tag/$tag': typeof SignalsTagTagRoute
+  '/visionarios/argentina/$slug': typeof VisionariosArgentinaSlugRoute
+  '/visionarios/argentina/metodologia': typeof VisionariosArgentinaMetodologiaRoute
+  '/visionarios/colombia/$slug': typeof VisionariosColombiaSlugRoute
+  '/visionarios/colombia/metodologia': typeof VisionariosColombiaMetodologiaRoute
   '/contra/autor': typeof ContraAutorIndexRoute
   '/contra/tag': typeof ContraTagIndexRoute
   '/innovatives/pais': typeof InnovativesPaisIndexRoute
@@ -442,6 +522,8 @@ export interface FileRoutesByTo {
   '/list/ciudad': typeof ListCiudadIndexRoute
   '/list/sector': typeof ListSectorIndexRoute
   '/signals/tag': typeof SignalsTagIndexRoute
+  '/visionarios/argentina': typeof VisionariosArgentinaIndexRoute
+  '/visionarios/colombia': typeof VisionariosColombiaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -461,6 +543,7 @@ export interface FileRoutesById {
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
   '/under40': typeof Under40RouteWithChildren
+  '/visionarios': typeof VisionariosRouteWithChildren
   '/api/markets': typeof ApiMarketsRouteWithChildren
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
@@ -478,11 +561,14 @@ export interface FileRoutesById {
   '/tag/$tag': typeof TagTagRoute
   '/under40/$slug': typeof Under40SlugRoute
   '/under40/metodologia': typeof Under40MetodologiaRoute
+  '/visionarios/argentina': typeof VisionariosArgentinaRouteWithChildren
+  '/visionarios/colombia': typeof VisionariosColombiaRouteWithChildren
   '/contra/': typeof ContraIndexRoute
   '/innovatives/': typeof InnovativesIndexRoute
   '/list/': typeof ListIndexRoute
   '/signals/': typeof SignalsIndexRoute
   '/under40/': typeof Under40IndexRoute
+  '/visionarios/': typeof VisionariosIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/markets/health': typeof ApiMarketsHealthRoute
   '/api/markets/ingest': typeof ApiMarketsIngestRoute
@@ -493,6 +579,10 @@ export interface FileRoutesById {
   '/list/ciudad/$city': typeof ListCiudadCityRoute
   '/list/sector/$sector': typeof ListSectorSectorRoute
   '/signals/tag/$tag': typeof SignalsTagTagRoute
+  '/visionarios/argentina/$slug': typeof VisionariosArgentinaSlugRoute
+  '/visionarios/argentina/metodologia': typeof VisionariosArgentinaMetodologiaRoute
+  '/visionarios/colombia/$slug': typeof VisionariosColombiaSlugRoute
+  '/visionarios/colombia/metodologia': typeof VisionariosColombiaMetodologiaRoute
   '/contra/autor/': typeof ContraAutorIndexRoute
   '/contra/tag/': typeof ContraTagIndexRoute
   '/innovatives/pais/': typeof InnovativesPaisIndexRoute
@@ -500,6 +590,8 @@ export interface FileRoutesById {
   '/list/ciudad/': typeof ListCiudadIndexRoute
   '/list/sector/': typeof ListSectorIndexRoute
   '/signals/tag/': typeof SignalsTagIndexRoute
+  '/visionarios/argentina/': typeof VisionariosArgentinaIndexRoute
+  '/visionarios/colombia/': typeof VisionariosColombiaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -520,6 +612,7 @@ export interface FileRouteTypes {
     | '/search'
     | '/signals'
     | '/under40'
+    | '/visionarios'
     | '/api/markets'
     | '/contra/autor'
     | '/contra/tag'
@@ -537,11 +630,14 @@ export interface FileRouteTypes {
     | '/tag/$tag'
     | '/under40/$slug'
     | '/under40/metodologia'
+    | '/visionarios/argentina'
+    | '/visionarios/colombia'
     | '/contra/'
     | '/innovatives/'
     | '/list/'
     | '/signals/'
     | '/under40/'
+    | '/visionarios/'
     | '/api/auth/$'
     | '/api/markets/health'
     | '/api/markets/ingest'
@@ -552,6 +648,10 @@ export interface FileRouteTypes {
     | '/list/ciudad/$city'
     | '/list/sector/$sector'
     | '/signals/tag/$tag'
+    | '/visionarios/argentina/$slug'
+    | '/visionarios/argentina/metodologia'
+    | '/visionarios/colombia/$slug'
+    | '/visionarios/colombia/metodologia'
     | '/contra/autor/'
     | '/contra/tag/'
     | '/innovatives/pais/'
@@ -559,6 +659,8 @@ export interface FileRouteTypes {
     | '/list/ciudad/'
     | '/list/sector/'
     | '/signals/tag/'
+    | '/visionarios/argentina/'
+    | '/visionarios/colombia/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -587,6 +689,7 @@ export interface FileRouteTypes {
     | '/list'
     | '/signals'
     | '/under40'
+    | '/visionarios'
     | '/api/auth/$'
     | '/api/markets/health'
     | '/api/markets/ingest'
@@ -597,6 +700,10 @@ export interface FileRouteTypes {
     | '/list/ciudad/$city'
     | '/list/sector/$sector'
     | '/signals/tag/$tag'
+    | '/visionarios/argentina/$slug'
+    | '/visionarios/argentina/metodologia'
+    | '/visionarios/colombia/$slug'
+    | '/visionarios/colombia/metodologia'
     | '/contra/autor'
     | '/contra/tag'
     | '/innovatives/pais'
@@ -604,6 +711,8 @@ export interface FileRouteTypes {
     | '/list/ciudad'
     | '/list/sector'
     | '/signals/tag'
+    | '/visionarios/argentina'
+    | '/visionarios/colombia'
   id:
     | '__root__'
     | '/'
@@ -622,6 +731,7 @@ export interface FileRouteTypes {
     | '/search'
     | '/signals'
     | '/under40'
+    | '/visionarios'
     | '/api/markets'
     | '/contra/autor'
     | '/contra/tag'
@@ -639,11 +749,14 @@ export interface FileRouteTypes {
     | '/tag/$tag'
     | '/under40/$slug'
     | '/under40/metodologia'
+    | '/visionarios/argentina'
+    | '/visionarios/colombia'
     | '/contra/'
     | '/innovatives/'
     | '/list/'
     | '/signals/'
     | '/under40/'
+    | '/visionarios/'
     | '/api/auth/$'
     | '/api/markets/health'
     | '/api/markets/ingest'
@@ -654,6 +767,10 @@ export interface FileRouteTypes {
     | '/list/ciudad/$city'
     | '/list/sector/$sector'
     | '/signals/tag/$tag'
+    | '/visionarios/argentina/$slug'
+    | '/visionarios/argentina/metodologia'
+    | '/visionarios/colombia/$slug'
+    | '/visionarios/colombia/metodologia'
     | '/contra/autor/'
     | '/contra/tag/'
     | '/innovatives/pais/'
@@ -661,6 +778,8 @@ export interface FileRouteTypes {
     | '/list/ciudad/'
     | '/list/sector/'
     | '/signals/tag/'
+    | '/visionarios/argentina/'
+    | '/visionarios/colombia/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -680,6 +799,7 @@ export interface RootRouteChildren {
   SearchRoute: typeof SearchRoute
   SignalsRoute: typeof SignalsRouteWithChildren
   Under40Route: typeof Under40RouteWithChildren
+  VisionariosRoute: typeof VisionariosRouteWithChildren
   ApiMarketsRoute: typeof ApiMarketsRouteWithChildren
   SectionSectionRoute: typeof SectionSectionRoute
   StorySlugRoute: typeof StorySlugRoute
@@ -799,6 +919,13 @@ declare module '@tanstack/react-router' {
       path: '/under40'
       fullPath: '/under40'
       preLoaderRoute: typeof Under40RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visionarios': {
+      id: '/visionarios'
+      path: '/visionarios'
+      fullPath: '/visionarios'
+      preLoaderRoute: typeof VisionariosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/markets': {
@@ -955,6 +1082,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Under40MetodologiaRouteImport
       parentRoute: typeof Under40Route
     }
+    '/visionarios/': {
+      id: '/visionarios/'
+      path: '/'
+      fullPath: '/visionarios/'
+      preLoaderRoute: typeof VisionariosIndexRouteImport
+      parentRoute: typeof VisionariosRoute
+    }
+    '/visionarios/argentina': {
+      id: '/visionarios/argentina'
+      path: '/argentina'
+      fullPath: '/visionarios/argentina'
+      preLoaderRoute: typeof VisionariosArgentinaRouteImport
+      parentRoute: typeof VisionariosRoute
+    }
+    '/visionarios/colombia': {
+      id: '/visionarios/colombia'
+      path: '/colombia'
+      fullPath: '/visionarios/colombia'
+      preLoaderRoute: typeof VisionariosColombiaRouteImport
+      parentRoute: typeof VisionariosRoute
+    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
@@ -1073,6 +1221,48 @@ declare module '@tanstack/react-router' {
       fullPath: '/signals/tag/$tag'
       preLoaderRoute: typeof SignalsTagTagRouteImport
       parentRoute: typeof SignalsTagRoute
+    }
+    '/visionarios/argentina/': {
+      id: '/visionarios/argentina/'
+      path: '/'
+      fullPath: '/visionarios/argentina/'
+      preLoaderRoute: typeof VisionariosArgentinaIndexRouteImport
+      parentRoute: typeof VisionariosArgentinaRoute
+    }
+    '/visionarios/argentina/$slug': {
+      id: '/visionarios/argentina/$slug'
+      path: '/$slug'
+      fullPath: '/visionarios/argentina/$slug'
+      preLoaderRoute: typeof VisionariosArgentinaSlugRouteImport
+      parentRoute: typeof VisionariosArgentinaRoute
+    }
+    '/visionarios/argentina/metodologia': {
+      id: '/visionarios/argentina/metodologia'
+      path: '/metodologia'
+      fullPath: '/visionarios/argentina/metodologia'
+      preLoaderRoute: typeof VisionariosArgentinaMetodologiaRouteImport
+      parentRoute: typeof VisionariosArgentinaRoute
+    }
+    '/visionarios/colombia/': {
+      id: '/visionarios/colombia/'
+      path: '/'
+      fullPath: '/visionarios/colombia/'
+      preLoaderRoute: typeof VisionariosColombiaIndexRouteImport
+      parentRoute: typeof VisionariosColombiaRoute
+    }
+    '/visionarios/colombia/$slug': {
+      id: '/visionarios/colombia/$slug'
+      path: '/$slug'
+      fullPath: '/visionarios/colombia/$slug'
+      preLoaderRoute: typeof VisionariosColombiaSlugRouteImport
+      parentRoute: typeof VisionariosColombiaRoute
+    }
+    '/visionarios/colombia/metodologia': {
+      id: '/visionarios/colombia/metodologia'
+      path: '/metodologia'
+      fullPath: '/visionarios/colombia/metodologia'
+      preLoaderRoute: typeof VisionariosColombiaMetodologiaRouteImport
+      parentRoute: typeof VisionariosColombiaRoute
     }
   }
 }
@@ -1255,6 +1445,52 @@ const Under40RouteChildren: Under40RouteChildren = {
 const Under40RouteWithChildren =
   Under40Route._addFileChildren(Under40RouteChildren)
 
+interface VisionariosArgentinaRouteChildren {
+  VisionariosArgentinaSlugRoute: typeof VisionariosArgentinaSlugRoute
+  VisionariosArgentinaMetodologiaRoute: typeof VisionariosArgentinaMetodologiaRoute
+  VisionariosArgentinaIndexRoute: typeof VisionariosArgentinaIndexRoute
+}
+
+const VisionariosArgentinaRouteChildren: VisionariosArgentinaRouteChildren = {
+  VisionariosArgentinaSlugRoute: VisionariosArgentinaSlugRoute,
+  VisionariosArgentinaMetodologiaRoute: VisionariosArgentinaMetodologiaRoute,
+  VisionariosArgentinaIndexRoute: VisionariosArgentinaIndexRoute,
+}
+
+const VisionariosArgentinaRouteWithChildren =
+  VisionariosArgentinaRoute._addFileChildren(VisionariosArgentinaRouteChildren)
+
+interface VisionariosColombiaRouteChildren {
+  VisionariosColombiaSlugRoute: typeof VisionariosColombiaSlugRoute
+  VisionariosColombiaMetodologiaRoute: typeof VisionariosColombiaMetodologiaRoute
+  VisionariosColombiaIndexRoute: typeof VisionariosColombiaIndexRoute
+}
+
+const VisionariosColombiaRouteChildren: VisionariosColombiaRouteChildren = {
+  VisionariosColombiaSlugRoute: VisionariosColombiaSlugRoute,
+  VisionariosColombiaMetodologiaRoute: VisionariosColombiaMetodologiaRoute,
+  VisionariosColombiaIndexRoute: VisionariosColombiaIndexRoute,
+}
+
+const VisionariosColombiaRouteWithChildren =
+  VisionariosColombiaRoute._addFileChildren(VisionariosColombiaRouteChildren)
+
+interface VisionariosRouteChildren {
+  VisionariosArgentinaRoute: typeof VisionariosArgentinaRouteWithChildren
+  VisionariosColombiaRoute: typeof VisionariosColombiaRouteWithChildren
+  VisionariosIndexRoute: typeof VisionariosIndexRoute
+}
+
+const VisionariosRouteChildren: VisionariosRouteChildren = {
+  VisionariosArgentinaRoute: VisionariosArgentinaRouteWithChildren,
+  VisionariosColombiaRoute: VisionariosColombiaRouteWithChildren,
+  VisionariosIndexRoute: VisionariosIndexRoute,
+}
+
+const VisionariosRouteWithChildren = VisionariosRoute._addFileChildren(
+  VisionariosRouteChildren,
+)
+
 interface ApiMarketsRouteChildren {
   ApiMarketsHealthRoute: typeof ApiMarketsHealthRoute
   ApiMarketsIngestRoute: typeof ApiMarketsIngestRoute
@@ -1286,6 +1522,7 @@ const rootRouteChildren: RootRouteChildren = {
   SearchRoute: SearchRoute,
   SignalsRoute: SignalsRouteWithChildren,
   Under40Route: Under40RouteWithChildren,
+  VisionariosRoute: VisionariosRouteWithChildren,
   ApiMarketsRoute: ApiMarketsRouteWithChildren,
   SectionSectionRoute: SectionSectionRoute,
   StorySlugRoute: StorySlugRoute,

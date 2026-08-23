@@ -13,17 +13,34 @@ export function Under40Shot({
   sizes?: "portrait" | "hero";
   showRank?: boolean;
 }) {
+  const initials = person.name
+    .split(/\s+/)
+    .filter((w) => !/^(de|del|la|las|los|y)$/i.test(w))
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase();
   return (
     <span
       className={cn(
-        "u40-shot block overflow-hidden bg-ink",
+        "u40-shot relative block overflow-hidden bg-ivory",
         sizes === "hero" ? "aspect-[16/10] sm:aspect-[5/3]" : "aspect-[4/5]",
         className,
       )}
       data-sector={person.sectorSlug}
       data-slug={person.slug}
     >
-      <img src={person.image} alt={person.name} />
+      <span className="absolute inset-0 flex items-end justify-between bg-ivory px-3 py-3">
+        <span className="headline text-4xl leading-none text-ink/15">{initials}</span>
+        <span className="kicker text-[10px] text-ink/30">{String(person.rank).padStart(3, "0")}</span>
+      </span>
+      <img
+        src={person.image}
+        alt={person.name}
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+        }}
+      />
       {showRank ? (
         <span className="u40-rank" aria-hidden>
           {String(person.rank).padStart(3, "0")}

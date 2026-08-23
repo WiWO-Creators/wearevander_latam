@@ -4,7 +4,7 @@ import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { HOUSE, ISSUE, SECTIONS, BRIEFS, DESKS } from "@/lib/content";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { UserButton } from "@/lib/auth/gates";
-import { Wordmark, VanderCycle, ChileOnly } from "@/components/brand";
+import { Wordmark, VanderCycle } from "@/components/brand";
 import { AdSlot } from "@/components/ad-slot";
 import { MarketsBar } from "@/components/markets-bar";
 import { cn } from "@/lib/utils";
@@ -145,7 +145,7 @@ function DesktopNav({
   mega: MegaId | null;
   setMega: (id: MegaId | null) => void;
 }) {
-  const rankingsOn = pathname.startsWith("/list") || pathname.startsWith("/innovatives") || pathname.startsWith("/indice") || pathname.startsWith("/under40");
+  const rankingsOn = pathname.startsWith("/list") || pathname.startsWith("/innovatives") || pathname.startsWith("/indice") || pathname.startsWith("/under40") || pathname.startsWith("/visionarios");
   const casaOn = ["/about", "/obituarios", "/briefing", "/anuncia", "/saved"].some(
     (p) => pathname === p || pathname.startsWith(`${p}/`),
   );
@@ -299,15 +299,13 @@ function MegaPanel({
                 Innovación verificable. Metodología pública.
               </p>
             </Link>
-            <Link to="/under40" onClick={onClose} className="group block">
-              <p className="kicker inline-flex items-center gap-1.5 text-xs text-rust">
-                <ChileOnly />
-              </p>
+            <Link to="/visionarios" onClick={onClose} className="group block">
+              <p className="kicker text-xs text-rust">Colección</p>
               <p className="headline mt-2 text-3xl group-hover:text-rust">
                 100V Visionarios
               </p>
               <p className="mt-2 font-body text-sm leading-snug text-muted">
-                Cien fichas chilenas. Edad declarada. Enlaces a la prensa.
+                Chile, Argentina y Colombia. Un volumen por país. Edad declarada.
               </p>
             </Link>
             <Link to="/indice" onClick={onClose} className="group block">
@@ -379,9 +377,8 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/under40" onClick={onClose} className="flex min-h-12 items-center gap-3 headline text-3xl">
+            <Link to="/visionarios" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               100V Visionarios
-              <ChileOnly className="font-kicker text-xs tracking-wider uppercase text-rust" />
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
@@ -486,7 +483,7 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/under40" className="link-title">
+                <Link to="/visionarios" className="link-title">
                   100V Visionarios
                 </Link>
               </li>

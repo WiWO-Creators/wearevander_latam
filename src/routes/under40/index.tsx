@@ -11,6 +11,7 @@ import { Under40Links, Under40Shot } from "@/components/under40-shot";
 import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
 import { ChileOnly } from "@/components/brand";
+import { VisionariosSwitcher } from "@/components/visionarios-pack";
 import { cn } from "@/lib/utils";
 import { seoHead } from "@/lib/seo";
 
@@ -54,11 +55,12 @@ function Under40Index() {
   return (
     <main>
       <section className="bg-ivory text-ink">
-        <div className="mx-auto max-w-7xl px-4 pt-10 pb-4 lg:hidden sm:px-6">
-          <p className="kicker text-xs text-rust">
+        <div className="mx-auto max-w-7xl px-4 pt-10 pb-4 sm:px-6">
+          <VisionariosSwitcher current="cl" />
+          <p className="kicker mt-4 text-xs text-rust lg:hidden">
             <ChileOnly /> · agosto 2026
           </p>
-          <h1 className="headline mt-3 text-5xl leading-[0.9] sm:text-6xl">
+          <h1 className="headline mt-3 text-5xl leading-[0.9] sm:text-6xl lg:hidden">
             100V Visionarios
           </h1>
         </div>
