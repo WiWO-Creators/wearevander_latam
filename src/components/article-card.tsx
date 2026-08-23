@@ -141,12 +141,12 @@ export function HeroStory({ article }: { article: Article }) {
         <Photo src={article.image} alt={article.imageAlt} className="aspect-video w-full" />
       </Link>
       <p className="kicker mt-3 text-xs text-rust">{article.kicker}</p>
-      <h2 className="headline mt-1 text-3xl sm:text-5xl">
+      <h2 className="headline mt-2 text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
         <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
           {article.title}
         </Link>
       </h2>
-      <p className="mt-3 font-body text-base leading-snug text-ink-soft sm:text-lg">{article.dek}</p>
+      <p className="mt-4 max-w-2xl font-body text-base leading-snug text-ink-soft sm:text-lg">{article.dek}</p>
       <div className="mt-3">
         <TagPills article={article} />
       </div>
@@ -162,7 +162,7 @@ export function RailItem({ article }: { article: Article }) {
     <article className="grid grid-cols-12 gap-3 border-b border-rule py-3 last:border-b-0">
       <div className="col-span-8">
         <p className="kicker text-xs text-rust">{article.kicker}</p>
-        <h3 className="headline mt-1 text-base sm:text-lg">
+        <h3 className="headline mt-1 text-lg leading-[1.12] sm:text-xl">
           <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
             {article.title}
           </Link>
@@ -193,14 +193,28 @@ export function StackedCard({
           alt={article.imageAlt}
           className={cn("w-full", large ? "aspect-video" : "aspect-[3/2]")}
         />
-        <p className="kicker mt-2.5 flex items-center gap-1.5 text-xs text-rust">
+        <p className="kicker mt-3 flex items-center gap-1.5 text-xs text-rust">
           <VanderBug className="size-3" />
           {article.kicker}
         </p>
-        <h3 className={cn("headline link-title mt-1", large ? "text-3xl sm:text-4xl" : "text-xl")}>
+        <h3
+          className={cn(
+            "headline link-title mt-2 text-balance",
+            large
+              ? "text-[2.05rem] leading-[1.06] sm:text-5xl lg:text-6xl"
+              : "text-2xl leading-[1.1] sm:text-3xl",
+          )}
+        >
           {article.title}
         </h3>
-        <p className="mt-2 line-clamp-2 font-body text-sm leading-snug text-ink-soft">{article.dek}</p>
+        <p
+          className={cn(
+            "mt-3 font-body leading-snug text-ink-soft",
+            large ? "max-w-2xl text-base sm:text-lg" : "line-clamp-2 text-sm",
+          )}
+        >
+          {article.dek}
+        </p>
       </Link>
       <div className="mt-2">
         <TagPills article={article} />
@@ -219,12 +233,12 @@ export function HorizontalCard({ article }: { article: Article }) {
       </Link>
       <div className="col-span-8">
         <p className="kicker text-xs text-rust">{article.kicker}</p>
-        <h3 className="headline mt-1 text-xl sm:text-2xl">
+        <h3 className="headline mt-2 text-2xl leading-[1.1] sm:text-3xl lg:text-4xl">
           <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
             {article.title}
           </Link>
         </h3>
-        <p className="mt-1 hidden font-body text-sm leading-snug text-ink-soft sm:line-clamp-2 sm:block">
+        <p className="mt-2 hidden font-body text-sm leading-snug text-ink-soft sm:line-clamp-2 sm:block sm:text-base">
           {article.dek}
         </p>
         <p className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">
@@ -281,7 +295,7 @@ export function MiniLead({ article }: { article: Article }) {
       <Link to="/story/$slug" params={{ slug: article.slug }} className="group block">
         <Photo src={article.image} alt={article.imageAlt} className="aspect-[3/2] w-full" />
         <p className="kicker mt-2.5 text-xs text-rust">{city}</p>
-        <h3 className="headline link-title mt-1 text-xl">{article.title}</h3>
+        <h3 className="headline link-title mt-1.5 text-xl leading-[1.12] sm:text-2xl">{article.title}</h3>
         <p className="mt-1 font-kicker text-xs tracking-wider text-muted uppercase">
           {article.readMinutes} min de lectura
         </p>
