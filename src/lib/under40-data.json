@@ -571,80 +571,6 @@
   },
   {
     "rank": 16,
-    "slug": "matias-perez-pefaur",
-    "name": "Matías Pérez Pefaur",
-    "role": "Cofundador y Chief AI Officer de Vambe",
-    "sector": "IA y software",
-    "sectorSlug": "ia",
-    "sectorDetail": "Inteligencia artificial",
-    "focus": "agentes conversacionales de venta",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "27 años (n. ~1998-99) — verificada (Forbes Chile 30 Under 30, julio 2026)",
-    "ageShort": "27",
-    "verification": "verificada",
-    "bio": "Ingeniero civil y compañero de colegio y universidad de Nicolás Camhi, con quien ya había trabajado en Carvuk. Es el arquitecto del músculo de inteligencia artificial de Vambe y, según su propio relato, fue el socio más escéptico al comienzo: fue él quien puso el ultimátum de ir all in o abandonar la idea. Su aporte más citado, sin embargo, no es técnico: un TikTok casero promocionando la herramienta se volvió viral y trajo los primeros clientes pagadores, una lección de distribución que la empresa incorporó a su manual.",
-    "hitos": [
-      "Definió la arquitectura de agentes que hoy usan unas 2.000 empresas en Chile, México y Brasil.",
-      "Impulsó el pivote desde cobranza hacia ventas, agendamiento y marketing.",
-      "Forbes Chile 30 Under 30, generación 2026, categoría Tecnología e Innovación."
-    ],
-    "news": [
-      {
-        "title": "30 Under 30: Matías Pérez Pefaur",
-        "url": "https://forbes.cl/30-under-30/2026-07-31/30-under-30-matias-perez-pefaur/",
-        "credit": "Forbes Chile, julio 2026"
-      },
-      {
-        "title": "Vambe: quienes son los tres cerebros sub-30 detrás de la startup chilena",
-        "url": "https://www.ex-ante.cl/negocios/quienes-estan-detras-de-la-startup-vambe/",
-        "credit": "Ex-Ante, agosto 2026"
-      }
-    ],
-    "url": "https://vambe.ai",
-    "trust": "Alta",
-    "image": "/under40/matias-perez-pefaur.jpg",
-    "linkedin": "https://www.linkedin.com/in/matias-perez-pefaur-8abb3022b"
-  },
-  {
-    "rank": 17,
-    "slug": "diego-chahuan-luhrs",
-    "name": "Diego Chahuán Luhrs",
-    "role": "Cofundador y CTO de Vambe",
-    "sector": "IA y software",
-    "sectorSlug": "ia",
-    "sectorDetail": "Inteligencia artificial",
-    "focus": "agentes conversacionales de venta",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "25 años (n. ~2000-01) — verificada (Forbes Chile 30 Under 30, julio 2026)",
-    "ageShort": "25",
-    "verification": "verificada",
-    "bio": "Ingeniero civil industrial con mención en computación, es el más joven del trío fundador de Vambe y el responsable de la infraestructura que sostiene sus agentes comerciales. Llegó cuando la idea «tenía que ponerse seria». Su tesis operativa la resume en una frase que dio a Forbes: «el mejor consejo de todos es escuchar lo que le duele a tu cliente y no lo que le duele a tu idea». Bajo su dirección técnica, Vambe multiplicó por seis sus ingresos en 2025 y abrió México y Brasil.",
-    "hitos": [
-      "CTO de la startup chilena de IA que más rápido escaló en 2025 (6x ingresos).",
-      "Sostuvo el escalamiento técnico de 22 a más de 180 personas y de uno a tres mercados.",
-      "Forbes Chile 30 Under 30 2026 a los 25 años; Forbes estimó la valorización de Vambe en torno a US$100 millones."
-    ],
-    "news": [
-      {
-        "title": "30 Under 30: Diego Chahuán Luhrs",
-        "url": "https://forbes.cl/30-under-30/2026-07-31/30-under-30-diego-chahuan-luhrs/",
-        "credit": "Forbes Chile, julio 2026"
-      },
-      {
-        "title": "Startup chilena Vambe cerro ronda de US$14 millones y suma a CEO de Rappi a su Junta Directiva",
-        "url": "https://www.bloomberglinea.com/negocios/startup-chilena-vambe-cerro-ronda-de-us14-millones-y-suma-a-ceo-de-rappi-a-su-junta-directiva/",
-        "credit": "Bloomberg Linea, diciembre 2025"
-      }
-    ],
-    "url": "https://vambe.ai",
-    "trust": "Alta",
-    "image": "/under40/diego-chahuan-luhrs.jpg",
-    "linkedin": "https://www.linkedin.com/in/diego-chahuan-40a3a8211"
-  },
-  {
-    "rank": 18,
     "slug": "ian-lee",
     "name": "Ian Lee",
     "role": "Cofundador de Nexor; cofundador y presidente del directorio de Examedi",
@@ -681,7 +607,7 @@
     "linkedin": "https://www.linkedin.com/in/ianleeexamedi"
   },
   {
-    "rank": 19,
+    "rank": 17,
     "slug": "ignacio-ponce-castro",
     "name": "Ignacio Ponce Castro",
     "role": "Fundador y director de Smart Plus Robotics",
@@ -718,7 +644,7 @@
     "linkedin": "https://www.linkedin.com/in/ignacio-ponce-castro-858990235"
   },
   {
-    "rank": 20,
+    "rank": 18,
     "slug": "isis-riquelme-arredondo",
     "name": "Isis Riquelme Arredondo",
     "role": "Cofundadora y CEO de Chucaw; socia fundadora de la Cámara Chilena de Inteligencia Artificial",
@@ -755,7 +681,7 @@
     "linkedin": "https://www.linkedin.com/in/isis-riquelme-11517b145"
   },
   {
-    "rank": 21,
+    "rank": 19,
     "slug": "cristobal-valenzuela-barrera",
     "name": "Cristóbal Valenzuela Barrera",
     "role": "Cofundador y CEO de Runway (Runway AI)",
@@ -787,7 +713,7 @@
     "linkedin": "https://www.linkedin.com/in/cvalenzuelab"
   },
   {
-    "rank": 22,
+    "rank": 20,
     "slug": "teresita-moran",
     "name": "Teresita Morán",
     "role": "Cofundadora y Chief Revenue Officer regional de Buk",
@@ -824,7 +750,7 @@
     "linkedin": ""
   },
   {
-    "rank": 23,
+    "rank": 21,
     "slug": "jaime-arrieta-boetsch",
     "name": "Jaime Arrieta Boetsch",
     "role": "Cofundador y CEO de Buk",
@@ -861,7 +787,7 @@
     "linkedin": "https://www.linkedin.com/in/jaime-arrieta-boetsch-ab214150"
   },
   {
-    "rank": 24,
+    "rank": 22,
     "slug": "felipe-torres",
     "name": "Felipe Torres",
     "role": "Cofundador y CTO de Skyward",
@@ -893,7 +819,7 @@
     "linkedin": "https://www.linkedin.com/in/fforres"
   },
   {
-    "rank": 25,
+    "rank": 23,
     "slug": "francesco-crivelli",
     "name": "Francesco Crivelli",
     "role": "Fundador de Intuition",
@@ -925,86 +851,7 @@
     "linkedin": "https://www.linkedin.com/in/francesco-crivelli"
   },
   {
-    "rank": 26,
-    "slug": "samuel-weinstein-miranda",
-    "name": "Samuel Weinstein Miranda",
-    "role": "Cofundador de The Growth Pro (TGP)",
-    "sector": "IA y software",
-    "sectorSlug": "ia",
-    "sectorDetail": "Servicios B2B",
-    "focus": "prospección comercial y martech",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "28 años (n. ~1997-98) — verificada (Forbes Chile 30 Under 30, julio 2026)",
-    "ageShort": "28",
-    "verification": "verificada",
-    "bio": "Ingeniero civil de la Universidad Católica, fundó tres empresas antes de dar con la buena. En 2022 levantó junto a Ariel Kauderer The Growth Pro, agencia de prospección B2B y agendamiento de reuniones que hoy se posiciona como la mayor de Latinoamérica en su rubro. Weinstein lidera la visión estratégica de un negocio que creció sin capital de riesgo: es 100% bootstrapped. «Cada fracaso fue parte del aprendizaje, no el final del proceso», dijo a Forbes sobre sus intentos previos.",
-    "hitos": [
-      "Cofundó TGP en 2022 tras tres emprendimientos fallidos.",
-      "La agencia coordina más de 2.000 reuniones comerciales al mes para clientes como MercadoLibre, Cabify, Buk y Betterfly.",
-      "Crecimiento 100% bootstrapped, sin levantar capital de riesgo."
-    ],
-    "news": [
-      {
-        "title": "30 Under 30: Samuel Weinstein Miranda",
-        "url": "https://forbes.cl/30-under-30/2026-07-31/30-under-30-samuel-weinstein-miranda/",
-        "credit": "Forbes Chile, julio 2026"
-      },
-      {
-        "title": "The Growth Pro: Top Strategic Sales Prospecting Solutions In Latin América 2026",
-        "url": "https://www.cioreview.com/the-growth-pro-2026",
-        "credit": "CIO Review, 2026"
-      }
-    ],
-    "url": "https://thegrowth.pro",
-    "trust": "Alta en edad; media en cifras de negocio",
-    "image": "/under40/samuel-weinstein-miranda.jpg",
-    "linkedin": "https://www.linkedin.com/in/samuel-weinstein-miranda-9a82061b9"
-  },
-  {
-    "rank": 27,
-    "slug": "ariel-kauderer-daniels",
-    "name": "Ariel Kauderer Daniels",
-    "role": "Cofundador y director de Operaciones y Crecimiento de The Growth Pro",
-    "sector": "IA y software",
-    "sectorSlug": "ia",
-    "sectorDetail": "Servicios B2B",
-    "focus": "prospección comercial y martech",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "27 años (n. ~1998-99) — verificada (Forbes Chile 30 Under 30, julio 2026)",
-    "ageShort": "27",
-    "verification": "verificada",
-    "bio": "Ingeniero civil de la Universidad Católica, es la contraparte operativa de Weinstein en TGP: dirige operaciones y crecimiento de una agencia que arma pipeline comercial para corporativos y scale-ups de la región. La firma, fundada en 2022 y financiada íntegramente con caja propia, agenda más de 2.000 reuniones mensuales. «Partimos de cero y hoy somos la mayor agencia de prospección de Latinoamérica; el mejor momento para lanzar es hoy, no mañana», resumió a Forbes.",
-    "hitos": [
-      "Cofundó TGP en 2022 y dirige operaciones y crecimiento.",
-      "Más de 2.000 reuniones B2B agendadas al mes con cartera regional.",
-      "Modelo bootstrapped, sin levantamiento de capital externo."
-    ],
-    "news": [
-      {
-        "title": "30 Under 30: Ariel Kauderer Daniels",
-        "url": "https://forbes.cl/30-under-30/2026-07-31/30-under-30-ariel-kauderer-daniels/",
-        "credit": "Forbes Chile, julio 2026"
-      },
-      {
-        "title": "III. Foodtech, agtech y biotecnología",
-        "url": "",
-        "credit": ""
-      },
-      {
-        "title": "Donde Chile compite de verdad: proteínas, semillas, acuicultura y edición génica. Es también la vertical con menos edades publicadas",
-        "url": "",
-        "credit": "la prensa de negocios rara vez las consigna en biotech—, por lo que varios perfiles quedan con la edad marcada como no verificada."
-      }
-    ],
-    "url": "https://thegrowth.pro",
-    "trust": "Alta en edad; media en cifras de negocio",
-    "image": "/under40/ariel-kauderer-daniels.jpg",
-    "linkedin": ""
-  },
-  {
-    "rank": 28,
+    "rank": 24,
     "slug": "matias-muchnick",
     "name": "Matías Muchnick",
     "role": "Cofundador y CEO de NotCo (The Not Company)",
@@ -1041,7 +888,7 @@
     "linkedin": "https://www.linkedin.com/in/mmuchnick"
   },
   {
-    "rank": 29,
+    "rank": 25,
     "slug": "francisca-castillo-castro",
     "name": "Francisca Castillo Castro",
     "role": "Fundadora, CEO y directora de investigación de NeoCrop Technologies",
@@ -1078,7 +925,7 @@
     "linkedin": ""
   },
   {
-    "rank": 30,
+    "rank": 26,
     "slug": "daniel-norero",
     "name": "Daniel Norero",
     "role": "Cofundador y COO de NeoCrop Technologies",
@@ -1115,7 +962,7 @@
     "linkedin": ""
   },
   {
-    "rank": 31,
+    "rank": 27,
     "slug": "jose-del-solar",
     "name": "José del Solar",
     "role": "Cofundador y CEO de ByBug",
@@ -1152,44 +999,7 @@
     "linkedin": "https://www.linkedin.com/company/bybug"
   },
   {
-    "rank": 32,
-    "slug": "daniel-troncoso",
-    "name": "Daniel Troncoso",
-    "role": "Cofundador y CTO de ByBug; gestor tecnológico de Science Up en la Universidad Católica del Norte",
-    "sector": "Foodtech y biotech",
-    "sectorSlug": "foodtech",
-    "sectorDetail": "Deeptech",
-    "focus": "biotecnología veterinaria",
-    "place": "Coquimbo",
-    "city": "Coquimbo",
-    "age": "30-32 años — dato en conflicto (MIT Technology Review, septiembre 2025: «29 años»; La Tercera, febrero 2026: «32 años»)",
-    "ageShort": "30-32",
-    "verification": "no-verificada",
-    "bio": "Ingeniero en biotecnología, fue primero mentor y después socio de José del Solar en ByBug. La compañía sostiene que su método —producir proteínas recombinantes en larvas modificadas— reduce hasta cien veces el costo frente a los métodos tradicionales. En septiembre de 2025 el MIT Technology Review lo incluyó entre los Innovadores Menores de 35 de Latinoamérica, categoría Pioneros. Compagina la empresa con la gestión tecnológica en la Universidad Católica del Norte.",
-    "hitos": [
-      "MIT Technology Review, Innovators Under 35 LATAM 2025, categoría Pioneros.",
-      "Ronda seed de US$1,4 millones (2024) y campaña abierta en Broota durante 2026, con DraperU Ventures y Tulsa Local Ventures entre los respaldos.",
-      "ByBug elegida dos veces solución más innovadora en el Demo Day de Start-Up Chile."
-    ],
-    "news": [
-      {
-        "title": "Daniel Troncoso (Chile), 29 - ByBug",
-        "url": "https://technologyreview.es/article/daniel-troncoso-chile-29/",
-        "credit": "MIT Technology Review en espanol, septiembre 2025"
-      },
-      {
-        "title": "Biotech chilena ByBug abre ronda en Broota con tecnología para editar insectos genéticamente",
-        "url": "https://www.latercera.com/emprendimiento/noticia/biotech-chilena-bybug-abre-ronda-en-broota-con-tecnologia-para-editar-insectos-geneticamente/",
-        "credit": "La Tercera, febrero 2026"
-      }
-    ],
-    "url": "https://bybug.io",
-    "trust": "Alta en trayectoria; media en edad",
-    "image": "/under40/daniel-troncoso.jpg",
-    "linkedin": ""
-  },
-  {
-    "rank": 33,
+    "rank": 28,
     "slug": "rocio-espinoza",
     "name": "Rocío Espinoza",
     "role": "Cofundadora y COO de ByBug",
@@ -1221,7 +1031,7 @@
     "linkedin": "https://www.linkedin.com/in/rocio-espinosa-torres-29bb04202"
   },
   {
-    "rank": 34,
+    "rank": 29,
     "slug": "kris-blanchard",
     "name": "Kris Blanchard",
     "role": "Cofundador y CEO de Luyef Biotechnologies",
@@ -1258,7 +1068,7 @@
     "linkedin": ""
   },
   {
-    "rank": 35,
+    "rank": 30,
     "slug": "carolina-aguila-diaz",
     "name": "Carolina Águila Díaz",
     "role": "Cofundadora y CEO de NanoInGreen",
@@ -1295,7 +1105,7 @@
     "linkedin": ""
   },
   {
-    "rank": 36,
+    "rank": 31,
     "slug": "leonardo-alvarez",
     "name": "Leonardo Álvarez",
     "role": "Cofundador y CEO de Protera",
@@ -1332,7 +1142,7 @@
     "linkedin": "https://www.linkedin.com/in/leonardoalvarezm"
   },
   {
-    "rank": 37,
+    "rank": 32,
     "slug": "claudio-pedreros",
     "name": "Claudio Pedreros",
     "role": "Cofundador y CEO de Done Properly",
@@ -1369,7 +1179,7 @@
     "linkedin": ""
   },
   {
-    "rank": 38,
+    "rank": 33,
     "slug": "diego-gutierrez",
     "name": "Diego Gutiérrez",
     "role": "Cofundador y CEO de Codebreaker Bioscience",
@@ -1406,7 +1216,7 @@
     "linkedin": ""
   },
   {
-    "rank": 39,
+    "rank": 34,
     "slug": "alejandra-allendes",
     "name": "Alejandra Allendes",
     "role": "Cofundadora de Quelp",
@@ -1448,7 +1258,7 @@
     "linkedin": "https://www.linkedin.com/in/alejandra-allendes"
   },
   {
-    "rank": 40,
+    "rank": 35,
     "slug": "pamela-salazar-cifuentes",
     "name": "Pamela Salazar Cifuentes",
     "role": "Fundadora y CEO de uMov (dispositivo ALBA)",
@@ -1485,7 +1295,7 @@
     "linkedin": ""
   },
   {
-    "rank": 41,
+    "rank": 36,
     "slug": "melissa-munoz-flandez",
     "name": "Melissa Muñoz Flández",
     "role": "Fundadora de AutistApp; ingeniera de proyectos del Centro de Datos e Inteligencia Artificial (CDIA) de la Universidad de Concepción",
@@ -1522,7 +1332,7 @@
     "linkedin": ""
   },
   {
-    "rank": 42,
+    "rank": 37,
     "slug": "ricardo-susaeta",
     "name": "Ricardo Susaeta",
     "role": "Cofundador y CEO de Búho",
@@ -1559,7 +1369,7 @@
     "linkedin": ""
   },
   {
-    "rank": 43,
+    "rank": 38,
     "slug": "manuel-aguirre-olivares",
     "name": "Manuel Aguirre Olivares",
     "role": "Cofundador y Chief Product Officer de Búho",
@@ -1596,7 +1406,7 @@
     "linkedin": ""
   },
   {
-    "rank": 44,
+    "rank": 39,
     "slug": "andres-kemeny",
     "name": "Andrés Kemeny",
     "role": "Cofundador y CTO de Examedi",
@@ -1633,7 +1443,7 @@
     "linkedin": "https://www.linkedin.com/in/andres-kemeny"
   },
   {
-    "rank": 45,
+    "rank": 40,
     "slug": "nicolas-uribe-espinoza",
     "name": "Nicolás Uribe Espinoza",
     "role": "Cofundador y CEO de Smert Group (ex LobbyControl)",
@@ -1670,7 +1480,7 @@
     "linkedin": ""
   },
   {
-    "rank": 46,
+    "rank": 41,
     "slug": "eloisa-koch",
     "name": "Eloísa Koch",
     "role": "Gerenta general y CEO de MELISA Institute",
@@ -1702,7 +1512,7 @@
     "linkedin": "https://www.linkedin.com/in/eloisa-koch-8b0b1b1b3"
   },
   {
-    "rank": 47,
+    "rank": 42,
     "slug": "carolina-cabalin",
     "name": "Carolina Cabalín",
     "role": "Cofundadora de Inverskin SpA (marca MicrobeSkin)",
@@ -1734,7 +1544,7 @@
     "linkedin": "https://www.linkedin.com/in/carolina-cabalin1990"
   },
   {
-    "rank": 48,
+    "rank": 43,
     "slug": "alejandra-gatica-salgado",
     "name": "Alejandra Gatica Salgado",
     "role": "Fundadora de Demiora Tech",
@@ -1771,7 +1581,7 @@
     "linkedin": "https://www.linkedin.com/in/alejandra-gatica-salgado-61206828b"
   },
   {
-    "rank": 49,
+    "rank": 44,
     "slug": "beatriz-palma",
     "name": "Beatriz Palma",
     "role": "Fundadora de My Nipp",
@@ -1818,7 +1628,7 @@
     "linkedin": "https://www.linkedin.com/in/beatrizpalmaroeschmann"
   },
   {
-    "rank": 50,
+    "rank": 45,
     "slug": "felipe-prado-gilles",
     "name": "Felipe Prado Gilles",
     "role": "Cofundador de Swarmob",
@@ -1855,7 +1665,7 @@
     "linkedin": "https://www.linkedin.com/in/felipe-prado-gilles"
   },
   {
-    "rank": 51,
+    "rank": 46,
     "slug": "natalia-perez",
     "name": "Natalia Pérez",
     "role": "Cofundadora y CEO de Swarmob",
@@ -1892,7 +1702,7 @@
     "linkedin": ""
   },
   {
-    "rank": 52,
+    "rank": 47,
     "slug": "komal-dadlani",
     "name": "Komal Dadlani",
     "role": "Cofundadora y CEO de Lab4U",
@@ -1929,7 +1739,7 @@
     "linkedin": "https://www.linkedin.com/in/komaldadlani"
   },
   {
-    "rank": 53,
+    "rank": 48,
     "slug": "carlos-aravena",
     "name": "Carlos Aravena",
     "role": "Cofundador y CEO de Poliglota",
@@ -1966,7 +1776,7 @@
     "linkedin": "https://www.linkedin.com/in/carlos-aravena-poliglota"
   },
   {
-    "rank": 54,
+    "rank": 49,
     "slug": "elisa-torres-durney",
     "name": "Elisa Torres Durney",
     "role": "Fundadora y directora ejecutiva de Girls in Quantum",
@@ -2003,7 +1813,7 @@
     "linkedin": "https://www.linkedin.com/in/elisa-torres-durney"
   },
   {
-    "rank": 55,
+    "rank": 50,
     "slug": "francisca-koppmann-kuester",
     "name": "Francisca Koppmann Kuester",
     "role": "Cofundadora de la Red de Tutorías UC (TEUC)",
@@ -2035,7 +1845,7 @@
     "linkedin": "https://www.linkedin.com/in/francisca-koppmann-kuester-9902861b3"
   },
   {
-    "rank": 56,
+    "rank": 51,
     "slug": "melania-sanhueza",
     "name": "Melania Sanhueza",
     "role": "Cofundadora de Müud",
@@ -2067,7 +1877,7 @@
     "linkedin": "https://www.linkedin.com/in/melaniasanhueza"
   },
   {
-    "rank": 57,
+    "rank": 52,
     "slug": "martin-seguel",
     "name": "Martín Seguel",
     "role": "Creador de la app Habitree; desarrollador independiente",
@@ -2099,7 +1909,7 @@
     "linkedin": "https://www.linkedin.com/in/martin-seguel"
   },
   {
-    "rank": 58,
+    "rank": 53,
     "slug": "izumi-nakagawa",
     "name": "Izumi Nakagawa",
     "role": "Fundadora y directora de NKP MGMT; socia cofundadora de Histerya Colectiva",
@@ -2131,7 +1941,7 @@
     "linkedin": ""
   },
   {
-    "rank": 59,
+    "rank": 54,
     "slug": "maria-ignacia-urzua-reyes",
     "name": "María Ignacia Urzúa Reyes",
     "role": "Fundadora de Té con Libros; escritora",
@@ -2163,49 +1973,7 @@
     "linkedin": ""
   },
   {
-    "rank": 60,
-    "slug": "nicholas-hooper-h",
-    "name": "Nicholas Hooper H.",
-    "role": "Realizador y fundador de CUBHO Audiovisual",
-    "sector": "Educación",
-    "sectorSlug": "educacion",
-    "sectorDetail": "Industrias creativas",
-    "focus": "producción audiovisual",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "25 años (n. ~2000-01) — verificada (Forbes Chile 30 Under 30, julio 2026)",
-    "ageShort": "25",
-    "verification": "verificada",
-    "bio": "Fundó su propia productora antes de los 25 y llegó al circuito internacional por la puerta grande: fue productor ejecutivo de «La Memoria Infinita», de Maite Alberdi, nominada al Oscar y ganadora del Goya y del Platino. CUBHO Audiovisual opera con financiamiento de Ibermedia Next, el CNTV y el Fondo Audiovisual del Ministerio de las Culturas. Representa a una camada de productores jóvenes que profesionalizó el levantamiento de capital para cine documental chileno.",
-    "hitos": [
-      "Productor ejecutivo de «La Memoria Infinita», nominada al Oscar y ganadora del Goya y del Premio Platino.",
-      "Fundó CUBHO Audiovisual, con financiamiento de Ibermedia Next, CNTV y el Fondo Audiovisual del Mincap.",
-      "Forbes Chile 30 Under 30 2026, categoría Ciencia, Educación e Industrias Creativas."
-    ],
-    "news": [
-      {
-        "title": "30 Under 30: Nicholas Hooper",
-        "url": "https://forbes.cl/30-under-30/2026-07-31/30-under-30-nicholas-hooper/",
-        "credit": "Forbes Chile, julio 2026"
-      },
-      {
-        "title": "VI. Comercio, logística, proptech y consumo",
-        "url": "",
-        "credit": ""
-      },
-      {
-        "title": "Marcas construidas primero como comunidad digital y después como tienda; logística de última milla y devoluciones; software que le devuelve el canal directo al comercio. La vertical donde el bootstrapping sigue siendo una estrategia ganadora.",
-        "url": "",
-        "credit": ""
-      }
-    ],
-    "url": "https://www.cubho.cl/nicholas-hooper-h",
-    "trust": "Alta",
-    "image": "/under40/nicholas-hooper-h.jpg",
-    "linkedin": "https://www.linkedin.com/in/nicholas-hooper-h"
-  },
-  {
-    "rank": 61,
+    "rank": 55,
     "slug": "alejandra-acevedo",
     "name": "Alejandra Acevedo",
     "role": "Fundadora y CEO de Raindoor",
@@ -2242,7 +2010,7 @@
     "linkedin": ""
   },
   {
-    "rank": 62,
+    "rank": 56,
     "slug": "valentina-barna-fermandois",
     "name": "Valentina Barna Fermandois",
     "role": "Fundadora de BWild",
@@ -2279,7 +2047,7 @@
     "linkedin": ""
   },
   {
-    "rank": 63,
+    "rank": 57,
     "slug": "aline-israel",
     "name": "Aline Israel",
     "role": "Fundadora de ENILĀ",
@@ -2311,7 +2079,7 @@
     "linkedin": ""
   },
   {
-    "rank": 64,
+    "rank": 58,
     "slug": "benjamin-labra",
     "name": "Benjamín Labra",
     "role": "Cofundador y CEO de Houm",
@@ -2348,7 +2116,7 @@
     "linkedin": "https://www.linkedin.com/in/benjamin-labra"
   },
   {
-    "rank": 65,
+    "rank": 59,
     "slug": "alvaro-echeverria",
     "name": "Álvaro Echeverría",
     "role": "Cofundador y CEO de SimpliRoute",
@@ -2385,7 +2153,7 @@
     "linkedin": "https://www.linkedin.com/in/aechever"
   },
   {
-    "rank": 66,
+    "rank": 60,
     "slug": "benjamin-santa-maria",
     "name": "Benjamín Santa María",
     "role": "Cofundador y CEO de Reversso",
@@ -2422,7 +2190,7 @@
     "linkedin": ""
   },
   {
-    "rank": 67,
+    "rank": 61,
     "slug": "rodrigo-segal",
     "name": "Rodrigo Segal",
     "role": "Cofundador y CEO de Justo",
@@ -2459,7 +2227,7 @@
     "linkedin": "https://www.linkedin.com/in/rodrigosegal"
   },
   {
-    "rank": 68,
+    "rank": 62,
     "slug": "kim-maturana",
     "name": "Kim Maturana",
     "role": "Fundadora de UpGirl",
@@ -2496,7 +2264,7 @@
     "linkedin": ""
   },
   {
-    "rank": 69,
+    "rank": 63,
     "slug": "diego-pradenas-espinoza",
     "name": "Diego Pradenas Espinoza",
     "role": "Fundador y director de The Pradie Group SpA",
@@ -2533,7 +2301,7 @@
     "linkedin": ""
   },
   {
-    "rank": 70,
+    "rank": 64,
     "slug": "raimundo-zamora-baeza",
     "name": "Raimundo Zamora Baeza",
     "role": "Fundador de Razen",
@@ -2565,7 +2333,7 @@
     "linkedin": "https://www.linkedin.com/in/raimundo-zamora-b418151b1"
   },
   {
-    "rank": 71,
+    "rank": 65,
     "slug": "rodrigo-haydar",
     "name": "Rodrigo Haydar",
     "role": "Cofundador y CEO de GoodMeal",
@@ -2612,7 +2380,7 @@
     "linkedin": "https://www.linkedin.com/in/rohaydar"
   },
   {
-    "rank": 72,
+    "rank": 66,
     "slug": "constanza-levican-cardenas",
     "name": "Constanza Levicán Cárdenas",
     "role": "Fundadora y CEO de Suncast",
@@ -2649,7 +2417,7 @@
     "linkedin": "https://www.linkedin.com/in/constanza-levican"
   },
   {
-    "rank": 73,
+    "rank": 67,
     "slug": "ignacio-parada-da-fonseca",
     "name": "Ignacio Parada da Fonseca",
     "role": "Fundador y CEO de Bioelements",
@@ -2686,7 +2454,7 @@
     "linkedin": ""
   },
   {
-    "rank": 74,
+    "rank": 68,
     "slug": "oscar-munoz-cofre",
     "name": "Óscar Muñoz Cofré",
     "role": "Fundador y CEO de Green Glass",
@@ -2723,7 +2491,7 @@
     "linkedin": ""
   },
   {
-    "rank": 75,
+    "rank": 69,
     "slug": "matias-moya",
     "name": "Matías Moya",
     "role": "Cofundador y CEO de Photio",
@@ -2760,7 +2528,7 @@
     "linkedin": "https://www.linkedin.com/in/mat%C3%ADas-moya-alarc%C3%B3n-409229188"
   },
   {
-    "rank": 76,
+    "rank": 70,
     "slug": "paloma-gonzalez-rojas",
     "name": "Paloma González-Rojas",
     "role": "Cofundadora y CEO de Hera Materials (ex Atacama Biomaterials)",
@@ -2797,7 +2565,7 @@
     "linkedin": ""
   },
   {
-    "rank": 77,
+    "rank": 71,
     "slug": "fernando-ojeda-soto",
     "name": "Fernando Ojeda Soto",
     "role": "Fundador y CEO de Humos de la Patagonia",
@@ -2834,7 +2602,7 @@
     "linkedin": ""
   },
   {
-    "rank": 78,
+    "rank": 72,
     "slug": "felipe-nunez-lopez",
     "name": "Felipe Núñez López",
     "role": "Cofundador de Aqua Retorna",
@@ -2866,7 +2634,7 @@
     "linkedin": ""
   },
   {
-    "rank": 79,
+    "rank": 73,
     "slug": "valentina-veloso",
     "name": "Valentina Veloso",
     "role": "Cofundadora y directora ejecutiva de Yaku",
@@ -2898,7 +2666,7 @@
     "linkedin": ""
   },
   {
-    "rank": 80,
+    "rank": 74,
     "slug": "jennifer-araya-venegas",
     "name": "Jennifer Araya Venegas",
     "role": "Cofundadora y gerenta comercial de Imeko",
@@ -2935,7 +2703,7 @@
     "linkedin": ""
   },
   {
-    "rank": 81,
+    "rank": 75,
     "slug": "nadac-reales-del-canto",
     "name": "Nadac Reales del Canto",
     "role": "Fundadora y CEO de Rudanac Biotec (tecnología Spiromet)",
@@ -2972,7 +2740,7 @@
     "linkedin": ""
   },
   {
-    "rank": 82,
+    "rank": 76,
     "slug": "camila-briceno-albages",
     "name": "Camila Briceño Albages",
     "role": "Cofundadora de Grava Design",
@@ -3004,7 +2772,7 @@
     "linkedin": ""
   },
   {
-    "rank": 83,
+    "rank": 77,
     "slug": "joaquin-gonzalez",
     "name": "Joaquín González",
     "role": "Fundador y CEO de Cero Trade",
@@ -3041,7 +2809,7 @@
     "linkedin": ""
   },
   {
-    "rank": 84,
+    "rank": 78,
     "slug": "diego-siguelnitzky",
     "name": "Diego Siguelnitzky",
     "role": "Cofundador y CEO de 50x",
@@ -3083,7 +2851,7 @@
     "linkedin": ""
   },
   {
-    "rank": 85,
+    "rank": 79,
     "slug": "jose-manuel-moller",
     "name": "José Manuel Moller",
     "role": "Fundador de Common House; fundador de Algramo (2012-2025)",
@@ -3120,7 +2888,7 @@
     "linkedin": "https://www.linkedin.com/in/josemanuelmoller"
   },
   {
-    "rank": 86,
+    "rank": 80,
     "slug": "macarena-guajardo",
     "name": "Macarena Guajardo",
     "role": "Cofundadora de Fundación Basura; Zero Waste Cities Program Manager",
@@ -3157,7 +2925,7 @@
     "linkedin": ""
   },
   {
-    "rank": 87,
+    "rank": 81,
     "slug": "thomas-kimber",
     "name": "Thomas Kimber",
     "role": "Fundador de Karün (dejó la gerencia general en 2024)",
@@ -3194,7 +2962,7 @@
     "linkedin": "https://linkedin.com/in/thomas-kimber"
   },
   {
-    "rank": 88,
+    "rank": 82,
     "slug": "julieta-martinez",
     "name": "Julieta Martínez",
     "role": "Fundadora de Fundación Tremendas y de Latinas for Climate",
@@ -3231,7 +2999,7 @@
     "linkedin": "https://www.linkedin.com/in/julietamartinezo"
   },
   {
-    "rank": 89,
+    "rank": 83,
     "slug": "isidora-uribe-silva",
     "name": "Isidora Uribe Silva",
     "role": "Fundadora de la Fundación Encuentra Tu Lugar",
@@ -3268,7 +3036,7 @@
     "linkedin": ""
   },
   {
-    "rank": 90,
+    "rank": 84,
     "slug": "samuel-santa-cruz",
     "name": "Samuel Santa Cruz",
     "role": "Fundador y CEO de Fundación Parque Cochamó",
@@ -3305,7 +3073,7 @@
     "linkedin": ""
   },
   {
-    "rank": 91,
+    "rank": 85,
     "slug": "angela-astudillo",
     "name": "Ángela Astudillo",
     "role": "Cofundadora de la ONG Desierto Vestido",
@@ -3342,7 +3110,7 @@
     "linkedin": ""
   },
   {
-    "rank": 92,
+    "rank": 86,
     "slug": "bernardita-frez",
     "name": "Bernardita Frez",
     "role": "Directora ejecutiva de Juntos por la Reinserción",
@@ -3379,7 +3147,7 @@
     "linkedin": ""
   },
   {
-    "rank": 93,
+    "rank": 87,
     "slug": "ismaela-magliotto-quevedo",
     "name": "Ismaela Magliotto Quevedo",
     "role": "Cofundadora y directora ejecutiva de la Fundación Uno Punto Cinco",
@@ -3416,7 +3184,7 @@
     "linkedin": ""
   },
   {
-    "rank": 94,
+    "rank": 88,
     "slug": "alvaro-silberstein",
     "name": "Álvaro Silberstein",
     "role": "Cofundador y CEO de Wheel the World",
@@ -3453,7 +3221,7 @@
     "linkedin": "https://www.linkedin.com/in/alvaro-silberstein"
   },
   {
-    "rank": 95,
+    "rank": 89,
     "slug": "diego-antonio-gonzalez",
     "name": "Diego Antonio González",
     "role": "Fundador y director de la Fundación Proyecto Amar Migrar",
@@ -3495,7 +3263,7 @@
     "linkedin": ""
   },
   {
-    "rank": 96,
+    "rank": 90,
     "slug": "antonia-rojas-eing",
     "name": "Antonia Rojas Eing",
     "role": "Fundadora y managing partner de Attom Capital",
@@ -3532,7 +3300,7 @@
     "linkedin": "https://www.linkedin.com/in/antoniarojase"
   },
   {
-    "rank": 97,
+    "rank": 91,
     "slug": "paula-enei",
     "name": "Paula Enei",
     "role": "CEO, cofundadora y managing partner de Platanus Ventures",
@@ -3569,7 +3337,7 @@
     "linkedin": "https://www.linkedin.com/in/paulaenei"
   },
   {
-    "rank": 98,
+    "rank": 92,
     "slug": "maria-jose-alvarez",
     "name": "María José Álvarez",
     "role": "Socia y managing partner de WNT Ventures",
@@ -3601,7 +3369,7 @@
     "linkedin": "https://www.linkedin.com/in/mariajose-alvarez"
   },
   {
-    "rank": 99,
+    "rank": 93,
     "slug": "andres-matte",
     "name": "Andrés Matte",
     "role": "Fundador de Kapso; ex socio fundador de Platanus Ventures",
@@ -3633,7 +3401,7 @@
     "linkedin": "https://www.linkedin.com/in/andresmatte"
   },
   {
-    "rank": 100,
+    "rank": 94,
     "slug": "damian-panes",
     "name": "Damián Panes",
     "role": "Cofundador de Indies",
@@ -3663,5 +3431,385 @@
     "trust": "Alta",
     "image": "/under40/damian-panes.jpg",
     "linkedin": "https://www.linkedin.com/in/damianpanes"
+  },
+  {
+    "rank": 95,
+    "slug": "manuel-concha",
+    "name": "Manuel Concha",
+    "role": "Fundador de Kame ERP, hoy Siigo Kame",
+    "sector": "IA y software",
+    "sectorSlug": "ia",
+    "sectorDetail": "SaaS",
+    "focus": "software contable y de gestión para pymes",
+    "place": "Puerto Varas, Región de Los Lagos (nació en Cerrillos, creció en La Pintana)",
+    "city": "Puerto Varas",
+    "age": "38 años (n. ~1987-88) — verificada (DF MAS, julio 2026: «tiene 38 años, vive en Puerto Varas»)",
+    "ageShort": "38",
+    "verification": "verificada",
+    "bio": "Nació en una casa forrada en cartón y con piso de tierra; su madre trabajaba limpiando casas y él empezó a trabajar a los doce años, financiando la carrera de contador auditor con turnos de once de la noche a once de la mañana. En 2016 fundó Kame junto a Víctor Jiménez con tres reglas: barato, simple y bien atendido. Nunca levantó capital de riesgo. Hoy 30 mil empresas procesan su información en la plataforma. En 2025 vendió la compañía al colombiano Siigo, respaldado por Accel-KKR: uno de los pocos exits de un fundador chileno sin venture capital detrás.",
+    "hitos": [
+      "Fundó Kame ERP en 2016 sin levantar capital de riesgo y llegó a 30 mil empresas usuarias.",
+      "El Grupo MyA compró 33% en 2022, en una operación que valorizó la firma cerca de US$30 millones.",
+      "Venta a Siigo en 2025, que inyectó US$6 millones y llevó la facturación de US$4 a más de US$7 millones y el equipo de 50 a 120 personas."
+    ],
+    "news": [
+      {
+        "title": "Cómo Manuel Concha pasó de La Pintana a vender Kame ERP a Accel-KKR",
+        "url": "https://www.df.cl/df-mas/punto-de-partida/como-manuel-concha-paso-de-la-pintana-a-vender-kame-erp-a-accel-kkr",
+        "credit": "DF MAS, julio 2026"
+      },
+      {
+        "title": "Siigo adquiere Kame en Chile, donde invertirá US$6 millones",
+        "url": "https://forbes.co/2025/06/12/negocios/siigo-adquiere-kame-en-chile-donde-invertira-us6-millones/",
+        "credit": "Forbes Colombia, junio 2025"
+      },
+      {
+        "title": "Colombiana Siigo compra emblemática firma de software de nombre japonés Kame e inyecta US$6 millones",
+        "url": "https://www.df.cl/empresas/telecom-tecnologia/colombiana-siigo-compra-emblematica-firma-de-software-de-nombre-japones",
+        "credit": "Diario Financiero, mayo 2025"
+      }
+    ],
+    "url": "https://kame.cl",
+    "trust": "Alta",
+    "image": "/under40/manuel-concha.jpg",
+    "linkedin": "https://www.linkedin.com/in/manuelconcha"
+  },
+  {
+    "rank": 96,
+    "slug": "jose-manuel-jimenez-marin",
+    "name": "José Manuel Jiménez Marín",
+    "role": "Fundador y CEO de Webdox CLM",
+    "sector": "IA y software",
+    "sectorSlug": "ia",
+    "sectorDetail": "Legaltech",
+    "focus": "SaaS B2B de gestión del ciclo de vida de contratos",
+    "place": "Santiago, con operación en México, Colombia, Perú y Brasil",
+    "city": "Santiago",
+    "age": "35 años (n. ~1990-91) — verificada (DF MAS, mayo 2026: «Jiménez, 35 años, abogado UC, fundador y CEO de Webdox»)",
+    "ageShort": "35",
+    "verification": "verificada",
+    "bio": "Vendía palta y queso en el colegio y fue DJ hasta segundo año de universidad. Estudió Derecho en la UC y se metió de procurador en un estudio tributario para entender el problema desde adentro. Fundó Webdox en 2012 con dos socios que se bajaron al año y medio; siguió solo, sin cofundador técnico. Trece años después la empresa tiene 150 empleados, más de 800 clientes corporativos y un ARR de US$13 millones, habiendo levantado apenas US$11 millones en toda su historia. Rechazó una oferta de entre US$30 y US$40 millones para no perder el control de la gestión.",
+    "hitos": [
+      "US$13 millones de ARR con solo US$11 millones levantados en trece años.",
+      "Cerca del 35% de las mayores empresas de la región como clientes: Mercedes-Benz, Santander, Telefónica, Walmart, BNP Paribas, Coca-Cola Andina y Lipigas.",
+      "Operación propia en cinco países y crecimiento de 150% en Brasil; rechazó una ronda de US$30-40 millones en 2024."
+    ],
+    "news": [
+      {
+        "title": "Cómo Webdox llegó a facturar US$13 millones y perdió una ronda con Riverwood",
+        "url": "https://www.df.cl/df-mas/punto-de-partida/como-webdox-llego-a-facturar-us-13-millones-y-perdio-una-ronda-con",
+        "credit": "DF MAS, mayo 2026"
+      },
+      {
+        "title": "José Manuel Jiménez, CEO de Webdox, es el nuevo presidente del directorio de Altech",
+        "url": "https://estadodiario.com/bitacora/jose-manuel-jimenez-ceo-de-webdox-es-el-nuevo-presidente-del-directorio-de-altech/",
+        "credit": "Estado Diario"
+      }
+    ],
+    "url": "https://webdoxclm.com",
+    "trust": "Alta",
+    "image": "/under40/jose-manuel-jimenez-marin.jpg",
+    "linkedin": "https://www.linkedin.com/in/josemanueljimenezmarin"
+  },
+  {
+    "rank": 97,
+    "slug": "andres-ugarte",
+    "name": "Andrés Ugarte",
+    "role": "Fundador y CEO de Copilot Money",
+    "sector": "Fintech",
+    "sectorSlug": "fintech",
+    "sectorDetail": "Fintech",
+    "focus": "finanzas personales",
+    "place": "Brooklyn, Nueva York, con equipo de ingeniería en Santiago",
+    "city": "Nueva York",
+    "age": "38 años (n. ~1987-88) — verificada (DF MAS, enero 2025: «Ugarte tiene 37 años»)",
+    "ageShort": "38",
+    "verification": "verificada",
+    "bio": "Ingeniero UC. Su práctica fue en Palo Alto, en la startup de Francisco Larraín que Groupon terminó comprando, y de ahí pasó cinco años en Google —Google Plus, Hangouts, YouTube y la incubadora Area120—. Fundó Copilot en 2019, harto de esperar a que alguien inventara una herramienta de finanzas personales inteligente y privada, y la lanzó en 2020 cobrando desde el primer día. Cuando Mint cerró en 2023, creció diez veces de la noche a la mañana. Hoy es rentable, con un equipo de 32 personas repartido entre Brooklyn y Chile.",
+    "hitos": [
+      "Más de un millón de descargas y un ARR de unos US$20 millones al cierre de 2025, rentable desde 2023.",
+      "Serie A de US$6 millones tras partir prácticamente en bootstrapping.",
+      "Apple Design Award y nominación a mejor app del año en la App Store; llegó a la pantalla de inicio de Marques Brownlee, el youtuber tech más influyente del mundo, sin pagar nada."
+    ],
+    "news": [
+      {
+        "title": "El chileno detrás de la app de finanzas con más de un millón de descargas en EE.UU.",
+        "url": "https://www.df.cl/df-mas/punto-de-partida/el-chileno-detras-de-la-app-de-finanzas-con-mas-de-un-millon-de",
+        "credit": "DF MAS, enero 2025"
+      },
+      {
+        "title": "Andrés Ugarte: el chileno que conquistó a Marques Brownlee",
+        "url": "https://www.df.cl/df-mas/punto-de-partida/andres-ugarte-el-chileno-que-conquisto-a-marques-brownlee",
+        "credit": "DF MAS, diciembre 2025"
+      }
+    ],
+    "url": "https://copilot.money",
+    "trust": "Alta",
+    "image": "/under40/andres-ugarte.jpg",
+    "linkedin": "https://www.linkedin.com/in/andresugarte"
+  },
+  {
+    "rank": 98,
+    "slug": "pier-paolo-colonnello",
+    "name": "Pier Paolo Colonnello",
+    "role": "Cofundador de Wild Brands (Wild Lama, The Wild Foods, eDarkstore, Casa Nativa)",
+    "sector": "Comercio",
+    "sectorSlug": "comercio",
+    "sectorDetail": "Consumo",
+    "focus": "alimentos y moda sustentable",
+    "place": "Santiago, con operación en México",
+    "city": "Santiago",
+    "age": "39-40 años (n. ~1986) — verificada (Forbes Chile, octubre 2023: «37 años»); reconocido en «100 Jóvenes Líderes» 2022, cuyo tope es 35 años, consistente con el cálculo",
+    "ageShort": "39-40",
+    "verification": "verificada",
+    "bio": "Egresado de Ingeniería Comercial de la UC, partió en 2014 con US$150 vendiendo bandanas importadas y terminó armando Wild Brands, el holding que agrupa Wild Lama —moda sustentable certificada Empresa B— y The Wild Foods. Durante la pandemia llegó a vender 500 mil bandanas en dos meses. Wild Foods desplazó a PepsiCo y Carozzi para quedarse con el primer lugar de la categoría barras de cereal en Chile, con cerca del 70% del mercado de barras de proteína. El grupo supera los 200 trabajadores y siete tiendas propias.",
+    "hitos": [
+      "Fundó Wild Lama en 2014 con US$150 de capital inicial; certificación como Empresa B.",
+      "The Wild Foods es líder de la categoría barras de cereal en Chile y ronda el 70% del mercado de barras de proteína.",
+      "Serie A de US$25 millones en agosto de 2024 con Glisco Partners y 30N Ventures, y desembarco en México con 5.000 puntos de venta."
+    ],
+    "news": [
+      {
+        "title": "Wild Foods levanta serie A de US$25 millones y llevará sus barritas de proteína a México",
+        "url": "https://www.df.cl/df-mas/punto-de-partida/wild-foods-levanta-serie-a-de-us-25-millones-y-llevara-sus-barritas-de",
+        "credit": "DF MAS, agosto 2024"
+      },
+      {
+        "title": "Cambiar la industria del retail chileno «a lo wild»: la historia de Wild Lama y su fundador",
+        "url": "https://forbes.cl/negocios/2023-10-04/cambiar-la-industria-del-retail-chileno-a-lo-wild-la-historia-de-wild-lama-y-su-fundador-pier-colonnello/",
+        "credit": "Forbes Chile, octubre 2023"
+      }
+    ],
+    "url": "https://wildlama.com",
+    "trust": "Alta",
+    "image": "/under40/pier-paolo-colonnello.jpg",
+    "linkedin": "https://www.linkedin.com/in/pp-colonnello"
+  },
+  {
+    "rank": 99,
+    "slug": "felipe-cevallos-becker",
+    "name": "Felipe Cevallos Becker",
+    "role": "Cofundador y CEO de Reborn Electric Motors; profesor de la Universidad Católica",
+    "sector": "Cleantech",
+    "sectorSlug": "cleantech",
+    "sectorDetail": "Electromovilidad",
+    "focus": "manufactura industrial de buses eléctricos",
+    "place": "Rancagua, Región de O’Higgins",
+    "city": "Rancagua",
+    "age": "36 años (n. ~1989-90) — derivada («31 años» en el listado «100 Jóvenes Líderes» 2020, Ingeniería UC, abril 2021)",
+    "ageShort": "36",
+    "verification": "derivada",
+    "bio": "Ingeniero UC y académico de la misma casa de estudios, fundó en 2016 junto a Ricardo Repenning la primera fábrica de buses eléctricos de Latinoamérica, instalada en Rancagua. Reborn no arma vehículos nuevos: reconvierte buses diésel a eléctricos por cerca de la mitad del costo de una unidad nueva. Opera una planta de 3.000 m² con más de 80 trabajadores y capacidad escalable a 200 buses al año. Su cliente ancla ha sido la División El Teniente de Codelco, la mina de cobre subterránea más grande del mundo.",
+    "hitos": [
+      "Primera fábrica de buses eléctricos de Latinoamérica, creada en 2016 en Rancagua; más de cien buses fabricados.",
+      "La brasileña Marcopolo, quinta mayor fabricante mundial de buses, compró el 40% de la compañía por US$4 millones en junio de 2025.",
+      "Primera exportación de un bus urbano eléctrico fabricado en Chile a Brasil y apertura de una línea de venta de sistemas de tracción eléctrica."
+    ],
+    "news": [
+      {
+        "title": "Gigante brasileña Marcopolo adquiere un 40% de la fabricante de buses eléctricos chilena",
+        "url": "https://www.df.cl/empresas/industria/gigante-brasilena-marcopolo-adquiere-un-40-de-la-fabricante-de-buses",
+        "credit": "Diario Financiero, septiembre 2025"
+      },
+      {
+        "title": "Reborn Electric Motors proyecta comenzar a exportar este año a un segundo mercado de Latinoamérica",
+        "url": "https://www.df.cl/regiones/reborn-electric-motors-proyecta-comenzar-a-exportar-este-ano-a-un-segundo",
+        "credit": "Diario Financiero, abril 2026"
+      }
+    ],
+    "url": "https://rebornelectric.cl",
+    "trust": "Alta",
+    "image": "/under40/felipe-cevallos-becker.jpg",
+    "linkedin": "https://www.linkedin.com/in/felipe-cevallos-becker-48020a34"
+  },
+  {
+    "rank": 100,
+    "slug": "barbarita-lara-martinez",
+    "name": "Barbarita Lara Martínez",
+    "role": "Fundadora y CEO de EMERCOM; académica de la Universidad Andrés Bello; directora regional de Girls in Tech Chile",
+    "sector": "IA y software",
+    "sectorSlug": "ia",
+    "sectorDetail": "Deeptech",
+    "focus": "comunicaciones de emergencia",
+    "place": "Valparaíso (egresada de la UTFSM); nacida en Puerto Williams",
+    "city": "Valparaíso",
+    "age": "40 años (n. 27 de enero de 1986) — verificada con fecha exacta (base Mujeres Científicas Chilenas, Biblioteca del Congreso Nacional). Justo en el límite del corte.",
+    "ageShort": "40",
+    "verification": "verificada",
+    "bio": "Ingeniera civil informática de la Universidad Técnica Federico Santa María. El terremoto y tsunami de 2010 la dejó horas sin poder comunicarse y de ahí salió SIE, Sistema de Información de Emergencia: un protocolo que transmite mensajes cifrados por ondas de radio FM a teléfonos inteligentes, sin red celular ni internet. Fundó EMERCOM para llevarlo a mercado. En 2017 fue la primera chilena en la lista latinoamericana de Innovadores menores de 35 del MIT Technology Review y en 2018 escaló a la lista global, un salto que ninguna otra chilena había dado.",
+    "hitos": [
+      "Desarrollo y patente del SIE, sistema de mensajería de emergencia que opera sin infraestructura de telecomunicaciones.",
+      "Primera chilena en las listas LATAM (2017) y global (2018) de Innovadores menores de 35 del MIT Technology Review.",
+      "Primera ganadora chilena del Premio Ada Byron (2023) y autora del libro «Hack Yourself. La vida como tu mayor emprendimiento» (2024)."
+    ],
+    "news": [
+      {
+        "title": "Barbarita Lara, la primera chilena reconocida por el MIT entre los innovadores menores de 35 años a nivel mundial",
+        "url": "https://www.emol.com/noticias/Tecnologia/2018/06/27/911368/Barbarita-Lara-la-primera-chilena-reconocida-por-el-MIT-entre-los-innovadores-menores-de-35-anos-a-nivel-mundial.html",
+        "credit": "Emol, junio 2018"
+      },
+      {
+        "title": "Ingeniera Barbarita Lara es la ganadora de la primera versión del Premio Ada Byron Chile",
+        "url": "https://www.elmostrador.cl/braga/2023/01/16/ingeniera-barbarita-lara-es-la-ganadora-de-la-primera-version-del-premio-ada-byron-chile-que-entrega-unab/",
+        "credit": "El Mostrador, enero 2023"
+      },
+      {
+        "title": "Barbarita Lara: la primera chilena en la lista de innovadores sub-35 del MIT",
+        "url": "https://www.bbc.com/mundo/noticias-45472111",
+        "credit": "BBC Mundo, septiembre 2018"
+      }
+    ],
+    "url": "https://barbaritalara.com",
+    "trust": "Alta (edad con fecha de nacimiento exacta)",
+    "image": "/under40/barbarita-lara-martinez.jpg",
+    "linkedin": "https://www.linkedin.com/in/barbaritalaram"
+  },
+  {
+    "rank": 101,
+    "slug": "andrea-donoso-youlton",
+    "name": "Andrea Donoso Youlton",
+    "role": "CEO y cofundadora de Coloris Biotech; subdirectora de GIBMAR y coordinadora de gestión tecnológica del Centro de Biotecnología de la Universidad de Concepción",
+    "sector": "Foodtech y biotech",
+    "sectorSlug": "foodtech",
+    "sectorDetail": "Biotecnología",
+    "focus": "colorantes naturales para la industria alimentaria",
+    "place": "Concepción, Región del Biobío",
+    "city": "Concepción",
+    "age": "38 años (n. 25 de abril de 1988) — verificada con fecha exacta (base Mujeres Científicas Chilenas, Biblioteca del Congreso Nacional)",
+    "ageShort": "38",
+    "verification": "verificada",
+    "bio": "Dirige Coloris Biotech, spin-off del Grupo Interdisciplinario de Biotecnología Marina de la Universidad de Concepción que usa bacterias como biofábricas para producir colorantes naturales que normalmente se extraen de otras especies. El objetivo comercial es desplazar tintes artificiales —el azul brillante de las bebidas isotónicas, por ejemplo— con un producto inocuo y de color equivalente. La empresa ya tiene prototipos azul y rojo, con amarillo y violeta en desarrollo, y opera con licencia de prueba de la oficina de transferencia de la universidad.",
+    "hitos": [
+      "Cofundó y dirige Coloris Biotech, spin-off biotecnológico de GIBMAR-UdeC.",
+      "Obtuvo licencia de prueba de la Oficina de Transferencia y Licenciamiento y convenio con la Universidad de Concepción; incubada en Incuba UdeC.",
+      "Seleccionada en 2016 entre los diez jóvenes líderes de Chile del programa Young Leaders of the Americas del gobierno de Estados Unidos."
+    ],
+    "news": [
+      {
+        "title": "Coloris Biotech: innovación en colorantes naturales para un futuro alimentario más saludable",
+        "url": "https://noticias.udec.cl/coloris-biotech-innovacion-en-colorantes-naturales-para-un-futuro-alimentario-mas-saludable/",
+        "credit": "Noticias UdeC, septiembre 2024"
+      }
+    ],
+    "url": "https://coloris.cl",
+    "trust": "Alta (edad con fecha de nacimiento exacta)",
+    "image": "/under40/andrea-donoso-youlton.jpg",
+    "linkedin": "https://www.linkedin.com/in/andrea-donoso-youlton-6359b689"
+  },
+  {
+    "rank": 102,
+    "slug": "florencia-alamos-grau",
+    "name": "Florencia Alamos Grau",
+    "role": "Fundadora y directora ejecutiva de Fundación Kiri; cofundadora y presidenta de Fundación Ciencia Impacta; académica del Centro Interdisciplinario de Neurociencia UC",
+    "sector": "Impacto",
+    "sectorSlug": "impacto",
+    "sectorDetail": "Innovación social",
+    "focus": "salud mental infantil y neurociencia",
+    "place": "Santiago, con programas en la Región Metropolitana, La Araucanía y Ñuble",
+    "city": "Santiago",
+    "age": "39 años (n. 9 de mayo de 1987) — verificada con fecha exacta (base Mujeres Científicas Chilenas, BCN), corroborada por El Mercurio («37 años», agosto 2024)",
+    "ageShort": "39",
+    "verification": "verificada",
+    "bio": "Médica con doctorado en neurociencia y experiencia investigadora en neurodesarrollo en Estados Unidos y Canadá, volvió a Chile a convertir evidencia en programas. Fundación Kiri trabaja salud mental infantil mediante talleres culturales, deportivos y científicos, formación de equipos educativos y encuentros interescolares en tres regiones. En paralelo preside Fundación Ciencia Impacta e investiga terapias no invasivas para síntomas de Parkinson y la agenda de neuroderechos, uno de los debates regulatorios donde Chile llegó primero que el resto del mundo.",
+    "hitos": [
+      "Premio Mujer Impacta 2024 por el desarrollo de habilidades socioemocionales en niñez vulnerable.",
+      "Programas de Fundación Kiri operando en tres regiones; más de 350.000 jóvenes alcanzados en ciencia, tecnología y bienestar según su ficha institucional.",
+      "Incluida por Forbes Chile entre las mujeres más influyentes del país (2023)."
+    ],
+    "news": [
+      {
+        "title": "Premio Mujer Impacta 2024 reconoce a diez mujeres que transforman comunidades",
+        "url": "https://www.elmostrador.cl/braga/2024/08/30/premio-mujer-impacta-2024-reconoce-a-diez-mujeres-que-transforman-comunidades/",
+        "credit": "El Mostrador, agosto 2024"
+      },
+      {
+        "title": "Mujer Impacta reconoce a 10 mujeres que transforman comunidades",
+        "url": "https://www.df.cl/empresas/actualidad/mujer-impacta-reconoce-a-10-mujeres-que-transforman-comunidades",
+        "credit": "Diario Financiero, agosto 2024"
+      },
+      {
+        "title": "Florencia Álamos, reconocida entre las 100 Mujeres Líderes de Chile",
+        "url": "https://fundacionkiri.cl/florencia-alamos-directora-ejecutiva-de-fundacion-kiri-reconocida-entre-las-100-mujeres-lideres-de-chile-segun-el-mercurio/",
+        "credit": "Fundación Kiri, noviembre 2023"
+      }
+    ],
+    "url": "https://fundacionkiri.cl",
+    "trust": "Alta (edad con fecha de nacimiento exacta)",
+    "image": "/under40/florencia-alamos-grau.jpg",
+    "linkedin": "https://www.linkedin.com/in/mar%C3%ADa-florencia-%C3%A1lamos-grau-aab2781b6"
+  },
+  {
+    "rank": 103,
+    "slug": "melissa-jeldes",
+    "name": "Melissa Jeldes",
+    "role": "Fundadora y directora de Glocal Chile",
+    "sector": "Impacto",
+    "sectorSlug": "impacto",
+    "sectorDetail": "Innovación social",
+    "focus": "desarrollo territorial regenerativo",
+    "place": "Metreñehue, entre Pucón y el lago Caburgua, La Araucanía",
+    "city": "Pucón",
+    "age": "38 años (n. ~1988) — derivada (DF MAS, julio 2022: «Melissa Jeldes (34)»)",
+    "ageShort": "38",
+    "verification": "derivada",
+    "bio": "Pasó ocho años en Socialab: llegó en 2011, cuando aún era el centro de innovación de Techo, y salió como gerenta comercial del modelo de sostenibilidad. En pandemia dejó Santiago, se instaló en un motorhome cerca de Pucón y creó Glocal Chile para probar que se puede armar un ecosistema de innovación sin la capital. Su primera convocatoria reunió más de 300 propuestas y repartió $30 millones; al año siguiente el fondo Glocal Norpatagonia congregó a más de mil personas y articuló a La Araucanía, Los Ríos y Los Lagos.",
+    "hitos": [
+      "Glocal Pucón 2022, con Banco de Chile y Fundación Sustenta Pucón: más de 300 postulaciones, 50 colaboradores y $30 millones en premios.",
+      "Glocal Norpatagonia 2023: mil asistentes y articulación de tres regiones del sur.",
+      "Ocho años en Socialab antes de emprender; hoy asesora a universidades y aseguradoras en emprendimiento social."
+    ],
+    "news": [
+      {
+        "title": "Innovación descentralizada desde Pucón",
+        "url": "https://www.df.cl/df-mas/punto-de-partida/innovacion-descentralizada-desde-pucon",
+        "credit": "DF MAS, julio 2022"
+      },
+      {
+        "title": "Cientos de personas participaron en el lanzamiento del fondo de innovación regenerativa Glocal Norpatagonia",
+        "url": "https://www.paiscircular.cl/empresa-e-innovacion/cientos-de-personas-participaron-en-el-lanzamiento-del-fondo-nacional-de-innovacion-regenerativa-glocal-norpatagonia/",
+        "credit": "País Circular, diciembre 2023"
+      }
+    ],
+    "url": "https://glocalchile.cl",
+    "trust": "Alta",
+    "image": "/under40/melissa-jeldes.jpg",
+    "linkedin": "https://www.linkedin.com/in/melissajeldes"
+  },
+  {
+    "rank": 104,
+    "slug": "daniela-fernandez-rosso",
+    "name": "Daniela Fernández Rosso",
+    "role": "Fundadora y presidenta de la Fundación Pequeñas Grandes Estrellas; operadora de telescopio y especialista de instrumentos en el Observatorio Las Campanas (Carnegie Institution for Science)",
+    "sector": "Educación",
+    "sectorSlug": "educacion",
+    "sectorDetail": "Ciencia",
+    "focus": "educación STEM y astronomía",
+    "place": "Observatorio Las Campanas, Región de Atacama; alcance nacional y latinoamericano",
+    "city": "Atacama",
+    "age": "37 años (n. 11 de julio de 1989) — verificada con fecha exacta (base Mujeres Científicas Chilenas, Biblioteca del Congreso Nacional)",
+    "ageShort": "37",
+    "verification": "verificada",
+    "bio": "Astrónoma de la Universidad Católica con magíster en comunicación científica de la Universitat Pompeu Fabra, opera de noche el telescopio Du Pont en Las Campanas y participa del proyecto internacional SDSS-V. De día es «Astrodaniela»: en 2019 fundó Pequeñas Grandes Estrellas, que lleva astronomía a la primera infancia mediante cuentos, talleres y juego, y que declara haber llegado a más de 10.000 niños, educadores y familias en Chile y América Latina. Es uno de los pocos casos de una científica en activo que además construyó una organización de divulgación con alcance regional.",
+    "hitos": [
+      "Fundó Pequeñas Grandes Estrellas en 2019; más de 10.000 niños, educadores y familias alcanzados en Chile y América Latina.",
+      "Premio Mujer Impacta 2025 en categoría Ciencia y Tecnología y Top 4 del Premio Nacional de Divulgación de la Astronomía 2025.",
+      "Creó la colección de cuentos astronómicos Nova y el proyecto «ConociendoTé: Mujer en Ciencia»."
+    ],
+    "news": [
+      {
+        "title": "Astrodaniela: la astrónoma chilena que acerca el universo a la primera infancia",
+        "url": "https://www.cooperativaciencia.cl/cienciaconellas/2025/12/18/astrodaniela-la-astronoma-chilena-que-acerca-el-universo-a-la-primera-infancia/",
+        "credit": "Cooperativa Ciencia, diciembre 2025"
+      },
+      {
+        "title": "Mujeres que impactan: Daniela Fernández, decidida a acercar la astronomía a la infancia",
+        "url": "https://www.latercera.com/paula/noticia/mujeres-que-impactan-daniela-fernandez-decidida-a-acercar-la-astronomia-a-la-infancia/",
+        "credit": "La Tercera / Paula"
+      }
+    ],
+    "url": "https://fundacionpge.cl",
+    "trust": "Alta (edad con fecha de nacimiento exacta)",
+    "image": "/under40/daniela-fernandez-rosso.jpg",
+    "linkedin": "https://www.linkedin.com/in/danielafernandezrosso"
   }
 ]

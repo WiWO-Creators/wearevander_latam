@@ -17,7 +17,6 @@ export const AGOSTO_ARTICLES: Article[] = [
     image: "/photos/tmec-border.jpg",
     imageAlt: "Fila de camiones de carga en un cruce fronterizo México–Estados Unidos",
     caption: "El horizonte del T-MEC ahora se revisa cada julio.",
-    featured: true,
     city: "Ciudad de México",
     pace: "fondo",
     tags: ["industria", "nearshoring", "fondo"],

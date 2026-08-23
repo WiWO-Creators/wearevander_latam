@@ -67,7 +67,7 @@ function Under40Index() {
               {UNDER40_META.dek} {HOUSE.credit}.
             </p>
             <p className="font-body text-sm text-ink">
-              <span className="headline text-2xl leading-none sm:text-3xl">Los cien.</span>
+              <span className="headline text-2xl leading-none sm:text-3xl">El dossier.</span>
               <span className="mt-1 block text-ink-soft">
                 {UNDER40_META.women} mujeres, {UNDER40_META.men} hombres. {UNDER40_META.verticals}{" "}
                 verticales, {UNDER40_META.regions} regiones.

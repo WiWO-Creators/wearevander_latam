@@ -588,6 +588,31 @@
   object-position: 42% 18%;
 }
 
+.u40-shot[data-slug="manuel-concha"] img,
+.u40-shot[data-slug="jose-manuel-jimenez-marin"] img {
+  object-position: 48% 12%;
+}
+
+.u40-shot[data-slug="andres-ugarte"] img {
+  object-position: 28% 18%;
+}
+
+.u40-shot[data-slug="pier-paolo-colonnello"] img {
+  object-position: 50% 18%;
+}
+
+.u40-shot[data-slug="florencia-alamos-grau"] img {
+  object-position: 38% 22%;
+}
+
+.u40-shot[data-slug="daniela-fernandez-rosso"] img {
+  object-position: 58% 18%;
+}
+
+.u40-shot[data-slug="melissa-jeldes"] img {
+  object-position: 52% 42%;
+}
+
 .u40-shot::after {
   content: "";
   position: absolute;

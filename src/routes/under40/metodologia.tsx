@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { UNDER40_META, UNDER40_METHOD } from "@/lib/under40";
+import { UNDER40, UNDER40_META, UNDER40_METHOD } from "@/lib/under40";
 import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
 
@@ -20,7 +20,8 @@ function Under40Method() {
           </Link>
           <h1 className="headline mt-4 text-5xl sm:text-7xl">Cómo se armó</h1>
           <p className="mt-5 font-body text-lg leading-snug text-paper/75">
-            Dossier de {UNDER40_META.kicker}. Cien perfiles, nueve verticales, doce regiones. Pensado
+            Dossier de {UNDER40_META.kicker}. {UNDER40.length} perfiles, {UNDER40_META.verticals} verticales,{" "}
+            {UNDER40_META.regions} regiones. Pensado
             como material de trabajo periodístico: cada ficha puede convertirse en una nota sin volver
             a partir de cero. {HOUSE.credit}.
           </p>
@@ -39,7 +40,9 @@ function Under40Method() {
         <h2 className="headline mt-16 text-3xl sm:text-4xl">Advertencias</h2>
         <p className="mt-4 font-body text-base leading-relaxed text-ink-soft">
           Cinco perfiles rozan o superan los 40 y se incluyeron por ser ineludibles en su vertical:
-          Omar Larré, Sebastián Kreis, Jaime Arrieta, Carlos Aravena y Álvaro Silberstein.
+          Omar Larré, Sebastián Kreis, Jaime Arrieta, Carlos Aravena y Álvaro Silberstein. Barbarita
+          Lara y Pier Paolo Colonnello entran por el tramo 35-40, con edad verificada, y quedan en el
+          límite del corte.
         </p>
         <p className="mt-4 font-body text-base leading-relaxed text-ink-soft">
           Algramo pidió la quiebra en julio de 2025. Karün anunció cierre en 2024. Lab4U fue adquirida

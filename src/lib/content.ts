@@ -1,6 +1,7 @@
 import { AGOSTO_ARTICLES } from "./agosto";
 import { FONDO_ARTICLES } from "./fondo";
 import { FONDO2_ARTICLES } from "./fondo2";
+import { MELIMAFIA } from "./melimafia";
 
 export type SectionId = "ideas" | "work" | "design" | "climate" | "culture";
 export type PaceId = "rapida" | "fondo";
@@ -168,6 +169,7 @@ export const AUTHORS: Author[] = [
 ];
 
 export const ARTICLES: Article[] = [
+  MELIMAFIA,
   ...AGOSTO_ARTICLES,
   ...FONDO_ARTICLES,
   ...FONDO2_ARTICLES,
@@ -354,6 +356,7 @@ const SLUG_TAGS: Record<string, string[]> = {
   "machines-with-taste": ["diseno", "hardware"],
   "el-pacifico-se-firma-en-lima": ["logistica", "nearshoring"],
   "buenos-aires-restriccion": ["diseno", "industria"],
+  melimafia: ["fintech", "pagos"],
 };
 
 const UPDATED_AT: Record<string, string> = {

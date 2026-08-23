@@ -41,11 +41,11 @@ export const UNDER40 = raw as Under40Profile[];
 export const UNDER40_META = {
   title: "100 under 40",
   kicker: "Chile · agosto 2026",
-  dek: "Cien chilenas y chilenos menores de 40 que fundaron o dirigen. Cada ficha trae retrato, bio, hitos, prensa y un enlace a LinkedIn o a la empresa. Ninguna edad fue inventada.",
-  men: 61,
-  women: 39,
+  dek: "Chilenas y chilenos menores de 40 que fundaron o dirigen. Cada ficha trae retrato, bio, hitos, prensa y un enlace a LinkedIn o a la empresa. Ninguna edad fue inventada.",
+  men: 60,
+  women: 44,
   verticals: 9,
-  regions: 12,
+  regions: 13,
 } as const;
 
 export const UNDER40_METHOD = [
@@ -57,7 +57,7 @@ export const UNDER40_METHOD = [
   {
     n: "02",
     title: "Corte de edad",
-    body: "Nacidos en 1986 o después. Cinco excepciones de hasta 42, marcadas en la ficha, cuando la figura era ineludible en su vertical.",
+    body: "Nacidos en 1986 o después. Cinco excepciones de hasta 42, marcadas en la ficha, cuando la figura era ineludible en su vertical. La adenda 35-40 entra con edad publicada en fuente fechada.",
   },
   {
     n: "03",
