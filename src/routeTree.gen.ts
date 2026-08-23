@@ -24,6 +24,7 @@ import { Route as PisoRouteImport } from './routes/piso'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
+import { Route as Under40RouteImport } from './routes/under40'
 import { Route as ApiMarketsRouteImport } from './routes/api/markets'
 import { Route as ContraIndexRouteImport } from './routes/contra/index'
 import { Route as ContraAutorRouteImport } from './routes/contra/autor'
@@ -43,6 +44,9 @@ import { Route as SignalsIndexRouteImport } from './routes/signals/index'
 import { Route as SignalsTagRouteImport } from './routes/signals/tag'
 import { Route as StorySlugRouteImport } from './routes/story/$slug'
 import { Route as TagTagRouteImport } from './routes/tag/$tag'
+import { Route as Under40IndexRouteImport } from './routes/under40/index'
+import { Route as Under40SlugRouteImport } from './routes/under40/$slug'
+import { Route as Under40MetodologiaRouteImport } from './routes/under40/metodologia'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiMarketsHealthRouteImport } from './routes/api/markets.health'
 import { Route as ApiMarketsIngestRouteImport } from './routes/api/markets.ingest'
@@ -134,6 +138,11 @@ const SearchRoute = SearchRouteImport.update({
 const SignalsRoute = SignalsRouteImport.update({
   id: '/signals',
   path: '/signals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Under40Route = Under40RouteImport.update({
+  id: '/under40',
+  path: '/under40',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiMarketsRoute = ApiMarketsRouteImport.update({
@@ -230,6 +239,21 @@ const TagTagRoute = TagTagRouteImport.update({
   id: '/tag/$tag',
   path: '/tag/$tag',
   getParentRoute: () => rootRouteImport,
+} as any)
+const Under40IndexRoute = Under40IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => Under40Route,
+} as any)
+const Under40SlugRoute = Under40SlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => Under40Route,
+} as any)
+const Under40MetodologiaRoute = Under40MetodologiaRouteImport.update({
+  id: '/metodologia',
+  path: '/metodologia',
+  getParentRoute: () => Under40Route,
 } as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
@@ -333,6 +357,7 @@ export interface FileRoutesByFullPath {
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
+  '/under40': typeof Under40RouteWithChildren
   '/api/markets': typeof ApiMarketsRouteWithChildren
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
@@ -348,10 +373,13 @@ export interface FileRoutesByFullPath {
   '/signals/tag': typeof SignalsTagRouteWithChildren
   '/story/$slug': typeof StorySlugRoute
   '/tag/$tag': typeof TagTagRoute
+  '/under40/$slug': typeof Under40SlugRoute
+  '/under40/metodologia': typeof Under40MetodologiaRoute
   '/contra/': typeof ContraIndexRoute
   '/innovatives/': typeof InnovativesIndexRoute
   '/list/': typeof ListIndexRoute
   '/signals/': typeof SignalsIndexRoute
+  '/under40/': typeof Under40IndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/markets/health': typeof ApiMarketsHealthRoute
   '/api/markets/ingest': typeof ApiMarketsIngestRoute
@@ -390,10 +418,13 @@ export interface FileRoutesByTo {
   '/section/$section': typeof SectionSectionRoute
   '/story/$slug': typeof StorySlugRoute
   '/tag/$tag': typeof TagTagRoute
+  '/under40/$slug': typeof Under40SlugRoute
+  '/under40/metodologia': typeof Under40MetodologiaRoute
   '/contra': typeof ContraIndexRoute
   '/innovatives': typeof InnovativesIndexRoute
   '/list': typeof ListIndexRoute
   '/signals': typeof SignalsIndexRoute
+  '/under40': typeof Under40IndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/markets/health': typeof ApiMarketsHealthRoute
   '/api/markets/ingest': typeof ApiMarketsIngestRoute
@@ -429,6 +460,7 @@ export interface FileRoutesById {
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
+  '/under40': typeof Under40RouteWithChildren
   '/api/markets': typeof ApiMarketsRouteWithChildren
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
@@ -444,10 +476,13 @@ export interface FileRoutesById {
   '/signals/tag': typeof SignalsTagRouteWithChildren
   '/story/$slug': typeof StorySlugRoute
   '/tag/$tag': typeof TagTagRoute
+  '/under40/$slug': typeof Under40SlugRoute
+  '/under40/metodologia': typeof Under40MetodologiaRoute
   '/contra/': typeof ContraIndexRoute
   '/innovatives/': typeof InnovativesIndexRoute
   '/list/': typeof ListIndexRoute
   '/signals/': typeof SignalsIndexRoute
+  '/under40/': typeof Under40IndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/markets/health': typeof ApiMarketsHealthRoute
   '/api/markets/ingest': typeof ApiMarketsIngestRoute
@@ -484,6 +519,7 @@ export interface FileRouteTypes {
     | '/saved'
     | '/search'
     | '/signals'
+    | '/under40'
     | '/api/markets'
     | '/contra/autor'
     | '/contra/tag'
@@ -499,10 +535,13 @@ export interface FileRouteTypes {
     | '/signals/tag'
     | '/story/$slug'
     | '/tag/$tag'
+    | '/under40/$slug'
+    | '/under40/metodologia'
     | '/contra/'
     | '/innovatives/'
     | '/list/'
     | '/signals/'
+    | '/under40/'
     | '/api/auth/$'
     | '/api/markets/health'
     | '/api/markets/ingest'
@@ -541,10 +580,13 @@ export interface FileRouteTypes {
     | '/section/$section'
     | '/story/$slug'
     | '/tag/$tag'
+    | '/under40/$slug'
+    | '/under40/metodologia'
     | '/contra'
     | '/innovatives'
     | '/list'
     | '/signals'
+    | '/under40'
     | '/api/auth/$'
     | '/api/markets/health'
     | '/api/markets/ingest'
@@ -579,6 +621,7 @@ export interface FileRouteTypes {
     | '/saved'
     | '/search'
     | '/signals'
+    | '/under40'
     | '/api/markets'
     | '/contra/autor'
     | '/contra/tag'
@@ -594,10 +637,13 @@ export interface FileRouteTypes {
     | '/signals/tag'
     | '/story/$slug'
     | '/tag/$tag'
+    | '/under40/$slug'
+    | '/under40/metodologia'
     | '/contra/'
     | '/innovatives/'
     | '/list/'
     | '/signals/'
+    | '/under40/'
     | '/api/auth/$'
     | '/api/markets/health'
     | '/api/markets/ingest'
@@ -633,6 +679,7 @@ export interface RootRouteChildren {
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
   SignalsRoute: typeof SignalsRouteWithChildren
+  Under40Route: typeof Under40RouteWithChildren
   ApiMarketsRoute: typeof ApiMarketsRouteWithChildren
   SectionSectionRoute: typeof SectionSectionRoute
   StorySlugRoute: typeof StorySlugRoute
@@ -745,6 +792,13 @@ declare module '@tanstack/react-router' {
       path: '/signals'
       fullPath: '/signals'
       preLoaderRoute: typeof SignalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/under40': {
+      id: '/under40'
+      path: '/under40'
+      fullPath: '/under40'
+      preLoaderRoute: typeof Under40RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/markets': {
@@ -879,6 +933,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/tag/$tag'
       preLoaderRoute: typeof TagTagRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/under40/': {
+      id: '/under40/'
+      path: '/'
+      fullPath: '/under40/'
+      preLoaderRoute: typeof Under40IndexRouteImport
+      parentRoute: typeof Under40Route
+    }
+    '/under40/$slug': {
+      id: '/under40/$slug'
+      path: '/$slug'
+      fullPath: '/under40/$slug'
+      preLoaderRoute: typeof Under40SlugRouteImport
+      parentRoute: typeof Under40Route
+    }
+    '/under40/metodologia': {
+      id: '/under40/metodologia'
+      path: '/metodologia'
+      fullPath: '/under40/metodologia'
+      preLoaderRoute: typeof Under40MetodologiaRouteImport
+      parentRoute: typeof Under40Route
     }
     '/api/auth/$': {
       id: '/api/auth/$'
@@ -1165,6 +1240,21 @@ const SignalsRouteChildren: SignalsRouteChildren = {
 const SignalsRouteWithChildren =
   SignalsRoute._addFileChildren(SignalsRouteChildren)
 
+interface Under40RouteChildren {
+  Under40SlugRoute: typeof Under40SlugRoute
+  Under40MetodologiaRoute: typeof Under40MetodologiaRoute
+  Under40IndexRoute: typeof Under40IndexRoute
+}
+
+const Under40RouteChildren: Under40RouteChildren = {
+  Under40SlugRoute: Under40SlugRoute,
+  Under40MetodologiaRoute: Under40MetodologiaRoute,
+  Under40IndexRoute: Under40IndexRoute,
+}
+
+const Under40RouteWithChildren =
+  Under40Route._addFileChildren(Under40RouteChildren)
+
 interface ApiMarketsRouteChildren {
   ApiMarketsHealthRoute: typeof ApiMarketsHealthRoute
   ApiMarketsIngestRoute: typeof ApiMarketsIngestRoute
@@ -1195,6 +1285,7 @@ const rootRouteChildren: RootRouteChildren = {
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
   SignalsRoute: SignalsRouteWithChildren,
+  Under40Route: Under40RouteWithChildren,
   ApiMarketsRoute: ApiMarketsRouteWithChildren,
   SectionSectionRoute: SectionSectionRoute,
   StorySlugRoute: StorySlugRoute,

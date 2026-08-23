@@ -554,3 +554,52 @@
     display: none;
   }
 }
+
+.u40-shot {
+  position: relative;
+  background: var(--color-ink);
+}
+
+.u40-shot img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(0.92);
+  transition:
+    filter 420ms ease,
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.u40-shot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-rust);
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity 420ms ease;
+}
+
+.u40-shot[data-sector="ia"]::after,
+.u40-shot[data-sector="educacion"]::after,
+.u40-shot[data-sector="capital"]::after {
+  background: #2563eb;
+}
+
+.u40-shot[data-sector="cleantech"]::after,
+.u40-shot[data-sector="foodtech"]::after,
+.u40-shot[data-sector="comercio"]::after {
+  background: #2f6b4f;
+}
+
+.group:hover .u40-shot img,
+.u40-shot:hover img {
+  filter: grayscale(0.15) contrast(1.05) brightness(1);
+  transform: scale(1.04);
+}
+
+.group:hover .u40-shot::after,
+.u40-shot:hover::after {
+  opacity: 0.1;
+}

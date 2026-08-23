@@ -10,6 +10,7 @@ import {
 } from "@/lib/content";
 import { VANDER_LIST } from "@/lib/vander-list";
 import { INNOVATIVES } from "@/lib/innovatives";
+import { UNDER40 } from "@/lib/under40";
 import { PAY_ROWS, SHIFT_ROWS } from "@/lib/indice";
 import {
   CoverHero,
@@ -23,6 +24,7 @@ import { AdSlot } from "@/components/ad-slot";
 import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark } from "@/components/brand";
 import { SignalsField } from "@/components/signals-field";
 import { VerifiedStamp } from "@/components/verified-stamp";
+import { Under40Shot } from "@/components/under40-shot";
 import { LiveDesk } from "@/components/live-desk";
 
 export const Route = createFileRoute("/")({
@@ -255,6 +257,38 @@ function Home() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="border-y border-ink px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="kicker text-xs text-rust">Chile · agosto 2026</p>
+              <h2 className="headline mt-1 text-4xl sm:text-5xl">
+                <Link to="/under40" className="link-title">
+                  100 <span className="italic">under</span> 40
+                </Link>
+              </h2>
+              <p className="mt-2 max-w-lg font-body text-sm text-ink-soft">
+                Cien fichas. Edad declarada. Prensa con enlace. Ninguna edad fue inventada.
+              </p>
+            </div>
+            <Link to="/under40" className="kicker text-xs text-rust hover:underline">
+              El dossier
+            </Link>
+          </div>
+          <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+            {UNDER40.slice(0, 8).map((p) => (
+              <li key={p.slug}>
+                <Link to="/under40/$slug" params={{ slug: p.slug }} className="group block">
+                  <Under40Shot person={p} />
+                  <p className="kicker mt-2 text-[10px] text-rust">{String(p.rank).padStart(3, "0")}</p>
+                  <p className="headline mt-0.5 text-base leading-[1.1]">{p.name}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

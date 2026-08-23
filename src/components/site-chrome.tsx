@@ -145,7 +145,7 @@ function DesktopNav({
   mega: MegaId | null;
   setMega: (id: MegaId | null) => void;
 }) {
-  const rankingsOn = pathname.startsWith("/list") || pathname.startsWith("/innovatives") || pathname.startsWith("/indice");
+  const rankingsOn = pathname.startsWith("/list") || pathname.startsWith("/innovatives") || pathname.startsWith("/indice") || pathname.startsWith("/under40");
   const casaOn = ["/about", "/obituarios", "/briefing", "/anuncia", "/saved"].some(
     (p) => pathname === p || pathname.startsWith(`${p}/`),
   );
@@ -280,7 +280,7 @@ function MegaPanel({
           </div>
         ) : null}
         {id === "rankings" ? (
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <Link to="/list" onClick={onClose} className="group block">
               <p className="kicker text-xs text-signal">Protocolo</p>
               <p className="headline mt-2 text-3xl group-hover:text-rust">
@@ -296,7 +296,16 @@ function MegaPanel({
                 <span className="italic text-innov">50</span> Innovatives
               </p>
               <p className="mt-2 font-body text-sm leading-snug text-muted">
-                El gesto nuevo. Metodología pública. Cada ficha con fecha de visita.
+                El gesto nuevo. Metodología pública.
+              </p>
+            </Link>
+            <Link to="/under40" onClick={onClose} className="group block">
+              <p className="kicker text-xs text-rust">Chile</p>
+              <p className="headline mt-2 text-3xl group-hover:text-rust">
+                100 <span className="italic">under</span> 40
+              </p>
+              <p className="mt-2 font-body text-sm leading-snug text-muted">
+                Cien fichas. Edad declarada. Enlaces a la prensa.
               </p>
             </Link>
             <Link to="/indice" onClick={onClose} className="group block">
@@ -365,6 +374,11 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             <Link to="/innovatives" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               <span className="italic text-innov">50</span>
               <span className="ml-2">Innovatives</span>
+            </Link>
+          </li>
+          <li className="menu-item border-b border-paper/15">
+            <Link to="/under40" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
+              100 <span className="ml-2 italic">under</span>&nbsp;40
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
@@ -466,6 +480,11 @@ function Footer() {
               <li>
                 <Link to="/innovatives" className="link-title">
                   50 Innovatives
+                </Link>
+              </li>
+              <li>
+                <Link to="/under40" className="link-title">
+                  100 under 40
                 </Link>
               </li>
               <li>
