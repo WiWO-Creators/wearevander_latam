@@ -18,6 +18,7 @@ import {
   RailItem,
   SignalRow,
   StackedCard,
+  HorizontalCard,
 } from "@/components/article-card";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
@@ -51,6 +52,7 @@ function Home() {
 
   const interview = articlesByFormat("interview")[0];
   if (interview) used.add(interview.slug);
+  const lead = interview ?? take(ordered, used, 1)[0];
   const rail = take(ordered, used, 5);
   const popular = popularArticles(5);
   const signals = articlesByFranchise("signals").slice(0, 4);
@@ -58,6 +60,12 @@ function Home() {
   const obits = articlesByFormat("obituario").slice(0, 4);
   const flash = articlesByFormat("flash")[0];
   const visual = articlesByFormat("visual")[0];
+  const ninety = [flash, visual].filter((a): a is NonNullable<typeof a> => Boolean(a));
+  if (ninety.length === 0) {
+    ninety.push(...take(ordered, used, 2));
+  } else {
+    ninety.forEach((a) => used.add(a.slug));
+  }
   const fiftyLead = INNOVATIVES.slice(0, 3);
   const fiftyRest = INNOVATIVES.slice(3, 10);
 
@@ -67,11 +75,13 @@ function Home() {
       <JsonLd data={websiteSchema()} />
       <CoverHero article={hero} />
 
-      <section className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-7">
-        <div className="lg:col-span-8">
-          {interview && <StackedCard article={interview} large />}
-        </div>
-        <aside className="lg:col-span-4 lg:border-l lg:border-rule lg:pl-5">
+      <section className="mx-auto grid max-w-7xl items-start gap-5 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-7">
+        {lead ? (
+          <div className="min-w-0 lg:col-span-8">
+            <StackedCard article={lead} large />
+          </div>
+        ) : null}
+        <aside className={lead ? "min-w-0 lg:col-span-4 lg:border-l lg:border-rule lg:pl-5" : "min-w-0 lg:col-span-12"}>
           <p className="kicker mb-1 text-xs text-muted">En portada</p>
           {rail.map((a) => (
             <RailItem key={a.slug} article={a} />
@@ -152,8 +162,8 @@ function Home() {
       </SignalsField>
 
       <section className="border-y border-ink">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-4">
+        <div className="mx-auto grid max-w-7xl items-start gap-6 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:gap-8">
+          <div className="min-w-0 lg:col-span-4">
             <h2 className="kicker border-b border-ink pb-2 text-xs text-rust">Lo más leído</h2>
             <ol>
               {popular.map((a, i) => (
@@ -163,19 +173,18 @@ function Home() {
               ))}
             </ol>
           </div>
-          <div className="lg:col-span-8">
-            <p className="kicker border-b border-ink pb-2 text-xs text-rust">90 segundos</p>
-            {flash && (
-              <div className="pt-4">
-                <StackedCard article={flash} />
+          {ninety.length > 0 ? (
+            <div className="min-w-0 lg:col-span-8">
+              <p className="kicker border-b border-ink pb-2 text-xs text-rust">
+                {flash || visual ? "90 segundos" : "Sigue leyendo"}
+              </p>
+              <div className="pt-2">
+                {ninety.map((a) => (
+                  <HorizontalCard key={a.slug} article={a} />
+                ))}
               </div>
-            )}
-            {visual && (
-              <div className="mt-6 border-t border-rule pt-6">
-                <StackedCard article={visual} />
-              </div>
-            )}
-          </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
