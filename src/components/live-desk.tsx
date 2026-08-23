@@ -22,11 +22,6 @@ const FEEDS = [
     name: "ABC News",
     line: "ABC News Live",
   },
-  {
-    id: "XhAYcYpPzTc",
-    name: "News Live",
-    line: "News TV Live",
-  },
 ] as const;
 
 function Player({ id, name, line }: (typeof FEEDS)[number]) {
@@ -77,7 +72,7 @@ export function LiveDesk({ compact = false }: { compact?: boolean }) {
             </Link>
           ) : (
             <p className="max-w-sm text-right font-body text-xs text-paper/55">
-              Yahoo, Bloomberg, CNN, ABC y más. En mute. Vander no produce estas señales.
+              Yahoo, Bloomberg, CNN y ABC. En mute. Vander no produce estas señales.
             </p>
           )}
         </div>
