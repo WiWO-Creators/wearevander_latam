@@ -296,7 +296,7 @@ function MegaPanel({
                 <span className="italic text-innov">50</span> Innovatives
               </p>
               <p className="mt-2 font-body text-sm leading-snug text-muted">
-                El gesto nuevo. Metodología pública.
+                Innovación verificable. Metodología pública.
               </p>
             </Link>
             <Link to="/under40" onClick={onClose} className="group block">

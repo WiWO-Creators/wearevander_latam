@@ -175,12 +175,12 @@ function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-4 border-b border-paper/20 pb-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="kicker text-xs text-innov">Anual · 50 compañías visitadas</p>
+              <p className="kicker text-xs text-innov">Anual · 50 compañías</p>
               <Link to="/innovatives" className="logo-mark mt-3 block max-w-xl">
                 <InnovativesMark wide className="h-10 max-w-full sm:h-20" />
               </Link>
               <p className="mt-3 max-w-lg font-body text-sm text-paper/60">
-                Innovación que se puede visitar. Metodología pública. Distinto al Vander 20: acá cuenta el gesto nuevo, no el código de casa.
+                No las más grandes. Las que están rompiendo algo. Innovación verificable, cifra con fuente, metodología pública.
               </p>
             </div>
             <Link to="/innovatives" className="kicker press text-xs text-paper hover:text-innov">
@@ -190,13 +190,12 @@ function Home() {
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {fiftyLead.map((c) => (
               <Link key={c.slug} to="/innovatives/$slug" params={{ slug: c.slug }} className="group block">
-                <span className="photo block aspect-[3/2] w-full">
-                  <img src={c.image} alt={c.name} className="h-full w-full object-cover" />
+                <span className="photo innov-logo block aspect-[3/2] w-full bg-ivory">
+                  <img src={c.image} alt={c.name} className="h-full w-full object-contain p-5" />
                 </span>
                 <p className="mt-3 headline text-3xl tabular-nums text-innov">{String(c.rank).padStart(2, "0")}</p>
                 <h3 className="headline mt-1 text-2xl">{c.name}</h3>
                 <p className="mt-1 font-body text-sm text-paper/65">{c.blurb}</p>
-                <VerifiedStamp slug={c.slug} dark compact />
               </Link>
             ))}
           </div>

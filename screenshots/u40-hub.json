@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:8080/under40",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "100 under 40 — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 14211,
+      "bodyTextHash": "18cd0ea3df0950c5289f0f597071b5c64b3a32d65884c6f35d4211c8057f3820",
+      "bodyTextPrefix": "Saltar al contenido We Are Vander SECCIONES RANKINGS SIGNALS CON",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. https://www.linkedin.com/in/ram%C3%B3n-echeverr%C3%ADa-258a14199"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/u40-hub.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "100 under 40 — We Are Vander",
+      "hasCanvas": false,
+      "bodyTextLen": 14151,
+      "bodyTextHash": "edd579c8ebb1c5ca642eed891099ca02b4f12247c2af81fc8b7c97a2086dd851",
+      "bodyTextPrefix": "Saltar al contenido We Are Vander Último cierre · viernes 21 ago",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. https://www.linkedin.com/in/ram%C3%B3n-echeverr%C3%ADa-258a14199",
+        "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. https://linkedin.com/in/thomas-kimber",
+        "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. https://www.linkedin.com/in/mariajose-alvarez"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/u40-hub-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/u40-hub.json"
+}

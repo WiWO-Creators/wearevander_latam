@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8080/under40/cristina-etcheberry",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "001. Cristina Etcheberry — 100 under 40",
+      "hasCanvas": false,
+      "bodyTextLen": 3577,
+      "bodyTextHash": "177da7d0f0473d358e9cf51656c44159a5d6e6f5f1a877029d8a1dfb7cf0fe01",
+      "bodyTextPrefix": "Saltar al contenido We Are Vander SECCIONES RANKINGS SIGNALS CON",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/u40-profile.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "001. Cristina Etcheberry — 100 under 40",
+      "hasCanvas": false,
+      "bodyTextLen": 3517,
+      "bodyTextHash": "b19c28177a93dd769276ab0a7f960f685d3dfc4562fea4b68db43fb78d83fb41",
+      "bodyTextPrefix": "Saltar al contenido We Are Vander Último cierre · viernes 21 ago",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/u40-profile-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/u40-profile.json"
+}

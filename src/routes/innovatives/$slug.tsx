@@ -3,9 +3,7 @@ import { adjacentInnovative, getInnovative, INNOVATIVES } from "@/lib/innovative
 import { toCatSlug } from "@/lib/taxonomy";
 import { InnovativesMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
-import { VerifiedStamp, CrossList } from "@/components/verified-stamp";
-import { verifyOf } from "@/lib/verify";
-
+import { CrossList } from "@/components/verified-stamp";
 
 export const Route = createFileRoute("/innovatives/$slug")({
   component: InnovativeCompany,
@@ -38,7 +36,6 @@ function InnovativeCompany() {
     );
   }
   const { prev, next } = adjacentInnovative(company.slug);
-  const stamp = verifyOf(company.slug);
 
   return (
     <main>
@@ -63,6 +60,8 @@ function InnovativeCompany() {
               {company.sector}
             </Link>
             {" · "}
+            {company.vertical}
+            {" · "}
             <Link
               to="/innovatives/pais/$pais"
               params={{ pais: toCatSlug(company.country) }}
@@ -72,37 +71,82 @@ function InnovativeCompany() {
             </Link>
             {" · "}
             {company.city}
+            {company.founded ? ` · Fundada ${company.founded}` : ""}
           </p>
+          {company.warning ? (
+            <p className="mt-4 max-w-xl border-l-2 border-rust pl-3 font-body text-sm text-paper/80">
+              Advertencia editorial. {company.status || "Esta ficha no maquilla una dificultad real."}
+            </p>
+          ) : null}
           <div className="mt-5">
-            <VerifiedStamp slug={company.slug} dark />
-          </div>
-          <div className="mt-2">
             <CrossList slug={company.slug} current="50" dark />
           </div>
         </div>
       </section>
-      <figure className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-        <img src={company.image} alt="" className="aspect-video w-full object-cover" />
+      <figure className="mx-auto max-w-4xl bg-ivory px-4 py-10 sm:px-6">
+        <img src={company.image} alt={`Marca de ${company.name}`} className="mx-auto max-h-64 w-auto object-contain" />
       </figure>
-      <div className="mx-auto max-w-2xl px-4 pb-12 sm:px-6">
-        <p className="kicker text-xs text-innov">Por qué entra</p>
+      <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
+        <p className="kicker text-xs text-innov">Brief</p>
+        <p className="mt-3 font-body text-xl leading-snug">{company.brief}</p>
+        <p className="kicker mt-10 text-xs text-innov">El detalle</p>
+        <p className="mt-3 font-body text-lg leading-relaxed text-ink-soft">{company.detail}</p>
+        <p className="kicker mt-10 text-xs text-innov">Por qué está en la lista</p>
         <p className="mt-3 font-body text-lg leading-relaxed">{company.why}</p>
-        <p className="mt-5 font-body text-lg leading-relaxed text-ink-soft">{company.blurb}</p>
-        {stamp && (
-          <dl className="mt-8 grid gap-4 border-y border-ink py-5 sm:grid-cols-3">
+        {company.stats.length > 0 && (
+          <ul className="mt-10 border-y border-ink py-5">
+            {company.stats.map((s) => (
+              <li key={s} className="border-b border-rule py-2 font-sans text-sm last:border-b-0">
+                {s}
+              </li>
+            ))}
+          </ul>
+        )}
+        <dl className="mt-8 grid gap-4 sm:grid-cols-2">
+          {company.founders ? (
             <div>
-              <dt className="kicker text-xs text-muted">Fundada</dt>
-              <dd className="mt-1 font-sans text-sm font-semibold">{stamp.founded}</dd>
+              <dt className="kicker text-xs text-muted">Fundadores</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{company.founders}</dd>
             </div>
+          ) : null}
+          {company.ceo ? (
             <div>
-              <dt className="kicker text-xs text-muted">Evidencia</dt>
-              <dd className="mt-1 font-sans text-sm font-semibold">{stamp.proof}</dd>
+              <dt className="kicker text-xs text-muted">CEO</dt>
+              <dd className="mt-1 font-sans text-sm font-semibold">{company.ceo}</dd>
             </div>
-            <div>
-              <dt className="kicker text-xs text-muted">Mesa</dt>
-              <dd className="mt-1 font-sans text-sm font-semibold">{stamp.desk}</dd>
+          ) : null}
+          {company.status ? (
+            <div className="sm:col-span-2">
+              <dt className="kicker text-xs text-muted">Estado</dt>
+              <dd className="mt-1 font-sans text-sm">{company.status}</dd>
             </div>
-          </dl>
+          ) : null}
+        </dl>
+        <div className="mt-8 flex flex-wrap gap-4">
+          {company.web ? (
+            <a href={company.web} target="_blank" rel="noreferrer" className="kicker text-xs text-innov hover:underline">
+              {company.domain || "Sitio"}
+            </a>
+          ) : null}
+          {company.press ? (
+            <a href={company.press} target="_blank" rel="noreferrer" className="kicker text-xs text-muted hover:underline">
+              Press kit
+            </a>
+          ) : null}
+        </div>
+        {company.sources.length > 0 && (
+          <div className="mt-10">
+            <p className="kicker text-xs text-muted">Fuentes</p>
+            <ul className="mt-3 space-y-2">
+              {company.sources.map((s) => (
+                <li key={s.url}>
+                  <a href={s.url} target="_blank" rel="noreferrer" className="font-body text-sm text-ink-soft hover:text-ink hover:underline">
+                    {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
         <div className="mt-10 flex justify-between gap-4 border-t border-ink pt-6">
           {prev ? (

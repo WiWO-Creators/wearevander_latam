@@ -87,8 +87,37 @@ export function under40Sectors() {
   return groupByLabel(UNDER40, (p) => p.sector);
 }
 
+const CITY_MIN = 2;
+
+export function hubCity(person: Under40Profile) {
+  return person.city;
+}
+
 export function under40Cities() {
-  return groupByLabel(UNDER40, (p) => p.city);
+  const groups = groupByLabel(UNDER40, hubCity);
+  const main = groups.filter((g) => g.items.length >= CITY_MIN);
+  const rest = groups.filter((g) => g.items.length < CITY_MIN);
+  if (rest.length) {
+    main.push({
+      label: "Otras",
+      slug: "otras",
+      items: rest.flatMap((g) => g.items),
+    });
+  }
+  return main;
+}
+
+export function inUnder40City(person: Under40Profile, city: string | null) {
+  if (!city) return true;
+  if (city === "Otras") {
+    const named = new Set(
+      groupByLabel(UNDER40, hubCity)
+        .filter((g) => g.items.length >= CITY_MIN)
+        .map((g) => g.label),
+    );
+    return !named.has(person.city);
+  }
+  return person.city === city;
 }
 
 export function under40BySector(slug: string) {

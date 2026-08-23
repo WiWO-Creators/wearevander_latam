@@ -3,6 +3,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import {
   UNDER40,
   UNDER40_META,
+  inUnder40City,
   under40Cities,
   under40Sectors,
 } from "@/lib/under40";
@@ -29,7 +30,7 @@ function Under40Index() {
     const needle = q.trim().toLowerCase();
     return UNDER40.filter((p) => {
       if (sector && p.sector !== sector) return false;
-      if (city && p.city !== city) return false;
+      if (!inUnder40City(p, city)) return false;
       if (!needle) return true;
       const hay = `${p.name} ${p.role} ${p.bio} ${p.sector} ${p.city} ${p.focus}`.toLowerCase();
       return hay.includes(needle);
@@ -39,40 +40,43 @@ function Under40Index() {
   const filtering = Boolean(q.trim() || sector || city);
   const featured = filtering ? [] : list.slice(0, 3);
   const rest = filtering ? list : list.slice(3);
-  const mosaic = UNDER40.slice(0, 12);
 
   return (
     <main>
-      <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-12 lg:items-stretch">
-          <div className="flex flex-col justify-end px-4 py-14 sm:px-6 sm:py-20 lg:col-span-5 lg:py-16">
+      <section className="bg-ivory text-ink">
+        <div className="mx-auto max-w-7xl px-4 pt-10 pb-4 lg:hidden sm:px-6">
+          <p className="kicker text-xs text-rust">{UNDER40_META.kicker}</p>
+          <h1 className="headline mt-3 text-5xl leading-[0.9] sm:text-6xl">
+            100 <span className="italic">under</span> 40
+          </h1>
+        </div>
+        <figure className="relative mx-auto max-w-7xl">
+          <img
+            src="/illustrations/cien.jpg"
+            alt="Cien personas dibujadas como un retrato de curso, tinta y acuarela."
+            className="aspect-[5/4] w-full object-cover object-bottom sm:aspect-[2/1] lg:aspect-[16/9] lg:object-center"
+          />
+          <div className="pointer-events-none absolute inset-x-0 top-0 hidden px-6 pt-10 lg:block">
             <p className="kicker text-xs text-rust">{UNDER40_META.kicker}</p>
-            <h1 className="headline mt-4 text-6xl leading-[0.9] sm:text-7xl lg:text-8xl">
+            <h1 className="headline mt-3 max-w-3xl text-7xl leading-[0.88] xl:text-8xl">
               100 <span className="italic">under</span> 40
             </h1>
-            <p className="mt-6 max-w-md font-body text-lg leading-snug text-paper/75">
+          </div>
+          <figcaption className="flex flex-col gap-3 border-t border-ink/10 px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
+            <p className="max-w-xl font-body text-sm leading-snug text-ink-soft">
               {UNDER40_META.dek} {HOUSE.credit}.
             </p>
-            <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 lg:grid-cols-2">
-              <Stat n="100" label="Retratos" />
-              <Stat n={`${UNDER40_META.women} / ${UNDER40_META.men}`} label="Mujeres / hombres" />
-              <Stat n={String(UNDER40_META.verticals)} label="Verticales" />
-              <Stat n={String(UNDER40_META.regions)} label="Regiones" />
-            </dl>
-          </div>
-          <div className="hidden lg:col-span-7 lg:block">
-            <ul className="u40-mosaic h-full min-h-[32rem]">
-              {mosaic.map((p) => (
-                <li key={p.slug}>
-                  <Link to="/under40/$slug" params={{ slug: p.slug }} className="group block h-full">
-                    <Under40Shot person={p} className="h-full min-h-0 aspect-auto" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+            <p className="font-body text-sm text-ink">
+              <span className="headline text-2xl leading-none sm:text-3xl">Los cien.</span>
+              <span className="mt-1 block text-ink-soft">
+                {UNDER40_META.women} mujeres, {UNDER40_META.men} hombres. {UNDER40_META.verticals}{" "}
+                verticales, {UNDER40_META.regions} regiones.
+              </span>
+            </p>
+          </figcaption>
+        </figure>
       </section>
+
 
       <nav className="sticky top-0 z-20 border-b border-ink bg-paper/95 px-4 py-3 backdrop-blur-sm sm:px-6" aria-label="Filtros 100 under 40">
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
@@ -199,14 +203,5 @@ function FilterChip({
     >
       {children}
     </button>
-  );
-}
-
-function Stat({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="border-t border-paper/20 pt-3">
-      <p className="headline text-3xl sm:text-4xl">{n}</p>
-      <p className="mt-1 kicker text-xs text-silver">{label}</p>
-    </div>
   );
 }

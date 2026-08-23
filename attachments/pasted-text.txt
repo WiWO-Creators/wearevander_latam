@@ -1,0 +1,1354 @@
+# 50 INNOVATIVES · Latinoamérica 2026
+
+**Sección editorial para weareVander.com**
+Investigación y redacción: agosto de 2026 · Cobertura: Brasil, México, Argentina, Chile, Colombia, Uruguay, Perú, Costa Rica
+
+---
+
+## Nota del editor
+
+Esta no es una lista de las 50 startups más grandes de Latinoamérica. Es una lista de las 50 que están rompiendo algo.
+
+El criterio fue simple y exigente: cada empresa entra por una innovación **verificable** —una pieza de tecnología, un modelo de negocio o una jugada regulatoria que no existía antes en la región— y no por el tamaño de su última ronda. Por eso conviven aquí un banco con 139 millones de clientes y un laboratorio universitario chileno que fabrica fuentes de fotones entrelazados; una compañía que cotiza en Nasdaq y una startup uruguaya de nanoanticuerpos derivados de llamas.
+
+Tres decisiones editoriales que conviene explicitar:
+
+**Uno.** Mezclamos escalas a propósito. La innovación latinoamericana de 2026 no está solo en los unicornios acuñados durante el dinero barato de 2021; está en compañías que llegaron a rentabilidad sin fanfarria y en equipos de menos de veinte personas resolviendo problemas que nadie más resuelve.
+
+**Dos.** Todo dato tiene fuente y año. Donde no pudimos confirmar una cifra, lo decimos. Preferimos un vacío honesto a un número inflado —y marcamos con ⚠️ las compañías que atraviesan dificultades reales, porque una lista que solo celebra miente.
+
+**Tres.** Buscamos diversidad geográfica sin forzarla. Brasil concentra 16 de las 50 porque efectivamente concentra el capital y el volumen de innovación. Perú aparece una vez porque solo encontramos una compañía peruana que superara el filtro de rigor. Eso también es información.
+
+### Sobre las imágenes
+
+Cada ficha incluye una URL de logo servida vía el endpoint público `logo.clearbit.com/<dominio>`, que resuelve el logo oficial a partir del dominio verificado de la empresa. **Son referencias de trabajo para el equipo de diseño, no assets licenciados.** Antes de publicar, solicitar el kit de prensa a cada compañía o descargar el logo desde su sala de prensa oficial (linkeada en cada ficha). Para fotos de fundadores y producto, la vía correcta es el press kit corporativo.
+
+### Cómo leer cada ficha
+
+- **Brief** — la frase que explica qué hace, para alguien que nunca escuchó el nombre.
+- **El detalle** — el contexto: de dónde viene, qué construyó, dónde opera.
+- **Por qué está en la lista** — la innovación específica. Esta es la sección que importa.
+- **Datos clave** — cifras duras con año y fuente.
+
+---
+
+## Índice por vertical
+
+| Vertical | Empresas | Nº |
+|---|---|---|
+| **Fintech e infraestructura financiera** | 01–13 | 13 |
+| **IA, software y ciberseguridad** | 14–22 | 9 |
+| **Healthtech y biotech** | 23–30 | 8 |
+| **Agtech, foodtech, clima y energía** | 31–41 | 11 |
+| **Comercio, logística, movilidad y proptech** | 42–47 | 6 |
+| **Frontera: espacio, drones y robótica industrial** | 48–50 | 3 |
+
+## Índice por país
+
+**Brasil (16):** Nubank · CloudWalk · QI Tech · Enter · Decade · Maritaca AI · Huna · Solinftec · Mombak · InPlanet · re.green · QuintoAndar · Daki · Vammo · Speedbird Aero · Tractian
+
+**México (7):** Bitso · Clip · Plata · Kapital · Eden · Sistema.bio · Kavak
+
+**Argentina (8):** Ualá · Pomelo · Humand · Oncoliq · Puna Bio · Satellites on Fire · Tiendanube · Satellogic
+
+**Chile (8):** Global66 · Wiwo · Latam-GPT (CENIA) · Levita Magnetics · GeneproDX · NotCo · PhageLab · HIF Global
+
+**Colombia (6):** Addi · Cobre · Simetrik · Lumu Technologies · Telepatía · Habi
+
+**Uruguay (3):** dLocal · Strike · Nanogrow Biotech
+
+**Perú (1):** Bio Natural Solutions
+
+**Costa Rica (1):** Establishment Labs
+
+---
+---
+
+# I. FINTECH E INFRAESTRUCTURA FINANCIERA
+
+> Latinoamérica no inventó el neobanco, pero sí inventó el neobanco que gana dinero. Y en 2026 la frontera se movió: ya no se trata de abrir cuentas, sino de quién controla los rieles —licencias bancarias, stablecoins como capa de liquidación, y ahora cómputo de IA propio.
+
+---
+
+## 01 · Nubank
+
+**País:** Brasil (São Paulo) · **Fundación:** 2013 · **Vertical:** Neobanco / banca digital full-stack
+**Web:** [nubank.com.br](https://nubank.com.br) · **Logo:** `https://logo.clearbit.com/nubank.com.br` · **Press kit:** [international.nubank.com.br](https://international.nubank.com.br)
+**Estado:** Cotiza en NYSE (NU) desde diciembre de 2021
+
+**Brief.** El banco digital más grande del mundo fuera de Asia: 139 millones de clientes en Brasil, México y Colombia, construido sin una sola sucursal.
+
+**El detalle.** Nació en 2013 con una tarjeta de crédito morada y una idea contraria al sentido común brasileño: que se podía prestar dinero a gente que los cinco bancos dominantes despreciaban. Hoy Brasil aporta ~118 millones de clientes, México 15,8 millones y Colombia supera los 5 millones. En agosto de 2026 lanzó operación bancaria plena en México, convirtiéndose de inmediato en el mayor banco digital de ese país.
+
+**Por qué está en la lista.** No por tamaño —por arquitectura. Nubank construyó su propio core bancario desde cero, evitando los sistemas legacy que hacen que un banco tradicional gaste un múltiplo por cliente atendido. Esa decisión de ingeniería de 2013 es la que todavía explica su margen en 2026. Y la apuesta actual es aún más rara: **NuFormer**, un modelo fundacional propio entrenado sobre datos transaccionales y aplicado a underwriting de crédito y atención al cliente. Es uno de los poquísimos bancos del mundo que entrena sus propios foundation models en lugar de comprar scoring a terceros. Con **Croma** atacó además el segmento de alto patrimonio desde abajo, invirtiendo la lógica clásica de la banca privada.
+
+**Datos clave**
+- 139 millones de clientes (Q2 2026)
+- Ingresos brutos: US$5.900M en el trimestre, +39% interanual (Q2 2026)
+- Utilidad neta: US$1.100M — primer trimestre por encima de los mil millones (Q2 2026)
+- Cartera de crédito US$39.400M · Depósitos US$45.300M · ROE 33%
+- Capitalización de mercado: ~US$70.600M (julio 2026)
+
+**Fundadores:** David Vélez, Cristina Junqueira, Edward Wible
+**Fuentes:** [Resultados Q2 2026](https://international.nubank.com.br/company/nu-holdings-ltd-reports-second-quarter-2026-financial-results/) · [Multiples.vc — Unicornios de LatAm](https://multiples.vc/insights/the-unicorns-of-latin-america)
+
+---
+
+## 02 · CloudWalk
+
+**País:** Brasil (São Paulo) · **Fundación:** 2013 · **Vertical:** Pagos + infraestructura de cómputo de IA
+**Web:** [cloudwalk.io](https://www.cloudwalk.io) · **Logo:** `https://logo.clearbit.com/cloudwalk.io` · **Press kit:** [cloudwalk.io/newsroom](https://www.cloudwalk.io/newsroom)
+**Estado:** Privada, rentable
+
+**Brief.** La fintech brasileña que se convirtió en operadora de cómputo: procesa pagos para 7 millones de comercios y, de paso, corre el mayor clúster dedicado de IA de América Latina.
+
+**El detalle.** Opera InfinitePay en Brasil —adquirencia, cuenta y crédito para pequeños comercios— y JIM.com en Estados Unidos. Su agente conversacional Pierre.finance ha procesado más de 64 millones de transacciones.
+
+**Por qué está en la lista.** Es la historia más inesperada del fintech latinoamericano. En mayo de 2026 CloudWalk anunció que opera **la mayor infraestructura de cómputo de IA para servicios financieros de la región**, procesando **más de 60 mil millones de tokens diarios en producción** con utilización de GPU sostenida por encima del 90% —un nivel de eficiencia que muchos hyperscalers no alcanzan. El punto no es el modelo: es la integración vertical. Underwriting, riesgo, cobranza y soporte no son procesos con "un poco de IA encima"; se ejecutan como inferencia. El resultado se lee en una sola métrica brutal: **US$1,8 millones de ingreso por empleado**.
+
+**Datos clave**
+- Run-rate de ingresos anualizados: ~US$1.700M (2026)
+- Utilidad antes de impuestos anualizada: US$322M (2026)
+- +7 millones de usuarios activos mensuales entre Brasil y EE.UU.
+- Crecimiento de ingreso neto: >100% interanual
+- Valuación referencial: US$2.100M (julio 2026)
+
+**Fundador:** Luis Silva (CEO)
+**Fuentes:** [CloudWalk Newsroom](https://www.cloudwalk.io/newsroom/cloudwalk-operates-latin-americas-largest-ai-compute-infrastructure-processing-more-than-60-billion-tokens-per-day) · [Businesswire](https://www.businesswire.com/news/home/20260513790695/en/)
+
+---
+
+## 03 · dLocal
+
+**País:** Uruguay (Montevideo) · **Fundación:** 2016 · **Vertical:** Infraestructura de pagos cross-border
+**Web:** [dlocal.com](https://www.dlocal.com) · **Logo:** `https://logo.clearbit.com/dlocal.com` · **Press kit:** [dlocal.com/press-releases](https://www.dlocal.com/press-releases/)
+**Estado:** Cotiza en Nasdaq (DLO) desde junio de 2021
+
+**Brief.** Una sola API conecta a Amazon, Spotify, Microsoft y Uber con los métodos de pago locales de más de 40 mercados emergentes.
+
+**El detalle.** El primer unicornio uruguayo y la única tecnológica latinoamericana que se volvió infraestructura crítica del comercio digital global hacia el Sur. Modelo *pay-in / pay-out* unificado: cobra y paga en moneda local, resuelve FX y compliance, y expone todo detrás de una integración única.
+
+**Por qué está en la lista.** Resolvió el problema de "una API, muchos países" en geografías donde cada mercado tiene rieles de pago, regulación y tipo de cambio distintos —algo que antes exigía integrar decenas de procesadores locales, uno por país. En 2026 su volumen transaccionado creció casi el doble que sus ingresos, señal de que está capturando volumen enterprise a costa de margen: la jugada clásica de quien quiere convertirse en estándar. Su alianza con Félix para remesas por WhatsApp fondeadas en stablecoins muestra hacia dónde va la siguiente capa.
+
+**Datos clave**
+- TPV (volumen total procesado): US$17.700M en el trimestre, +92% interanual (Q2 2026)
+- Ingresos: US$399,7M, +56% interanual (Q2 2026)
+- Utilidad neta: US$54,8M, +28% interanual
+- Séptimo trimestre consecutivo con crecimiento superior al 50%
+- Incorporada al índice Russell 2000 (junio 2026)
+
+**Fundadores:** Sergio Fogel, Andrés Bzurovski · **CEO actual:** Pedro Arnt
+**Fuentes:** [Resultados Q2 2026](https://www.globenewswire.com/news-release/2026/08/13/3344936/0/en/dlocal-reports-second-quarter-2026-financial-results.html) · [FXC Intelligence](https://www.fxcintel.com/research/reports/ct-dlocal-q2-2026-earnings)
+
+---
+
+## 04 · QI Tech
+
+**País:** Brasil (São Paulo) · **Fundación:** 2018 · **Vertical:** Banking-as-a-Service / infraestructura financiera
+**Web:** [qitech.com.br](https://qitech.com.br) · **Logo:** `https://logo.clearbit.com/qitech.com.br`
+**Estado:** Privada · Unicornio desde 2024
+
+**Brief.** La infraestructura invisible detrás de Shopee, 99 y QuintoAndar cuando esas plataformas te prestan dinero, te cobran o te venden un seguro.
+
+**El detalle.** Plataforma que permite a fintechs y empresas no financieras ofrecer pagos, crédito, inversiones, seguros y antifraude embebidos. Custodia US$25.000 millones en activos y es el mayor custodio de fondos de crédito privado de Brasil.
+
+**Por qué está en la lista.** La mayoría de los BaaS alquilan la licencia de un banco tercero. QI Tech hizo lo contrario: **acumuló licencias regulatorias propias** —sociedad de crédito directo, custodia, corretaje— comprando compañías (Zaig, Singulare, Builders Bank) en lugar de esperar trámites. Esa combinación de licencia propia + tecnología significa que sus clientes no dependen de un intermediario bancario, lo que comprime costo y tiempo de lanzamiento de meses a semanas. Su capa antifraude procesa más de 20 millones de verificaciones mensuales sobre una base de 90 millones de registros validados.
+
+**Datos clave**
+- US$25.000M en activos bajo administración · US$17.000M en FIDC bajo custodia
+- +400 clientes corporativos
+- Ronda de US$63M liderada por General Atlantic con Across Capital (agosto 2025)
+- +US$27M en primas de seguros emitidas en los primeros seis meses del producto
+
+**Fundador:** Pedro Mac Dowell (CEO)
+**Fuentes:** [TechNews180](https://technews180.com/funding-news/qi-tech-secures-63m-to-expand-brazil-fintech-services/) · [Businesswire](https://www.businesswire.com/news/home/20240425819919/en/)
+
+---
+
+## 05 · Bitso
+
+**País:** México (CDMX) · **Fundación:** 2014 · **Vertical:** Cripto / stablecoins e infraestructura de pagos
+**Web:** [bitso.com](https://bitso.com) · **Logo:** `https://logo.clearbit.com/bitso.com`
+**Estado:** Privada · Unicornio desde 2021
+
+**Brief.** Dejó de ser un exchange de criptomonedas para volverse emisor de moneda: lanzó MXNB, la stablecoin del peso mexicano, y hoy más del 60% de sus nuevos clientes institucionales son bancos.
+
+**El detalle.** Opera 10 millones de usuarios retail y más de 1.900 clientes institucionales, con corredores de remesas y liquidación entre Estados Unidos, Latinoamérica y Asia.
+
+**Por qué está en la lista.** Bitso fue de las primeras compañías del mundo en demostrar que una stablecoin puede sustituir al banco corresponsal en un corredor de remesas real y a escala —el de Estados Unidos a México, el más grande del planeta. En 2025 dio el salto de operador a infraestructura: lanzó **MXNB** (peso mexicano tokenizado sobre Arbitrum) y **Juno**, su unidad de rieles. Pero el dato que mejor resume su tesis "Hybrid Finance" es sociológico: **más del 60% de sus nuevos clientes institucionales son bancos e instituciones financieras tradicionales**. La banca dejó de competir con la infraestructura cripto y empezó a comprarla.
+
+**Datos clave**
+- +10 millones de usuarios · +1.900 clientes institucionales (junio 2026)
+- Volúmenes de pago en stablecoins de Bitso Business: +81% interanual en el primer semestre de 2026
+- Lanzamiento de MXNB y Juno (marzo 2025)
+- Valuación referencial: US$2.200M (julio 2026)
+- Alianza ampliada con Ripple para liquidación empresarial en stablecoins (junio 2026)
+
+**Fundadores:** Daniel Vogel, Ben Peters, Pablo González
+**Fuentes:** [CoinDesk — Hybrid Finance](https://www.coindesk.com/press-release/2026/06/23/bitso-unveils-the-hybrid-finance-era-as-stablecoins-reshape-global-payments) · [Endeavor Outliers 2026](https://endeavor.org/2026-endeavor-outliers/)
+
+---
+
+## 06 · Clip
+
+**País:** México (CDMX) · **Fundación:** 2012 · **Vertical:** Pagos / adquirencia y wallet
+**Web:** [payclip.com](https://www.payclip.com) · **Logo:** `https://logo.clearbit.com/payclip.com` · **Press kit:** [payclip.com/media](https://www.payclip.com/media/clip-in-news)
+**Estado:** Privada · Unicornio desde 2021
+
+**Brief.** Llevó la terminal de pago a comercios que ningún banco quería atender. Ahora quiere convertir 100.000 tiendas de barrio en la red de cajeros de México.
+
+**El detalle.** En junio de 2026 levantó US$500 millones a una valuación reportada por encima de US$2.500 millones, y en mayo obtuvo autorización de la CNBV como Institución de Fondos de Pago Electrónico. Socios estratégicos: Ant International, Mastercard y TelevisaUnivision.
+
+**Por qué está en la lista.** Por dos movimientos de 2026 que cambian la naturaleza del negocio. El primero, **Hardware(less)**: convierte cualquier teléfono en terminal de pago, eliminando el costo del dispositivo, que es la barrera de entrada real —no la comisión. El segundo es más ambicioso: Clip busca escalar sus puntos autorizados de depósito en efectivo **de 28.000 a 100.000**. Está construyendo una red de cash-in / cash-out capilar que compite con la infraestructura de sucursales de la banca mexicana sin poseer una sola sucursal. En un país donde el efectivo sigue siendo el rey, quien controle la conversión efectivo↔digital controla el sistema.
+
+**Datos clave**
+- US$500M levantados en 2026 · valuación reportada >US$2.500M
+- Autorización CNBV como IFPE (18 de mayo de 2026)
+- Lanzamiento del ecosistema Mi Clip: Wansoft + Hardware(less) + Tap-to-Pay (junio 2026)
+- Meta: pasar de 28.000 a 100.000 puntos de depósito en efectivo
+
+**Fundadores:** Adolfo Babatz (CEO), Mariano Carranza (presidente y CFO)
+**Fuentes:** [Mexico Business News](https://mexicobusiness.news/finance/news/mexicos-clip-launches-mi-clip-wallet-secures-us500-million) · [Multiples.vc](https://multiples.vc/insights/the-unicorns-of-latin-america)
+
+---
+
+## 07 · Plata
+
+**País:** México (CDMX) · **Fundación:** ~2022 · **Vertical:** Neobanco / crédito al consumo
+**Web:** [platacard.mx](https://www.platacard.mx) · **Logo:** `https://logo.clearbit.com/platacard.mx`
+**Estado:** Privada · Unicornio
+
+**Brief.** El neobanco que le ganó la carrera regulatoria a Nubank y a Mercado Pago: obtuvo licencia bancaria plena en México antes que ambos.
+
+**El detalle.** Lanzó su primer producto en abril de 2023 y en menos de tres años acumuló 2,5 millones de usuarios activos y una valuación de US$3.100 millones (octubre 2025), con referencias de mercado que la ubican en US$5.000 millones a mediados de 2026.
+
+**Por qué está en la lista.** Por la jugada regulatoria más agresiva del mercado mexicano. Plata solicitó su licencia bancaria en septiembre de 2022 —antes de tener producto— y recibió la aprobación final de la CNBV en **febrero de 2026**, adelantándose a competidores infinitamente más grandes. Con licencia plena accede a depósitos de bajo costo mientras sus rivales siguen operando como IFPE. El segundo detalle que la explica: su equipo fundador viene de Tinkoff, el banco digital ruso, y trajo un enfoque invertido —**primero el motor de crédito, después la cuenta**— opuesto al de casi todos los neobancos de la región.
+
+**Datos clave**
+- Licencia bancaria plena aprobada por la CNBV (febrero 2026)
+- Series B de US$250M a valuación de US$3.100M (octubre 2025)
+- +2,5 millones de usuarios activos
+- Valuación referencial: US$5.000M (julio 2026)
+
+**Fundador:** Neri Tollardo (CEO)
+**Fuentes:** [FinTech Futures](https://www.fintechfutures.com/digital-banking/mexico-s-plata-completes-journey-to-become-a-fully-licensed-digital-bank) · [Bloomberg](https://www.bloomberg.com/news/articles/2026-02-19/mexico-s-plata-wins-banking-license-heating-up-fintech-race)
+
+---
+
+## 08 · Kapital
+
+**País:** México (CDMX) · **Fundación:** 2019 · **Vertical:** Banca para PyMEs con IA
+**Web:** [kapital.mx](https://www.kapital.mx) · **Logo:** `https://logo.clearbit.com/kapital.mx`
+**Estado:** Privada · Unicornio · Rentable
+
+**Brief.** En vez de pedir una licencia bancaria, compró un banco. Hoy presta a 300.000 PyMEs usando la telemetría de su propio software como historial crediticio.
+
+**El detalle.** Adquirió los activos de banca operativa, broker-dealer y gestión de activos de Grupo Financiero Intercam, heredando US$3.000 millones en activos y saltándose años de trámite regulatorio. Opera en México, Colombia y Estados Unidos. Es Technology Pioneer del World Economic Forum (2024 y 2025) y CNBC Disruptor 50 (2024).
+
+**Por qué está en la lista.** Resolvió el problema estructural que bloquea el crédito PyME en Latinoamérica: la empresa pequeña no tiene historial en el buró, así que el banco no le presta, así que nunca genera historial. Kapital rompe el círculo usando **los datos operativos en tiempo real de su propio software de gestión** —flujo de caja, cobros, cuentas por pagar— como sustrato de underwriting, en lugar de estados financieros históricos. Y lo hace con balance propio, no fondeo de terceros. Es rentable, algo excepcional en lending PyME.
+
+**Datos clave**
+- Series C de hasta US$100M liderada por Tribe Capital y Pelion Ventures (agosto-septiembre 2025)
+- Valuación: US$1.300M — duplicada en menos de dos años
+- 300.000 clientes en México, Colombia y EE.UU. · US$3.000M en activos
+- Compañía rentable
+
+**Fundadores:** René Saúl (CEO), Fernando Sandoval (CFO)
+**Fuentes:** [PR Newswire](https://www.prnewswire.com/news-releases/kapital-doubles-valuation-to-1-3b-becomes-latin-americas-first-ai-unicorn-302543673.html) · [Mexico News Daily](https://mexiconewsdaily.com/business/fintech-firm-kapital-unicorn/)
+
+---
+
+## 09 · Ualá
+
+**País:** Argentina (Buenos Aires) · **Fundación:** 2017 · **Vertical:** Ecosistema financiero / neobanco
+**Web:** [uala.com.ar](https://www.uala.com.ar) · **Logo:** `https://logo.clearbit.com/uala.com.ar`
+**Estado:** Privada · Unicornio
+
+**Brief.** Cerca de uno de cada cinco adultos argentinos usa Ualá. Ningún neobanco del mundo tiene esa penetración poblacional en su mercado de origen.
+
+**El detalle.** Tarjeta prepaga y de crédito, préstamos, inversiones, seguros y adquirencia para comercios en Argentina, México y Colombia. Compró bancos en ambos extremos —Wilobank en Argentina, ABC Capital en México— para operar con licencia propia.
+
+**Por qué está en la lista.** Porque construyó escala masiva en el peor laboratorio macroeconómico posible, y eso obligó a una innovación de producto que nadie más necesitaba. En un país con inflación extrema, el producto financiero relevante no es la cuenta: es la protección del poder adquisitivo. Ualá diseñó todo su ecosistema —rendimiento automático sobre saldos, inversiones desde montos mínimos, dolarización— alrededor de esa realidad. La entrada de **Allianz X** como inversor líder en marzo de 2026 señala el siguiente movimiento: de pagos hacia seguros e inversiones.
+
+**Datos clave**
+- +11 millones de clientes en Argentina, México y Colombia
+- Ronda de US$195M a valuación post-money de US$3.200M (marzo 2026)
+- Liderada por Allianz X, con Stone Ridge, Tencent, Soros Fund Management y D1 Capital
+- Licencias bancarias propias en Argentina y México
+
+**Fundador:** Pierpaolo Barbieri (CEO)
+**Fuentes:** [FinTech Futures](https://www.fintechfutures.com/challenger-banks/uala-hits-3-2bn-valuation-following-195m-investment) · [Buenos Aires Times](https://www.batimes.com.ar/news/amp/economy/argentinas-uala-reaches-us32-billion-valuation.phtml)
+
+---
+
+## 10 · Pomelo
+
+**País:** Argentina (Buenos Aires) · **Fundación:** 2021 · **Vertical:** Infraestructura de emisión de tarjetas
+**Web:** [pomelo.la](https://www.pomelo.la) · **Logo:** `https://logo.clearbit.com/pomelo.la`
+**Estado:** Privada
+
+**Brief.** Lanzar un programa de tarjetas en Latinoamérica tomaba trimestres. Con Pomelo se hace por API. Y desde 2026, la tarjeta puede tener una stablecoin como saldo subyacente.
+
+**El detalle.** Plataforma API-first de emisión, procesamiento y gestión de tarjetas para fintechs y empresas en Latinoamérica, Centroamérica y el Caribe. Más de 150 clientes y US$160 millones levantados en total.
+
+**Por qué está en la lista.** Por la expansión de 2026, que es técnicamente la más interesante del sector: **tarjetas globales stablecoin-native**. El saldo subyacente de la tarjeta es una stablecoin, y liquida en más de 150 países —lo que permite que un activo digital se gaste en un punto de venta tradicional sin que el comercio note diferencia alguna. Sumado a tokenización de pagos y gestión de contracargos con IA, Pomelo dejó de ser un reemplazo moderno de los procesadores legacy para convertirse en el puente operativo entre el dinero on-chain y el retail físico.
+
+**Datos clave**
+- Series C de US$55M co-liderada por Kaszek e Insight Partners (enero 2026)
+- Total levantado: US$160M · +150 clientes
+- Infraestructura de pagos operando en más de 150 países
+- Inversores: Index Ventures, Adams Street, S32, Endeavor Catalyst, monashees, TQ Ventures
+
+**Fundadores:** Gastón Irigoyen, Hernán Corral, Juan Fantoni
+**Fuentes:** [Insight Partners](https://www.insightpartners.com/ideas/pomelo-raises-55-million-series-c-to-accelerate-the-modernization-of-payments-infrastructure/) · [FinTech Futures](https://www.fintechfutures.com/venture-capital-funding/latam-fintech-pomelo-secures-55m-series-c)
+
+---
+
+## 11 · Addi
+
+**País:** Colombia (Bogotá) · **Fundación:** 2018 · **Vertical:** Crédito en punto de venta (BNPL) con IA
+**Web:** [addi.com](https://www.addi.com) · **Logo:** `https://logo.clearbit.com/addi.com`
+**Estado:** Privada · Rentable desde hace dos años
+
+**Brief.** El único BNPL relevante de Latinoamérica que llegó a rentabilidad sostenida en un sector donde casi todos quemaron capital subsidiando la tasa.
+
+**El detalle.** Da crédito instantáneo en el checkout a más de 3 millones de clientes en más de 39.000 comercios colombianos, y opera como entidad regulada por la autoridad financiera del país.
+
+**Por qué está en la lista.** Por resolver la ecuación que hundió al BNPL global: el costo de capital. Addi construyó una estructura de fondeo institucional de **más de US$680 millones en compromisos de deuda**, incluida una facilidad estructurada de US$150 millones de J.P. Morgan (abril 2026), lo que le da costo de fondeo de banco sin ser un banco. Sobre esa base corre decisión de crédito instantánea con modelos propios. El resultado: dos años consecutivos de rentabilidad y una Series D de US$85 millones en julio de 2026, cuando el resto del sector seguía en modo supervivencia.
+
+**Datos clave**
+- Series D de US$85M liderada por Citius y co-liderada por BTG Pactual, con GIC y Monashees (julio 2026)
+- +3 millones de clientes · +39.000 comercios
+- +US$680M en compromisos de deuda, incluida facilidad de US$150M de J.P. Morgan
+- Rentable dos años consecutivos
+
+**Fundadores:** Santiago Suárez, Daniel Vallejo, Elmer Ortega
+**Fuentes:** [FinTech Global](https://fintech.global/2026/07/02/addi-secures-85m-series-d-led-by-citius-and-btg-pactual/) · [Intelligent CIO LATAM](https://www.intelligentcio.com/latam/2026/07/03/addi-raises-us85-million-series-d-to-accelerate-ai-powered-fintech-growth-in-colombia/)
+
+---
+
+## 12 · Cobre
+
+**País:** Colombia (Bogotá) · **Vertical:** Infraestructura de pagos B2B en tiempo real
+**Web:** [cobre.co](https://cobre.co) · **Logo:** `https://logo.clearbit.com/cobre.co`
+**Estado:** Privada · **Nº1 de América Latina en el ranking Most Innovative Companies 2026 de Fast Company**
+
+**Brief.** Movió US$17.000 millones en 2025 haciendo que las transferencias interbancarias empresariales en Colombia tarden menos de 20 segundos en lugar de días.
+
+**El detalle.** Plataforma de tesorería y pagos B2B que conecta a empresas con el sistema financiero colombiano. A inicios de 2026 procesaba alrededor de US$2.600 millones mensuales.
+
+**Por qué está en la lista.** Es la única compañía latinoamericana en el primer lugar regional del ranking de innovación de Fast Company en 2026, y lo ganó por algo concreto: fue habilitadora temprana de **Bre-B**, el sistema de pagos inmediatos de Colombia, llevándolo al mundo corporativo. Bre-B es el equivalente colombiano de lo que Pix hizo en Brasil, y Cobre entendió antes que nadie que el valor no está en el consumidor sino en la tesorería empresarial: nóminas, pagos a proveedores, conciliación. Convirtió una infraestructura pública nueva en producto empresarial antes de que los bancos reaccionaran.
+
+**Datos clave**
+- US$17.000 millones procesados en 2025
+- ~US$2.600 millones mensuales a inicios de 2026
+- Nº1 de América Latina en Fast Company Most Innovative Companies 2026
+- Transferencias interbancarias empresariales en menos de 20 segundos
+
+**Fuentes:** [Businesswire — Cobre Nº1 Fast Company LATAM 2026](https://www.businesswire.com/news/home/20260324228136/en/Cobre-Ranked-No.-1-in-Latin-America-on-Fast-Companys-2026-List-of-the-Worlds-Most-Innovative-Companies) · [Fast Company MIC LATAM 2026](https://www.fastcompany.com/91497250/latin-america-most-innovative-companies-2026)
+
+---
+
+## 13 · Global66
+
+**País:** Chile (Santiago) · **Fundación:** 2018 · **Vertical:** Pagos cross-border / cuenta multi-moneda
+**Web:** [global66.com](https://www.global66.com) · **Logo:** `https://logo.clearbit.com/global66.com`
+**Estado:** Privada · Rentable hace más de 2,5 años
+
+**Brief.** La fintech chilena que superó los US$100 millones de ingresos anualizados creciendo más de 100% al año — y siendo rentable todo ese tiempo.
+
+**El detalle.** Transferencias internacionales, cuenta multi-moneda y tarjetas para personas y PyMEs en Chile, Colombia, Costa Rica y Paraguay, con registro habilitado desde más de 100 países.
+
+**Por qué está en la lista.** Por una combinación que casi no existe en el fintech latinoamericano: **escala, crecimiento de tres dígitos y rentabilidad sostenida simultáneas**. En un sector acostumbrado a subsidiar el take rate para comprar volumen, Global66 lleva más de dos años y medio en azul mientras duplica ingresos cada año. Ejecuta el 80% de sus pagos en menos de cinco minutos y lanza más de 15 productos o funcionalidades al año, incorporando liquidación vinculada a blockchain en corredores internacionales. Su participación activa en el diseño del marco de Open Finance chileno la convierte además en interlocutor regulatorio, no solo en usuario de la norma.
+
+**Datos clave**
+- +US$100M de ingresos anualizados, creciendo >100% interanual (2026)
+- US$3.500M transados por clientes en el primer semestre de 2026
+- US$1.360M transados en Chile en H1 2026, +74% vs. H1 2025
+- ~4,5 millones de transacciones · +50.000 clientes transaccionales nuevos por mes
+- Rentable hace más de 2,5 años
+
+**Fundador:** Tomás Bercovich (CEO)
+**Fuentes:** [LatamFintech](https://www.latamfintech.co/articles/fintech-chilena-global66-prepara-nuevos-productos-de-credito-e-inversion-tras-superar-los-us-100-millones-en-ingresos-anualizados)
+
+---
+---
+
+# II. IA, SOFTWARE Y CIBERSEGURIDAD
+
+> En 2026 América Latina dejó de ser solo un mercado de adopción de IA. Brasil produjo el primer unicornio de IA pura de la región y la mayor ronda seed de su historia; Chile lanzó un modelo fundacional abierto de 70 mil millones de parámetros entrenado con datos latinoamericanos. Aquí entran también las compañías de servicios que dejaron de vender horas para vender software propio. La ventaja regional no es el costo del talento: son los problemas que solo existen aquí.
+
+---
+
+## 14 · Enter
+
+**País:** Brasil (São Paulo) · **Fundación:** ~2023 · **Vertical:** Agentes de IA para litigio masivo
+**Web:** [getenter.ai](https://www.getenter.ai) · **Logo:** `https://logo.clearbit.com/getenter.ai`
+**Estado:** Privada · **Primer unicornio de IA pura de América Latina** (mayo 2026)
+
+**Brief.** Agentes de IA que ejecutan el ciclo procesal completo de litigios civiles y laborales de alto volumen. Triplicó su valuación en ocho meses.
+
+**El detalle.** Sistema operativo de IA para departamentos jurídicos: análisis de autos, extracción de pruebas, detección de fraude, redacción de contestaciones. Sus clientes incluyen a Bradesco y Nubank. Procesa más de 300.000 procesos judiciales al año.
+
+**Por qué está en la lista.** Porque atacó un problema que **solo Brasil tiene a esta escala**: decenas de millones de causas judiciales pendientes, un volumen que ningún país desarrollado enfrenta y que por lo tanto ninguna legaltech estadounidense está construyendo para resolver. Enter no hizo un copiloto de redacción: construyó agentes que ejecutan el ciclo completo con auditoría y edición humana sobre cada paso. Fue de las primeras empresas latinoamericanas aprobadas por OpenAI bajo Zero Data Retention Policy (febrero 2025) —requisito sin el cual ningún banco le habría entregado expedientes. Y la métrica que cierra el argumento no es de producto sino de resultado: **+6 puntos porcentuales de win rate** en litigio de consumo para Nubank.
+
+**Datos clave**
+- Series B de US$100M+ a valuación de US$1.200M, liderada por Founders Fund (mayo 2026)
+- Con Ribbit, Sequoia, ONEVC, Atlantico y Kaszek
+- Series A de US$35M a US$350M en 2025 — triplicó valuación en 8 meses
+- Ingresos 10x interanual · +300.000 procesos judiciales/año
+
+**Fundadores:** Henrique Vaz, Mateus Costa-Ribeiro, Michael Mac-Vicar (ex-CTO de Wix)
+**Fuentes:** [Greenberg Traurig](https://www.gtlaw.com/en/news/2026/05/press-releases/greenberg-traurig-represents-enter-in-$100m-series-b--creating-latin-americas-first-ai-unicorn) · [Pulse 2.0](https://pulse2.com/enter-100-million-series-b-raised-at-1-2-billion-valuation-for-ai-legal-platform/)
+
+---
+
+## 15 · Decade
+
+**País:** Brasil · **Fundación:** 2025–2026 · **Vertical:** IA aplicada a gestión patrimonial
+**Web:** [decade.com](https://decade.com) · **Logo:** `https://logo.clearbit.com/decade.com`
+**Estado:** Privada · **La mayor ronda seed de la historia de una startup latinoamericana**
+
+**Brief.** US$85 millones en ronda seed, co-liderada por Greenoaks, Benchmark y Diffusion. Fundada por el ex-CTO de Nubank.
+
+**El detalle.** Empareja asesores financieros humanos con sistemas de IA propietarios que retienen el historial financiero y conversacional completo de cada cliente, monitoreando gasto, mercado y portafolio de forma continua.
+
+**Por qué está en la lista.** Por el diseño técnico, no por el cheque. El núcleo del producto es **memoria longitudinal del cliente como sustrato**, no un chatbot sobre un CRM: la premisa es que las decisiones patrimoniales componen a lo largo de décadas, y que un sistema que recuerda todo lo dicho y hecho durante veinte años produce recomendaciones que un asesor humano con notas dispersas jamás podría. El equipo es la señal más fuerte: Vitor Olivier fue de los primeros ingenieros y luego CTO de Nubank cuando el banco cruzó los 100 millones de clientes; Felipe Meneses fundó Hyperplane (adquirida por Nubank) siendo el primer Thiel Fellow brasileño. Es la "mafia Nubank" convertida en motor de fundación.
+
+**Datos clave**
+- US$85M en ronda seed (agosto 2026) — récord regional
+- Co-liderada por Greenoaks, Benchmark y Diffusion
+- Fundadores provenientes del núcleo de ingeniería e IA de Nubank
+
+**Fundadores:** Vitor Olivier (CEO, ex-CTO de Nubank), Felipe Meneses (Head of AI, fundador de Hyperplane)
+**Fuentes:** [FinTech Global](https://fintech.global/2026/08/05/decade-nabs-record-seed-to-disrupt-brazilian-wealth-advice/) · [LatamList](https://latamlist.com/category/startup-news/funding/)
+
+---
+
+## 16 · Maritaca AI
+
+**País:** Brasil (Campinas — origen UNICAMP) · **Fundación:** 2023 · **Vertical:** Modelos fundacionales en portugués
+**Web:** [maritaca.ai](https://www.maritaca.ai) · **Logo:** `https://logo.clearbit.com/maritaca.ai`
+**Estado:** Privada
+
+**Brief.** Entrena LLMs desde cero en portugués brasileño y publica los papers que lo demuestran. Su modelo Sabiá superó a ChatGPT-3.5 en tareas en portugués con una fracción de los parámetros.
+
+**El detalle.** Familia Sabiá servida vía API, hoy en su cuarta generación (Sabiá 4, Sabiazinho 4 y Sabiá 4 Thinking, con razonamiento, function calling y procesamiento de hasta 100 archivos simultáneos). La línea Juru especializa el modelo en derecho brasileño.
+
+**Por qué está en la lista.** Porque demostró con **evidencia revisada por pares, no con marketing**, que el preentrenamiento continuado en un idioma específico supera a modelos generalistas más grandes: Sabiá-65B superó a ChatGPT-3.5 en promedio sobre 14 tareas en portugués (BRACIS 2023). Publicó reportes técnicos en arXiv para toda la familia, liberó Sabiá-7B en Hugging Face y —el aporte más generoso— creó **BLUEX**, un benchmark multimodal construido con exámenes de admisión de la USP y la UNICAMP que se volvió estándar de evaluación de modelos en portugués brasileño. Es de las pocas compañías de IA de la región que hace ciencia abierta y la somete a arbitraje.
+
+**Datos clave**
+- Familia Sabiá 4 en producción (2026): Sabiazinho 4, Sabiá 4 y Sabiá 4 Thinking
+- Sabiá-65B superó a ChatGPT-3.5 en 14 tareas en portugués (BRACIS 2023)
+- Sabiá-7B liberado en Hugging Face · Benchmark BLUEX de dominio público
+- Propuso públicamente un plan nacional de IA brasileña
+- ⚠️ Financiamiento y valuación: no divulgados públicamente
+
+**Fundador:** Rodrigo Nogueira (CEO, PhD en Ciencias de la Computación, NYU)
+**Fuentes:** [Maritaca — Research](https://www.maritaca.ai/en/pesquisa) · [Maritaca — Plan de IA brasileña](https://www.maritaca.ai/en/blog/plano-ia-brasileira)
+
+---
+
+## 17 · Latam-GPT (CENIA)
+
+**País:** Chile (Santiago) · **Lanzamiento:** 10 de febrero de 2026 · **Vertical:** Modelo fundacional abierto regional
+**Web:** [cenia.cl](https://cenia.cl) · **Logo:** `https://logo.clearbit.com/cenia.cl`
+**Estado:** ⚠️ **No es una startup:** es un consorcio público-académico. Entra en la lista porque es la pieza de infraestructura de IA más consecuente de la región.
+
+**Brief.** 70 mil millones de parámetros entrenados con 300 mil millones de tokens de corpus latinoamericano. El primer gran modelo de lenguaje abierto de la región, coordinado desde Chile con 60 instituciones de 15 países.
+
+**El detalle.** Arquitectura Llama 3.1, entrenado sobre un corpus regional curado —humanidades, educación, ciencias de la salud, políticas públicas, economía, medioambiente, artes y estudios de pueblos originarios— incluyendo variantes dialectales de español y portugués que los modelos globales sub-representan. AWS optimizó el entrenamiento de 25 a 9 días. Financiado por el Ministerio de Ciencia de Chile, CAF, AWS y Data Observatory.
+
+**Por qué está en la lista.** Porque define el sustrato sobre el que construirán muchas de las startups de esta lista. Un modelo entrenado mayoritariamente en inglés estadounidense no sabe qué es un "colectivo" en Buenos Aires, un "camión" en México o una "micro" en Santiago —y esa ignorancia se propaga a cada producto construido encima. Latam-GPT es el primer intento serio y abierto de corregirlo a escala continental. Y CENIA hizo algo que casi nadie hace: en abril de 2026 publicó **dos benchmarks propios para medir cuánto sabe realmente el modelo sobre la región**, en lugar de reportar métricas en inglés y llamarlo éxito.
+
+**Datos clave**
+- 70.000 millones de parámetros · +300.000 millones de tokens de corpus regional
+- 60+ instituciones de 15 países · 100+ profesionales
+- Entrenamiento optimizado de 25 a 9 días con AWS (−64%)
+- Lanzado públicamente el 10 de febrero de 2026
+- Open source
+
+**Líderes clave:** Álvaro Soto (director de CENIA, también cofundador de la robótica chilena Zippedi)
+**Fuentes:** [CENIA](https://cenia.cl/2026/02/10/latam-gpt-la-primera-ia-regional-abierta-creada-con-datos-latinoamericanos/) · [CAF](https://www.caf.com/es/actualidad/eventos/lanzamiento-latam-gpt-primer-gran-modelo-de-lenguaje-abierto-de-america-latina-y-el-caribe/)
+
+---
+
+## 18 · Humand
+
+**País:** Argentina (Buenos Aires) · **Fundación:** 2019–2020 · **Vertical:** HR tech AI-native para trabajadores sin escritorio
+**Web:** [humand.co](https://www.humand.co) · **Logo:** `https://logo.clearbit.com/humand.co`
+**Estado:** Privada
+
+**Brief.** El sistema operativo de recursos humanos para los trabajadores que Workday y Slack nunca diseñaron para atender: los que no tienen escritorio. 2 millones de usuarios en más de 50 países.
+
+**El detalle.** Más de 30 módulos —comunicación interna, nómina, turnos, capacitación, onboarding, desempeño— con agentes de IA que responden consultas de empleados y ejecutan solicitudes. Fundada por dos ingenieros del ITBA, pasó por Y Combinator (W22).
+
+**Por qué está en la lista.** Su ventaja no es el agente: es el sustrato. Al centralizar 30+ módulos de RR.HH. y operaciones sobre **una sola base de datos**, los agentes de IA tienen contexto completo del empleado —nómina, turnos, capacitación, tickets abiertos— en lugar de operar sobre un silo. Eso es lo que separa un asistente que contesta preguntas de uno que resuelve problemas. Y el foco es deliberadamente el segmento ignorado: manufactura, salud, construcción, retail, hospitalidad —la mayoría de la fuerza laboral latinoamericana. Creció con dos rondas previas de apenas US$2,5 millones cada una antes de la Series A: escaló con muy poco capital.
+
+**Datos clave**
+- Series A de US$66M liderada por Kaszek y Goodwater Capital (27 de febrero de 2026)
+- Con Newtopia VC, Y Combinator, Arash Ferdowsi (Dropbox), Sebastián Mejía (Rappi), Guillermo Rauch (Vercel), Marcos Galperin (Mercado Libre)
+- +2.000 clientes · +2 millones de usuarios · +500 empleados · 51 países
+- Una de las mayores Series A de la historia argentina
+
+**Fundadores:** Nicolás Benenzon (CEO), Gerónimo Maspero (CTO)
+**Fuentes:** [Infobae](https://www.infobae.com/economia/2026/02/25/una-startup-argentina-de-recursos-humanos-recibio-una-inversion-de-usd-66-millones-los-apoyan-galperin-y-otros-cinco-unicornios/) · [Y Combinator](https://www.ycombinator.com/companies/humand)
+
+---
+
+## 19 · Simetrik
+
+**País:** Colombia (Bogotá) · **Fundación:** 2019 · **Vertical:** IA agéntica / conciliación financiera
+**Web:** [simetrik.com](https://simetrik.com) · **Logo:** `https://logo.clearbit.com/simetrik.com`
+**Estado:** Privada
+
+**Brief.** Procesa más de mil millones de registros por día conciliando el dinero que se mueve entre bancos, procesadores y libros contables de Santander, Nubank, Itaú, Mercado Libre y Rappi.
+
+**El detalle.** Plataforma de IA agéntica y no-code que automatiza conciliación financiera, gestión de excepciones y flujos de cumplimiento. Opera en más de 40 países y crece 100% interanual en ingresos.
+
+**Por qué está en la lista.** Porque convirtió el trabajo más aburrido de las finanzas en una capa de datos estratégica. La conciliación tradicional compara par a par; Simetrik resuelve **matching multi-vía entre fuentes heterogéneas** y lo alinea automáticamente con asientos contables y saldos operativos. El resultado no es solo ahorro de horas: es un dataset conciliado "AI-ready" que después alimenta modelos de pronóstico y riesgo. La conciliación deja de ser un centro de costo y se vuelve el insumo limpio sobre el que se construye todo lo demás. A mil millones de registros diarios, ese activo no se replica.
+
+**Datos clave**
+- Series B total de US$85M, con extensión de US$30M liderada por Growth Equity at Goldman Sachs Alternatives (junio 2025)
+- +1.000 millones de registros procesados por día · 40+ países
+- Crecimiento de ingresos: 100% interanual
+- Clientes: Santander, Nubank, Itaú, Mercado Libre, Rappi, PayU, Sephora, Falabella
+
+**Fundadores:** Alejandro Casas (CEO), Santiago Gómez (COO)
+**Fuentes:** [Businesswire](https://www.businesswire.com/news/home/20250604684778/en/) · [Simetrik Blog](https://simetrik.com/blog/simetrik-raises-85m-to-redefine-financial-reconciliation-with-ai/)
+
+---
+
+## 20 · Strike
+
+**País:** Uruguay (Montevideo) · **Fundación:** 2020 · **Vertical:** Ciberseguridad / pentesting continuo con IA
+**Web:** [strike.sh](https://strike.sh) · **Logo:** `https://logo.clearbit.com/strike.sh`
+**Estado:** Privada
+
+**Brief.** Rompió el modelo del pentest como auditoría anual y cara: detección continua con IA, validación humana solo donde hace falta. Clientes: Santander, Mercado Libre y Okta.
+
+**El detalle.** Plataforma que combina un motor propio (Strike360) con una red de hackers éticos validadores, más una suite de cumplimiento para SOC2, ISO27001, HIPAA y PCI DSS. Más de 100 empresas cliente.
+
+**Por qué está en la lista.** El pentesting tradicional es una foto: se contrata una vez al año, cuesta decenas de miles de dólares y queda obsoleto la semana siguiente. Strike360 automatiza detección y remediación de forma **continua** y deriva a validación humana solo lo ambiguo, reduciendo los plazos de detección de meses a segundos. Lo notable es que se puso una meta técnica medible y pública —automatizar el 50% del pentesting hacia fines de 2025— en un sector que vive de la vaguedad. Y para una compañía uruguaya, tener a Santander, Mercado Libre y Okta como clientes no es tracción: es validación de que el modelo aguanta escrutinio de seguridad enterprise.
+
+**Datos clave**
+- Series A de US$13,5M liderada por FinTech Collective, con Galicia Ventures y Greyhound Capital (noviembre 2025)
+- +100 empresas cliente
+- Expansión a Estados Unidos y Brasil (2025–2026)
+
+**Fundador:** Santiago Rosenblatt (CEO)
+**Fuentes:** [Strike Blog](https://strike.sh/blog/strike-raises-13-5m-series-a-to-expand-ai-powered-continuous-pentesting-in-the-u-s-brazil) · [Contxto](https://www.contxto.com/en/funding/uruguay-cybersec-startup-strike-closes-13-5-million-series-a-round/)
+
+---
+
+## 21 · Lumu Technologies
+
+**País:** Colombia (fundación colombiana, operación con base en EE.UU.) · **Fundación:** 2019 · **Vertical:** Ciberseguridad / detección continua de compromiso
+**Web:** [lumu.io](https://lumu.io) · **Logo:** `https://logo.clearbit.com/lumu.io`
+**Estado:** Privada · **Adquirente** (compró Maltiverse en abril de 2025)
+
+**Brief.** Invirtió la premisa del SIEM: en vez de agregar todos los logs y buscar la aguja, parte de asumir que la red ya está comprometida y mide cuánto.
+
+**El detalle.** Mide continuamente el grado de compromiso de una red analizando su metadata —DNS, proxy, firewall, spam— contra inteligencia de amenazas, detectando indicadores de compromiso en tiempo real. Respaldada por Forgepoint Capital, SoftBank, BIP Ventures y Exceptional Capital.
+
+**Por qué está en la lista.** El SIEM clásico exige ingerir y correlacionar volúmenes gigantescos de log, lo que hace la seguridad avanzada económicamente inviable para todas las empresas salvo las más grandes. Lumu parte de la hipótesis de **"compromiso continuo"** y mide desviación en lugar de correlacionar todo, reduciendo drásticamente el volumen de telemetría necesario para detectar. Y con la compra de **Maltiverse** en abril de 2025 internalizó su propia fuente de threat intelligence, eliminando la dependencia de feeds de terceros —el insumo más caro y menos diferenciado del sector— y abriendo su entrada a Europa.
+
+**Datos clave**
+- +US$38M levantados en total
+- Adquisición de Maltiverse (España, threat intelligence) el 9 de abril de 2025
+- Inversores: Forgepoint Capital, SoftBank, BIP Ventures, Exceptional Capital, Simma Capital
+
+**Fundador:** Ricardo Villadiego
+**Fuentes:** [LatAm Republic](https://www.latamrepublic.com/lumu-technologies-expands-cybersecurity-reach-with-maltiverse-acquisition/) · [Lumu Investors](https://lumu.io/investors/)
+
+---
+## 22 · Wiwo
+
+**País:** Chile (Santiago; hubs en Bogotá, Panamá y Miami) · **Vertical:** Servicios AI-native / neomarketing con software propietario
+**Web:** [meetwiwo.com](https://www.meetwiwo.com) · **Logo:** `https://logo.clearbit.com/meetwiwo.com`
+**Estado:** Privada · Parte de MGC Global Group · Miembro de NVIDIA Inception
+
+**Brief.** Desarmó la agencia de publicidad y la volvió a armar como producto de software. Cinco herramientas propias, un modelo llamado Neomarketing, y la tesis de que en Latinoamérica el cuello de botella nunca fue la idea creativa: fue la operación.
+
+**El detalle.** Se define como la primera **Neo-Agencia IA-first** de Latinoamérica: integra estrategia, creatividad, datos, tecnología y operación como un sistema continuo de crecimiento en lugar de campañas sueltas. Sobre ese modelo construyó cinco productos propios —**Wiwo.Lab** (investigación, creación y producción con IA), **Wiwo.Ops** (gestión de tareas y proyectos), **Wiwo.MetriQ** (medición y reporting), **Wiwo.Talk** (canales, CRM y agentes conversacionales) y **Wiwo.Social**— y presta consultoría en transformación digital, e-commerce, advertising y SEO/GEO. Opera desde Santiago, Bogotá, Panamá y Miami, dentro de la red de MGC Global Group (250 profesionales, 4 hubs regionales, 10 países). Casos publicados: Make-A-Wish *Dona una Estrella*, el lanzamiento del MG3 de MG Motor con IA y FlixBus Chile.
+
+**Por qué está en la lista.** Porque ataca una asimetría que casi nadie nombra. La empresa mediana latinoamericana no compra estrategia: compra horas. Y entre la campaña, el CRM, el reporte y la operación comercial hay un abismo que ninguna agencia tradicional cruza —cada pieza vive en una herramienta distinta, con datos que no se hablan y decisiones que llegan un mes tarde. La apuesta de Wiwo es colapsar esa cadena en un solo stack propio, de modo que la creatividad, la medición y la conversación con el cliente compartan la misma base de datos. Es la misma lógica de integración vertical que explica a CloudWalk o a Tractian en esta lista, aplicada a la capa de servicios: **dejar de vender el output y empezar a vender el sistema que lo produce**. Su membresía en NVIDIA Inception —programa reservado a compañías que convierten investigación en producto— es la señal de que el software es propio y no una capa de marca sobre herramientas de terceros. Y el eje Santiago–Bogotá–Panamá–Miami no es geografía decorativa: es la ruta por la que una marca latinoamericana escala al mercado hispano de Estados Unidos.
+
+**Datos clave**
+- 5 productos de software propietarios: Wiwo.Lab, Wiwo.Ops, Wiwo.MetriQ, Wiwo.Talk, Wiwo.Social
+- Hubs en Santiago, Bogotá, Panamá y Miami
+- Parte de MGC Global Group: 250 profesionales, 4 hubs regionales, presencia en 10 países
+- Miembro de NVIDIA Inception · Premiada en los WINA Awards
+- Alianzas tecnológicas: NVIDIA, OpenAI, Google, Salesforce, HubSpot, Bitrix24, BytePlus, Vambe
+
+**Fundador:** Polo Díaz (Founder & CEO de Wiwo; Global Head of Innovation de MGC Global Group)
+**Fuentes:** [Wiwo](https://www.meetwiwo.com) · [MGC Global Group](https://www.mgcglobalgroup.com) · [Portal Innova](https://portalinnova.cl/wiwo-apuesta-por-el-crecimiento-empresarial-en-etm-day-2024/)
+
+---
+
+---
+
+# III. HEALTHTECH Y BIOTECH
+
+> Aquí está la innovación menos visible y quizás la más consecuente. Compañías que rediseñan el tamizaje de cáncer para que cueste casi nada, que operan con imanes en vez de incisiones, que fabrican anticuerpos a partir de llamas. Casi todas nacen de universidades y centros públicos de investigación.
+
+---
+
+## 23 · Telepatía
+
+**País:** Colombia (fundada en Medellín, incubada en Stanford) · **Fundación:** 2025 · **Vertical:** IA clínica
+**Web:** [telepatia.ai](https://www.telepatia.ai) · **Logo:** `https://logo.clearbit.com/telepatia.ai`
+**Estado:** Privada · Operación principal en Brasil, más México, Chile y Argentina
+
+**Brief.** Levantó US$42 millones en menos de un año, incluida una Series A liderada por a16z. Dice haber interceptado 60.000 errores médicos en tiempo real.
+
+**El detalle.** Plataforma AI-native que escucha la consulta médico-paciente, genera la nota clínica estructurada y añade soporte a la decisión y auditoría de calidad. Está desplegando "trabajadores IA" con rol clínico definido —médico, enfermería, auditoría— en más de 25 sistemas hospitalarios que atienden a 14 millones de pacientes.
+
+**Por qué está en la lista.** No es un transcriptor médico genérico, y esa es toda la diferencia. Telepatía entrena sobre **protocolos institucionales latinoamericanos**, lo que le permite auditar adherencia contra el protocolo específico de cada hospital en tiempo real, en vez de contra un estándar estadounidense que aquí no aplica. El resultado medido —adherencia a protocolo de 84% a 99%— es el tipo de dato que convierte un producto de productividad en uno de seguridad del paciente. Además se integra con más de 50 sistemas hospitalarios preexistentes, resolviendo el cuello de botella real de la salud digital regional, que nunca fue el algoritmo sino la interoperabilidad.
+
+**Datos clave**
+- Series A de US$33M liderada por Andreessen Horowitz (junio 2026); US$42M totales en menos de un año
+- Con Shyam Sankar (CTO de Palantir), Simón Borrero (Rappi) y David Vélez (Nubank)
+- 14 millones de pacientes alcanzados · 25+ instituciones de salud
+- Adherencia a protocolo: de 84% a 99% · 60.000 errores médicos interceptados
+- Médicos recuperan ~1,7–2 horas diarias de documentación
+
+**Fundador:** Nicolás Abad (CEO)
+**Fuentes:** [a16z](https://www.a16z.news/p/investing-in-telepatia) · [MobiHealthNews](https://www.mobihealthnews.com/news/telepatia-secures-33m-expand-ai-healthcare-platform-across-latin-america)
+
+---
+
+## 24 · Eden
+
+**País:** México · **Vertical:** Diagnóstico por imagen / infraestructura RIS-PACS cloud
+**Web:** [edenmed.com](https://edenmed.com) · **Logo:** `https://logo.clearbit.com/edenmed.com`
+**Estado:** Privada
+
+**Brief.** Procesa 13 millones de estudios radiológicos al año en 18 países, y en el camino acumuló uno de los mayores datasets de imagen médica con etiquetado clínico de la región.
+
+**El detalle.** Sistema RIS/PACS cloud-native para gestión del flujo de imagen médica, con herramientas de IA diagnóstica integradas y sin necesidad de infraestructura local. Más de 2.200 instituciones médicas. Fundada por Julián Ríos Cantú, quien previamente construyó Higia Technologies.
+
+**Por qué está en la lista.** Porque eligió atacar la capa de infraestructura en lugar de la de algoritmo, que es donde todos compiten. El servidor PACS on-premise —caro, difícil de mantener, imposible de actualizar— es lo que hace inviable la radiología moderna en hospitales medianos de Latinoamérica. Eden lo elimina y, al hacerlo, **convierte esa capa en el canal de distribución de sus propios modelos de IA**: cada nueva capacidad diagnóstica llega a 2.200 instituciones sin instalar nada. La estrategia es la de un sistema operativo, no la de una aplicación.
+
+**Datos clave**
+- Series A de US$22M liderada por Sierra Ventures (octubre 2025), con Liquid 2 Ventures y Daniel Servitje (CEO de Grupo Bimbo)
+- Ronda previa de US$10M en 2024
+- 18 países · 2.200+ instituciones médicas · 13 millones de estudios anuales
+
+**Fundador:** Julián Ríos Cantú (CEO)
+**Fuentes:** [LatamList](https://latamlist.com/eden-raises-22m-series-a/) · [Contxto](https://contxto.com/en/healthtech/eden-closes-22-million-series-a-round-led-by-global-funds/)
+
+---
+
+## 25 · Huna
+
+**País:** Brasil · **Fundación:** 2022 · **Vertical:** Detección temprana de cáncer con IA
+**Web:** [huna-ai.com](https://huna-ai.com) · **Logo:** `https://logo.clearbit.com/huna-ai.com`
+**Estado:** Privada · Etapa temprana
+
+**Brief.** Detecta riesgo oncológico analizando con IA un hemograma común. Sin biomarcador nuevo, sin equipo nuevo, sin costo marginal.
+
+**El detalle.** Algoritmos entrenados sobre 5 millones de exámenes de sangre de rutina para identificar patrones de riesgo, empezando por cáncer de mama. Validación científica publicada en *Nature* (2024). Seleccionada por Cuantico VP entre las startups brasileñas a seguir en 2026.
+
+**Por qué está en la lista.** Es la idea más elegante de esta lista. Los programas de tamizaje poblacional fracasan en sistemas públicos por una razón económica simple: cada test adicional cuesta dinero, logística y adherencia del paciente. Huna extrae señal predictiva de **exámenes que ya se hacen por millones**, lo que lleva el costo marginal del screening prácticamente a cero. No hay que convencer al paciente de hacerse nada nuevo, ni al hospital de comprar nada nuevo. Es el punto exacto donde la IA aplicada tiene un impacto sanitario desproporcionado respecto de su costo. La validación en *Nature* es lo que la separa de las decenas de promesas del sector.
+
+**Datos clave**
+- Ronda pre-seed de US$1,5M liderada por Kortex Ventures (junio 2025), con big_bets, Niu Ventures y New Ventures Capital
+- Algoritmos entrenados sobre 5 millones de exámenes
+- Validación publicada en *Nature* (2024)
+- Expandiéndose hacia una plataforma multi-cáncer
+
+**Fundadores:** Vinicius Ribeiro (CEO), Daniella Castro
+**Fuentes:** [LatamList](https://latamlist.com/huna-raises-1-5m-to-expand-ai-powered-cancer-diagnostics-platform/) · [Cuantico VP](https://reports.cuanticovp.com/cuantico-vp-identifies-brazils-top-startups-to-watch-for-2026/)
+
+---
+
+## 26 · Levita Magnetics
+
+**País:** Chile (origen chileno, I+D y cirugías en Santiago; HQ corporativo en Mountain View) · **Fundación:** 2011–2012 · **Vertical:** Robótica quirúrgica magnética
+**Web:** [levita.com](https://www.levita.com) · **Logo:** `https://logo.clearbit.com/levita.com`
+**Estado:** Privada · +1.000 cirugías realizadas
+
+**Brief.** El 10 de septiembre de 2025, en la Clínica Las Condes de Santiago, anunció **la primera cirugía del mundo con cámara quirúrgica guiada autónomamente por IA** — una colecistectomía.
+
+**El detalle.** MARS (Magnetic-Assisted Robotic Surgery) usa imanes externos para controlar un retractor interno a través de la pared abdominal, eliminando incisiones. Tiene autorización de la FDA para vesícula, bariátrica, próstata, colorrectal y hernia hiatal, más uso pediátrico. Ganadora del RBR50 Robotics Innovation Award 2025.
+
+**Por qué está en la lista.** Porque cambió la física del procedimiento, no el software. Mientras Intuitive y el resto del sector compiten por meter más instrumentos por más puertos, Levita **elimina un puerto completo** usando acoplamiento magnético a través del tejido. Sobre esa base montó guiado autónomo de cámara por IA que mantiene el campo visual sin que un asistente humano la opere —y con eso ejecutó la primera cirugía autónoma guiada por IA reportada en el mundo, en Chile. También protagonizó el primer procedimiento dual-robot del planeta, combinando MARS con el Da Vinci SP: complementariedad, no competencia frontal con el incumbente.
+
+**Datos clave**
+- Primera cirugía del mundo con cámara autónoma guiada por IA (colecistectomía): anunciada el 10 de septiembre de 2025, Clínica Las Condes, Santiago
+- +1.000 cirugías completadas con MARS a nivel mundial (julio 2025)
+- FDA amplió indicaciones a bariátrica y hernia hiatal (junio 2025)
+- US$26M levantados en Series C
+- ⚠️ La función de cámara autónoma no está aún autorizada por FDA ni a la venta en EE.UU.
+
+**Fundador:** Dr. Alberto Rodríguez Navarro (CEO)
+**Fuentes:** [Levita](https://www.levita.com/blog/levita-magnetics-powers-worlds-first-ai-guided-autonomous-surgery-with-mars-platform) · [The Robot Report](https://www.therobotreport.com/levita-magnetics-mars-platform-uses-ai-guided-autonomous-camera-first-surgery/)
+
+---
+
+## 27 · GeneproDX
+
+**País:** Chile (Santiago; sede europea en Barcelona) · **Vertical:** Diagnóstico molecular oncológico
+**Web:** [geneprodx.com](https://www.geneprodx.com) · **Logo:** `https://logo.clearbit.com/geneprodx.com`
+**Estado:** Privada · Acceso a mercado en más de 88 países
+
+**Brief.** ThyroidPrint® evita cirugías de tiroides innecesarias. Cada año se hacen unas 900.000 en el mundo que no hacían falta.
+
+**El detalle.** Test molecular de 10 biomarcadores que reclasifica nódulos tiroideos indeterminados. Reporta 95% de precisión para predecir benignidad y evitación de cirugía en el 70% de los casos, sobre un mercado de ~1,25 millones de biopsias indeterminadas anuales.
+
+**Por qué está en la lista.** Por una decisión de arquitectura que sus competidores estadounidenses no pueden replicar fuera de Norteamérica. GeneproDX corre sobre la plataforma Idylla™ de Biocartis —qPCR en cartucho cerrado— lo que entrega **resultado en 3 horas en el laboratorio del propio hospital**, sin enviar la muestra a un laboratorio central en Estados Unidos. Ese modelo de laboratorio central es exactamente lo que hace inviables a sus competidores en Latinoamérica, Europa y Asia. Y el diseño del test alrededor de la decisión quirúrgica —no del diagnóstico abstracto— se explica porque su fundador es cirujano y profesor de la Universidad Católica de Chile.
+
+**Datos clave**
+- 95% de precisión para predecir benignidad · evita cirugía en 70% de los casos
+- Resultado en 3 horas, en el laboratorio del hospital
+- Acceso a mercado en Europa y Latinoamérica: 88+ países
+- Mercado direccionable declarado: ~US$2.000M anuales
+- ⚠️ Montos de financiamiento no divulgados públicamente
+
+**Fundador:** Dr. Hernán González, MD, PhD (CEO)
+**Fuentes:** [GeneproDX](https://www.geneprodx.com/investors) · [Biocartis](https://www.biocartis.com/en/about-us/our-partners/our-content-partners/geneprodx)
+
+---
+
+## 28 · Oncoliq
+
+**País:** Argentina · **Vertical:** Biopsia líquida oncológica
+**Estado:** Privada · Etapa temprana · Nacida del CONICET
+
+**Brief.** Detección temprana de cáncer en una muestra de sangre por US$70. Los tests equivalentes del norte cuestan uno o dos órdenes de magnitud más.
+
+**El detalle.** Analiza micro-ARN y ARN tumoral circulante, con sensibilidad reportada del 85–91% en validación clínica. Forma parte del fondo SF500 de Bioceres. Marcó el récord de inversión seed en biotecnología argentina: unas 8 veces el ticket promedio del sector en el país.
+
+**Por qué está en la lista.** Por el punto de precio, que es la innovación real. Oncoliq apunta a **micro-ARN circulante** en lugar de ADN tumoral circulante (ctDNA), la ruta que dominan los gigantes estadounidenses —una elección técnica que abarata radicalmente el ensayo. A US$70 por test, la biopsia líquida deja de ser un producto premium de nicho y se convierte en una herramienta de **tamizaje poblacional viable** para sistemas de salud latinoamericanos. Esa es la diferencia entre una tecnología que existe y una que llega a la gente. Que haya nacido del CONICET, fundada por dos científicas, la convierte además en el caso testigo de la nueva ola biotech argentina.
+
+**Datos clave**
+- Seed de US$2,84M liderada por Endurance28 (San Francisco) — 31 de mayo de 2025
+- Con Draper U Ventures, Air Capital, Women in Technology, DIM Centros de Salud
+- Total acumulado: +US$4,2M
+- 85–91% de sensibilidad reportada · precio objetivo de US$70 por test
+- Récord de inversión seed en biotecnología argentina
+
+**Fundadoras:** Marina Simian (CEO), Adriana De Siervi
+**Fuentes:** [Bloomberg Línea](https://www.bloomberglinea.com/latinoamerica/argentina/startup-argentina-marca-record-para-la-inversion-seed-en-biotecnologia-en-el-pais/) · [El Ecosistema Startup](https://ecosistemastartup.com/8-cientificas-del-conicet-levantaron-us-40m-para-startups-biotech-en-2026/)
+
+---
+
+## 29 · Nanogrow Biotech
+
+**País:** Uruguay (con sede europea en Navarra, España desde 2025) · **Fundación:** 2021 · **Vertical:** Nanoanticuerpos
+**Estado:** Privada · **Startup más disruptiva de South Summit Brazil 2025** entre 2.000 postulantes
+
+**Brief.** Fabrica anticuerpos a partir de llamas y alpacas. Es una ventaja geográfica que casi ningún país del mundo puede copiar.
+
+**El detalle.** Desarrolla nanoanticuerpos derivados de camélidos para dermatitis atópica, psoriasis, asma, colitis ulcerosa, carcinoma colorrectal y melanoma, más una línea veterinaria (Nanovet). Siete patentes desarrolladas con el CIMA de la Universidad de Navarra. Equipo de 15 personas.
+
+**Por qué está en la lista.** Los nanobodies son más pequeños y térmicamente estables que los anticuerpos monoclonales convencionales, lo que les da penetración tisular y resistencia a cadenas de frío débiles —dos ventajas concretas en dermatología tópica y en distribución en mercados emergentes. Uruguay tiene una posición estructural en camélidos sudamericanos que hace su plataforma de inmunización difícil de replicar en otra geografía. Pero lo que la vuelve notable es la estrategia financiera: **usa su línea veterinaria para generar caja mientras avanza el pipeline humano** —tres acuerdos comerciales firmados en dermatitis atópica canina— resolviendo el problema de financiamiento que mata a la mayoría de los biotech de países pequeños.
+
+**Datos clave**
+- Seed de US$1,2M (2024) · Series A objetivo de US$10M (primer semestre 2026)
+- 7 patentes desarrolladas con el CIMA de la Universidad de Navarra
+- Startup más disruptiva de South Summit Brazil 2025 (entre 2.000 postulantes)
+- Primer lugar en Drug and Therapy Discovery Platforms, Deep Tech Summit Brazil
+- 3 acuerdos comerciales veterinarios firmados
+
+**Fundadores:** Nicolás Galmarini (CEO), Lucía Vanrell (CSO, PhD Universidad de Navarra)
+**Fuentes:** [Uruguay XXI](https://www.uruguayxxi.gub.uy/en/news/article/nanogrow-biotech-uruguayan-science-that-crosses-borders-and-strengthens-its-presence-in-europe/) · [Forbes Uruguay](https://www.forbesuruguay.com/negocios/la-startup-uruguaya-nanogrow-fue-elegida-como-mas-disruptiva-south-summit-asi-prepara-levantar-una-serie-us10-m-n70858)
+
+---
+
+## 30 · Establishment Labs
+
+**País:** Costa Rica · **Vertical:** Dispositivos médicos / femtech
+**Web:** [establishmentlabs.com](https://www.establishmentlabs.com) · **Logo:** `https://logo.clearbit.com/establishmentlabs.com`
+**Estado:** Cotiza en Nasdaq (ESTA) · ⚠️ Ya no es startup en etapa VC; entra como el activo insignia de ciencias de la vida centroamericano
+
+**Brief.** El único fabricante del mundo que desafió con éxito al duopolio de implantes mamarios desde fuera de Estados Unidos. Más de 5 millones de dispositivos distribuidos en 100+ países.
+
+**El detalle.** Diseña y fabrica los implantes Motiva y la plataforma Mia Femtech / Preservé de aumento mínimamente invasivo. Obtuvo aprobación PMA de la FDA para Motiva en septiembre de 2024, tras años de operar solo en mercados internacionales.
+
+**Por qué está en la lista.** Porque es la prueba de que un país centroamericano puede construir un fabricante de dispositivos médicos de clase mundial y ganarle regulatoriamente a los incumbentes en su propio terreno. Mia Femtech reposiciona el aumento mamario como procedimiento ambulatorio mínimamente invasivo, con **resultados clínicos prospectivos a tres años publicados en el *Aesthetic Surgery Journal*** —evidencia revisada por pares en una industria dominada por marketing estético. Y la plataforma Preservé se vende ~30% por encima del Motiva estándar, lo que indica poder real de fijación de precios sobre su propia base instalada.
+
+**Datos clave**
+- Ingresos Q1 2026: US$59,9M, +44,7% interanual · margen bruto 70,7%
+- Guidance FY2026 elevado a US$266,5–268,5M
+- +5 millones de dispositivos Motiva distribuidos en 100+ países
+- Aprobación PMA de la FDA para Motiva (septiembre 2024)
+- Refinanciamiento con préstamo senior de US$300M de fondos de Oaktree Capital (abril 2026)
+
+**Fuentes:** [StockTitan ESTA](https://www.stocktitan.net/news/ESTA/) · [Businesswire — aprobación FDA](https://www.businesswire.com/news/home/20240926359459/en/)
+
+---
+---
+
+# IV. AGTECH, FOODTECH, CLIMA Y ENERGÍA
+
+> El capital de climate tech en Latinoamérica pasó de US$211 millones en 2024 a US$447 millones en 2025. Pero el dato relevante de 2026 es otro: Brasil dejó de prometer remoción de carbono y empezó a entregarla, verificada y antes de plazo. Es la única región del mundo donde eso está pasando a escala.
+
+---
+
+## 31 · Solinftec
+
+**País:** Brasil (Araçatuba, SP) · **Fundación:** 2007 · **Vertical:** Robótica agrícola autónoma
+**Web:** [solinftec.com](https://www.solinftec.com) · **Logo:** `https://logo.clearbit.com/solinftec.com`
+**Estado:** Privada · Opera en 5 países
+
+**Brief.** Robots solares autónomos que recorren el cultivo aplicando herbicida planta por planta. Reducción de hasta 95% del insumo. Más de 100 desplegados en campos estadounidenses.
+
+**El detalle.** Plataforma de IA agrícola (ALICE AI) y robots Solix. En 2026 aumentó 243% la superficie bajo operación en Estados Unidos respecto de 2024. Mantiene 330 personas dedicadas a I+D sobre 800 empleados y ha levantado cerca de US$289 millones desde su fundación.
+
+**Por qué está en la lista.** Por la Refill Station, que suena a detalle logístico y es en realidad el candado del sector. El cuello de botella de la robótica agrícola nunca fue navegar el campo: fue **reabastecer** —cada vez que el robot se queda sin herbicida o sin energía, necesita a un humano. Solinftec debutó comercialmente en 2026 una estación de recarga autónoma que cierra el bucle y habilita operación 24/7 sin intervención. Sumado a que el robot es solar (sin ventana de operación limitada por combustible) y que aplica **por visión computacional planta por planta** en vez de por zona, el resultado reescribe la economía del insumo agrícola, no solo la del equipo.
+
+**Datos clave**
+- +100 robots Solix autónomos desplegados en EE.UU. (2026)
+- +243% de superficie bajo operación en EE.UU. vs. 2024
+- Reducción de herbicida de hasta 95% frente a aspersión en manta
+- US$288,8M levantados desde su fundación · Series D de US$57M (2024) + bonos por US$36M (2025)
+- Debut comercial de la estación de recarga autónoma (2026)
+
+**Fundadores:** Britaldo Hernandez (fundador, President & CIO), Daniel Padrão (COO)
+**Fuentes:** [Solinftec — Commodity Classic 2026](https://www.solinftec.com/en-us/blog/solinftec-expands-u-s-footprint-243-deploys-100-autonomous-robots-as-it-showcases-next-generation-solix-system-at-commodity-classic-2026/) · [AgFunderNews](https://agfundernews.com/solinftecs-self-refilling-spray-robots-close-the-loop-on-247-autonomy-on-the-farm)
+
+---
+
+## 32 · Mombak
+
+**País:** Brasil (São Paulo; operaciones en Pará) · **Fundación:** 2021 · **Vertical:** Remoción de carbono / reforestación amazónica
+**Web:** [mombak.com](https://mombak.com) · **Logo:** `https://logo.clearbit.com/mombak.com`
+**Estado:** Privada · +US$200M levantados
+
+**Brief.** Entregó créditos de carbono verificados **dos años antes** de lo proyectado. En un mercado construido sobre promesas incumplidas, eso es la noticia.
+
+**El detalle.** Adquiere tierras degradadas de la Amazonía y las restaura con más de 80 especies nativas. Ya plantó unos 15 millones de árboles en 12 proyectos en Pará. Inversores: Bain Capital, AXA IM Alts, Lowercarbon Capital, Kaszek y Union Square Ventures.
+
+**Por qué está en la lista.** Por dos decisiones estructurales y un resultado. La primera decisión: **compra la tierra** en vez de contratar al propietario, lo que elimina el riesgo de reversión que hunde a la mayoría de proyectos forestales de carbono —si el dueño tala en el año siete, el crédito se evapora. La segunda: planta con 80+ especies nativas en lugar de monocultivo de eucalipto, lo que sostiene la clasificación de "remoción" real y no de emisión evitada. Y el resultado: en agosto de 2026 emitió más de 21.000 créditos verificados que no se esperaban hasta 2028. Google amplió su contrato de 50.000 a 200.000 toneladas; Microsoft contrató 1,5 millones de toneladas hasta 2032.
+
+**Datos clave**
+- +US$200M levantados (incluidos US$30M adicionales en 2026)
+- ~15 millones de árboles nativos plantados en 12 proyectos en Pará
+- 21.000+ créditos verificados emitidos en agosto de 2026 — dos años antes de lo proyectado
+- Google: contrato ampliado de 50.000 a 200.000 toneladas
+- Microsoft: 1,5 millones de toneladas contratadas hasta 2032
+- Coalición Symbiosis (Google, Microsoft, Meta, Salesforce): hasta 20M t a 2030
+
+**Fundadores:** Peter Fernandez y Gabriel Silva
+**Fuentes:** [CarbonCredits.com](https://carboncredits.com/brazils-mombak-delivers-amazon-carbon-credits-early-giving-google-a-climate-win/) · [Google Blog](https://blog.google/company-news/outreach-and-initiatives/sustainability/mombak-co2-removal/)
+
+---
+
+## 33 · InPlanet
+
+**País:** Brasil (Piracicaba, SP; oficina en Múnich) · **Fundación:** 2022 · **Vertical:** Meteorización mejorada de rocas (ERW)
+**Web:** [inplanet.earth](https://inplanet.earth) · **Logo:** `https://logo.clearbit.com/inplanet.earth`
+**Estado:** Privada · Microsoft es cliente e inversor
+
+**Brief.** Entregó los **primeros créditos de meteorización mejorada de rocas verificados independientemente del mundo**, con la calificación más alta del segmento.
+
+**El detalle.** Aplica roca silicatada finamente molida —residuo de minería ya extraído— sobre suelos tropicales para acelerar una reacción geoquímica natural que captura CO₂ de forma permanente. Más de 12.000 hectáreas tratadas en Brasil. Más del 70% del equipo está en Brasil.
+
+**Por qué está en la lista.** La química del ERW se conoce hace décadas; la barrera siempre fue la **cuantificación defendible** —cómo demostrar, con medición auditable, cuánto carbono se secuestró realmente bajo tierra. InPlanet llegó primero: en diciembre de 2024 entregó los primeros créditos ERW del mundo verificados de forma independiente, con calificación **'A' de BeZero Carbon**. Y su ventaja geográfica es real: el suelo tropical brasileño, ácido y de alta pluviosidad, acelera la cinética de meteorización varias veces respecto de climas templados. Además el mismo insumo funciona como corrector de acidez agronómico, así que el agricultor tiene un motivo para aceptarlo aunque el crédito no existiera —lo que resuelve el problema de adopción que hunde a casi todos los proyectos de carbono.
+
+**Datos clave**
+- Primeros créditos ERW del mundo verificados independientemente (diciembre 2024), calificación 'A' de BeZero Carbon
+- Acuerdo con Microsoft: 28.500 toneladas de remoción de CO₂, entrega 2026–2028, con inversión de Microsoft en la compañía
+- +12.000 hectáreas tratadas en Brasil
+- Créditos verificados bajo el Enhanced Weathering Protocol de Isometric
+
+**Fundador:** Felix Harteneck (CEO)
+**Fuentes:** [InPlanet](https://inplanet.earth/press/inplanet-secures-agreement-to-deliver-28500-enhanced-rock-weathering-credits-to-microsoft-providing-durable-carbon-removal-and-regenerative-agriculture-benefits-in-brazil/) · [Carbon Herald](https://carbonherald.com/microsoft-invests-in-brazil-based-erw-carbon-removal-from-inplanet/)
+
+---
+
+## 34 · re.green
+
+**País:** Brasil (Río de Janeiro) · **Fundación:** 2021 · **Vertical:** Restauración de ecosistemas a escala industrial
+**Web:** [regreen.eco.br](https://regreen.eco.br) · **Logo:** `https://logo.clearbit.com/regreen.eco.br`
+**Estado:** Privada · **Ganadora del Earthshot Prize 2025**
+
+**Brief.** Ganó la primera concesión de restauración de la Amazonía subastada por el Estado brasileño: 59.000 hectáreas por 40 años.
+
+**El detalle.** Restaura tierras degradadas en la Amazonía y la Mata Atlántica usando drones e IA para siembra y monitoreo de supervivencia a escala. Acuerdos de reforestación con Microsoft y Novo Nordisk. Respaldada por los fundadores de Lanx Capital y Gávea.
+
+**Por qué está en la lista.** Porque resolvió el problema que ninguna tecnología resuelve: **la tenencia de la tierra**. En marzo de 2026 ganó en la B3 de São Paulo la primera concesión de restauración amazónica subastada por el Estado brasileño —un instrumento regulatorio completamente nuevo que convierte tierra pública degradada en un activo restaurable a 40 años, con una regalía de apenas 0,7% de los ingresos por crédito. Eso no es un contrato: es la creación de una clase de activo. Brasil planea expandir el modelo hasta unas 750.000 hectáreas para 2027, y re.green escribió el primer capítulo. El Earthshot Prize 2025 confirmó lo que el mercado ya había validado.
+
+**Datos clave**
+- Primera concesión de restauración amazónica subastada por el Estado brasileño: 59.000 hectáreas, 40 años (marzo 2026)
+- Ganadora del Earthshot Prize 2025
+- Acuerdos de reforestación con Microsoft y Novo Nordisk
+- R$80 millones de un fondo climático estatal brasileño
+- Brasil planea expandir el modelo de concesiones a ~750.000 hectáreas para 2027
+
+**CEO:** Thiago Picolo
+**Fuentes:** [Carbon Herald](https://carbonherald.com/brazil-launches-amazon-restoration-push-with-new-concession-model-awards-first-long-term-deal-to-re-green/) · [Earthshot Prize](https://earthshotprize.org/winners-finalists/re-green/)
+
+---
+
+## 35 · Puna Bio
+
+**País:** Argentina (Buenos Aires / Tucumán) · **Fundación:** 2019 · **Vertical:** Biotecnología agrícola con extremófilos
+**Web:** [puna.bio](https://www.puna.bio) · **Logo:** `https://logo.clearbit.com/puna.bio`
+**Estado:** Privada · **Primera inversión de la Gates Foundation en una startup argentina** · Fast Company MIC LATAM 2026
+
+**Brief.** Aísla microorganismos que sobreviven en la Puna de Atacama —radiación UV extrema, salinidad, sequía, 4.000 msnm— y se los transfiere a los cultivos.
+
+**El detalle.** Recubrimientos de semilla con extremófilos que hacen los cultivos resistentes al estrés térmico y salino. Productos desplegados en más de 800.000 acres en varios países, expandiéndose a África subsahariana y el sur de Asia.
+
+**Por qué está en la lista.** Porque su materia prima es un activo geográfico irreplicable. Los microorganismos de la Puna llevan maquinaria bioquímica de tolerancia al estrés que ninguna cepa de laboratorio tiene, porque evolucionaron en condiciones análogas a las que la agricultura global enfrentará bajo cambio climático. Puna Bio transfiere esa tolerancia a la planta vía simbiosis, lo que significa que **la resiliencia viene del microbioma y no de modificar el genoma del cultivo** —eliminando de un plumazo la barrera regulatoria transgénica que ralentiza a la competencia por años. El desafío técnico que efectivamente resolvieron es de formulación: hacer un extremófilo vivo estable en estantería y compatible con maquinaria de siembra convencional.
+
+**Datos clave**
+- Series A de US$20,3M liderada por Corteva Catalyst (abril 2025), con At One Ventures, Bill & Melinda Gates Foundation y Dalus Capital
+- Primera inversión de la Gates Foundation en una startup con base en Argentina (julio 2025)
+- Productos desplegados en +800.000 acres
+- Seleccionada por Fast Company entre las empresas más innovadoras de América Latina 2026
+
+**Fundadores:** Franco Martínez Levis (CEO), con las científicas del CONICET Elisa Violeta Bertini y María Eugenia Farías
+**Fuentes:** [AgFunderNews](https://agfundernews.com/gates-foundation-invests-in-puna-bio-to-bring-extremophile-based-ag-biologicals-to-africa) · [Fast Company MIC LATAM 2026](https://www.fastcompany.com/91497250/latin-america-most-innovative-companies-2026)
+
+---
+
+## 36 · Satellites on Fire
+
+**País:** Argentina · **Fundación:** ~2021 · **Vertical:** Detección temprana de incendios con IA
+**Web:** [satellitesonfire.com](https://satellitesonfire.com) · **Logo:** `https://logo.clearbit.com/satellitesonfire.com`
+**Estado:** Privada · Etapa temprana
+
+**Brief.** Detecta incendios forestales **35 minutos antes, en promedio, que el sistema FIRMS de la NASA**. Usando los mismos satélites.
+
+**El detalle.** Fusiona imágenes de más de 8 satélites, cámaras en torres y modelos de propagación para detectar y simular incendios en tiempo real, con refresco de hasta 5 minutos. Atendió más de 600 incendios en 2025. Nació como proyecto escolar; su CEO tiene 22 años.
+
+**Por qué está en la lista.** Porque esos 35 minutos son exactamente la ventana de contención efectiva —la diferencia entre un foco que se apaga y uno que arrasa. Y la ventaja no viene de mejores satélites: usa los mismos de NASA, NOAA y ESA. Viene de **fusión multi-fuente y modelos propios de firma térmica**. Pero lo que más habla del equipo es lo que hicieron antes: consultaron a más de 80 bomberos, escucharon que la primera versión del producto era inútil, y la reconstruyeron desde cero. Esa disciplina de descarte es rarísima en climate tech. La validación definitiva llegó en 2026, cuando **Aon integró la plataforma en la totalidad de sus pólizas de seguro forestal en América Latina**: distribución embebida, no venta transaccional.
+
+**Datos clave**
+- Seed de US$2,7M liderada por Dalus Capital (10 de abril de 2026), con Draper Associates, VitaminC y Savia Ventures
+- Detección promedio 35 minutos antes que el sistema FIRMS de la NASA
+- +600 incendios atendidos en 2025 · refresco de hasta 5 minutos
+- Aon integró la plataforma en todas sus pólizas de seguro forestal en LatAm
+
+**Fundador:** Rodríguez Viau (CEO)
+**Fuentes:** [PreventionWeb / UNDRR](https://www.preventionweb.net/news/argentine-wildfire-ai-startup-raises-27m-after-building-detection-system-beats-nasas-alerts-35) · [FinSMEs](https://www.finsmes.com/2026/04/satellites-on-fire-raises-2-7m-in-seed-funding.html)
+
+---
+
+## 37 · NotCo ⚠️
+
+**País:** Chile (Santiago) · **Fundación:** 2015 · **Vertical:** IA para formulación de alimentos
+**Web:** [notco.com](https://notco.com) · **Logo:** `https://logo.clearbit.com/notco.com`
+**Estado:** Privada · Unicornio (valuación de US$1.500M alcanzada en 2021) · ⚠️ **En reestructuración**
+
+**Brief.** Su activo ya no es la marca: son diez años de datos sobre 10.000 formulaciones con feedback sensorial humano acoplado. Hoy licencia esa capacidad a 7 de las 10 mayores empresas de consumo del mundo.
+
+**El detalle.** Su plataforma de IA "Giuseppe" encuentra combinaciones no obvias de ingredientes vegetales que replican productos animales. En Chile y Argentina, solo el 20% del negocio viene ya de snacks de marca propia: el resto es licenciamiento de tecnología.
+
+**Por qué está en la lista, y con una advertencia.** Está por el pivote honesto: NotCo entendió que la guerra de las góndolas de proteína alternativa se estaba perdiendo globalmente y movió el negocio hacia donde tenía ventaja defendible —el dataset. Diez años de formulaciones con feedback sensorial acoplado es un corpus que no se puede comprar ni scrapear, y hoy lo usa con siete de las diez mayores CPG del planeta. Además está en **ensayos clínicos en humanos de un potenciador de GLP-1 en polvo**, moviéndose de "sustituto vegetal" a ingrediente funcional metabólico. La advertencia: cerró sus oficinas de Nueva York, terminó la relación con Kraft Heinz como distribuidor en EE.UU. y Canadá, redujo ~11% de su plantilla y postergó la rentabilidad de 2024 a 2027. Es una compañía valiosa atravesando una corrección severa, y esta lista no la va a maquillar.
+
+**Datos clave**
+- Valuación de US$1.500M alcanzada en la Series D de 2021 (valuación 2026 no verificada, probablemente marcada a la baja)
+- Trabaja con 7 de las 10 mayores CPG globales
+- Dataset de 10+ años sobre 10.000+ formulaciones con feedback sensorial
+- Ensayos clínicos en humanos de un potenciador de GLP-1 en polvo
+- ⚠️ Cierre de oficinas en Nueva York, fin de la distribución con Kraft Heinz en EE.UU./Canadá, −11% de plantilla; rentabilidad postergada a 2027
+
+**Fundadores:** Matías Muchnick (CEO), Karim Pichara (CTO), Pablo Zamora
+**Fuentes:** [AgFunderNews — entrevista al CEO](https://agfundernews.com/notco-ceo-on-the-road-to-profitability-the-evolving-business-model-and-its-new-glp-1-booster) · [AméricaEconomía](https://www.americaeconomia.com/en/node/290416)
+
+---
+
+## 38 · PhageLab
+
+**País:** Chile (Santiago; operaciones en Brasil) · **Fundación:** ~2017 · **Vertical:** Bacteriófagos guiados por IA / resistencia antimicrobiana
+**Web:** [phage-lab.com](https://phage-lab.com) · **Logo:** `https://logo.clearbit.com/phage-lab.com`
+**Estado:** Privada · ~US$40M levantados
+
+**Brief.** Reemplaza antibióticos en producción avícola y porcina con virus que matan bacterias, emparejados por IA a la cepa específica de cada granja.
+
+**El detalle.** Diseña cócteles de bacteriófagos con portafolio ya segmentado por patógeno: Inspektor (Salmonella), Fórmida (E. coli aviar), Phagein (diarrea infecciosa en rumiantes). Desplegado en grandes productores avícolas de Chile y Brasil.
+
+**Por qué está en la lista.** El fago no es nuevo —se conoce desde hace un siglo. Lo nuevo es el **matching computacional entre la cepa bacteriana presente en la granja y el cóctel específico** que la mata. La razón histórica del fracaso de la fagoterapia fue justamente su hiperespecificidad: un fago mata una cepa y no la de al lado. Con secuenciación e IA, esa debilidad se convierte en precisión quirúrgica. Y el timing es el correcto: la presión regulatoria europea sobre antibióticos promotores de crecimiento está creando un mercado forzado, y la resistencia antimicrobiana en ganadería es uno de los riesgos sanitarios globales mejor documentados.
+
+**Datos clave**
+- ~US$40M de financiamiento total acumulado (2026)
+- Ronda puente de US$3M liderada por Kaszek Ventures (abril 2026)
+- Series A de US$11M (enero 2024)
+- Nuevo CEO: Caue Zortea (ex-CCO, ex-Eli Lilly, MBA Stanford); Hans Pieringer pasa a CSO
+- Nuevas formulaciones no líquidas previstas para fines de 2026 / inicios de 2027
+
+**Fundador:** Hans Pieringer (cofundador, hoy CSO)
+**Fuentes:** [LatamRepublic](https://www.latamrepublic.com/phagelab-targets-global-expansion-after-us-3m-round-led-by-kaszek-ventures/) · [Businesswire](https://www.businesswire.com/news/home/20240123553007/en/)
+
+---
+
+## 39 · HIF Global
+
+**País:** Chile (Santiago; planta insignia en Magallanes) · **Fundación:** 2016 · **Vertical:** Hidrógeno verde y e-fuels
+**Web:** [hifglobal.com](https://hifglobal.com) · **Logo:** `https://logo.clearbit.com/hifglobal.com`
+**Estado:** Privada · ⚠️ Es un desarrollador de infraestructura de escala multimillonaria, no una startup de VC clásica
+
+**Brief.** La planta Haru Oni, en la Patagonia chilena, es la **primera instalación comercial de combustibles sintéticos del mundo**. Con respaldo de Porsche y Siemens Energy.
+
+**El detalle.** Combina hidrógeno verde de electrólisis eólica con CO₂ capturado para producir e-metanol y e-gasolina drop-in. Pipeline de US$15.300 millones en CAPEX planificado, con proyectos en Estados Unidos, Uruguay, Brasil y Australia.
+
+**Por qué está en la lista.** Por dos razones que se refuerzan. La primera es geográfica y no es casualidad: la Patagonia chilena tiene factores de planta eólicos **superiores al 70%**, y el costo de la electricidad domina el costo del e-fuel. Chile tiene una ventaja física que ningún país europeo puede comprar. La segunda es de producto: el e-fuel es *drop-in*, funciona en motores y logística existentes sin reemplazar flota. Eso lo convierte en la ruta de descarbonización realista para aviación y transporte marítimo, donde la electrificación directa simplemente no es viable. HIF está intentando que el recurso eólico austral se transforme en exportación de energía.
+
+**Datos clave**
+- Haru Oni (Magallanes): primera planta comercial de e-fuels del mundo
+- Pipeline de US$15.300M en CAPEX planificado (2026)
+- Meta de 200.000 toneladas anuales de producción combinada
+- Offtakes con Mabanaft y e Fuel One GmbH por 100.000 t anuales cada uno
+- 1,8 GW de electrolizadores PEM seleccionados para la planta de Matagorda, Texas (septiembre 2025)
+- Proyectos anunciados en Paysandú, Uruguay (US$5.300M) y Brasil (US$4.000M)
+
+**CEO:** César Norton · **COO:** Clara Bowman
+**Fuentes:** [OECD Case Study](https://www.oecd.org/content/dam/oecd/en/about/programmes/cefim/green-hydrogen/HIF-global-case-study.pdf) · [EnkiAI](https://enkiai.com/carbon-capture/hif-global-dac-e-methanol/)
+
+---
+
+## 40 · Sistema.bio
+
+**País:** México (sede global) · **Fundación:** 2010 · **Vertical:** Biodigestores y financiamiento climático
+**Web:** [sistema.bio](https://sistema.bio) · **Logo:** `https://logo.clearbit.com/sistema.bio`
+**Estado:** Privada · Opera en más de 35 países
+
+**Brief.** El metano causa cerca del 30% del calentamiento global y recibe el 2% del financiamiento climático rastreado. Sistema.bio construyó el vehículo financiero para corregir esa asimetría.
+
+**El detalle.** Fabrica y financia biodigestores modulares que convierten estiércol en biogás y biofertilizante para pequeños productores agropecuarios. Ha financiado más de 90.000 biodigestores y más de 9 millones de toneladas de CO₂ equivalente en reducciones.
+
+**Por qué está en la lista.** No por el hardware, que lleva 15 años funcionando, sino por **FarmCarbon**, lanzado en marzo de 2026: la innovación es financiera. El vehículo **pre-financia la instalación del biodigestor contra acuerdos plurianuales de compra de reducciones de emisiones futuras**, entregando al pequeño productor el valor del crédito de carbono por adelantado en lugar de dentro de cinco años. Ese desfase temporal es exactamente lo que impedía que el financiamiento climático llegara al pequeño agricultor. Y el biodigestor sustituye simultáneamente leña, fertilizante sintético y emisiones de metano: tres flujos de valor por una sola instalación. A&O Shearman lo estructuró como un vehículo "market-first".
+
+**Datos clave**
+- US$53M en primer cierre de FarmCarbon, liderado por BNP Paribas Asset Management Alts (17 de marzo de 2026), con British International Investment y Shell Foundation
+- +90.000 biodigestores financiados
+- +9 millones de toneladas de CO₂e en reducciones
+- Opera en 35+ países
+
+**Fundadores:** Alexander Eaton (CEO), Camilo Pagés
+**Fuentes:** [Shell Foundation](https://shellfoundation.org/press-release/sistema-bio-raises-53m-to-launch-farmcarbon-an-innovative-funding-vehicle-aimed-at-expanding-climate-finance-for-smallholder-farmers-and-accelerating-methane-mitigation/) · [ESG Today](https://www.esgtoday.com/bnp-paribas-am-invests-in-farming-decarbonization-platform-farmcarbon/)
+
+---
+
+## 41 · Bio Natural Solutions
+
+**País:** Perú (Lima) · **Fundación:** ~2016 · **Vertical:** Economía circular / bioinsumos y vida útil de alimentos
+**Web:** [bnsworldwide.com](https://www.bnsworldwide.com) · **Logo:** `https://logo.clearbit.com/bnsworldwide.com`
+**Estado:** Privada · **Rentable desde 2022**
+
+**Brief.** Convierte la cáscara del mango en el producto que hace que el mango llegue vivo a Europa. Circularidad literal, y rentable desde 2022.
+
+**El detalle.** Transforma residuos agrícolas —cáscaras, semillas— en extractos antimicrobianos y antioxidantes usados como recubrimiento poscosecha (Life Cover) y como bioinsumo precosecha. Atiende a unos 205 productores peruanos de mango, palta y cítricos. Patentes en más de una docena de países y certificaciones para comercializar en más de 10 mercados.
+
+**Por qué está en la lista.** Porque el insumo es el descarte de la misma cadena agroexportadora a la que le vende —no hay materia prima que comprar, hay un problema de residuos que resolver. Y el mismo extracto sirve pre y poscosecha: controla patógenos fúngicos en campo y extiende vida útil durante semanas de flete marítimo, que es exactamente donde la exportación peruana de mango y palta pierde valor. Pero el dato que más importa en un continente lleno de biotech agrícola quemando capital: **alcanzó breakeven en 2022**. Es la única startup peruana de esta lista, y llegó por rigor, no por cuota.
+
+**Datos clave**
+- Rentable desde 2022
+- ~205 productores atendidos: ~100 en Piura (mango), 60 en Ica (palta), 45 en Ica (cítricos)
+- Patentes en más de una docena de países · certificaciones en 10+ mercados (Perú, Centroamérica, Colombia, México, Chile, UE, Reino Unido, EE.UU.)
+- Inversión de Mercy Corps Ventures
+- Aprobaciones regulatorias esperadas en Brasil y Ecuador durante 2026
+- Entre las 10 startups peruanas a seguir en 2026 según Gestión
+
+**Fundador:** Miguel Malnati (CEO)
+**Fuentes:** [Mercy Corps Ventures](https://www.mercycorpsventures.com/blog/bio-natural-solutions-latin-americas-next-breakout-biotech-turning-agricultural-waste-into-crop-protectionnbsp) · [Gestión](https://gestion.pe/g-de-gestion/reportaje/las-10-startups-en-peru-que-hay-que-seguir-en-2026-segun-3-ejecutivos-del-ecosistema-noticia/)
+
+---
+---
+
+# V. COMERCIO, LOGÍSTICA, MOVILIDAD Y PROPTECH
+
+> La categoría donde la corrección de valuaciones pegó más fuerte —y donde emergió la generación de compañías que aprendió a crecer con márgenes. Kavak volvió a levantar por encima de su down round. Daki llegó a breakeven cuando todos sus pares globales cerraban. QuintoAndar invirtió US$395 millones en IA sin levantar un dólar.
+
+---
+
+## 42 · Kavak
+
+**País:** México (CDMX) · **Fundación:** 2016 · **Vertical:** Marketplace de autos usados + financiamiento
+**Web:** [kavak.com](https://www.kavak.com) · **Logo:** `https://logo.clearbit.com/kavak.com`
+**Estado:** Privada · Unicornio · **La mayor inversión de a16z en América Latina**
+
+**Brief.** Cayó de US$8.700 millones a US$2.200 millones, llegó a su primer mes de rentabilidad consolidada en diciembre de 2025, y en febrero de 2026 levantó US$300 millones por encima de esa marca. Es el mejor caso de estudio de reseteo de valuación de la región.
+
+**El detalle.** Compra, valora, reacondiciona, garantiza y financia autos usados. Su brazo de crédito, Kuna Capital, coloca a un ritmo anualizado de ~US$600 millones. Aseguró US$400 millones en líneas de deuda a inicios de 2025.
+
+**Por qué está en la lista.** Porque la palanca que la salvó no fue el marketplace: fue el balance. Kavak se convirtió en un **originador financiero con colateral físico** —presta contra un activo que inspecciona, reacondiciona y puede recuperar—, y esa transformación es lo que produjo la rentabilidad. Que esta sea la mayor inversión de a16z en América Latina no es un detalle de prensa: señala que el capital global volvió a la región, pero con una tesis distinta a la de 2021. Ya no compra crecimiento; compra unit economics probados. Kavak es la prueba de concepto de esa nueva tesis.
+
+**Datos clave**
+- US$300M de equity en febrero de 2026: US$200M de a16z + US$100M co-liderados por WCM Investment Management, con Foxhaven
+- Valuación superior a los US$2.200M de la ronda previa (2025); tope histórico: US$8.700M en 2021
+- Primer mes de rentabilidad consolidada: diciembre de 2025
+- Kuna Capital coloca ~US$600M anualizados en crédito
+- La compañía se declara "estructuralmente preparada para salir a bolsa cuando el timing lo permita"
+
+**Fundadores:** Carlos García Ottati (CEO), Loreanne García, Roger Laughlin Carvallo
+**Fuentes:** [Bloomberg](https://www.bloomberg.com/news/articles/2026-02-17/andreessen-horowitz-backs-mexico-unicorn-kavak-in-300-million-equity-round) · [TechFundingNews](https://techfundingnews.com/a16z-makes-first-latam-play-with-300m-kavak-lifeline-post-down-round/)
+
+---
+
+## 43 · Habi
+
+**País:** Colombia (Bogotá) · **Fundación:** 2019 · **Vertical:** Proptech / iBuying e infraestructura para corredores
+**Web:** [habi.co](https://habi.co) · **Logo:** `https://logo.clearbit.com/habi.co`
+**Estado:** Privada · **Primera proptech unicornio de América Latina** · Adquirente
+
+**Brief.** Construyó desde cero el dataset de precios de vivienda que Colombia y México nunca tuvieron. Ahora se lo vende a los corredores en vez de competir con ellos.
+
+**El detalle.** Compra, valora, vende y financia vivienda usada de precio medio en mercados sin MLS ni registro público confiable de precios. Fundada por Brynne McNulty Rojas y Sebastián Noguera, superó los US$1.000 millones de valuación tras una Series C de US$200 millones.
+
+**Por qué está en la lista.** Su ventaja nunca fue el capital para comprar casas: fue el **dataset propietario de precios** que tuvo que construir desde cero en mercados donde no existe información pública confiable. Eso es una barrera acumulativa —mejora con cada transacción— y no una ventaja de balance que cualquier fondo puede replicar. En 2026 hizo el pivote correcto: con la compra de **Pulppo**, la startup mexicana de Y Combinator, pasó de operador intensivo en capital a **proveedor de tecnología para el canal fragmentado de corredores** en México, Colombia y Argentina. Y financia crecimiento con líneas bancarias en lugar de equity dilutivo, señal de un modelo con colateral que la banca ya acepta.
+
+**Datos clave**
+- Valuación superior a US$1.000M — primera proptech unicornio de América Latina
+- Adquisición de Pulppo (startup mexicana, alumni de Y Combinator) en marzo de 2026
+- Línea de crédito de US$40M de BBVA Spark (abril 2026)
+- Series C previa de US$200M
+
+**Fundadores:** Brynne McNulty Rojas (CEO), Sebastián Noguera Escallón
+**Fuentes:** [The Real Deal](https://therealdeal.com/international/2026/03/06/proptech-unicorn-habi-acquires-mexican-startup-pulppo/) · [LatamList](https://latamlist.com/tag/proptech/)
+
+---
+
+## 44 · QuintoAndar
+
+**País:** Brasil (São Paulo) · **Fundación:** 2012 · **Vertical:** Proptech residencial end-to-end
+**Web:** [quintoandar.com.br](https://www.quintoandar.com.br) · **Logo:** `https://logo.clearbit.com/quintoandar.com.br`
+**Estado:** Privada · Rentable desde 2021 · Valuación aproximada de US$5.000M
+
+**Brief.** Anunció R$2.000 millones (~US$395 millones) de inversión en IA **financiados con caja propia, sin levantar una ronda**. Es la mayor apuesta de IA de una tecnológica latinoamericana costeada con su propio flujo.
+
+**El detalle.** Eliminó al fiador del alquiler residencial brasileño asumiendo ella misma el riesgo de crédito, y opera todo el ciclo de búsqueda, contrato, pago y postventa de alquiler y compra de vivienda en Brasil, México, Argentina y Perú, con hub tecnológico en Portugal.
+
+**Por qué está en la lista.** Porque la inversión de junio de 2026 solo es posible gracias a una decisión anterior: **ser rentable desde 2021**. Mientras el resto del sector negociaba términos con fondos, QuintoAndar firmó un cheque a dos años contra sus propias reservas. El destino de esa inversión es coherente con su modelo: asistentes virtuales que acompañan al usuario desde la búsqueda hasta la firma, verificación de crédito y pricing —es decir, ataca el **costo variable humano** que históricamente limitó el margen del modelo end-to-end. Ya escribe alrededor de cuatro quintos de su código con asistencia de IA.
+
+**Datos clave**
+- R$2.000 millones (~US$395M) de inversión en IA a dos años, financiada con reservas propias (junio 2026)
+- Rentable desde 2021
+- Valuación aproximada: US$5.000M
+- Opera en Brasil, México, Argentina y Perú, con hub tecnológico en Portugal
+- ~80% de su código escrito con asistencia de IA
+
+**Fundadores:** Gabriel Braga, André Penha
+**Fuentes:** [Rio Times](https://www.riotimesonline.com/quintoandar-2-billion-reais-ai-investment-proptech-june-2026/) · [TechCrunch](https://techcrunch.com/2021/05/27/quintoandar-raises-300m-at-a-4b-valuation-as-ribbit-capital-makes-a-big-bet-on-the-brazilian-proptech/)
+
+---
+
+## 45 · Tiendanube / Nuvemshop
+
+**País:** Argentina (Buenos Aires; co-sede operativa en São Paulo) · **Fundación:** 2011 · **Vertical:** E-commerce enablement
+**Web:** [tiendanube.com](https://www.tiendanube.com) · **Logo:** `https://logo.clearbit.com/tiendanube.com`
+**Estado:** Privada · 160.000 comercios activos en 5 países
+
+**Brief.** Entendió antes que nadie que en Latinoamérica la tienda online no es el destino: es el backend de una conversación de WhatsApp.
+
+**El detalle.** Permite a PyMEs de Argentina, Brasil, México, Colombia y Chile montar y operar su comercio digital, con pagos, logística y marketing integrados. Levantó una Series E de US$500 millones a US$3.100 millones de valuación en 2021.
+
+**Por qué está en la lista.** Por la jugada de 2025 que la aleja definitivamente del modelo "clon de Shopify". Compró la startup argentina **VICI** y lanzó **Nuvem Chat**, un agente de IA que conecta catálogo, inventario y pedidos **dentro de la conversación de WhatsApp** —procesó más de un millón de conversaciones solo en beta. En un continente donde el canal de venta dominante de la PyME no es la web sino el chat, eso invierte la arquitectura del producto: la tienda pasa a ser la infraestructura silenciosa detrás de una venta conversacional. Y sus 160.000 comercios le dan datos de demanda PyME que ninguna plataforma global tiene en la región.
+
+**Datos clave**
+- 160.000 comercios activos en Argentina, Brasil, México, Colombia y Chile (2025)
+- Adquisición de VICI y lanzamiento de Nuvem Chat (junio 2025)
+- +1 millón de conversaciones procesadas por Nuvem Chat solo en beta
+- Series E de US$500M a valuación de US$3.100M (2021, Insight Partners y Tiger Global)
+
+**Fundadores:** Santiago Sosa, Alejandro Vázquez, Martín Palombo, José Abuchaem
+**Fuentes:** [LatamList](https://latamlist.com/tiendanube-acquires-vici-and-launches-nuvem-chat/) · [TechCrunch](https://techcrunch.com/2021/08/17/brazils-nuvemshop-raises-500m-at-a-3-1b-valuation-months-after-last-raise/)
+
+---
+
+## 46 · Daki
+
+**País:** Brasil (São Paulo) · **Fundación:** 2021 · **Vertical:** Quick commerce verticalmente integrado
+**Web:** [daki.com.br](https://www.daki.com.br) · **Logo:** `https://logo.clearbit.com/daki.com.br`
+**Estado:** Privada · **Breakeven financiero anunciado el 20 de mayo de 2026**
+
+**Brief.** Casi todos sus pares globales del quick commerce cerraron o fueron absorbidos. Daki llegó a breakeven financiero acercándose a R$1.000 millones de ingreso anualizado. La palanca fueron 50 agentes de IA.
+
+**El detalle.** Supermercado online de entrega rápida con red propia de hubs hiperlocales de ~3.000 SKUs cada uno, integrando compras, inventario, fulfillment y última milla. Parte del grupo JOKR. Ha levantado más de US$500 millones (Balderton, Tiger Global, HV Capital, GGV).
+
+**Por qué está en la lista.** Porque es el caso más creíble de una categoría que el mercado dio por muerta. Y la palanca no fue recortar: fue automatizar la decisión. **Más de 50 agentes de IA automatizan alrededor del 95% de las decisiones de compra** —qué reponer, cuánto, en qué hub, a qué precio— sosteniendo ~45% de margen bruto antes de delivery y 99% de entregas a tiempo. Que **iFood**, el jugador dominante del delivery en Latinoamérica, haya entrado con una participación minoritaria valida la infraestructura, no el frontend: le interesa cómo Daki mueve inventario, no cómo se ve su app.
+
+**Datos clave**
+- Breakeven financiero anunciado el 20 de mayo de 2026 (el breakeven de EBITDA reportado en junio de 2026 corresponde a JOKR, la matriz)
+- Cerca de R$1.000 millones de ingreso anualizado, creciendo >50% interanual
+- +50 agentes de IA automatizando ~95% de las decisiones de compra
+- ~45% de margen bruto antes de delivery · 99% de entregas a tiempo
+- Inversión minoritaria de iFood (<5%) para acelerar expansión nacional
+- +US$500M levantados históricamente
+
+**Fundadores:** Rafael Vasto (CEO de Daki), Ralf Wenzel (fundador y chairman de JOKR)
+**Fuentes:** [PR Newswire](https://www.prnewswire.com/news-releases/daki-reaches-financial-breakeven-and-announces-minority-investment-from-ifood-to-accelerate-geographic-expansion-302777819.html) · [Retail Technology Innovation Hub](https://retailtechinnovationhub.com/home/2026/6/25/quick-commerce-firm-jokr-reaches-ebitda-break-even-after-five-year-rebuild-around-ai-and-automation)
+
+---
+
+## 47 · Vammo
+
+**País:** Brasil (São Paulo) · **Fundación:** 2022 · **Vertical:** Movilidad eléctrica / battery swapping
+**Web:** [vammo.com](https://www.vammo.com) · **Logo:** `https://logo.clearbit.com/vammo.com`
+**Estado:** Privada · Fast Company MIC LATAM 2025
+
+**Brief.** Más de 8 millones de intercambios de batería. El repartidor cambia la batería en menos de un minuto y vuelve a la calle: el vehículo eléctrico gana en productividad, no solo en costo.
+
+**El detalle.** Suscripción semanal o mensual de motos eléctricas para repartidores urbanos, con más de 300 estaciones de swap en el Gran São Paulo y una flota de ~5.000 motos. Integrada con Uber, 99, Rappi e iFood.
+
+**Por qué está en la lista.** Porque identificó correctamente el bloqueo real de la electrificación de flotas de reparto en Latinoamérica: **no es el precio de la moto, es el tiempo muerto de carga**. Un repartidor que gana por entrega no puede perder tres horas cargando. El swapping devuelve la moto a la calle en menos de 60 segundos, lo que convierte al vehículo eléctrico en más productivo que el de combustión, no solo más barato. Y se insertó donde vive la demanda —dentro de las apps de delivery— en lugar de esperar adopción individual. Ahora está bajando el stack: más de R$500 millones anunciados en manufactura local vía Manaos para controlar el costo de materiales en lugar de importar de Asia.
+
+**Datos clave**
+- Series B de US$45M liderada por Ecosystem Integrity Fund (Q4 2025), con Construct Capital, 2150, Qualcomm Ventures, Monashees, Maniv y Endeavor Catalyst
+- ~5.000 motos eléctricas en flota · +300 estaciones de swap en Gran São Paulo
+- +8 millones de intercambios de batería acumulados · +217 millones de km recorridos
+- Crecimiento reportado de 10x interanual · plan de triplicar la flota en 2026
+- +R$500M anunciados en manufactura local vía Manaos
+
+**Fundador:** Jack Sarvary (CEO), con equipo fundador de ex-ejecutivos de Rappi y Tesla
+**Fuentes:** [LatAm Republic](https://www.latamrepublic.com/vammo-raises-45m-in-series-b-led-by-ecosystem-integrity-fund-to-scale-electric-mobility-across-latam/) · [Electrek](https://electrek.co/2025/10/30/vammo-leads-latin-americas-battery-swapping-revolution-as-regions-e-motorcycle-market-surges/)
+
+---
+---
+
+# VI. FRONTERA: ESPACIO, DRONES Y ROBÓTICA INDUSTRIAL
+
+> La categoría más pequeña de esta lista y la más reveladora. Tres compañías que construyen hardware —satélites, drones, sensores industriales— desde un continente que durante décadas solo importó tecnología física.
+
+---
+
+## 48 · Satellogic
+
+**País:** Argentina (fundación) · **Fundación:** 2010 · **Vertical:** Observación de la Tierra e inteligencia geoespacial
+**Web:** [satellogic.com](https://satellogic.com) · **Logo:** `https://logo.clearbit.com/satellogic.com`
+**Estado:** Cotiza en Nasdaq (SATL) · **Primer trimestre con resultado operativo positivo de su historia (Q2 2026)**
+
+**Brief.** La compañía espacial argentina que fabrica sus propios satélites y también los vende enteros. En 2026 llegó por primera vez a resultado operativo positivo.
+
+**El detalle.** Diseña, fabrica y opera su constelación de satélites de imagen submétrica, vendiendo datos e inteligencia geoespacial y también naves completas a gobiernos. Backlog contractual de US$80,7 millones y caja de US$112,8 millones al 30 de junio de 2026.
+
+**Por qué está en la lista.** Por dos cosas. La primera es el modelo dual: es de las poquísimas empresas de observación terrestre del mundo verticalmente integrada al punto de poder **vender el satélite entero además del dato** —lo que le abre el mercado de soberanía tecnológica de países que quieren capacidad propia, no una suscripción. La segunda es técnica y llega en Q4 2026: su próxima constelación, **Merlin**, es "AI-first" —el procesamiento de detección corre **a bordo, en órbita**, en lugar de bajar píxeles crudos a tierra. Eso colapsa latencia y ancho de banda simultáneamente, que son las dos restricciones que definen la utilidad operativa de una constelación de imagen.
+
+**Datos clave**
+- Ingresos Q2 2026: US$15,9M, +259% interanual (US$7,1M en datos, US$8,8M en sistemas espaciales)
+- Primer trimestre con resultado operativo positivo: US$0,3M · EBITDA ajustado +US$2,8M
+- ⚠️ Matiz: la pérdida neta GAAP del trimestre fue de US$20,0M, por un cargo no monetario de US$19,7M por valor razonable
+- Caja: US$112,8M · Backlog contractual: US$80,7M (30 de junio de 2026)
+- Contrato de dos satélites por US$18M con CEiiA de Portugal, primero ya entregado
+- Venta en órbita de un satélite por US$12M a un cliente soberano de defensa
+- Constelación Merlin totalmente financiada, primer lanzamiento comprometido para Q4 2026
+
+**Fundadores:** Emiliano Kargieman (CEO), Gerardo Richarte
+**Fuentes:** [Resultados Q2 2026](https://www.globenewswire.com/news-release/2026/08/05/3339670/0/en/satellogic-reports-second-quarter-2026-financial-results.html) · [Satellogic IR](https://investors.satellogic.com/news-events/news-releases)
+
+---
+
+## 49 · Speedbird Aero
+
+**País:** Brasil (São Paulo / Aracaju) · **Vertical:** Logística aérea autónoma (delivery por dron)
+**Web:** [speedbird.aero](https://speedbird.aero) · **Logo:** `https://logo.clearbit.com/speedbird.aero`
+**Estado:** Privada · Único operador brasileño certificado por ANAC para vuelos BVLOS
+
+**Brief.** Opera el programa comercial de delivery por dron de alimentos **más antiguo del mundo en funcionamiento continuo** —Aracaju, desde 2020— y en 2026 ganó permiso para volar sobre ciudades densas.
+
+**El detalle.** Fabrica drones de carga y opera redes de entrega autónoma más allá de la línea visual sobre ciudades brasileñas, integrada con DECEA (el control del espacio aéreo brasileño) y autorizada a transportar material biológico. Dos modelos de dron de carga aprobados por ANAC.
+
+**Por qué está en la lista.** Porque el cuello de botella del delivery por dron nunca fue la aeronave: es la **autorización regulatoria**. En marzo de 2026 Speedbird obtuvo aprobación de ANAC para operar sobre áreas con densidades **superiores a 5.000 habitantes por km²** —el salto más difícil del sector, porque convierte un modelo de aprobación ruta por ruta en operaciones escalables sobre ciudad. Y la validación comercial llegó de quien más sabe de entregas en la región: **iFood lideró su ronda puente** de US$5,8 millones y lanzó una ruta conjunta en São Paulo en junio de 2026.
+
+**Datos clave**
+- Ronda puente de US$5,8M (≈R$30M) liderada por iFood, con fondos de Portugal, EE.UU. y Brasil (febrero 2026)
+- Aprobación de ANAC para BVLOS urbano sobre >5.000 hab/km² (marzo 2026)
+- Único operador brasileño certificado por ANAC para vuelos BVLOS
+- Programa comercial de delivery por dron de alimentos más antiguo del mundo en operación continua (Aracaju, desde 2020)
+- Nueva ruta de delivery con iFood en São Paulo (junio 2026)
+
+**Fundador:** Manoel Coelho (CEO)
+**Fuentes:** [Zag Daily](https://zagdaily.com/zag-air/speedbird-raises-us5-8m-to-scale-drone-deliveries-in-brazil/) · [AIN FutureFlight](https://www.ainonline.com/aviation-news/futureflight/2026-03-19/speedbird-gains-brazil-approval-urban-bvlos-flights)
+
+---
+
+## 50 · Tractian
+
+**País:** Brasil (São Paulo; co-sede en Atlanta) · **Fundación:** 2019 · **Vertical:** Hardware industrial + IA (mantenimiento predictivo)
+**Web:** [tractian.com](https://tractian.com) · **Logo:** `https://logo.clearbit.com/tractian.com`
+**Estado:** Privada · Valuación de US$720M · Candidata a próximo unicornio según Distrito
+
+**Brief.** Fabrica el sensor, la conectividad y el modelo. Esa integración le dio un dataset de vibración industrial que ningún competidor de puro software puede replicar.
+
+**El detalle.** Sensores IoT propios que se adhieren a máquinas industriales y corren modelos de IA sobre la señal de vibración y corriente para predecir fallas antes de que ocurran. Abrió un AI Center en São Paulo en 2025. Ha levantado US$183,7 millones en total.
+
+**Por qué está en la lista.** Porque es **full-stack de hardware a modelo**, y en IA industrial eso es la ventaja decisiva. Quien no fabrica el sensor depende de datos de terceros; quien lo fabrica acumula un corpus propietario de firmas de vibración de máquinas reales que se vuelve más valioso cada mes. Sobre ese corpus Tractian corre un "copiloto industrial" que no solo detecta la anomalía sino que prescribe la intervención —la diferencia entre un dashboard y una decisión. Y es la única compañía de perfil industrial y de hardware en la lista de próximos unicornios de Distrito, dominada por fintech: una anomalía que dice mucho sobre lo escaso que sigue siendo el hardware en el ecosistema regional.
+
+**Datos clave**
+- Series C de US$120M a valuación de US$720M (diciembre 2024)
+- Total levantado: US$183,7M
+- AI Center propio en São Paulo (2025)
+- Incluida por Distrito entre las 12 compañías candidatas a próximos unicornios de América Latina (2026)
+
+**Fundadores:** Igor Marinelli (CEO), Gabriel Lameirinhas
+**Fuentes:** [Forbes](https://www.forbes.com/sites/jimvinoski/2024/12/05/industrial-copilot-tractian-raises-another-120-million/) · [Bloomberg Línea / Distrito](https://www.bloomberglinea.com/negocios/las-12-companias-que-se-convertirian-en-los-proximos-unicornios-de-latinoamerica-segun-distrito/)
+
+---
+---
+
+# La próxima ola: 21 nombres para vigilar
+
+Compañías que quedaron fuera de las 50 por poco —o porque son demasiado nuevas para juzgarlas— y que merecen seguimiento editorial para la próxima edición.
+
+| Empresa | País | Vertical | Por qué vigilarla |
+|---|---|---|---|
+| **Galgo** | Chile | Movilidad + fintech | Uber invirtió en agosto de 2026 para financiar motos a repartidores. +200.000 clientes, ~7.500 motos financiadas por mes, breakeven de utilidad neta |
+| **Buk** | Chile | HR tech | +6.000 empresas y +2 millones de usuarios en 5 países. Ganó por cumplimiento local: motores de nómina nativos país por país |
+| **Ainwater** | Chile | Water tech + IA | Fast Company MIC LATAM 2026. Sistema operativo de IA para plantas de tratamiento: 100+ plantas, hasta −30% de costos. Clientes: Nestlé, Colgate |
+| **Toku** | Chile | Fintech B2B | La mayor Series A liderada por una mujer en LatAm (extensión de US$48M). CEO: Cristina Etcheberry. 160% de retención neta en dólares |
+| **Luyef** | Chile | Fermentación de precisión | Deep Tech Pioneer de Hello Tomorrow. Proteínas animales a partir de subproductos agrícolas |
+| **Lihuen Quantum** | Chile | Óptica cuántica | Spin-off de la U. de Chile, ganadora de Startup Ciencia 2026 de ANID. Fabrica fuentes de fotones entrelazados: no existe proveedor local en Sudamérica |
+| **NanoFreeze** | Colombia | Bio-nanotecnología | Fast Company MIC LATAM 2026. Paneles que mejoran la eficiencia de enfriamiento hasta 44% |
+| **Bold** | Colombia | Fintech | Pasó de terminales de pago a soluciones bancarias completas con liquidación en tiempo real |
+| **Somos Internet** | Colombia | Telecom con hardware propio | US$18M Serie A liderada por Union Square Ventures (agosto 2025). Router y software desarrollados in-house, 700 km de red de fibra |
+| **Alkemio** | Argentina | Minerales críticos | Pre-seed de US$2M (mayo 2026). Refinación modular de tierras raras in situ: −80% de CAPEX, sin solventes tóxicos. China controla ~90% del refinado global |
+| **Emi Labs** | Argentina | IA para reclutamiento | Y Combinator W19. Entrevista y contrata trabajadores de primera línea por SMS/WhatsApp para Walmart, Burger King, Starbucks, Danone |
+| **Kilimo** | Argentina | Agtech | Fast Company MIC LATAM 2025. Reduce 20% el uso de agua agrícola con datos satelitales |
+| **Blender** | Argentina | Creator economy | El nombre más relevante de la economía de creadores en la región: pionera del streaming profesional combinando YouTube, video-podcast y eventos en vivo |
+| **TLON Space** | Argentina | Microlanzadores | Desarrolla Aventura I, microlanzador con plataforma móvil que no requiere puerto espacial fijo. ⚠️ Estado del lanzamiento de febrero de 2026 no confirmado |
+| **Nowports** | México | Freight forwarding digital | Unicornio desde 2022 (US$1.100M), +5.000 clientes y 90 países conectados. Sale de las 50 por no tener hito, ronda ni lanzamiento confirmado públicamente en 2025–2026 |
+| **Frete.com** | Brasil | Freight tech + fintech | ~900.000 camioneros. US$28M vía FIDC estructurado por XP (enero 2026). Su capa de verificación reporta haber evitado R$1.400M en robo de carga |
+| **BeConfident** | Brasil | Edtech con IA | Llegó a +US$10M de ARR **sin capital de riesgo**. Series A de US$15,8M liderada por Prosus Ventures (febrero 2026). 3M de usuarios, 160.000 pagos |
+| **Comp** | Brasil | HR tech | US$17,25M Series A liderada por Khosla Ventures — su primera inversión en Brasil. Benchmarking salarial de +1.000 compañías |
+| **Carecode** | Brasil | Agentes de IA en salud | Respaldada por a16z y QED. Agentes sobre WhatsApp que automatizan la capa administrativa de la atención médica. Fundada por el creador de dr.consulta |
+| **PX** | Brasil | Marketplace de trabajo logístico | US$47M Series A liderada por Bicycle Capital (noviembre 2025). +300.000 conductores, R$167,7M de facturación en 2024 |
+| **XMobots** | Brasil | Drones y defensa | Acuerdo de R$50M con la Marina de Brasil y Petrobras (enero 2026). Primer eVTOL brasileño certificado por ANAC para BVLOS |
+
+---
+---
+
+# Lecturas del año: cinco patrones que explican esta lista
+
+**1. La innovación financiera está superando a la tecnológica.**
+Los movimientos más inteligentes de 2026 no fueron de producto sino de estructura. FarmCarbon de Sistema.bio pre-financia biodigestores contra créditos de carbono futuros. Satellites on Fire se metió dentro de las pólizas de Aon en lugar de venderle a cada cliente. Addi construyó US$680 millones en compromisos de deuda para tener costo de capital de banco sin serlo. El patrón a buscar ya no es "qué tecnología", sino "dentro de qué canal existente se incrusta".
+
+**2. La licencia regulatoria volvió a ser la barrera de entrada.**
+Plata ganó la carrera bancaria mexicana. Kapital compró un banco. Ualá compró dos. QI Tech acumuló licencias por adquisición. Speedbird consiguió el permiso de vuelo urbano que nadie más tiene. Habi construyó el dataset que el registro público no ofrece. En un ciclo donde el capital dejó de ser abundante, lo escaso —y por lo tanto lo defendible— es el permiso.
+
+**3. Brasil dejó de prometer carbono y empezó a entregarlo.**
+Mombak emitió créditos verificados dos años antes de lo proyectado. InPlanet entregó los primeros créditos ERW verificados independientemente del mundo. re.green ganó la primera concesión de restauración amazónica subastada por el Estado. En dieciocho meses Brasil construyó la infraestructura regulatoria y de verificación que el mercado voluntario global no había logrado en una década. Es la ventaja más subestimada de la región.
+
+**4. La rentabilidad se volvió el nuevo estatus.**
+Global66 lleva dos años y medio en azul. Addi, dos. Bio Natural Solutions desde 2022. QuintoAndar desde 2021. Daki llegó a breakeven en mayo de 2026. Kavak tuvo su primer mes rentable en diciembre de 2025 y eso —no el crecimiento— fue lo que le permitió levantar US$300 millones de a16z. En 2021 la métrica de portada era la valuación; en 2026 es el margen.
+
+**5. La ventaja latinoamericana real no es el costo del talento: son los problemas.**
+Enter existe porque Brasil tiene decenas de millones de causas judiciales pendientes. Puna Bio existe porque la Puna de Atacama tiene microorganismos que ningún laboratorio puede fabricar. HIF Global existe porque la Patagonia tiene factores de planta eólicos superiores al 70%. Nanogrow existe porque Uruguay tiene camélidos. Bitso y Félix existen porque el corredor de remesas Estados Unidos–México es el más grande del mundo. Wiwo existe porque la empresa mediana latinoamericana compra horas de agencia donde necesita un sistema operativo comercial. Las mejores compañías de esta lista no son versiones locales de algo global: son respuestas a condiciones que solo existen aquí.
+
+---
+
+# Notas metodológicas y vacíos honestos
+
+**Qué verificamos.** Cada cifra de esta lista está atribuida a una fuente pública con año. Donde no pudimos confirmar un dato —montos no divulgados, años de fundación sin fuente primaria, métricas 2026 no publicadas— lo dejamos explícito en lugar de estimarlo.
+
+**Qué marcamos con ⚠️.** Compañías con dificultades reales (NotCo en reestructuración), datos desactualizados, o que no son startups en sentido estricto pero entran por relevancia (Latam-GPT es un consorcio público-académico; Establishment Labs cotiza en Nasdaq; HIF Global es un desarrollador de infraestructura).
+
+**Verticales donde no encontramos candidatas verificables.** Estos vacíos son información, no omisiones:
+- **Semiconductores.** No existe una startup latinoamericana de semiconductores con financiamiento privado o hito verificable en 2025–2026. El movimiento es estatal: planta de chips proyectada en México, parque de diseño en Jalisco. Es el hueco más grande del mapa regional de deep tech.
+- **Gaming.** Fuera de Wildlife Studios —ya madura— el ecosistema enfrenta un cuello de botella de financiamiento reconocido públicamente en Gamescom LATAM 2026.
+- **Construcción / contech.** Ninguna startup latinoamericana del sector con ronda o hito verificable en el período.
+- **Insurtech.** El vertical más débil de la región: cerró 2025 con ~530 empresas y solo ~US$200 millones de inversión total, según Mapfre.
+
+**Sobre Perú.** Buscamos específicamente y solo una compañía peruana superó el filtro de rigor. Varios nombres del ecosistema local no tienen cifras de funding, fundadores o métricas publicadas que pudiéramos confirmar. Preferimos una sola ficha peruana sólida a tres rellenadas.
+
+**Sobre las imágenes.** Todas las URLs de logo son referencias de trabajo servidas vía `logo.clearbit.com`. **No son assets licenciados.** Antes de publicar, solicitar el kit de prensa de cada compañía o descargar desde su sala de prensa oficial. Para fotos de fundadores, el press kit corporativo es la única vía correcta.
+
+---
+
+**Investigación y redacción:** agosto de 2026
+**Para:** weareVander.com · sección *50 Innovatives*
+**Última actualización de datos:** 23 de agosto de 2026

@@ -1,5 +1,6 @@
 import { AGOSTO_ARTICLES } from "./agosto";
 import { FONDO_ARTICLES } from "./fondo";
+import { FONDO2_ARTICLES } from "./fondo2";
 
 export type SectionId = "ideas" | "work" | "design" | "climate" | "culture";
 export type PaceId = "rapida" | "fondo";
@@ -169,6 +170,7 @@ export const AUTHORS: Author[] = [
 export const ARTICLES: Article[] = [
   ...AGOSTO_ARTICLES,
   ...FONDO_ARTICLES,
+  ...FONDO2_ARTICLES,
 ];
 
 export function getSectionLabel(id: SectionId) {
@@ -254,16 +256,16 @@ export type Brief = {
 };
 
 export const BRIEFS: Brief[] = [
-  { id: "b1", time: "08:42", section: "ideas", slug: "tmec-horizonte-doce-meses", title: "EE.UU. no extendió el T-MEC 16 años. El horizonte ahora es de 12 meses." },
-  { id: "b2", time: "08:11", section: "ideas", slug: "ied-noventa-y-cuatro", title: "México: IED récord de US$ 23.591 M. El 94% es reinversión." },
-  { id: "b3", time: "07:38", section: "ideas", slug: "pix-problema-comercial", title: "Pix movió R$ 35,3 billones. Washington abrió investigación." },
-  { id: "b4", time: "07:05", section: "ideas", slug: "mercado-libre-dejo-de-ser-ecommerce", title: "Mercado Libre: US$ 10.200 M. En Argentina, el 64% ya es Pago." },
-  { id: "b5", time: "06:50", section: "climate", slug: "chile-vertimiento-6000-gwh", title: "Chile vertió 6.084 GWh de energía limpia en 2025." },
-  { id: "b6", time: "Ayer", section: "climate", slug: "vaca-muerta-sacar-del-pais", title: "Vaca Muerta: superávit energético de US$ 6.987 M. Faltan ductos." },
-  { id: "b7", time: "Ayer", section: "ideas", slug: "vc-mas-dinero-menos-startups", title: "VC latam: +13,8% de capital, mínimo de deals desde 2017." },
-  { id: "b8", time: "Ayer", section: "climate", slug: "data-centers-cinco-por-ciento", title: "Latam tiene el 5% de los data centers y el 100% del debate del agua." },
-  { id: "b9", time: "18 ago", section: "climate", slug: "litio-no-volvio", title: "El carbonato no volvió a 80.000. El triángulo diseñó política para un precio que no existe." },
-  { id: "b10", time: "17 ago", section: "work", slug: "ia-purgatorio-del-piloto", title: "IA en Latam: adopción sobre la media, 1,1% de la inversión mundial." },
+  { id: "b1", time: "09:10", section: "ideas", slug: "el-credito-es-el-producto-el-software-es-el-envase", title: "El crédito es el producto. El software es el envase." },
+  { id: "b2", time: "08:42", section: "ideas", slug: "tmec-horizonte-doce-meses", title: "EE.UU. no extendió el T-MEC 16 años. El horizonte ahora es de 12 meses." },
+  { id: "b3", time: "08:11", section: "ideas", slug: "ied-noventa-y-cuatro", title: "México: IED récord de US$ 23.591 M. El 94% es reinversión." },
+  { id: "b4", time: "07:50", section: "work", slug: "el-salario-dejo-de-ser-en-moneda-local", title: "El salario dejó de ser en moneda local." },
+  { id: "b5", time: "07:38", section: "ideas", slug: "pix-problema-comercial", title: "Pix movió R$ 35,3 billones. Washington abrió investigación." },
+  { id: "b6", time: "07:05", section: "climate", slug: "el-agua-es-la-restriccion-que-nadie-puso-en-el-modelo-financiero", title: "El agua es la restricción que nadie puso en el modelo financiero." },
+  { id: "b7", time: "06:50", section: "ideas", slug: "puerto-cuello-de-botella-geopolitico", title: "El puerto es el nuevo cuello de botella geopolítico." },
+  { id: "b8", time: "Ayer", section: "ideas", slug: "innovacion-corporativa-fracaso", title: "La innovación corporativa fracasó. Digan por qué." },
+  { id: "b9", time: "Ayer", section: "climate", slug: "chile-vertimiento-6000-gwh", title: "Chile vertió 6.084 GWh de energía limpia en 2025." },
+  { id: "b10", time: "18 ago", section: "ideas", slug: "estado-comprador-tecnologia", title: "El Estado es el mayor comprador de tecnología. Nadie le vende." },
 ];
 
 export const POPULAR_SLUGS = [

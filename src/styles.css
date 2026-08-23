@@ -9,6 +9,7 @@
 
   --color-paper: #ffffff;
   --color-paper-deep: #f4f2ec;
+  --color-ivory: #fcf5e5;
   --color-ink: #0a0a0a;
   --color-ink-soft: #1a1a1a;
   --color-muted: #6a6a6a;
@@ -606,14 +607,6 @@
   letter-spacing: -0.02em;
   text-shadow: 0 1px 10px rgb(0 0 0 / 0.5);
   pointer-events: none;
-}
-
-.u40-mosaic {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--color-ink);
 }
 
 .group:hover .u40-shot img,

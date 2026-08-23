@@ -63,3 +63,13 @@ export const VERIFY: Record<string, Verify> = {
 export function verifyOf(slug: string): Verify | undefined {
   return VERIFY[slug];
 }
+
+export function innovStamp(c: { founded?: string; city?: string; proof?: string; country?: string }) {
+  const bits = [
+    c.founded ? `Fundada ${c.founded}` : null,
+    c.city || c.country || null,
+    c.proof ? c.proof.replace(/^⚠️\s*/, "") : null,
+  ].filter(Boolean);
+  return bits.join(" · ");
+}
+

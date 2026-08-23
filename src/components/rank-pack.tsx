@@ -72,14 +72,14 @@ export function RankFeatured50({ companies }: { companies: Innovative[] }) {
     <div className="grid gap-6 sm:grid-cols-3">
       {companies.map((c) => (
         <Link key={c.slug} to="/innovatives/$slug" params={{ slug: c.slug }} className="group block">
-          <span className="photo block aspect-[3/2] w-full">
-            <img src={c.image} alt={c.name} className="h-full w-full object-cover" />
+          <span className="photo innov-logo block aspect-[3/2] w-full bg-ivory">
+            <img src={c.image} alt={c.name} className="h-full w-full object-contain p-6" />
           </span>
           <p className="mt-3 headline text-3xl tabular-nums text-innov">{String(c.rank).padStart(2, "0")}</p>
           <h3 className="headline mt-1 text-2xl">{c.name}</h3>
           <p className="mt-1 font-body text-sm text-ink-soft">{c.blurb}</p>
           <p className="mt-2 kicker text-xs text-muted">
-            {c.sector} · {c.city}
+            {c.sector} · {c.city} · {c.country}
           </p>
         </Link>
       ))}
@@ -121,22 +121,22 @@ export function RankRow20({ company, adAfter }: { company: ListedCompany; adAfte
 
 export function RankRow50({ company, adAfter }: { company: Innovative; adAfter?: boolean }) {
   return (
-    <li className="group border-t border-ink py-6 first:border-t-0 first:pt-0">
+    <li className="group border-t border-ink py-6">
       <Link to="/innovatives/$slug" params={{ slug: company.slug }} className="grid grid-cols-12 gap-3">
         <span className="col-span-2 headline text-4xl tabular-nums text-innov sm:text-5xl">
           {String(company.rank).padStart(2, "0")}
         </span>
         <div className="col-span-10">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="headline text-2xl sm:text-3xl">{company.name}</h2>
+            <h2 className="headline text-2xl sm:text-3xl">
+              {company.name}
+              {company.warning ? <span className="ml-2 text-rust">*</span> : null}
+            </h2>
             <p className="kicker text-xs text-muted">
-              {company.sector} · {company.city}
+              {company.sector} · {company.city} · {company.country}
             </p>
           </div>
           <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft sm:text-base">{company.blurb}</p>
-          <div className="mt-2">
-            <VerifiedStamp slug={company.slug} />
-          </div>
           <p className="mt-2 kicker text-xs text-innov sm:opacity-0 sm:transition-opacity sm:duration-200 sm:group-hover:opacity-100">
             Por qué entra
           </p>

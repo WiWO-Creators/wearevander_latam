@@ -40,7 +40,7 @@ function InnovCountryPage() {
           <p className="kicker mt-6 text-xs text-innov">50 Innovatives · País</p>
           <h1 className="headline mt-2 text-5xl sm:text-7xl">{group.label}</h1>
           <p className="mt-4 max-w-xl font-body text-base text-paper/70">
-            {group.items.length} {group.items.length === 1 ? "compañía" : "compañías"} visitadas en{" "}
+            {group.items.length} {group.items.length === 1 ? "compañía" : "compañías"} en{" "}
             {group.label}.
           </p>
         </div>

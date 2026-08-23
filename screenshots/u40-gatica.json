@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:8080/under40/alejandra-gatica-salgado",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "048. Alejandra Gatica Salgado — 100 under 40",
+      "hasCanvas": false,
+      "bodyTextLen": 3293,
+      "bodyTextHash": "0ba1ec362a500b800794ba5a9da3636b897949f5bd555f5389893f890ecc83e0",
+      "bodyTextPrefix": "Saltar al contenido We Are Vander SECCIONES RANKINGS SIGNALS CON",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/u40-gatica.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "048. Alejandra Gatica Salgado — 100 under 40",
+      "hasCanvas": false,
+      "bodyTextLen": 3233,
+      "bodyTextHash": "db941a82fbc4f280edb2c0f1576ad3d49c6f2f7b0c3e922408c85f836a0e7aac",
+      "bodyTextPrefix": "Saltar al contenido We Are Vander Último cierre · viernes 21 ago",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/u40-gatica-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "verdictFile": "/workspace/screenshots/u40-gatica.json"
+}
