@@ -1,3 +1,5 @@
+import { findGroup, groupByLabel } from "./taxonomy";
+
 export type ListedCompany = {
   rank: number;
   slug: string;
@@ -253,7 +255,33 @@ export const VANDER_LIST: ListedCompany[] = [
   },
 ];
 
+export const VANDER_METHOD = [
+  {
+    title: "Protocolo, no gesto",
+    text: "El Vander 20 no premia lo nuevo. Premia lo que ya está escrito: un horario, un handoff, un no. Si el negocio solo funciona cuando hay un anuncio, no entra.",
+  },
+  {
+    title: "Se visita",
+    text: "Una mesa de Team Vander camina la planta, la sucursal o el predio. El deck no suma. El patio, el muelle y la persiana sí.",
+  },
+  {
+    title: "Código de casa",
+    text: "Tiene que haber un lenguaje propio —en español o portugués de piso— que sobreviva al screenshot. Si el copy es de Palo Alto, descuenta.",
+  },
+  {
+    title: "Veinte, no cincuenta",
+    text: "No es un recorte de las 50 Innovatives. Son listas distintas. Acá manda cómo se siente el negocio cuando el protocolo está en la mesa. Allá, el gesto que todavía no es hábito.",
+  },
+  {
+    title: "Sin pago por aparecer",
+    text: "Nadie compra un puesto. El briefing comercial vive en otra puerta. El ranking es un argumento editorial, no un catálogo.",
+  },
+];
+
+export const LIST_RESERVED = new Set(["sector", "ciudad", "metodologia"]);
+
 export function getCompany(slug: string) {
+  if (LIST_RESERVED.has(slug)) return undefined;
   return VANDER_LIST.find((c) => c.slug === slug);
 }
 
@@ -264,4 +292,20 @@ export function adjacentCompanies(slug: string) {
     prev: index > 0 ? VANDER_LIST[index - 1] : undefined,
     next: index >= 0 && index < VANDER_LIST.length - 1 ? VANDER_LIST[index + 1] : undefined,
   };
+}
+
+export function vanderSectors() {
+  return groupByLabel(VANDER_LIST, (c) => c.sector);
+}
+
+export function vanderCities() {
+  return groupByLabel(VANDER_LIST, (c) => c.city);
+}
+
+export function vanderSector(slug: string) {
+  return findGroup(vanderSectors(), slug);
+}
+
+export function vanderCity(slug: string) {
+  return findGroup(vanderCities(), slug);
 }

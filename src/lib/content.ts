@@ -1042,3 +1042,29 @@ export function articlesByFranchise(id: FranchiseId) {
   return ARTICLES.filter((a) => a.franchise === id).sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
+export function articlesByFranchiseTag(id: FranchiseId, tag: string) {
+  return articlesByFranchise(id).filter((a) => articleTags(a).includes(tag));
+}
+
+export function franchiseTags(id: FranchiseId, kind?: TagKind) {
+  const used = new Set(articlesByFranchise(id).flatMap((a) => articleTags(a)));
+  return TAGS.filter((t) => used.has(t.id) && (kind ? t.kind === kind : true));
+}
+
+export function articlesByFranchiseAuthor(id: FranchiseId, authorId: string) {
+  return articlesByFranchise(id).filter((a) => a.authorId === authorId);
+}
+
+export function franchiseAuthors(id: FranchiseId) {
+  const seen = new Set<string>();
+  const out: Author[] = [];
+  for (const a of articlesByFranchise(id)) {
+    if (seen.has(a.authorId)) continue;
+    seen.add(a.authorId);
+    const author = getAuthor(a.authorId);
+    if (author) out.push(author);
+  }
+  return out;
+}
+
+

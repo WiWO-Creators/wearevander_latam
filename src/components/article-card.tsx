@@ -38,7 +38,13 @@ export function TagPills({ article, dark = false }: { article: Article; dark?: b
         return (
           <li key={id}>
             <Link
-              to="/tag/$tag"
+              to={
+                article.franchise === "signals"
+                  ? "/signals/tag/$tag"
+                  : article.franchise === "contra"
+                    ? "/contra/tag/$tag"
+                    : "/tag/$tag"
+              }
               params={{ tag: id }}
               className={cn(
                 "kicker text-xs hover:text-rust",
@@ -304,6 +310,9 @@ export function SignalRow({ article }: { article: Article }) {
         </Link>
       </h3>
       <p className="mt-1 font-body text-sm leading-snug text-ink-soft">{article.dek}</p>
+      <div className="mt-2">
+        <TagPills article={article} />
+      </div>
     </article>
   );
 }

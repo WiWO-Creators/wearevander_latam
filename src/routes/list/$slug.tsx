@@ -1,11 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesMentioning, HOUSE } from "@/lib/content";
 import { adjacentCompanies, getCompany, VANDER_LIST } from "@/lib/vander-list";
+import { toCatSlug } from "@/lib/taxonomy";
 import { HorizontalCard } from "@/components/article-card";
 import { AdSlot } from "@/components/ad-slot";
 import { Newsletter } from "@/components/newsletter";
 import { Vander20Mark } from "@/components/brand";
 import { VerifiedStamp, CrossList } from "@/components/verified-stamp";
+
 
 export const Route = createFileRoute("/list/$slug")({
   component: CompanyPage,
@@ -56,7 +58,18 @@ function CompanyPage() {
           </p>
           <h1 className="headline mt-2 text-5xl sm:text-7xl">{company.name}</h1>
           <p className="mt-4 kicker text-xs text-silver">
-            {company.sector} · {company.city} · Team Vander
+            <Link
+              to="/list/sector/$sector"
+              params={{ sector: toCatSlug(company.sector) }}
+              className="hover:text-signal"
+            >
+              {company.sector}
+            </Link>
+            {" · "}
+            <Link to="/list/ciudad/$city" params={{ city: toCatSlug(company.city) }} className="hover:text-signal">
+              {company.city}
+            </Link>
+            {" · Team Vander"}
           </p>
           <p className="mt-5 max-w-2xl font-body text-lg leading-snug text-paper/75">{company.blurb}</p>
           <div className="mt-5">
@@ -75,11 +88,23 @@ function CompanyPage() {
           <dl className="mt-8 grid grid-cols-2 gap-4 border-y border-ink py-5 sm:grid-cols-3">
             <div>
               <dt className="kicker text-xs text-muted">Mesa</dt>
-              <dd className="mt-1 font-sans text-sm font-semibold">{company.city}</dd>
+              <dd className="mt-1 font-sans text-sm font-semibold">
+                <Link to="/list/ciudad/$city" params={{ city: toCatSlug(company.city) }} className="hover:text-signal">
+                  {company.city}
+                </Link>
+              </dd>
             </div>
             <div>
               <dt className="kicker text-xs text-muted">Sector</dt>
-              <dd className="mt-1 font-sans text-sm font-semibold">{company.sector}</dd>
+              <dd className="mt-1 font-sans text-sm font-semibold">
+                <Link
+                  to="/list/sector/$sector"
+                  params={{ sector: toCatSlug(company.sector) }}
+                  className="hover:text-signal"
+                >
+                  {company.sector}
+                </Link>
+              </dd>
             </div>
             <div className="col-span-2 sm:col-span-1">
               <dt className="kicker text-xs text-muted">Verificación</dt>

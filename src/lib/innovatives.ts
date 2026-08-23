@@ -1,3 +1,5 @@
+import { findGroup, groupByLabel } from "./taxonomy";
+
 export type Innovative = {
   rank: number;
   slug: string;
@@ -172,7 +174,10 @@ export const INNOVATIVES_METHOD = [
   },
 ];
 
+export const INNOV_RESERVED = new Set(["sector", "pais", "metodologia"]);
+
 export function getInnovative(slug: string) {
+  if (INNOV_RESERVED.has(slug)) return undefined;
   return INNOVATIVES.find((c) => c.slug === slug);
 }
 
@@ -184,3 +189,20 @@ export function adjacentInnovative(slug: string) {
     next: index >= 0 && index < INNOVATIVES.length - 1 ? INNOVATIVES[index + 1] : undefined,
   };
 }
+
+export function innovSectors() {
+  return groupByLabel(INNOVATIVES, (c) => c.sector);
+}
+
+export function innovCountries() {
+  return groupByLabel(INNOVATIVES, (c) => c.country);
+}
+
+export function innovSector(slug: string) {
+  return findGroup(innovSectors(), slug);
+}
+
+export function innovCountry(slug: string) {
+  return findGroup(innovCountries(), slug);
+}
+

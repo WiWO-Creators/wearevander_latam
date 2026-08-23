@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { adjacentInnovative, getInnovative, INNOVATIVES } from "@/lib/innovatives";
+import { toCatSlug } from "@/lib/taxonomy";
 import { InnovativesMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
 import { VerifiedStamp, CrossList } from "@/components/verified-stamp";
 import { verifyOf } from "@/lib/verify";
+
 
 export const Route = createFileRoute("/innovatives/$slug")({
   component: InnovativeCompany,
@@ -53,7 +55,23 @@ function InnovativeCompany() {
           </p>
           <h1 className="headline mt-2 text-5xl sm:text-7xl">{company.name}</h1>
           <p className="mt-3 kicker text-xs text-silver">
-            {company.sector} · {company.city}
+            <Link
+              to="/innovatives/sector/$sector"
+              params={{ sector: toCatSlug(company.sector) }}
+              className="hover:text-innov"
+            >
+              {company.sector}
+            </Link>
+            {" · "}
+            <Link
+              to="/innovatives/pais/$pais"
+              params={{ pais: toCatSlug(company.country) }}
+              className="hover:text-innov"
+            >
+              {company.country}
+            </Link>
+            {" · "}
+            {company.city}
           </p>
           <div className="mt-5">
             <VerifiedStamp slug={company.slug} dark />

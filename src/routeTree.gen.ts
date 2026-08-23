@@ -20,14 +20,39 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
+import { Route as ContraIndexRouteImport } from './routes/contra/index'
+import { Route as ContraAutorRouteImport } from './routes/contra/autor'
+import { Route as ContraTagRouteImport } from './routes/contra/tag'
 import { Route as InnovativesIndexRouteImport } from './routes/innovatives/index'
 import { Route as InnovativesSlugRouteImport } from './routes/innovatives/$slug'
+import { Route as InnovativesMetodologiaRouteImport } from './routes/innovatives/metodologia'
+import { Route as InnovativesPaisRouteImport } from './routes/innovatives/pais'
+import { Route as InnovativesSectorRouteImport } from './routes/innovatives/sector'
 import { Route as ListIndexRouteImport } from './routes/list/index'
 import { Route as ListSlugRouteImport } from './routes/list/$slug'
+import { Route as ListCiudadRouteImport } from './routes/list/ciudad'
+import { Route as ListMetodologiaRouteImport } from './routes/list/metodologia'
+import { Route as ListSectorRouteImport } from './routes/list/sector'
 import { Route as SectionSectionRouteImport } from './routes/section/$section'
+import { Route as SignalsIndexRouteImport } from './routes/signals/index'
+import { Route as SignalsTagRouteImport } from './routes/signals/tag'
 import { Route as StorySlugRouteImport } from './routes/story/$slug'
 import { Route as TagTagRouteImport } from './routes/tag/$tag'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ContraAutorIndexRouteImport } from './routes/contra/autor/index'
+import { Route as ContraAutorAutorRouteImport } from './routes/contra/autor/$autor'
+import { Route as ContraTagIndexRouteImport } from './routes/contra/tag/index'
+import { Route as ContraTagTagRouteImport } from './routes/contra/tag/$tag'
+import { Route as InnovativesPaisIndexRouteImport } from './routes/innovatives/pais/index'
+import { Route as InnovativesPaisPaisRouteImport } from './routes/innovatives/pais/$pais'
+import { Route as InnovativesSectorIndexRouteImport } from './routes/innovatives/sector/index'
+import { Route as InnovativesSectorSectorRouteImport } from './routes/innovatives/sector/$sector'
+import { Route as ListCiudadIndexRouteImport } from './routes/list/ciudad/index'
+import { Route as ListCiudadCityRouteImport } from './routes/list/ciudad/$city'
+import { Route as ListSectorIndexRouteImport } from './routes/list/sector/index'
+import { Route as ListSectorSectorRouteImport } from './routes/list/sector/$sector'
+import { Route as SignalsTagIndexRouteImport } from './routes/signals/tag/index'
+import { Route as SignalsTagTagRouteImport } from './routes/signals/tag/$tag'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -84,6 +109,21 @@ const SignalsRoute = SignalsRouteImport.update({
   path: '/signals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContraIndexRoute = ContraIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ContraRoute,
+} as any)
+const ContraAutorRoute = ContraAutorRouteImport.update({
+  id: '/autor',
+  path: '/autor',
+  getParentRoute: () => ContraRoute,
+} as any)
+const ContraTagRoute = ContraTagRouteImport.update({
+  id: '/tag',
+  path: '/tag',
+  getParentRoute: () => ContraRoute,
+} as any)
 const InnovativesIndexRoute = InnovativesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -92,6 +132,21 @@ const InnovativesIndexRoute = InnovativesIndexRouteImport.update({
 const InnovativesSlugRoute = InnovativesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
+  getParentRoute: () => InnovativesRoute,
+} as any)
+const InnovativesMetodologiaRoute = InnovativesMetodologiaRouteImport.update({
+  id: '/metodologia',
+  path: '/metodologia',
+  getParentRoute: () => InnovativesRoute,
+} as any)
+const InnovativesPaisRoute = InnovativesPaisRouteImport.update({
+  id: '/pais',
+  path: '/pais',
+  getParentRoute: () => InnovativesRoute,
+} as any)
+const InnovativesSectorRoute = InnovativesSectorRouteImport.update({
+  id: '/sector',
+  path: '/sector',
   getParentRoute: () => InnovativesRoute,
 } as any)
 const ListIndexRoute = ListIndexRouteImport.update({
@@ -104,10 +159,35 @@ const ListSlugRoute = ListSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ListRoute,
 } as any)
+const ListCiudadRoute = ListCiudadRouteImport.update({
+  id: '/ciudad',
+  path: '/ciudad',
+  getParentRoute: () => ListRoute,
+} as any)
+const ListMetodologiaRoute = ListMetodologiaRouteImport.update({
+  id: '/metodologia',
+  path: '/metodologia',
+  getParentRoute: () => ListRoute,
+} as any)
+const ListSectorRoute = ListSectorRouteImport.update({
+  id: '/sector',
+  path: '/sector',
+  getParentRoute: () => ListRoute,
+} as any)
 const SectionSectionRoute = SectionSectionRouteImport.update({
   id: '/section/$section',
   path: '/section/$section',
   getParentRoute: () => rootRouteImport,
+} as any)
+const SignalsIndexRoute = SignalsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SignalsRoute,
+} as any)
+const SignalsTagRoute = SignalsTagRouteImport.update({
+  id: '/tag',
+  path: '/tag',
+  getParentRoute: () => SignalsRoute,
 } as any)
 const StorySlugRoute = StorySlugRouteImport.update({
   id: '/story/$slug',
@@ -124,46 +204,157 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContraAutorIndexRoute = ContraAutorIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ContraAutorRoute,
+} as any)
+const ContraAutorAutorRoute = ContraAutorAutorRouteImport.update({
+  id: '/$autor',
+  path: '/$autor',
+  getParentRoute: () => ContraAutorRoute,
+} as any)
+const ContraTagIndexRoute = ContraTagIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ContraTagRoute,
+} as any)
+const ContraTagTagRoute = ContraTagTagRouteImport.update({
+  id: '/$tag',
+  path: '/$tag',
+  getParentRoute: () => ContraTagRoute,
+} as any)
+const InnovativesPaisIndexRoute = InnovativesPaisIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InnovativesPaisRoute,
+} as any)
+const InnovativesPaisPaisRoute = InnovativesPaisPaisRouteImport.update({
+  id: '/$pais',
+  path: '/$pais',
+  getParentRoute: () => InnovativesPaisRoute,
+} as any)
+const InnovativesSectorIndexRoute = InnovativesSectorIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InnovativesSectorRoute,
+} as any)
+const InnovativesSectorSectorRoute = InnovativesSectorSectorRouteImport.update({
+  id: '/$sector',
+  path: '/$sector',
+  getParentRoute: () => InnovativesSectorRoute,
+} as any)
+const ListCiudadIndexRoute = ListCiudadIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ListCiudadRoute,
+} as any)
+const ListCiudadCityRoute = ListCiudadCityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
+  getParentRoute: () => ListCiudadRoute,
+} as any)
+const ListSectorIndexRoute = ListSectorIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ListSectorRoute,
+} as any)
+const ListSectorSectorRoute = ListSectorSectorRouteImport.update({
+  id: '/$sector',
+  path: '/$sector',
+  getParentRoute: () => ListSectorRoute,
+} as any)
+const SignalsTagIndexRoute = SignalsTagIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SignalsTagRoute,
+} as any)
+const SignalsTagTagRoute = SignalsTagTagRouteImport.update({
+  id: '/$tag',
+  path: '/$tag',
+  getParentRoute: () => SignalsTagRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
-  '/contra': typeof ContraRoute
+  '/contra': typeof ContraRouteWithChildren
   '/innovatives': typeof InnovativesRouteWithChildren
   '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
-  '/signals': typeof SignalsRoute
+  '/signals': typeof SignalsRouteWithChildren
+  '/contra/autor': typeof ContraAutorRouteWithChildren
+  '/contra/tag': typeof ContraTagRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
+  '/innovatives/metodologia': typeof InnovativesMetodologiaRoute
+  '/innovatives/pais': typeof InnovativesPaisRouteWithChildren
+  '/innovatives/sector': typeof InnovativesSectorRouteWithChildren
   '/list/$slug': typeof ListSlugRoute
+  '/list/ciudad': typeof ListCiudadRouteWithChildren
+  '/list/metodologia': typeof ListMetodologiaRoute
+  '/list/sector': typeof ListSectorRouteWithChildren
   '/section/$section': typeof SectionSectionRoute
+  '/signals/tag': typeof SignalsTagRouteWithChildren
   '/story/$slug': typeof StorySlugRoute
   '/tag/$tag': typeof TagTagRoute
+  '/contra/': typeof ContraIndexRoute
   '/innovatives/': typeof InnovativesIndexRoute
   '/list/': typeof ListIndexRoute
+  '/signals/': typeof SignalsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/contra/autor/$autor': typeof ContraAutorAutorRoute
+  '/contra/tag/$tag': typeof ContraTagTagRoute
+  '/innovatives/pais/$pais': typeof InnovativesPaisPaisRoute
+  '/innovatives/sector/$sector': typeof InnovativesSectorSectorRoute
+  '/list/ciudad/$city': typeof ListCiudadCityRoute
+  '/list/sector/$sector': typeof ListSectorSectorRoute
+  '/signals/tag/$tag': typeof SignalsTagTagRoute
+  '/contra/autor/': typeof ContraAutorIndexRoute
+  '/contra/tag/': typeof ContraTagIndexRoute
+  '/innovatives/pais/': typeof InnovativesPaisIndexRoute
+  '/innovatives/sector/': typeof InnovativesSectorIndexRoute
+  '/list/ciudad/': typeof ListCiudadIndexRoute
+  '/list/sector/': typeof ListSectorIndexRoute
+  '/signals/tag/': typeof SignalsTagIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
-  '/contra': typeof ContraRoute
   '/login': typeof LoginRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
-  '/signals': typeof SignalsRoute
   '/innovatives/$slug': typeof InnovativesSlugRoute
+  '/innovatives/metodologia': typeof InnovativesMetodologiaRoute
   '/list/$slug': typeof ListSlugRoute
+  '/list/metodologia': typeof ListMetodologiaRoute
   '/section/$section': typeof SectionSectionRoute
   '/story/$slug': typeof StorySlugRoute
   '/tag/$tag': typeof TagTagRoute
+  '/contra': typeof ContraIndexRoute
   '/innovatives': typeof InnovativesIndexRoute
   '/list': typeof ListIndexRoute
+  '/signals': typeof SignalsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/contra/autor/$autor': typeof ContraAutorAutorRoute
+  '/contra/tag/$tag': typeof ContraTagTagRoute
+  '/innovatives/pais/$pais': typeof InnovativesPaisPaisRoute
+  '/innovatives/sector/$sector': typeof InnovativesSectorSectorRoute
+  '/list/ciudad/$city': typeof ListCiudadCityRoute
+  '/list/sector/$sector': typeof ListSectorSectorRoute
+  '/signals/tag/$tag': typeof SignalsTagTagRoute
+  '/contra/autor': typeof ContraAutorIndexRoute
+  '/contra/tag': typeof ContraTagIndexRoute
+  '/innovatives/pais': typeof InnovativesPaisIndexRoute
+  '/innovatives/sector': typeof InnovativesSectorIndexRoute
+  '/list/ciudad': typeof ListCiudadIndexRoute
+  '/list/sector': typeof ListSectorIndexRoute
+  '/signals/tag': typeof SignalsTagIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -171,21 +362,46 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/anuncia': typeof AnunciaRoute
   '/briefing': typeof BriefingRoute
-  '/contra': typeof ContraRoute
+  '/contra': typeof ContraRouteWithChildren
   '/innovatives': typeof InnovativesRouteWithChildren
   '/list': typeof ListRouteWithChildren
   '/login': typeof LoginRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
-  '/signals': typeof SignalsRoute
+  '/signals': typeof SignalsRouteWithChildren
+  '/contra/autor': typeof ContraAutorRouteWithChildren
+  '/contra/tag': typeof ContraTagRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
+  '/innovatives/metodologia': typeof InnovativesMetodologiaRoute
+  '/innovatives/pais': typeof InnovativesPaisRouteWithChildren
+  '/innovatives/sector': typeof InnovativesSectorRouteWithChildren
   '/list/$slug': typeof ListSlugRoute
+  '/list/ciudad': typeof ListCiudadRouteWithChildren
+  '/list/metodologia': typeof ListMetodologiaRoute
+  '/list/sector': typeof ListSectorRouteWithChildren
   '/section/$section': typeof SectionSectionRoute
+  '/signals/tag': typeof SignalsTagRouteWithChildren
   '/story/$slug': typeof StorySlugRoute
   '/tag/$tag': typeof TagTagRoute
+  '/contra/': typeof ContraIndexRoute
   '/innovatives/': typeof InnovativesIndexRoute
   '/list/': typeof ListIndexRoute
+  '/signals/': typeof SignalsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/contra/autor/$autor': typeof ContraAutorAutorRoute
+  '/contra/tag/$tag': typeof ContraTagTagRoute
+  '/innovatives/pais/$pais': typeof InnovativesPaisPaisRoute
+  '/innovatives/sector/$sector': typeof InnovativesSectorSectorRoute
+  '/list/ciudad/$city': typeof ListCiudadCityRoute
+  '/list/sector/$sector': typeof ListSectorSectorRoute
+  '/signals/tag/$tag': typeof SignalsTagTagRoute
+  '/contra/autor/': typeof ContraAutorIndexRoute
+  '/contra/tag/': typeof ContraTagIndexRoute
+  '/innovatives/pais/': typeof InnovativesPaisIndexRoute
+  '/innovatives/sector/': typeof InnovativesSectorIndexRoute
+  '/list/ciudad/': typeof ListCiudadIndexRoute
+  '/list/sector/': typeof ListSectorIndexRoute
+  '/signals/tag/': typeof SignalsTagIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -201,33 +417,74 @@ export interface FileRouteTypes {
     | '/saved'
     | '/search'
     | '/signals'
+    | '/contra/autor'
+    | '/contra/tag'
     | '/innovatives/$slug'
+    | '/innovatives/metodologia'
+    | '/innovatives/pais'
+    | '/innovatives/sector'
     | '/list/$slug'
+    | '/list/ciudad'
+    | '/list/metodologia'
+    | '/list/sector'
     | '/section/$section'
+    | '/signals/tag'
     | '/story/$slug'
     | '/tag/$tag'
+    | '/contra/'
     | '/innovatives/'
     | '/list/'
+    | '/signals/'
     | '/api/auth/$'
+    | '/contra/autor/$autor'
+    | '/contra/tag/$tag'
+    | '/innovatives/pais/$pais'
+    | '/innovatives/sector/$sector'
+    | '/list/ciudad/$city'
+    | '/list/sector/$sector'
+    | '/signals/tag/$tag'
+    | '/contra/autor/'
+    | '/contra/tag/'
+    | '/innovatives/pais/'
+    | '/innovatives/sector/'
+    | '/list/ciudad/'
+    | '/list/sector/'
+    | '/signals/tag/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/anuncia'
     | '/briefing'
-    | '/contra'
     | '/login'
     | '/saved'
     | '/search'
-    | '/signals'
     | '/innovatives/$slug'
+    | '/innovatives/metodologia'
     | '/list/$slug'
+    | '/list/metodologia'
     | '/section/$section'
     | '/story/$slug'
     | '/tag/$tag'
+    | '/contra'
     | '/innovatives'
     | '/list'
+    | '/signals'
     | '/api/auth/$'
+    | '/contra/autor/$autor'
+    | '/contra/tag/$tag'
+    | '/innovatives/pais/$pais'
+    | '/innovatives/sector/$sector'
+    | '/list/ciudad/$city'
+    | '/list/sector/$sector'
+    | '/signals/tag/$tag'
+    | '/contra/autor'
+    | '/contra/tag'
+    | '/innovatives/pais'
+    | '/innovatives/sector'
+    | '/list/ciudad'
+    | '/list/sector'
+    | '/signals/tag'
   id:
     | '__root__'
     | '/'
@@ -241,14 +498,39 @@ export interface FileRouteTypes {
     | '/saved'
     | '/search'
     | '/signals'
+    | '/contra/autor'
+    | '/contra/tag'
     | '/innovatives/$slug'
+    | '/innovatives/metodologia'
+    | '/innovatives/pais'
+    | '/innovatives/sector'
     | '/list/$slug'
+    | '/list/ciudad'
+    | '/list/metodologia'
+    | '/list/sector'
     | '/section/$section'
+    | '/signals/tag'
     | '/story/$slug'
     | '/tag/$tag'
+    | '/contra/'
     | '/innovatives/'
     | '/list/'
+    | '/signals/'
     | '/api/auth/$'
+    | '/contra/autor/$autor'
+    | '/contra/tag/$tag'
+    | '/innovatives/pais/$pais'
+    | '/innovatives/sector/$sector'
+    | '/list/ciudad/$city'
+    | '/list/sector/$sector'
+    | '/signals/tag/$tag'
+    | '/contra/autor/'
+    | '/contra/tag/'
+    | '/innovatives/pais/'
+    | '/innovatives/sector/'
+    | '/list/ciudad/'
+    | '/list/sector/'
+    | '/signals/tag/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -256,13 +538,13 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AnunciaRoute: typeof AnunciaRoute
   BriefingRoute: typeof BriefingRoute
-  ContraRoute: typeof ContraRoute
+  ContraRoute: typeof ContraRouteWithChildren
   InnovativesRoute: typeof InnovativesRouteWithChildren
   ListRoute: typeof ListRouteWithChildren
   LoginRoute: typeof LoginRoute
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
-  SignalsRoute: typeof SignalsRoute
+  SignalsRoute: typeof SignalsRouteWithChildren
   SectionSectionRoute: typeof SectionSectionRoute
   StorySlugRoute: typeof StorySlugRoute
   TagTagRoute: typeof TagTagRoute
@@ -348,6 +630,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contra/': {
+      id: '/contra/'
+      path: '/'
+      fullPath: '/contra/'
+      preLoaderRoute: typeof ContraIndexRouteImport
+      parentRoute: typeof ContraRoute
+    }
+    '/contra/autor': {
+      id: '/contra/autor'
+      path: '/autor'
+      fullPath: '/contra/autor'
+      preLoaderRoute: typeof ContraAutorRouteImport
+      parentRoute: typeof ContraRoute
+    }
+    '/contra/tag': {
+      id: '/contra/tag'
+      path: '/tag'
+      fullPath: '/contra/tag'
+      preLoaderRoute: typeof ContraTagRouteImport
+      parentRoute: typeof ContraRoute
+    }
     '/innovatives/': {
       id: '/innovatives/'
       path: '/'
@@ -360,6 +663,27 @@ declare module '@tanstack/react-router' {
       path: '/$slug'
       fullPath: '/innovatives/$slug'
       preLoaderRoute: typeof InnovativesSlugRouteImport
+      parentRoute: typeof InnovativesRoute
+    }
+    '/innovatives/metodologia': {
+      id: '/innovatives/metodologia'
+      path: '/metodologia'
+      fullPath: '/innovatives/metodologia'
+      preLoaderRoute: typeof InnovativesMetodologiaRouteImport
+      parentRoute: typeof InnovativesRoute
+    }
+    '/innovatives/pais': {
+      id: '/innovatives/pais'
+      path: '/pais'
+      fullPath: '/innovatives/pais'
+      preLoaderRoute: typeof InnovativesPaisRouteImport
+      parentRoute: typeof InnovativesRoute
+    }
+    '/innovatives/sector': {
+      id: '/innovatives/sector'
+      path: '/sector'
+      fullPath: '/innovatives/sector'
+      preLoaderRoute: typeof InnovativesSectorRouteImport
       parentRoute: typeof InnovativesRoute
     }
     '/list/': {
@@ -376,12 +700,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListSlugRouteImport
       parentRoute: typeof ListRoute
     }
+    '/list/ciudad': {
+      id: '/list/ciudad'
+      path: '/ciudad'
+      fullPath: '/list/ciudad'
+      preLoaderRoute: typeof ListCiudadRouteImport
+      parentRoute: typeof ListRoute
+    }
+    '/list/metodologia': {
+      id: '/list/metodologia'
+      path: '/metodologia'
+      fullPath: '/list/metodologia'
+      preLoaderRoute: typeof ListMetodologiaRouteImport
+      parentRoute: typeof ListRoute
+    }
+    '/list/sector': {
+      id: '/list/sector'
+      path: '/sector'
+      fullPath: '/list/sector'
+      preLoaderRoute: typeof ListSectorRouteImport
+      parentRoute: typeof ListRoute
+    }
     '/section/$section': {
       id: '/section/$section'
       path: '/section/$section'
       fullPath: '/section/$section'
       preLoaderRoute: typeof SectionSectionRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/signals/': {
+      id: '/signals/'
+      path: '/'
+      fullPath: '/signals/'
+      preLoaderRoute: typeof SignalsIndexRouteImport
+      parentRoute: typeof SignalsRoute
+    }
+    '/signals/tag': {
+      id: '/signals/tag'
+      path: '/tag'
+      fullPath: '/signals/tag'
+      preLoaderRoute: typeof SignalsTagRouteImport
+      parentRoute: typeof SignalsRoute
     }
     '/story/$slug': {
       id: '/story/$slug'
@@ -404,16 +763,190 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contra/autor/': {
+      id: '/contra/autor/'
+      path: '/'
+      fullPath: '/contra/autor/'
+      preLoaderRoute: typeof ContraAutorIndexRouteImport
+      parentRoute: typeof ContraAutorRoute
+    }
+    '/contra/autor/$autor': {
+      id: '/contra/autor/$autor'
+      path: '/$autor'
+      fullPath: '/contra/autor/$autor'
+      preLoaderRoute: typeof ContraAutorAutorRouteImport
+      parentRoute: typeof ContraAutorRoute
+    }
+    '/contra/tag/': {
+      id: '/contra/tag/'
+      path: '/'
+      fullPath: '/contra/tag/'
+      preLoaderRoute: typeof ContraTagIndexRouteImport
+      parentRoute: typeof ContraTagRoute
+    }
+    '/contra/tag/$tag': {
+      id: '/contra/tag/$tag'
+      path: '/$tag'
+      fullPath: '/contra/tag/$tag'
+      preLoaderRoute: typeof ContraTagTagRouteImport
+      parentRoute: typeof ContraTagRoute
+    }
+    '/innovatives/pais/': {
+      id: '/innovatives/pais/'
+      path: '/'
+      fullPath: '/innovatives/pais/'
+      preLoaderRoute: typeof InnovativesPaisIndexRouteImport
+      parentRoute: typeof InnovativesPaisRoute
+    }
+    '/innovatives/pais/$pais': {
+      id: '/innovatives/pais/$pais'
+      path: '/$pais'
+      fullPath: '/innovatives/pais/$pais'
+      preLoaderRoute: typeof InnovativesPaisPaisRouteImport
+      parentRoute: typeof InnovativesPaisRoute
+    }
+    '/innovatives/sector/': {
+      id: '/innovatives/sector/'
+      path: '/'
+      fullPath: '/innovatives/sector/'
+      preLoaderRoute: typeof InnovativesSectorIndexRouteImport
+      parentRoute: typeof InnovativesSectorRoute
+    }
+    '/innovatives/sector/$sector': {
+      id: '/innovatives/sector/$sector'
+      path: '/$sector'
+      fullPath: '/innovatives/sector/$sector'
+      preLoaderRoute: typeof InnovativesSectorSectorRouteImport
+      parentRoute: typeof InnovativesSectorRoute
+    }
+    '/list/ciudad/': {
+      id: '/list/ciudad/'
+      path: '/'
+      fullPath: '/list/ciudad/'
+      preLoaderRoute: typeof ListCiudadIndexRouteImport
+      parentRoute: typeof ListCiudadRoute
+    }
+    '/list/ciudad/$city': {
+      id: '/list/ciudad/$city'
+      path: '/$city'
+      fullPath: '/list/ciudad/$city'
+      preLoaderRoute: typeof ListCiudadCityRouteImport
+      parentRoute: typeof ListCiudadRoute
+    }
+    '/list/sector/': {
+      id: '/list/sector/'
+      path: '/'
+      fullPath: '/list/sector/'
+      preLoaderRoute: typeof ListSectorIndexRouteImport
+      parentRoute: typeof ListSectorRoute
+    }
+    '/list/sector/$sector': {
+      id: '/list/sector/$sector'
+      path: '/$sector'
+      fullPath: '/list/sector/$sector'
+      preLoaderRoute: typeof ListSectorSectorRouteImport
+      parentRoute: typeof ListSectorRoute
+    }
+    '/signals/tag/': {
+      id: '/signals/tag/'
+      path: '/'
+      fullPath: '/signals/tag/'
+      preLoaderRoute: typeof SignalsTagIndexRouteImport
+      parentRoute: typeof SignalsTagRoute
+    }
+    '/signals/tag/$tag': {
+      id: '/signals/tag/$tag'
+      path: '/$tag'
+      fullPath: '/signals/tag/$tag'
+      preLoaderRoute: typeof SignalsTagTagRouteImport
+      parentRoute: typeof SignalsTagRoute
+    }
   }
 }
 
+interface ContraAutorRouteChildren {
+  ContraAutorAutorRoute: typeof ContraAutorAutorRoute
+  ContraAutorIndexRoute: typeof ContraAutorIndexRoute
+}
+
+const ContraAutorRouteChildren: ContraAutorRouteChildren = {
+  ContraAutorAutorRoute: ContraAutorAutorRoute,
+  ContraAutorIndexRoute: ContraAutorIndexRoute,
+}
+
+const ContraAutorRouteWithChildren = ContraAutorRoute._addFileChildren(
+  ContraAutorRouteChildren,
+)
+
+interface ContraTagRouteChildren {
+  ContraTagTagRoute: typeof ContraTagTagRoute
+  ContraTagIndexRoute: typeof ContraTagIndexRoute
+}
+
+const ContraTagRouteChildren: ContraTagRouteChildren = {
+  ContraTagTagRoute: ContraTagTagRoute,
+  ContraTagIndexRoute: ContraTagIndexRoute,
+}
+
+const ContraTagRouteWithChildren = ContraTagRoute._addFileChildren(
+  ContraTagRouteChildren,
+)
+
+interface ContraRouteChildren {
+  ContraAutorRoute: typeof ContraAutorRouteWithChildren
+  ContraTagRoute: typeof ContraTagRouteWithChildren
+  ContraIndexRoute: typeof ContraIndexRoute
+}
+
+const ContraRouteChildren: ContraRouteChildren = {
+  ContraAutorRoute: ContraAutorRouteWithChildren,
+  ContraTagRoute: ContraTagRouteWithChildren,
+  ContraIndexRoute: ContraIndexRoute,
+}
+
+const ContraRouteWithChildren =
+  ContraRoute._addFileChildren(ContraRouteChildren)
+
+interface InnovativesPaisRouteChildren {
+  InnovativesPaisPaisRoute: typeof InnovativesPaisPaisRoute
+  InnovativesPaisIndexRoute: typeof InnovativesPaisIndexRoute
+}
+
+const InnovativesPaisRouteChildren: InnovativesPaisRouteChildren = {
+  InnovativesPaisPaisRoute: InnovativesPaisPaisRoute,
+  InnovativesPaisIndexRoute: InnovativesPaisIndexRoute,
+}
+
+const InnovativesPaisRouteWithChildren = InnovativesPaisRoute._addFileChildren(
+  InnovativesPaisRouteChildren,
+)
+
+interface InnovativesSectorRouteChildren {
+  InnovativesSectorSectorRoute: typeof InnovativesSectorSectorRoute
+  InnovativesSectorIndexRoute: typeof InnovativesSectorIndexRoute
+}
+
+const InnovativesSectorRouteChildren: InnovativesSectorRouteChildren = {
+  InnovativesSectorSectorRoute: InnovativesSectorSectorRoute,
+  InnovativesSectorIndexRoute: InnovativesSectorIndexRoute,
+}
+
+const InnovativesSectorRouteWithChildren =
+  InnovativesSectorRoute._addFileChildren(InnovativesSectorRouteChildren)
+
 interface InnovativesRouteChildren {
   InnovativesSlugRoute: typeof InnovativesSlugRoute
+  InnovativesMetodologiaRoute: typeof InnovativesMetodologiaRoute
+  InnovativesPaisRoute: typeof InnovativesPaisRouteWithChildren
+  InnovativesSectorRoute: typeof InnovativesSectorRouteWithChildren
   InnovativesIndexRoute: typeof InnovativesIndexRoute
 }
 
 const InnovativesRouteChildren: InnovativesRouteChildren = {
   InnovativesSlugRoute: InnovativesSlugRoute,
+  InnovativesMetodologiaRoute: InnovativesMetodologiaRoute,
+  InnovativesPaisRoute: InnovativesPaisRouteWithChildren,
+  InnovativesSectorRoute: InnovativesSectorRouteWithChildren,
   InnovativesIndexRoute: InnovativesIndexRoute,
 }
 
@@ -421,30 +954,91 @@ const InnovativesRouteWithChildren = InnovativesRoute._addFileChildren(
   InnovativesRouteChildren,
 )
 
+interface ListCiudadRouteChildren {
+  ListCiudadCityRoute: typeof ListCiudadCityRoute
+  ListCiudadIndexRoute: typeof ListCiudadIndexRoute
+}
+
+const ListCiudadRouteChildren: ListCiudadRouteChildren = {
+  ListCiudadCityRoute: ListCiudadCityRoute,
+  ListCiudadIndexRoute: ListCiudadIndexRoute,
+}
+
+const ListCiudadRouteWithChildren = ListCiudadRoute._addFileChildren(
+  ListCiudadRouteChildren,
+)
+
+interface ListSectorRouteChildren {
+  ListSectorSectorRoute: typeof ListSectorSectorRoute
+  ListSectorIndexRoute: typeof ListSectorIndexRoute
+}
+
+const ListSectorRouteChildren: ListSectorRouteChildren = {
+  ListSectorSectorRoute: ListSectorSectorRoute,
+  ListSectorIndexRoute: ListSectorIndexRoute,
+}
+
+const ListSectorRouteWithChildren = ListSectorRoute._addFileChildren(
+  ListSectorRouteChildren,
+)
+
 interface ListRouteChildren {
   ListSlugRoute: typeof ListSlugRoute
+  ListCiudadRoute: typeof ListCiudadRouteWithChildren
+  ListMetodologiaRoute: typeof ListMetodologiaRoute
+  ListSectorRoute: typeof ListSectorRouteWithChildren
   ListIndexRoute: typeof ListIndexRoute
 }
 
 const ListRouteChildren: ListRouteChildren = {
   ListSlugRoute: ListSlugRoute,
+  ListCiudadRoute: ListCiudadRouteWithChildren,
+  ListMetodologiaRoute: ListMetodologiaRoute,
+  ListSectorRoute: ListSectorRouteWithChildren,
   ListIndexRoute: ListIndexRoute,
 }
 
 const ListRouteWithChildren = ListRoute._addFileChildren(ListRouteChildren)
+
+interface SignalsTagRouteChildren {
+  SignalsTagTagRoute: typeof SignalsTagTagRoute
+  SignalsTagIndexRoute: typeof SignalsTagIndexRoute
+}
+
+const SignalsTagRouteChildren: SignalsTagRouteChildren = {
+  SignalsTagTagRoute: SignalsTagTagRoute,
+  SignalsTagIndexRoute: SignalsTagIndexRoute,
+}
+
+const SignalsTagRouteWithChildren = SignalsTagRoute._addFileChildren(
+  SignalsTagRouteChildren,
+)
+
+interface SignalsRouteChildren {
+  SignalsTagRoute: typeof SignalsTagRouteWithChildren
+  SignalsIndexRoute: typeof SignalsIndexRoute
+}
+
+const SignalsRouteChildren: SignalsRouteChildren = {
+  SignalsTagRoute: SignalsTagRouteWithChildren,
+  SignalsIndexRoute: SignalsIndexRoute,
+}
+
+const SignalsRouteWithChildren =
+  SignalsRoute._addFileChildren(SignalsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AnunciaRoute: AnunciaRoute,
   BriefingRoute: BriefingRoute,
-  ContraRoute: ContraRoute,
+  ContraRoute: ContraRouteWithChildren,
   InnovativesRoute: InnovativesRouteWithChildren,
   ListRoute: ListRouteWithChildren,
   LoginRoute: LoginRoute,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
-  SignalsRoute: SignalsRoute,
+  SignalsRoute: SignalsRouteWithChildren,
   SectionSectionRoute: SectionSectionRoute,
   StorySlugRoute: StorySlugRoute,
   TagTagRoute: TagTagRoute,

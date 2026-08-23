@@ -10,13 +10,12 @@ import { MarketsBar } from "@/components/markets-bar";
 import { cn } from "@/lib/utils";
 
 const MORE_LINKS = [
-  { to: "/signals" as const, label: "Signals" },
-  { to: "/contra" as const, label: "Contra la corriente" },
   { to: "/briefing" as const, label: "Briefing" },
   { to: "/about" as const, label: "Redacción" },
   { to: "/anuncia" as const, label: "Anuncia" },
   { to: "/saved" as const, label: "Guardados" },
 ];
+
 
 export function SiteChrome({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -67,7 +66,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
               <span className="sr-only">{HOUSE.name}</span>
             </Link>
             <nav className="hidden min-w-0 flex-1 lg:block" aria-label="Secciones">
-              <ul className="flex items-center">
+              <ul className="flex items-center overflow-x-auto">
                 {SECTIONS.map((s) => {
                   const href = `/section/${s.id}`;
                   const active = pathname === href || pathname.startsWith(`${href}/`);
@@ -77,7 +76,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
                         to="/section/$section"
                         params={{ section: s.id }}
                         className={cn(
-                          "nav-link inline-flex h-12 items-center px-2.5 text-xs text-paper hover:text-rust xl:px-3",
+                          "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
                           active && "is-active text-rust",
                         )}
                       >
@@ -90,7 +89,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
                   <Link
                     to="/list"
                     className={cn(
-                      "nav-link inline-flex h-12 items-center px-2.5 text-xs text-paper hover:text-rust xl:px-3",
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
                       pathname.startsWith("/list") && "is-active",
                     )}
                   >
@@ -101,12 +100,34 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
                   <Link
                     to="/innovatives"
                     className={cn(
-                      "nav-link inline-flex h-12 items-center px-2.5 text-xs text-paper hover:text-innov xl:px-3",
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-innov xl:px-2.5",
                       pathname.startsWith("/innovatives") && "is-active",
                     )}
                   >
                     <span className="normal-case italic text-innov">50</span>
                     <span className="ml-1 hidden xl:inline">Innovatives</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signals"
+                    className={cn(
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
+                      pathname.startsWith("/signals") && "is-active",
+                    )}
+                  >
+                    Signals
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contra"
+                    className={cn(
+                      "nav-link inline-flex h-12 items-center px-2 text-xs text-paper hover:text-rust xl:px-2.5",
+                      pathname.startsWith("/contra") && "is-active",
+                    )}
+                  >
+                    Contra
                   </Link>
                 </li>
                 <MoreMenu pathname={pathname} />

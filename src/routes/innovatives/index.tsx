@@ -1,10 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { INNOVATIVES, INNOVATIVES_METHOD } from "@/lib/innovatives";
+import { INNOVATIVES, INNOVATIVES_METHOD, innovCountries, innovSectors } from "@/lib/innovatives";
 import { HOUSE, ISSUE } from "@/lib/content";
 import { InnovativesMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
-import { AdSlot } from "@/components/ad-slot";
-import { VerifiedStamp } from "@/components/verified-stamp";
+import { CatChip, MethodGrid, RankFeatured50, RankRow50, RankStat } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/innovatives/")({
   component: InnovativesPage,
@@ -14,11 +13,15 @@ export const Route = createFileRoute("/innovatives/")({
 });
 
 function InnovativesPage() {
+  const sectors = innovSectors();
+  const countries = innovCountries();
+  const featured = INNOVATIVES.slice(0, 3);
+
   return (
     <main>
       <section className="bg-ink px-4 py-14 text-paper sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-4xl">
-          <p className="kicker text-xs text-innov">Anual {ISSUE.date.split(" ").at(-1)} · Latam</p>
+        <div className="mx-auto max-w-7xl">
+          <p className="kicker text-xs text-innov">Anual {ISSUE.date.split(" ").at(-1)} · Latam · Gesto nuevo</p>
           <h1 className="mt-5 max-w-3xl">
             <InnovativesMark wide className="h-16 sm:h-24 lg:h-28" />
           </h1>
@@ -27,66 +30,95 @@ function InnovativesPage() {
             visitar. Distinto al Vander 20: acá cuenta el gesto nuevo. Metodología pública. Cada ficha
             tiene mesa, fecha de visita y evidencia. {HOUSE.credit}.
           </p>
+          <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <RankStat n="50" label="Compañías visitadas" />
+            <RankStat n={String(sectors.length)} label="Sectores" />
+            <RankStat n={String(countries.length)} label="Países" />
+            <RankStat n="5" label="Criterios públicos" />
+          </div>
         </div>
       </section>
 
-      <section id="metodologia" className="border-b border-ink bg-paper-deep px-4 py-10 sm:px-6">
+      <nav className="border-b border-ink bg-paper-deep px-4 py-4 sm:px-6" aria-label="Categorías 50 Innovatives">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="kicker mr-2 text-xs text-muted">Sector</p>
+            {sectors.map((s) => (
+              <CatChip
+                key={s.slug}
+                to="/innovatives/sector/$sector"
+                params={{ sector: s.slug }}
+                label={s.label}
+                count={s.items.length}
+                accent="innov"
+              />
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="kicker mr-2 text-xs text-muted">País</p>
+            {countries.map((c) => (
+              <CatChip
+                key={c.slug}
+                to="/innovatives/pais/$pais"
+                params={{ pais: c.slug }}
+                label={c.label}
+                count={c.items.length}
+                accent="innov"
+              />
+            ))}
+            <Link
+              to="/innovatives/metodologia"
+              className="kicker ml-auto inline-flex h-9 items-center text-xs text-innov hover:underline"
+            >
+              Metodología
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+        <p className="kicker text-xs text-innov">El gesto de este año</p>
+        <h2 className="headline mt-2 text-3xl sm:text-5xl">Las tres que abren la lista</h2>
+        <div className="mt-8">
+          <RankFeatured50 companies={featured} />
+        </div>
+      </section>
+
+      <section id="metodologia" className="border-y border-ink bg-paper-deep px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-4xl">
           <p className="kicker text-xs text-innov">Metodología pública</p>
           <h2 className="headline mt-2 text-3xl sm:text-4xl">Cómo entra una compañía</h2>
           <p className="mt-3 max-w-2xl font-body text-base leading-relaxed text-ink-soft">
-            El ranking es anual. La mesa visita, llama y cruza. No hay pago por aparecer. El score
-            es editorial: cinco criterios, publicados aquí para que se puedan discutir.
+            El ranking es anual. La mesa visita, llama y cruza. No hay pago por aparecer. El score es
+            editorial: cinco criterios, publicados para que se puedan discutir.
           </p>
-          <ol className="mt-8 grid gap-6 sm:grid-cols-2">
-            {INNOVATIVES_METHOD.map((m, i) => (
-              <li key={m.title} className="border-t border-ink pt-4">
-                <p className="headline text-xl">
-                  <span className="text-innov">{String(i + 1).padStart(2, "0")} </span>
-                  {m.title}
-                </p>
-                <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft">{m.text}</p>
-              </li>
-            ))}
-          </ol>
+          <MethodGrid items={INNOVATIVES_METHOD} accent="innov" />
+          <Link to="/innovatives/metodologia" className="kicker mt-8 inline-block text-xs text-innov hover:underline">
+            Leer la metodología completa
+          </Link>
         </div>
       </section>
 
-      <div className="px-4 py-8 sm:px-6 sm:py-10">
+      <section className="px-4 py-10 sm:px-6 sm:py-14">
         <div className="mx-auto max-w-4xl">
+          <div className="mb-2 flex items-end justify-between">
+            <h2 className="headline text-3xl sm:text-4xl">Las 50</h2>
+            <p className="kicker text-xs text-muted">Edición {ISSUE.date.split(" ").at(-1)}</p>
+          </div>
           <ol>
             {INNOVATIVES.map((c) => (
-              <li key={c.rank} className="group border-t border-ink py-6 first:border-t-0 first:pt-0">
-                <Link to="/innovatives/$slug" params={{ slug: c.slug }} className="grid grid-cols-12 gap-3">
-                  <span className="col-span-2 headline text-4xl tabular-nums text-innov sm:text-5xl">
-                    {String(c.rank).padStart(2, "0")}
-                  </span>
-                  <div className="col-span-10">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h2 className="headline text-2xl sm:text-3xl">{c.name}</h2>
-                      <p className="kicker text-xs text-muted">
-                        {c.sector} · {c.city}
-                      </p>
-                    </div>
-                    <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft sm:text-base">{c.blurb}</p>
-                    <div className="mt-2">
-                      <VerifiedStamp slug={c.slug} />
-                    </div>
-                    <p className="mt-2 kicker text-xs text-innov sm:opacity-0 sm:transition-opacity sm:duration-200 sm:group-hover:opacity-100">
-                      Por qué entra
-                    </p>
-                  </div>
-                </Link>
-                {c.rank === 10 && (
-                  <div className="mt-6">
-                    <AdSlot size="leaderboard" creative="anuncia" />
-                  </div>
-                )}
-              </li>
+              <RankRow50 key={c.rank} company={c} adAfter={c.rank === 10} />
             ))}
           </ol>
+          <p className="mt-8 font-sans text-sm text-muted">
+            El Vander 20 —protocolo, no gesto— está en{" "}
+            <Link to="/list" className="text-ink underline decoration-signal hover:text-signal">
+              su propia lista
+            </Link>
+            .
+          </p>
         </div>
-      </div>
+      </section>
       <Newsletter />
     </main>
   );
