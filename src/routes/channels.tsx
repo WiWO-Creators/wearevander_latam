@@ -11,7 +11,7 @@ export const Route = createFileRoute("/channels")({
       { title: "Channels — We Are Vander" },
       {
         name: "description",
-        content: "Yahoo Finance y Bloomberg en vivo, en mute. El apartado Channels de We Are Vander.",
+        content: "Yahoo Finance, Bloomberg, CNN, ABC News y más, en vivo y en mute. Channels, We Are Vander.",
       },
     ],
   }),
@@ -25,7 +25,8 @@ function ChannelsPage() {
           <p className="kicker text-xs text-rust">Channels · {ISSUE.city}</p>
           <h1 className="headline mt-3 text-4xl sm:text-6xl">Channels</h1>
           <p className="mt-4 max-w-2xl font-body text-lg leading-snug text-ink-soft">
-            Dos señales de referencia, pequeñas y en silencio. {HOUSE.credit}.
+            Yahoo Finance, Bloomberg, CNN, ABC News y News TV. Pequeñas, en silencio, en el aire.
+            {HOUSE.credit}.
           </p>
         </div>
       </section>

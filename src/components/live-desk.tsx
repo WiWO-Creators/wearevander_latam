@@ -12,6 +12,21 @@ const FEEDS = [
     name: "Bloomberg",
     line: "Bloomberg TV",
   },
+  {
+    id: "GotlA1KKWoo",
+    name: "CNN",
+    line: "CNN Headlines",
+  },
+  {
+    id: "iipR5yUp36o",
+    name: "ABC News",
+    line: "ABC News Live",
+  },
+  {
+    id: "XhAYcYpPzTc",
+    name: "News Live",
+    line: "News TV Live",
+  },
 ] as const;
 
 function Player({ id, name, line }: (typeof FEEDS)[number]) {
@@ -62,7 +77,7 @@ export function LiveDesk({ compact = false }: { compact?: boolean }) {
             </Link>
           ) : (
             <p className="max-w-sm text-right font-body text-xs text-paper/55">
-              Yahoo Finance y Bloomberg, en mute. Vander no produce estas señales.
+              Yahoo, Bloomberg, CNN, ABC y más. En mute. Vander no produce estas señales.
             </p>
           )}
         </div>
