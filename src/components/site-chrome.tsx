@@ -4,7 +4,7 @@ import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { HOUSE, ISSUE, SECTIONS, BRIEFS, DESKS } from "@/lib/content";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { UserButton } from "@/lib/auth/gates";
-import { Wordmark, VanderCycle } from "@/components/brand";
+import { Wordmark, VanderCycle, ChileOnly } from "@/components/brand";
 import { AdSlot } from "@/components/ad-slot";
 import { MarketsBar } from "@/components/markets-bar";
 import { cn } from "@/lib/utils";
@@ -282,12 +282,12 @@ function MegaPanel({
         {id === "rankings" ? (
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <Link to="/list" onClick={onClose} className="group block">
-              <p className="kicker text-xs text-signal">Protocolo</p>
+              <p className="kicker text-xs text-signal">2026</p>
               <p className="headline mt-2 text-3xl group-hover:text-rust">
                 Vander <span className="italic text-signal">20</span>
               </p>
               <p className="mt-2 font-body text-sm leading-snug text-muted">
-                Las veinte compañías visitadas. Código de casa, no ruido.
+                Las veinte que ganan plata, ordenadas por la calidad de la prueba.
               </p>
             </Link>
             <Link to="/innovatives" onClick={onClose} className="group block">
@@ -300,12 +300,14 @@ function MegaPanel({
               </p>
             </Link>
             <Link to="/under40" onClick={onClose} className="group block">
-              <p className="kicker text-xs text-rust">Chile</p>
+              <p className="kicker inline-flex items-center gap-1.5 text-xs text-rust">
+                <ChileOnly />
+              </p>
               <p className="headline mt-2 text-3xl group-hover:text-rust">
-                100 <span className="italic">under</span> 40
+                100V Visionarios
               </p>
               <p className="mt-2 font-body text-sm leading-snug text-muted">
-                Cien fichas. Edad declarada. Enlaces a la prensa.
+                Cien fichas chilenas. Edad declarada. Enlaces a la prensa.
               </p>
             </Link>
             <Link to="/indice" onClick={onClose} className="group block">
@@ -377,8 +379,9 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/under40" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
-              100 <span className="ml-2 italic">under</span>&nbsp;40
+            <Link to="/under40" onClick={onClose} className="flex min-h-12 items-center gap-3 headline text-3xl">
+              100V Visionarios
+              <ChileOnly className="font-kicker text-xs tracking-wider uppercase text-rust" />
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
@@ -484,7 +487,7 @@ function Footer() {
               </li>
               <li>
                 <Link to="/under40" className="link-title">
-                  100 under 40
+                  100V Visionarios
                 </Link>
               </li>
               <li>

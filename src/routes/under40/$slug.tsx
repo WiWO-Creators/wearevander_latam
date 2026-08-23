@@ -3,6 +3,7 @@ import { Globe, Linkedin } from "lucide-react";
 import type { ReactNode } from "react";
 import { adjacentUnder40, getUnder40, hostFromUrl, under40Links } from "@/lib/under40";
 import { Under40Shot, Under40Verify } from "@/components/under40-shot";
+import { ChileOnly } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
 
@@ -14,8 +15,8 @@ export const Route = createFileRoute("/under40/$slug")({
       meta: [
         {
           title: person
-            ? `${String(person.rank).padStart(3, "0")}. ${person.name} — 100 under 40`
-            : "100 under 40 — We Are Vander",
+            ? `${String(person.rank).padStart(3, "0")}. ${person.name} — 100V Visionarios`
+            : "100V Visionarios — We Are Vander",
         },
       ],
     };
@@ -51,8 +52,8 @@ function Under40ProfilePage() {
             />
           </div>
           <div className="flex flex-col justify-end px-4 py-10 sm:px-8 lg:col-span-7 lg:px-12 lg:py-14">
-            <Link to="/under40" className="kicker text-xs text-rust hover:underline">
-              100 under 40 · Chile
+            <Link to="/under40" className="kicker inline-flex items-center gap-2 text-xs text-rust hover:underline">
+              100V Visionarios · <ChileOnly />
             </Link>
             <p className="headline mt-5 text-6xl tabular-nums leading-none text-rust sm:text-8xl">
               {String(person.rank).padStart(3, "0")}

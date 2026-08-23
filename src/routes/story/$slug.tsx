@@ -18,18 +18,38 @@ import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
 import { ContraMark, SignalsMark, VanderBug } from "@/components/brand";
 import { getSavedSlugs } from "@/lib/server/magazine";
+import { JsonLd } from "@/components/json-ld";
+import { FaqBlock, Tldr, Crumbs } from "@/components/faq-block";
+import { seoHead, articleSchema, faqSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/story/$slug")({
   component: StoryPage,
   head: ({ params }) => {
     const article = getArticle(params.slug);
-    return {
-      meta: [
-        {
-          title: article ? `${article.title} — We Are Vander` : "Historia — We Are Vander",
-        },
-      ],
-    };
+    if (!article) {
+      return seoHead({
+        title: "Historia — We Are Vander",
+        description: "Esta historia no está en el número.",
+        path: `/story/${params.slug}`,
+        noindex: true,
+      });
+    }
+    const desc =
+      article.seoDescription ??
+      article.dek.replace(/\s+/g, " ").slice(0, 155);
+    const title = article.seoTitle ?? `${article.title} — We Are Vander`;
+    return seoHead({
+      title,
+      description: desc,
+      path: `/story/${article.slug}`,
+      image: article.ogImage ?? article.image,
+      imageAlt: article.imageAlt,
+      ogTitle: article.ogTitle,
+      ogDescription: article.ogDescription,
+      type: "article",
+      published: article.publishedAt,
+      modified: article.updatedAt ?? article.publishedAt,
+    });
   },
 });
 
@@ -68,8 +88,35 @@ function StoryPage() {
 
   return (
     <main>
+      <JsonLd
+        data={articleSchema({
+          headline: article.title,
+          description: article.seoDescription ?? article.dek,
+          path: `/story/${article.slug}`,
+          image: article.ogImage ?? article.image,
+          datePublished: article.publishedAt,
+          dateModified: article.updatedAt ?? article.publishedAt,
+          author: article.signedName ?? author?.name ?? "Team Vander",
+          section: getSectionLabel(article.section),
+        })}
+      />
+      {article.faq?.length ? <JsonLd data={faqSchema(article.faq)} /> : null}
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "We Are Vander", path: "/" },
+          { name: getSectionLabel(article.section), path: `/section/${article.section}` },
+          { name: article.title, path: `/story/${article.slug}` },
+        ])}
+      />
       <article>
         <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6 sm:pt-12">
+          <Crumbs
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: getSectionLabel(article.section), href: `/section/${article.section}` },
+              { label: article.title },
+            ]}
+          />
           {article.franchise === "contra" && (
             <Link to="/contra" className="logo-mark mb-4 inline-block">
               <ContraMark className="h-8 sm:h-10" />
@@ -80,12 +127,13 @@ function StoryPage() {
               <SignalsMark className="h-10 sm:h-12" />
             </Link>
           )}
-          <p className="kicker flex items-center gap-2 text-xs text-rust">
+          <p className="kicker mt-4 flex items-center gap-2 text-xs text-rust">
             <VanderBug />
             {article.kicker} · {city || getSectionLabel(article.section)}
           </p>
           <h1 className="headline mt-3 text-4xl leading-[1.06] sm:mt-4 sm:text-6xl lg:text-7xl">{article.title}</h1>
           <p className="mt-4 font-body text-base leading-snug text-ink-soft sm:mt-5 sm:text-2xl">{article.dek}</p>
+          {article.tldr ? <Tldr items={article.tldr} /> : null}
           <div className="mt-5">
             <TagPills article={article} />
           </div>
@@ -108,7 +156,7 @@ function StoryPage() {
         </div>
 
         <figure className="mx-auto mt-8 max-w-6xl px-4 sm:px-6">
-          <img src={article.image} alt={article.imageAlt} className="aspect-video w-full object-cover" />
+          <img src={article.image} alt={article.imageAlt} className="aspect-video w-full object-cover" loading="eager" />
           <figcaption className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">
             {article.caption}
           </figcaption>
@@ -127,6 +175,7 @@ function StoryPage() {
 
         <div className="mx-auto mt-8 max-w-2xl px-4 sm:mt-10 sm:px-6">
           {renderBody(article.body, article.franchise !== "signals")}
+          {article.faq?.length ? <FaqBlock items={article.faq} /> : null}
         </div>
 
         <aside className="mx-auto mt-14 max-w-2xl border-t-2 border-ink px-4 py-6 sm:px-6">

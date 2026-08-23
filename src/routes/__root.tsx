@@ -7,19 +7,15 @@ import { AppErrorComponent } from "@/lib/error-component";
 import { HILLTOP_ZONES, HILLTOP_SERVE } from "@/lib/ads";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "We Are Vander";
+import { SITE } from "@/lib/seo";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: APP_NAME },
-      {
-        name: "description",
-        content:
-          "We Are Vander. We Love Business. Un medio de Interadia. Portal de innovación empresarial en América Latina — Team Vander desde CDMX, São Paulo, Buenos Aires, Bogotá, Santiago y Lima.",
-      },
+      { title: SITE.name },
+      { name: "description", content: SITE.description },
       { name: "theme-color", content: "#ce3134" },
     ],
     links: [

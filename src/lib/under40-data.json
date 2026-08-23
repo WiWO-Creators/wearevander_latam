@@ -376,38 +376,6 @@
   },
   {
     "rank": 11,
-    "slug": "nicolas-ramos",
-    "name": "Nicolás Ramos",
-    "role": "Cofundador de Xpendit",
-    "sector": "Fintech",
-    "sectorSlug": "fintech",
-    "sectorDetail": "Fintech",
-    "focus": "gestión de gastos corporativos con IA",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "≈25 años (n. ~2001) — derivada (DF MAS, septiembre 2024: «23 años»)",
-    "ageShort": "25",
-    "verification": "derivada",
-    "bio": "Programador y el más joven del cuarteto fundador de Xpendit. Dejó cuarto año de Ingeniería Civil en la Universidad Católica para dedicarse por completo a la startup. Junto a Martín del Castillo forma el ala veinteañera del equipo, que completan Felipe Puntarelli, exsocio de Xepelin, y Diego Philippi. Esa mezcla —fundadores con recorrido y capital, más operadores muy jóvenes— fue el rasgo distintivo del pitch con el que la compañía convenció a fondos mexicanos y chilenos.",
-    "hitos": [
-      "Cofundó Xpendit en 2023, con lanzamiento comercial en octubre de ese año.",
-      "Participó en los levantamientos de US$1 millón (2024) y US$1,5 millones (enero 2025).",
-      "Equipo de 25 personas y expansión a México en menos de tres años."
-    ],
-    "news": [
-      {
-        "title": "Startup de fundadores de Xepelin y Magma Partners más dos veinteañeros levanta US$1 millón",
-        "url": "https://www.df.cl/df-mas/punto-de-partida/startup-de-fundadores-de-xepelin-y-magma-partners-mas-dos-veinteaneros",
-        "credit": "DF MAS, septiembre 2024"
-      }
-    ],
-    "url": "https://xpendit.com",
-    "trust": "Media-alta",
-    "image": "/under40/nicolas-ramos.jpg",
-    "linkedin": "https://www.linkedin.com/in/nicolas-jose-ramos"
-  },
-  {
-    "rank": 12,
     "slug": "ramon-echeverria",
     "name": "Ramón Echeverría",
     "role": "Cofundador de Grupalia; ex ingeniero de Platanus Ventures",
@@ -439,7 +407,7 @@
     "linkedin": "https://www.linkedin.com/in/ram%C3%B3n-echeverr%C3%ADa-258a14199"
   },
   {
-    "rank": 13,
+    "rank": 12,
     "slug": "ignacio-detmer-latorre",
     "name": "Ignacio Detmer Latorre",
     "role": "Cofundador y CEO de Koywe",
@@ -486,7 +454,7 @@
     "linkedin": "https://www.linkedin.com/in/ignaciodetmer"
   },
   {
-    "rank": 14,
+    "rank": 13,
     "slug": "polo-diaz",
     "name": "Polo Díaz",
     "role": "Fundador y CEO de Wiwo; Chief AI Officer de MGC Global Group",
@@ -528,7 +496,7 @@
     "linkedin": "https://www.linkedin.com/in/polodiaz"
   },
   {
-    "rank": 15,
+    "rank": 14,
     "slug": "nicolas-camhi-guerrero",
     "name": "Nicolás Camhi Guerrero",
     "role": "Cofundador y CEO de Vambe",
@@ -570,7 +538,7 @@
     "linkedin": "https://www.linkedin.com/in/nicolas-camhi"
   },
   {
-    "rank": 16,
+    "rank": 15,
     "slug": "ian-lee",
     "name": "Ian Lee",
     "role": "Cofundador de Nexor; cofundador y presidente del directorio de Examedi",
@@ -607,7 +575,7 @@
     "linkedin": "https://www.linkedin.com/in/ianleeexamedi"
   },
   {
-    "rank": 17,
+    "rank": 16,
     "slug": "ignacio-ponce-castro",
     "name": "Ignacio Ponce Castro",
     "role": "Fundador y director de Smart Plus Robotics",
@@ -644,7 +612,7 @@
     "linkedin": "https://www.linkedin.com/in/ignacio-ponce-castro-858990235"
   },
   {
-    "rank": 18,
+    "rank": 17,
     "slug": "isis-riquelme-arredondo",
     "name": "Isis Riquelme Arredondo",
     "role": "Cofundadora y CEO de Chucaw; socia fundadora de la Cámara Chilena de Inteligencia Artificial",
@@ -681,7 +649,7 @@
     "linkedin": "https://www.linkedin.com/in/isis-riquelme-11517b145"
   },
   {
-    "rank": 19,
+    "rank": 18,
     "slug": "cristobal-valenzuela-barrera",
     "name": "Cristóbal Valenzuela Barrera",
     "role": "Cofundador y CEO de Runway (Runway AI)",
@@ -713,44 +681,7 @@
     "linkedin": "https://www.linkedin.com/in/cvalenzuelab"
   },
   {
-    "rank": 20,
-    "slug": "teresita-moran",
-    "name": "Teresita Morán",
-    "role": "Cofundadora y Chief Revenue Officer regional de Buk",
-    "sector": "IA y software",
-    "sectorSlug": "ia",
-    "sectorDetail": "HR tech",
-    "focus": "SaaS B2B",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "39 años (n. ~1987) — verificada (Ex-Ante, agosto 2026)",
-    "ageShort": "39",
-    "verification": "verificada",
-    "bio": "Ingeniera civil de la Universidad Católica. Volvió a Chile en 2017 tras cuatro años en Estados Unidos y se sumó como cofundadora al proyecto que hoy es Buk, la mayor plataforma de gestión de personas de la región y el candidato chileno más claro al estatus de unicornio. Entre 2021 y marzo de 2026 fue country manager de Buk Chile, el mercado que consolidó la operación. Desde abril de 2026 dirige la estrategia comercial regional en cinco países. Es una de las pocas mujeres en el núcleo fundador del SaaS chileno.",
-    "hitos": [
-      "Cofundó Buk en 2017; la plataforma llegó a más de 9.000 empresas y 2 millones de usuarios en Latinoamérica.",
-      "Emprendedora Endeavor (2024), directora de Icare (2025) y Forbes Chile «50 Mujeres más Poderosas» (2025).",
-      "Asumió la responsabilidad comercial regional (Chile, Perú, Colombia, México y Brasil) en abril de 2026."
-    ],
-    "news": [
-      {
-        "title": "Quién es Teresita Moran, la cofundadora de Buk que paso de construir el negocio local a liderar su expansión regional",
-        "url": "https://www.ex-ante.cl/negocios/quien-es-teresita-moran-cofundadora-de-buk/",
-        "credit": "Ex-Ante, agosto 2026"
-      },
-      {
-        "title": "Las 50 mujeres más poderosas de Chile en 2025: Teresita Moran",
-        "url": "https://forbes.cl/lista-forbes/2025-12-23/las-50-mujeres-mas-poderosas-de-chile-en-2025-teresita-moran/",
-        "credit": "Forbes Chile, diciembre 2025"
-      }
-    ],
-    "url": "https://buk.cl",
-    "trust": "Alta",
-    "image": "/under40/teresita-moran.jpg",
-    "linkedin": ""
-  },
-  {
-    "rank": 21,
+    "rank": 19,
     "slug": "jaime-arrieta-boetsch",
     "name": "Jaime Arrieta Boetsch",
     "role": "Cofundador y CEO de Buk",
@@ -787,7 +718,7 @@
     "linkedin": "https://www.linkedin.com/in/jaime-arrieta-boetsch-ab214150"
   },
   {
-    "rank": 22,
+    "rank": 20,
     "slug": "felipe-torres",
     "name": "Felipe Torres",
     "role": "Cofundador y CTO de Skyward",
@@ -819,7 +750,7 @@
     "linkedin": "https://www.linkedin.com/in/fforres"
   },
   {
-    "rank": 23,
+    "rank": 21,
     "slug": "francesco-crivelli",
     "name": "Francesco Crivelli",
     "role": "Fundador de Intuition",
@@ -851,7 +782,7 @@
     "linkedin": "https://www.linkedin.com/in/francesco-crivelli"
   },
   {
-    "rank": 24,
+    "rank": 22,
     "slug": "matias-muchnick",
     "name": "Matías Muchnick",
     "role": "Cofundador y CEO de NotCo (The Not Company)",
@@ -888,7 +819,7 @@
     "linkedin": "https://www.linkedin.com/in/mmuchnick"
   },
   {
-    "rank": 25,
+    "rank": 23,
     "slug": "francisca-castillo-castro",
     "name": "Francisca Castillo Castro",
     "role": "Fundadora, CEO y directora de investigación de NeoCrop Technologies",
@@ -925,7 +856,7 @@
     "linkedin": ""
   },
   {
-    "rank": 26,
+    "rank": 24,
     "slug": "daniel-norero",
     "name": "Daniel Norero",
     "role": "Cofundador y COO de NeoCrop Technologies",
@@ -962,7 +893,7 @@
     "linkedin": ""
   },
   {
-    "rank": 27,
+    "rank": 25,
     "slug": "jose-del-solar",
     "name": "José del Solar",
     "role": "Cofundador y CEO de ByBug",
@@ -999,7 +930,7 @@
     "linkedin": "https://www.linkedin.com/company/bybug"
   },
   {
-    "rank": 28,
+    "rank": 26,
     "slug": "rocio-espinoza",
     "name": "Rocío Espinoza",
     "role": "Cofundadora y COO de ByBug",
@@ -1031,7 +962,7 @@
     "linkedin": "https://www.linkedin.com/in/rocio-espinosa-torres-29bb04202"
   },
   {
-    "rank": 29,
+    "rank": 27,
     "slug": "kris-blanchard",
     "name": "Kris Blanchard",
     "role": "Cofundador y CEO de Luyef Biotechnologies",
@@ -1068,7 +999,7 @@
     "linkedin": ""
   },
   {
-    "rank": 30,
+    "rank": 28,
     "slug": "carolina-aguila-diaz",
     "name": "Carolina Águila Díaz",
     "role": "Cofundadora y CEO de NanoInGreen",
@@ -1105,7 +1036,7 @@
     "linkedin": ""
   },
   {
-    "rank": 31,
+    "rank": 29,
     "slug": "leonardo-alvarez",
     "name": "Leonardo Álvarez",
     "role": "Cofundador y CEO de Protera",
@@ -1142,7 +1073,7 @@
     "linkedin": "https://www.linkedin.com/in/leonardoalvarezm"
   },
   {
-    "rank": 32,
+    "rank": 30,
     "slug": "claudio-pedreros",
     "name": "Claudio Pedreros",
     "role": "Cofundador y CEO de Done Properly",
@@ -1179,7 +1110,7 @@
     "linkedin": ""
   },
   {
-    "rank": 33,
+    "rank": 31,
     "slug": "diego-gutierrez",
     "name": "Diego Gutiérrez",
     "role": "Cofundador y CEO de Codebreaker Bioscience",
@@ -1216,7 +1147,7 @@
     "linkedin": ""
   },
   {
-    "rank": 34,
+    "rank": 32,
     "slug": "alejandra-allendes",
     "name": "Alejandra Allendes",
     "role": "Cofundadora de Quelp",
@@ -1258,7 +1189,7 @@
     "linkedin": "https://www.linkedin.com/in/alejandra-allendes"
   },
   {
-    "rank": 35,
+    "rank": 33,
     "slug": "pamela-salazar-cifuentes",
     "name": "Pamela Salazar Cifuentes",
     "role": "Fundadora y CEO de uMov (dispositivo ALBA)",
@@ -1295,7 +1226,7 @@
     "linkedin": ""
   },
   {
-    "rank": 36,
+    "rank": 34,
     "slug": "melissa-munoz-flandez",
     "name": "Melissa Muñoz Flández",
     "role": "Fundadora de AutistApp; ingeniera de proyectos del Centro de Datos e Inteligencia Artificial (CDIA) de la Universidad de Concepción",
@@ -1332,7 +1263,7 @@
     "linkedin": ""
   },
   {
-    "rank": 37,
+    "rank": 35,
     "slug": "ricardo-susaeta",
     "name": "Ricardo Susaeta",
     "role": "Cofundador y CEO de Búho",
@@ -1369,7 +1300,7 @@
     "linkedin": ""
   },
   {
-    "rank": 38,
+    "rank": 36,
     "slug": "manuel-aguirre-olivares",
     "name": "Manuel Aguirre Olivares",
     "role": "Cofundador y Chief Product Officer de Búho",
@@ -1406,7 +1337,7 @@
     "linkedin": ""
   },
   {
-    "rank": 39,
+    "rank": 37,
     "slug": "andres-kemeny",
     "name": "Andrés Kemeny",
     "role": "Cofundador y CTO de Examedi",
@@ -1443,7 +1374,7 @@
     "linkedin": "https://www.linkedin.com/in/andres-kemeny"
   },
   {
-    "rank": 40,
+    "rank": 38,
     "slug": "nicolas-uribe-espinoza",
     "name": "Nicolás Uribe Espinoza",
     "role": "Cofundador y CEO de Smert Group (ex LobbyControl)",
@@ -1480,7 +1411,7 @@
     "linkedin": ""
   },
   {
-    "rank": 41,
+    "rank": 39,
     "slug": "eloisa-koch",
     "name": "Eloísa Koch",
     "role": "Gerenta general y CEO de MELISA Institute",
@@ -1512,7 +1443,7 @@
     "linkedin": "https://www.linkedin.com/in/eloisa-koch-8b0b1b1b3"
   },
   {
-    "rank": 42,
+    "rank": 40,
     "slug": "carolina-cabalin",
     "name": "Carolina Cabalín",
     "role": "Cofundadora de Inverskin SpA (marca MicrobeSkin)",
@@ -1544,7 +1475,7 @@
     "linkedin": "https://www.linkedin.com/in/carolina-cabalin1990"
   },
   {
-    "rank": 43,
+    "rank": 41,
     "slug": "alejandra-gatica-salgado",
     "name": "Alejandra Gatica Salgado",
     "role": "Fundadora de Demiora Tech",
@@ -1581,7 +1512,7 @@
     "linkedin": "https://www.linkedin.com/in/alejandra-gatica-salgado-61206828b"
   },
   {
-    "rank": 44,
+    "rank": 42,
     "slug": "beatriz-palma",
     "name": "Beatriz Palma",
     "role": "Fundadora de My Nipp",
@@ -1628,7 +1559,7 @@
     "linkedin": "https://www.linkedin.com/in/beatrizpalmaroeschmann"
   },
   {
-    "rank": 45,
+    "rank": 43,
     "slug": "felipe-prado-gilles",
     "name": "Felipe Prado Gilles",
     "role": "Cofundador de Swarmob",
@@ -1665,7 +1596,7 @@
     "linkedin": "https://www.linkedin.com/in/felipe-prado-gilles"
   },
   {
-    "rank": 46,
+    "rank": 44,
     "slug": "natalia-perez",
     "name": "Natalia Pérez",
     "role": "Cofundadora y CEO de Swarmob",
@@ -1702,7 +1633,7 @@
     "linkedin": ""
   },
   {
-    "rank": 47,
+    "rank": 45,
     "slug": "komal-dadlani",
     "name": "Komal Dadlani",
     "role": "Cofundadora y CEO de Lab4U",
@@ -1739,7 +1670,7 @@
     "linkedin": "https://www.linkedin.com/in/komaldadlani"
   },
   {
-    "rank": 48,
+    "rank": 46,
     "slug": "carlos-aravena",
     "name": "Carlos Aravena",
     "role": "Cofundador y CEO de Poliglota",
@@ -1776,7 +1707,7 @@
     "linkedin": "https://www.linkedin.com/in/carlos-aravena-poliglota"
   },
   {
-    "rank": 49,
+    "rank": 47,
     "slug": "elisa-torres-durney",
     "name": "Elisa Torres Durney",
     "role": "Fundadora y directora ejecutiva de Girls in Quantum",
@@ -1813,7 +1744,7 @@
     "linkedin": "https://www.linkedin.com/in/elisa-torres-durney"
   },
   {
-    "rank": 50,
+    "rank": 48,
     "slug": "francisca-koppmann-kuester",
     "name": "Francisca Koppmann Kuester",
     "role": "Cofundadora de la Red de Tutorías UC (TEUC)",
@@ -1845,7 +1776,7 @@
     "linkedin": "https://www.linkedin.com/in/francisca-koppmann-kuester-9902861b3"
   },
   {
-    "rank": 51,
+    "rank": 49,
     "slug": "melania-sanhueza",
     "name": "Melania Sanhueza",
     "role": "Cofundadora de Müud",
@@ -1877,7 +1808,7 @@
     "linkedin": "https://www.linkedin.com/in/melaniasanhueza"
   },
   {
-    "rank": 52,
+    "rank": 50,
     "slug": "martin-seguel",
     "name": "Martín Seguel",
     "role": "Creador de la app Habitree; desarrollador independiente",
@@ -1909,7 +1840,7 @@
     "linkedin": "https://www.linkedin.com/in/martin-seguel"
   },
   {
-    "rank": 53,
+    "rank": 51,
     "slug": "izumi-nakagawa",
     "name": "Izumi Nakagawa",
     "role": "Fundadora y directora de NKP MGMT; socia cofundadora de Histerya Colectiva",
@@ -1941,7 +1872,7 @@
     "linkedin": ""
   },
   {
-    "rank": 54,
+    "rank": 52,
     "slug": "maria-ignacia-urzua-reyes",
     "name": "María Ignacia Urzúa Reyes",
     "role": "Fundadora de Té con Libros; escritora",
@@ -1973,7 +1904,7 @@
     "linkedin": ""
   },
   {
-    "rank": 55,
+    "rank": 53,
     "slug": "alejandra-acevedo",
     "name": "Alejandra Acevedo",
     "role": "Fundadora y CEO de Raindoor",
@@ -2010,7 +1941,7 @@
     "linkedin": ""
   },
   {
-    "rank": 56,
+    "rank": 54,
     "slug": "valentina-barna-fermandois",
     "name": "Valentina Barna Fermandois",
     "role": "Fundadora de BWild",
@@ -2047,7 +1978,7 @@
     "linkedin": ""
   },
   {
-    "rank": 57,
+    "rank": 55,
     "slug": "aline-israel",
     "name": "Aline Israel",
     "role": "Fundadora de ENILĀ",
@@ -2079,7 +2010,7 @@
     "linkedin": ""
   },
   {
-    "rank": 58,
+    "rank": 56,
     "slug": "benjamin-labra",
     "name": "Benjamín Labra",
     "role": "Cofundador y CEO de Houm",
@@ -2116,7 +2047,7 @@
     "linkedin": "https://www.linkedin.com/in/benjamin-labra"
   },
   {
-    "rank": 59,
+    "rank": 57,
     "slug": "alvaro-echeverria",
     "name": "Álvaro Echeverría",
     "role": "Cofundador y CEO de SimpliRoute",
@@ -2153,7 +2084,7 @@
     "linkedin": "https://www.linkedin.com/in/aechever"
   },
   {
-    "rank": 60,
+    "rank": 58,
     "slug": "benjamin-santa-maria",
     "name": "Benjamín Santa María",
     "role": "Cofundador y CEO de Reversso",
@@ -2190,7 +2121,7 @@
     "linkedin": ""
   },
   {
-    "rank": 61,
+    "rank": 59,
     "slug": "rodrigo-segal",
     "name": "Rodrigo Segal",
     "role": "Cofundador y CEO de Justo",
@@ -2227,7 +2158,7 @@
     "linkedin": "https://www.linkedin.com/in/rodrigosegal"
   },
   {
-    "rank": 62,
+    "rank": 60,
     "slug": "kim-maturana",
     "name": "Kim Maturana",
     "role": "Fundadora de UpGirl",
@@ -2264,7 +2195,7 @@
     "linkedin": ""
   },
   {
-    "rank": 63,
+    "rank": 61,
     "slug": "diego-pradenas-espinoza",
     "name": "Diego Pradenas Espinoza",
     "role": "Fundador y director de The Pradie Group SpA",
@@ -2301,7 +2232,7 @@
     "linkedin": ""
   },
   {
-    "rank": 64,
+    "rank": 62,
     "slug": "raimundo-zamora-baeza",
     "name": "Raimundo Zamora Baeza",
     "role": "Fundador de Razen",
@@ -2333,7 +2264,7 @@
     "linkedin": "https://www.linkedin.com/in/raimundo-zamora-b418151b1"
   },
   {
-    "rank": 65,
+    "rank": 63,
     "slug": "rodrigo-haydar",
     "name": "Rodrigo Haydar",
     "role": "Cofundador y CEO de GoodMeal",
@@ -2380,7 +2311,7 @@
     "linkedin": "https://www.linkedin.com/in/rohaydar"
   },
   {
-    "rank": 66,
+    "rank": 64,
     "slug": "constanza-levican-cardenas",
     "name": "Constanza Levicán Cárdenas",
     "role": "Fundadora y CEO de Suncast",
@@ -2417,7 +2348,7 @@
     "linkedin": "https://www.linkedin.com/in/constanza-levican"
   },
   {
-    "rank": 67,
+    "rank": 65,
     "slug": "ignacio-parada-da-fonseca",
     "name": "Ignacio Parada da Fonseca",
     "role": "Fundador y CEO de Bioelements",
@@ -2454,7 +2385,7 @@
     "linkedin": ""
   },
   {
-    "rank": 68,
+    "rank": 66,
     "slug": "oscar-munoz-cofre",
     "name": "Óscar Muñoz Cofré",
     "role": "Fundador y CEO de Green Glass",
@@ -2491,7 +2422,7 @@
     "linkedin": ""
   },
   {
-    "rank": 69,
+    "rank": 67,
     "slug": "matias-moya",
     "name": "Matías Moya",
     "role": "Cofundador y CEO de Photio",
@@ -2528,7 +2459,7 @@
     "linkedin": "https://www.linkedin.com/in/mat%C3%ADas-moya-alarc%C3%B3n-409229188"
   },
   {
-    "rank": 70,
+    "rank": 68,
     "slug": "paloma-gonzalez-rojas",
     "name": "Paloma González-Rojas",
     "role": "Cofundadora y CEO de Hera Materials (ex Atacama Biomaterials)",
@@ -2565,7 +2496,7 @@
     "linkedin": ""
   },
   {
-    "rank": 71,
+    "rank": 69,
     "slug": "fernando-ojeda-soto",
     "name": "Fernando Ojeda Soto",
     "role": "Fundador y CEO de Humos de la Patagonia",
@@ -2602,7 +2533,7 @@
     "linkedin": ""
   },
   {
-    "rank": 72,
+    "rank": 70,
     "slug": "felipe-nunez-lopez",
     "name": "Felipe Núñez López",
     "role": "Cofundador de Aqua Retorna",
@@ -2634,7 +2565,7 @@
     "linkedin": ""
   },
   {
-    "rank": 73,
+    "rank": 71,
     "slug": "valentina-veloso",
     "name": "Valentina Veloso",
     "role": "Cofundadora y directora ejecutiva de Yaku",
@@ -2666,7 +2597,7 @@
     "linkedin": ""
   },
   {
-    "rank": 74,
+    "rank": 72,
     "slug": "jennifer-araya-venegas",
     "name": "Jennifer Araya Venegas",
     "role": "Cofundadora y gerenta comercial de Imeko",
@@ -2703,7 +2634,7 @@
     "linkedin": ""
   },
   {
-    "rank": 75,
+    "rank": 73,
     "slug": "nadac-reales-del-canto",
     "name": "Nadac Reales del Canto",
     "role": "Fundadora y CEO de Rudanac Biotec (tecnología Spiromet)",
@@ -2740,7 +2671,7 @@
     "linkedin": ""
   },
   {
-    "rank": 76,
+    "rank": 74,
     "slug": "camila-briceno-albages",
     "name": "Camila Briceño Albages",
     "role": "Cofundadora de Grava Design",
@@ -2772,7 +2703,7 @@
     "linkedin": ""
   },
   {
-    "rank": 77,
+    "rank": 75,
     "slug": "joaquin-gonzalez",
     "name": "Joaquín González",
     "role": "Fundador y CEO de Cero Trade",
@@ -2809,7 +2740,7 @@
     "linkedin": ""
   },
   {
-    "rank": 78,
+    "rank": 76,
     "slug": "diego-siguelnitzky",
     "name": "Diego Siguelnitzky",
     "role": "Cofundador y CEO de 50x",
@@ -2851,7 +2782,7 @@
     "linkedin": ""
   },
   {
-    "rank": 79,
+    "rank": 77,
     "slug": "jose-manuel-moller",
     "name": "José Manuel Moller",
     "role": "Fundador de Common House; fundador de Algramo (2012-2025)",
@@ -2888,44 +2819,7 @@
     "linkedin": "https://www.linkedin.com/in/josemanuelmoller"
   },
   {
-    "rank": 80,
-    "slug": "macarena-guajardo",
-    "name": "Macarena Guajardo",
-    "role": "Cofundadora de Fundación Basura; Zero Waste Cities Program Manager",
-    "sector": "Impacto",
-    "sectorSlug": "impacto",
-    "sectorDetail": "Innovación social",
-    "focus": "residuos e incidencia ambiental",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "≈37 años (n. ~1988-89) — derivada de su ficha de Fellow 2016 del Premio Impacto Social («27 años»)",
-    "ageShort": "37",
-    "verification": "derivada",
-    "bio": "Arquitecta UC con MSc en Energía, Tecnología y Estructuras Sostenibles de la TU Berlín, empezó en 2015 con un sitio web —basural.com— que catalogaba proyectos hechos con material recuperado. De ahí nació Fundación Basura y su consigna incómoda: «la basura no existe, es una decisión». Fue candidata constituyente en 2021 y voz recurrente en el debate sobre plásticos de un solo uso. Hoy la dirección ejecutiva la ocupa Tamara Ortega; Guajardo permanece como cofundadora y lidera un programa internacional de ciudades basura cero.",
-    "hitos": [
-      "Fundó Fundación Basura en 2015 y publicó un libro en su primer año.",
-      "Seleccionada entre los 500 mejores proyectos de los Premios Latinoamérica Verde; Fellow del Premio Impacto Social 2016.",
-      "Participación en la coalición «Supera el Plástico» y en la incidencia por la Ley PUSU."
-    ],
-    "news": [
-      {
-        "title": "Macarena Guajardo, la arquitecta que se hizo cargo de la basura",
-        "url": "https://www.df.cl/df-lab/sostenibilidad/macarena-guajardo-la-arquitecta-que-se-hizo-cargo-de-la-basura",
-        "credit": "Diario Financiero, s/f"
-      },
-      {
-        "title": "Macarena Guajardo, candidata constituyente y directora de Fundación Basura",
-        "url": "https://lamaquinamedio.com/macarena-guajardo-constituyente-ecologica-feminista-dignidad/",
-        "credit": "La Maquina, enero 2021"
-      }
-    ],
-    "url": "https://fundacionbasura.org",
-    "trust": "Alta en trayectoria; edad derivada",
-    "image": "/under40/macarena-guajardo.jpg",
-    "linkedin": ""
-  },
-  {
-    "rank": 81,
+    "rank": 78,
     "slug": "thomas-kimber",
     "name": "Thomas Kimber",
     "role": "Fundador de Karün (dejó la gerencia general en 2024)",
@@ -2962,44 +2856,7 @@
     "linkedin": "https://linkedin.com/in/thomas-kimber"
   },
   {
-    "rank": 82,
-    "slug": "julieta-martinez",
-    "name": "Julieta Martínez",
-    "role": "Fundadora de Fundación Tremendas y de Latinas for Climate",
-    "sector": "Impacto",
-    "sectorSlug": "impacto",
-    "sectorDetail": "Innovación social",
-    "focus": "liderazgo juvenil, género y justicia climática",
-    "place": "Santiago",
-    "city": "Santiago",
-    "age": "22 años (n. ~2003) — verificada (Forbes Chile, julio 2025: «21 años»; tenía 18 en septiembre de 2021)",
-    "ageShort": "22",
-    "verification": "verificada",
-    "bio": "Fundó Tremendas a los 15 años y hoy, estudiante de Antropología en la UC, encabeza una plataforma presente en 20 países que articula el liderazgo de niñas y jóvenes en torno a los Objetivos de Desarrollo Sostenible. Su activismo partió a los 10, empujado por su propia diabetes insulinodependiente y la exigencia de acceso equitativo a salud. Es una de las voces chilenas más citadas en foros globales sobre género y crisis climática, con una tesis constante: las mujeres sostienen los cuidados en los desastres y son las más expuestas a ellos.",
-    "hitos": [
-      "Fundó Tremendas en 2019, a los 15 años; hoy en 20 países. Fundadora también de Latinas for Climate.",
-      "Grupo de Trabajo Juvenil de ONU Mujeres para la Igualdad Generacional; I Cumbre Regional de las Niñas con 5.000 asistentes (2024).",
-      "Premio Juvenil WIN WIN 2026 de sostenibilidad; Forbes 30 Under 30 Chile 2025 y lista Forbes de mujeres poderosas 2023."
-    ],
-    "news": [
-      {
-        "title": "Activista chilena es reconocida con el Premio Juvenil WIN WIN 2026",
-        "url": "https://www.tourinnovacion.cl/actualidad/joven-activista-chilena-julieta-martinez-es-reconocida-con-uno-de-los-premios-de-sostenibilidad-mas-importantes-del-mundo/",
-        "credit": "Tour Innovación, abril 2026"
-      },
-      {
-        "title": "Julieta Martinez: «Cuando hay desastres naturales, son las mujeres las primeras que sostienen los cuidados»",
-        "url": "https://www.latercera.com/sustentabilidad/noticia/julieta-martinez-cuando-hay-desastres-naturales-son-las-mujeres-las-primeras-que-sostienen-los-cuidados-y-aun-asi-son-las-mas-vulnerables/",
-        "credit": "La Tercera, mayo 2026"
-      }
-    ],
-    "url": "https://tremendas.org",
-    "trust": "Alta",
-    "image": "/under40/julieta-martinez.jpg",
-    "linkedin": "https://www.linkedin.com/in/julietamartinezo"
-  },
-  {
-    "rank": 83,
+    "rank": 79,
     "slug": "isidora-uribe-silva",
     "name": "Isidora Uribe Silva",
     "role": "Fundadora de la Fundación Encuentra Tu Lugar",
@@ -3036,7 +2893,7 @@
     "linkedin": ""
   },
   {
-    "rank": 84,
+    "rank": 80,
     "slug": "samuel-santa-cruz",
     "name": "Samuel Santa Cruz",
     "role": "Fundador y CEO de Fundación Parque Cochamó",
@@ -3073,7 +2930,7 @@
     "linkedin": ""
   },
   {
-    "rank": 85,
+    "rank": 81,
     "slug": "angela-astudillo",
     "name": "Ángela Astudillo",
     "role": "Cofundadora de la ONG Desierto Vestido",
@@ -3110,7 +2967,7 @@
     "linkedin": ""
   },
   {
-    "rank": 86,
+    "rank": 82,
     "slug": "bernardita-frez",
     "name": "Bernardita Frez",
     "role": "Directora ejecutiva de Juntos por la Reinserción",
@@ -3147,7 +3004,7 @@
     "linkedin": ""
   },
   {
-    "rank": 87,
+    "rank": 83,
     "slug": "ismaela-magliotto-quevedo",
     "name": "Ismaela Magliotto Quevedo",
     "role": "Cofundadora y directora ejecutiva de la Fundación Uno Punto Cinco",
@@ -3184,7 +3041,7 @@
     "linkedin": ""
   },
   {
-    "rank": 88,
+    "rank": 84,
     "slug": "alvaro-silberstein",
     "name": "Álvaro Silberstein",
     "role": "Cofundador y CEO de Wheel the World",
@@ -3221,7 +3078,7 @@
     "linkedin": "https://www.linkedin.com/in/alvaro-silberstein"
   },
   {
-    "rank": 89,
+    "rank": 85,
     "slug": "diego-antonio-gonzalez",
     "name": "Diego Antonio González",
     "role": "Fundador y director de la Fundación Proyecto Amar Migrar",
@@ -3263,7 +3120,7 @@
     "linkedin": ""
   },
   {
-    "rank": 90,
+    "rank": 86,
     "slug": "antonia-rojas-eing",
     "name": "Antonia Rojas Eing",
     "role": "Fundadora y managing partner de Attom Capital",
@@ -3300,7 +3157,7 @@
     "linkedin": "https://www.linkedin.com/in/antoniarojase"
   },
   {
-    "rank": 91,
+    "rank": 87,
     "slug": "paula-enei",
     "name": "Paula Enei",
     "role": "CEO, cofundadora y managing partner de Platanus Ventures",
@@ -3337,7 +3194,7 @@
     "linkedin": "https://www.linkedin.com/in/paulaenei"
   },
   {
-    "rank": 92,
+    "rank": 88,
     "slug": "maria-jose-alvarez",
     "name": "María José Álvarez",
     "role": "Socia y managing partner de WNT Ventures",
@@ -3369,7 +3226,7 @@
     "linkedin": "https://www.linkedin.com/in/mariajose-alvarez"
   },
   {
-    "rank": 93,
+    "rank": 89,
     "slug": "andres-matte",
     "name": "Andrés Matte",
     "role": "Fundador de Kapso; ex socio fundador de Platanus Ventures",
@@ -3401,7 +3258,7 @@
     "linkedin": "https://www.linkedin.com/in/andresmatte"
   },
   {
-    "rank": 94,
+    "rank": 90,
     "slug": "damian-panes",
     "name": "Damián Panes",
     "role": "Cofundador de Indies",
@@ -3433,7 +3290,7 @@
     "linkedin": "https://www.linkedin.com/in/damianpanes"
   },
   {
-    "rank": 95,
+    "rank": 91,
     "slug": "manuel-concha",
     "name": "Manuel Concha",
     "role": "Fundador de Kame ERP, hoy Siigo Kame",
@@ -3475,7 +3332,7 @@
     "linkedin": "https://www.linkedin.com/in/manuelconcha"
   },
   {
-    "rank": 96,
+    "rank": 92,
     "slug": "jose-manuel-jimenez-marin",
     "name": "José Manuel Jiménez Marín",
     "role": "Fundador y CEO de Webdox CLM",
@@ -3512,7 +3369,7 @@
     "linkedin": "https://www.linkedin.com/in/josemanueljimenezmarin"
   },
   {
-    "rank": 97,
+    "rank": 93,
     "slug": "andres-ugarte",
     "name": "Andrés Ugarte",
     "role": "Fundador y CEO de Copilot Money",
@@ -3549,7 +3406,7 @@
     "linkedin": "https://www.linkedin.com/in/andresugarte"
   },
   {
-    "rank": 98,
+    "rank": 94,
     "slug": "pier-paolo-colonnello",
     "name": "Pier Paolo Colonnello",
     "role": "Cofundador de Wild Brands (Wild Lama, The Wild Foods, eDarkstore, Casa Nativa)",
@@ -3586,7 +3443,7 @@
     "linkedin": "https://www.linkedin.com/in/pp-colonnello"
   },
   {
-    "rank": 99,
+    "rank": 95,
     "slug": "felipe-cevallos-becker",
     "name": "Felipe Cevallos Becker",
     "role": "Cofundador y CEO de Reborn Electric Motors; profesor de la Universidad Católica",
@@ -3623,7 +3480,7 @@
     "linkedin": "https://www.linkedin.com/in/felipe-cevallos-becker-48020a34"
   },
   {
-    "rank": 100,
+    "rank": 96,
     "slug": "barbarita-lara-martinez",
     "name": "Barbarita Lara Martínez",
     "role": "Fundadora y CEO de EMERCOM; académica de la Universidad Andrés Bello; directora regional de Girls in Tech Chile",
@@ -3665,7 +3522,7 @@
     "linkedin": "https://www.linkedin.com/in/barbaritalaram"
   },
   {
-    "rank": 101,
+    "rank": 97,
     "slug": "andrea-donoso-youlton",
     "name": "Andrea Donoso Youlton",
     "role": "CEO y cofundadora de Coloris Biotech; subdirectora de GIBMAR y coordinadora de gestión tecnológica del Centro de Biotecnología de la Universidad de Concepción",
@@ -3697,7 +3554,7 @@
     "linkedin": "https://www.linkedin.com/in/andrea-donoso-youlton-6359b689"
   },
   {
-    "rank": 102,
+    "rank": 98,
     "slug": "florencia-alamos-grau",
     "name": "Florencia Alamos Grau",
     "role": "Fundadora y directora ejecutiva de Fundación Kiri; cofundadora y presidenta de Fundación Ciencia Impacta; académica del Centro Interdisciplinario de Neurociencia UC",
@@ -3739,7 +3596,7 @@
     "linkedin": "https://www.linkedin.com/in/mar%C3%ADa-florencia-%C3%A1lamos-grau-aab2781b6"
   },
   {
-    "rank": 103,
+    "rank": 99,
     "slug": "melissa-jeldes",
     "name": "Melissa Jeldes",
     "role": "Fundadora y directora de Glocal Chile",
@@ -3776,7 +3633,7 @@
     "linkedin": "https://www.linkedin.com/in/melissajeldes"
   },
   {
-    "rank": 104,
+    "rank": 100,
     "slug": "daniela-fernandez-rosso",
     "name": "Daniela Fernández Rosso",
     "role": "Fundadora y presidenta de la Fundación Pequeñas Grandes Estrellas; operadora de telescopio y especialista de instrumentos en el Observatorio Las Campanas (Carnegie Institution for Science)",
@@ -3811,5 +3668,55 @@
     "trust": "Alta (edad con fecha de nacimiento exacta)",
     "image": "/under40/daniela-fernandez-rosso.jpg",
     "linkedin": "https://www.linkedin.com/in/danielafernandezrosso"
+  },
+  {
+    "rank": 101,
+    "slug": "marcela-ruiz-aguilar",
+    "name": "Marcela Ruiz Aguilar",
+    "role": "Fundadora y CEO de Acústica Marina SpA",
+    "sector": "Cleantech",
+    "sectorSlug": "cleantech",
+    "sectorDetail": "Economía azul",
+    "focus": "bioacústica submarina e inteligencia oceánica con IA",
+    "place": "Valdivia, Región de Los Ríos, con operación en Chile, Perú, Panamá, Colombia y México",
+    "city": "Valdivia",
+    "age": "40-41 años (n. ~1985) — derivada: Diario Financiero, serie «Pioneras», octubre 2023, la consigna con 38 años. Queda fuera del corte estricto de under 40 y en el borde superior del tramo 35-40.",
+    "ageShort": "40",
+    "verification": "derivada",
+    "bio": "Bióloga marina de la Universidad Austral con tesis en oceanografía y magíster en Gestión Estratégica de la Universidad San Sebastián. Pasó más de nueve años como fiscalizadora de Sernapesca implementando la política de pesca y acuicultura en Los Ríos, y de ahí saltó a gerenta de innovación de una empresa científico-tecnológica, donde vio el hueco: nadie estaba escuchando el mar. En 2020 fundó Acústica Marina en Valdivia. La empresa combina hardware propio —boyas inteligentes, catamaranes a control remoto, drones hidroacústicos— con inteligencia artificial para detectar ballenas, embarcaciones, presión sonora, salinidad y CO₂ en tiempo real. En 2023 pivotó de medir ruido puntual a operar como plataforma de inteligencia oceánica.",
+    "hitos": [
+      "Ganó Women in Tech Latam 2023 en la categoría de tecnología más disruptiva y fue la única chilena en la final global de Dubái, en noviembre de ese año.",
+      "Acreditada por el American Bureau of Shipping para medir ruido radiado al agua (URN): la única empresa de Latinoamérica y el Caribe con esa certificación y la séptima del mundo.",
+      "$1.400 millones del fondo Innova Alta Tecnología de Corfo a fines de 2024, dentro de unos US$2 millones en financiamiento no dilutivo total. Facturación de US$6 millones, 80% corporativa (puertos, minería, navieras) y 20% de gobierno, con 50% de los ingresos reinvertidos en I+D.",
+      "Más de 100 terabytes de datos oceánicos acumulados; boyas operando en Chungungo, Región de Coquimbo, para el proyecto Puerto Cruz Grande de la Compañía Minera del Pacífico.",
+      "Misión Pacífico Sur: red hidroacústica desde la Antártica chilena hasta Baja California, operativa a 2030, con US$30 millones de inversión requerida. Cinco nodos Chile-Perú en 2026-2027 y diez Panamá-México en 2028-2029.",
+      "Operación en Chile, Perú (desde 2025), Panamá, Colombia y México. Entre sus clientes peruanos está PUCA, la organización de Gastón Acurio, para rastrear el paiche amazónico."
+    ],
+    "news": [
+      {
+        "title": "Cómo Acústica Marina se transformó en una plataforma de inteligencia oceánica",
+        "url": "https://www.df.cl/como-acustica-marina-se-transformo-en-una-plataforma-de-inteligencia",
+        "credit": "Diario Financiero, abril 2026"
+      },
+      {
+        "title": "Pioneras: la emprendedora científica que aplica inteligencia artificial al ruido del mar",
+        "url": "https://www.df.cl/df-lab/innovacion-y-startups/pioneras-la-emprendedora-cientifica-que-aplica-inteligencia-artificial",
+        "credit": "Diario Financiero, octubre 2023"
+      },
+      {
+        "title": "La bióloga marina que usa inteligencia artificial para proteger a las ballenas",
+        "url": "https://www.latercera.com/paula/noticia/la-biologa-marina-que-usa-inteligencia-artificial-para-proteger-a-las-ballenas/",
+        "credit": "La Tercera Paula, julio 2026"
+      },
+      {
+        "title": "Startup chilena arribó a Perú con su sistema de monitoreo de ruido submarino",
+        "url": "https://www.df.cl/df-lab/innovacion-y-startups/startup-chilena-arribo-a-peru-con-su-sistema-de-monitoreo-de-ruido",
+        "credit": "Diario Financiero, septiembre 2023"
+      }
+    ],
+    "url": "https://www.acusticamarina.com",
+    "trust": "Alta en trayectoria, cifras y premios; edad derivada de una sola fuente fechada",
+    "image": "/under40/marcela-ruiz-aguilar.jpg",
+    "linkedin": "https://www.linkedin.com/in/marcela-ruiz-aguilar-3939b046"
   }
 ]

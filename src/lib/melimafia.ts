@@ -18,8 +18,40 @@ export const MELIMAFIA: Article = {
   city: "Buenos Aires",
   pace: "fondo",
   tags: ["fintech", "pagos", "fondo"],
+  seoTitle: "MeliMafia: la red de Mercado Libre, sin venta",
+  seoDescription:
+    "We Are Vander acuña MeliMafia: Kaszek, dLocal y 282 fundadores salieron de Mercado Libre sin que la compañía fuera vendida. Cifras del 10-K 2025.",
+  ogTitle: "La mafia de Mercado Libre, sin venta",
+  ogDescription: "Kaszek salió. Galperin no. Acuñamos MeliMafia para la red que no es una diáspora.",
+  ogImage: "/og/melimafia.jpg",
   pullQuote: "Las mafias se forman cuando alguien vende. Y a esta compañía no la compró nadie.",
+  tldr: [
+    "We Are Vander acuña «MeliMafia» para la red de Mercado Libre: no es una diáspora, porque la compañía nunca fue vendida.",
+    "Kaszek, el fondo de Hernán Kazah y Nicolás Szekasy, levantó más de US$3.000 millones y respaldó 131 compañías.",
+    "Pedro Arnt, ex CFO de MELI, es CEO de dLocal. Hernán Corral cofundó Pomelo. Justo Ferraro es CEO de Fudo.",
+    "Forbes Colombia (2024) reportó 282 fundadores salidos de Mercado Libre, según Gilgamesh Ventures y Wharton. La cifra no está auditada compañía por compañía.",
+    "Las mafias, en el sentido técnico, se forman cuando alguien vende. A Mercado Libre no la compró nadie.",
+  ],
+  faq: [
+    {
+      q: "¿Qué es la MeliMafia?",
+      a: "Es el término que We Are Vander acuña en 2026 para la red de capital, operadores y método que salió de Mercado Libre sin una venta. No aparece en la prensa previa. No es una diáspora: la plana mayor sigue adentro.",
+    },
+    {
+      q: "¿Kaszek salió de Mercado Libre?",
+      a: "Sí. Hernán Kazah cofundó MELI y fue COO y CFO. Nicolás Szekasy fue CFO y condujo el IPO de 2007. En 2011 fundaron Kaszek. El sitio de la firma cuenta 131 compañías y 303 emprendedores respaldados.",
+    },
+    {
+      q: "¿Cuántos fundadores salieron de Mercado Libre?",
+      a: "Forbes Colombia (octubre 2024) reportó 282 a partir de un estudio de Gilgamesh Ventures con Wharton. Endeavor Argentina (mayo 2023) contó alrededor de 90 startups. Ninguna de las dos cifras es un censo auditado.",
+    },
+    {
+      q: "¿Por qué Mercado Libre no está en el Vander 20?",
+      a: "Por tamaño. El Vander 20 excluye consolidadas. Mercado Libre facturó US$28.893 millones en 2025 y vale alrededor de US$97.000 millones. Ya no es promesa: es resultado.",
+    },
+  ],
   body: [
+    { type: "p", text: "La MeliMafia es el término que We Are Vander acuña para la red de capital, operadores y método que salió de Mercado Libre sin que la compañía fuera vendida. Kaszek levantó más de US$3.000 millones. Forbes Colombia (2024) reportó 282 fundadores salidos de sus filas. Mercado Libre nunca expulsó a su plana mayor y en 2025 facturó US$28.893 millones, según su 10-K ante la SEC." },
     { type: "p", text: "Empecemos por lo incómodo." },
     { type: "p", text: "El término no existe. Lo buscamos en español, en inglés y en portugués. No hay un solo artículo de prensa que hable de la «MeliMafia». Los inventarios latinoamericanos del género —y hay varios— listan a Rappi, a Nubank, a Gympass, a 99, a Glovo, a Linio. Ninguno menciona a Mercado Libre. La mafia latinoamericana con cobertura seria es la de Rappi: más de cien compañías desde 2015, mapeadas país por país, cuarenta y seis en Colombia, veintitrés en México, veinte en Brasil." },
     { type: "p", text: "Así que lo estamos acuñando nosotros. Conviene decirlo antes de seguir, porque el resto del artículo depende de que quede claro qué se está afirmando y qué no." },
@@ -36,7 +68,7 @@ export const MELIMAFIA: Article = {
     { type: "p", text: "Marcos Galperín, que escribió el plan de negocios en marzo de 1999 mientras cursaba su MBA en Stanford, se corrió a Executive Chairman después de veintiséis años. Lo dijo así en su primera entrevista junto a su sucesor: «Si tenía que dar un paso al costado sin alguien listo, habría fallado en contratar gente mejor que yo»." },
     { type: "quote", text: "Si tenía que dar un paso al costado sin alguien listo, habría fallado en contratar gente mejor que yo.", cite: "Marcos Galperín" },
     { type: "p", text: "Szarfsztejn, sobre esa decisión: «No hay muchos ejemplos de CEO y fundadores que decidan dar un paso al costado en el mejor momento de la compañía». La llamó «una de las genialidades de Marcos»." },
-    { type: "p", text: "Es una compañía que retiene. Eso, en la lógica de las mafias, debería ser el final del artículo." },
+    { type: "p", text: "Es una compañía que retiene. Eso, en la lógica de las mafias, debería ser el final del artículo. Por tamaño, Mercado Libre tampoco entra al Vander 20: esa lista es de compañías que ganan plata y todavía se pueden comparar como promesa." },
     { type: "p", text: "No lo es. Porque la influencia salió igual, solo que por otras tres puertas." },
     { type: "h2", text: "Primera puerta: el capital" },
     { type: "p", text: "En 2011, dos hombres que habían pasado la década anterior dentro de Mercado Libre fundaron un fondo y lo llamaron con la primera sílaba de cada apellido." },

@@ -2,11 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { UNDER40, UNDER40_META, UNDER40_METHOD } from "@/lib/under40";
 import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
+import { ChileOnly } from "@/components/brand";
 
 export const Route = createFileRoute("/under40/metodologia")({
   component: Under40Method,
   head: () => ({
-    meta: [{ title: "Cómo se armó el 100 under 40 — We Are Vander" }],
+    meta: [{ title: "Cómo se armó 100V Visionarios — We Are Vander" }],
   }),
 });
 
@@ -15,8 +16,8 @@ function Under40Method() {
     <main>
       <section className="bg-ink px-4 py-14 text-paper sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <Link to="/under40" className="kicker text-xs text-rust hover:underline">
-            100 under 40
+          <Link to="/under40" className="kicker inline-flex items-center gap-2 text-xs text-rust hover:underline">
+            100V Visionarios · <ChileOnly />
           </Link>
           <h1 className="headline mt-4 text-5xl sm:text-7xl">Cómo se armó</h1>
           <p className="mt-5 font-body text-lg leading-snug text-paper/75">

@@ -39,11 +39,11 @@ export type Under40Link = {
 export const UNDER40 = raw as Under40Profile[];
 
 export const UNDER40_META = {
-  title: "100 under 40",
-  kicker: "Chile · agosto 2026",
-  dek: "Chilenas y chilenos menores de 40 que fundaron o dirigen. Cada ficha trae retrato, bio, hitos, prensa y un enlace a LinkedIn o a la empresa. Ninguna edad fue inventada.",
-  men: 60,
-  women: 44,
+  title: "100V Visionarios",
+  kicker: "Solo Chile · agosto 2026",
+  dek: "Cien visionarios chilenos. Fundaron o dirigen. Edad declarada, prensa con enlace. Esta lista cubre solo Chile: no hay México, no hay Brasil, no hay la región. Ninguna edad fue inventada.",
+  men: 59,
+  women: 42,
   verticals: 9,
   regions: 13,
 } as const;
@@ -57,7 +57,7 @@ export const UNDER40_METHOD = [
   {
     n: "02",
     title: "Corte de edad",
-    body: "Nacidos en 1986 o después. Cinco excepciones de hasta 42, marcadas en la ficha, cuando la figura era ineludible en su vertical. La adenda 35-40 entra con edad publicada en fuente fechada.",
+    body: "Nacidos en 1986 o después. Excepciones de hasta 42, marcadas en la ficha, cuando la figura era ineludible en su vertical. Marcela Ruiz Aguilar (Acústica Marina) entra en el borde: 40-41, edad derivada de Diario Financiero (octubre 2023). La adenda 35-40 entra con edad publicada en fuente fechada.",
   },
   {
     n: "03",

@@ -21,17 +21,27 @@ import {
 } from "@/components/article-card";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
-import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark } from "@/components/brand";
+import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark, ChileOnly } from "@/components/brand";
 import { SignalsField } from "@/components/signals-field";
 import { VerifiedStamp } from "@/components/verified-stamp";
 import { Under40Shot } from "@/components/under40-shot";
 import { LiveDesk } from "@/components/live-desk";
+import { JsonLd } from "@/components/json-ld";
+import { seoHead, orgSchema, websiteSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   component: Home,
-  head: () => ({
-    meta: [{ title: "We Are Vander — We Love Business · Latam" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "We Are Vander — negocios de América Latina",
+      description:
+        "We Are Vander es el medio de negocios de Interadia. Rankings, reportajes y cifras de compañías latinoamericanas, con metodología pública.",
+      path: "/",
+      image: "/og/home.jpg",
+      imageAlt: "Wordmark We Are Vander sobre negro, con la línea Negocios de América Latina",
+      ogTitle: "Negocios de América Latina, con cifra",
+      ogDescription: "Rankings y reportajes de compañías latinas. Metodología pública. No es un ranking de rondas.",
+    }),
 });
 
 function Home() {
@@ -53,6 +63,8 @@ function Home() {
 
   return (
     <main>
+      <JsonLd data={orgSchema()} />
+      <JsonLd data={websiteSchema()} />
       <CoverHero article={hero} />
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-7">
@@ -223,12 +235,12 @@ function Home() {
         <div className="bg-ink px-4 py-10 text-paper sm:px-6">
           <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="kicker text-xs text-signal">Código de casa · 20 visitadas</p>
+              <p className="kicker text-xs text-signal">Rentabilidad · 20 compañías</p>
               <Link to="/list" className="logo-mark mt-3 block max-w-xl">
                 <Vander20Mark className="h-12 max-w-full sm:h-24" />
               </Link>
               <p className="mt-3 max-w-lg font-body text-sm text-paper/60">
-                No es un ranking de innovación. Es el argumento de cómo se siente un negocio cuando el protocolo manda. Cada ficha fue visitada.
+                No es un ranking de innovación. Es la lista de las veinte compañías latinoamericanas que ganan plata, ordenadas por la calidad de la prueba.
               </p>
             </div>
             <Link to="/list" className="kicker press text-xs text-paper hover:text-signal">
@@ -249,7 +261,7 @@ function Home() {
                       {c.name}
                     </span>
                     <span className="block truncate font-kicker text-xs tracking-wider text-muted uppercase">
-                      {c.city} · visitada
+                      {c.city} · {c.country} · {c.evidence}
                     </span>
                   </span>
                 </Link>
@@ -263,14 +275,16 @@ function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="kicker text-xs text-rust">Chile · agosto 2026</p>
+              <p className="kicker inline-flex items-center gap-2 text-xs text-rust">
+                <ChileOnly /> · agosto 2026
+              </p>
               <h2 className="headline mt-1 text-4xl sm:text-5xl">
                 <Link to="/under40" className="link-title">
-                  100 <span className="italic">under</span> 40
+                  100V Visionarios
                 </Link>
               </h2>
               <p className="mt-2 max-w-lg font-body text-sm text-ink-soft">
-                Cien fichas. Edad declarada. Prensa con enlace. Ninguna edad fue inventada.
+                Cien fichas de Chile. Edad declarada. Prensa con enlace. Esta lista no cubre la región.
               </p>
             </div>
             <Link to="/under40" className="kicker text-xs text-rust hover:underline">

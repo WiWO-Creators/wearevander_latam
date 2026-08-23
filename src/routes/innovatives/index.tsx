@@ -11,12 +11,21 @@ import { HOUSE } from "@/lib/content";
 import { InnovativesMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
 import { CatChip, MethodGrid, RankFeatured50, RankRow50, RankStat } from "@/components/rank-pack";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/innovatives/")({
   component: InnovativesPage,
-  head: () => ({
-    meta: [{ title: "50 Innovatives — We Are Vander" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "50 Innovatives 2026: innovación verificable LatAm",
+      description:
+        "Las 50 compañías más innovadoras de América Latina según We Are Vander. Metodología pública, no es un ranking de rondas.",
+      path: "/innovatives",
+      image: "/og/innovatives.jpg",
+      imageAlt: "50 Innovatives 2026: 50 que innovan. No las que más levantan.",
+      ogTitle: "50 que innovan. No las que más levantan.",
+      ogDescription: "Innovación verificable en LatAm. Metodología pública. Distinto al Vander 20.",
+    }),
 });
 
 function InnovativesPage() {
@@ -146,7 +155,7 @@ function InnovativesPage() {
 
       <section className="px-4 py-10 sm:px-6">
         <p className="mx-auto max-w-4xl font-sans text-sm text-muted">
-          El Vander 20 —protocolo, no gesto— está en{" "}
+          El Vander 20 —quién gana plata, y quién lo verificó— está en{" "}
           <Link to="/list" className="text-ink underline decoration-signal hover:text-signal">
             su propia lista
           </Link>

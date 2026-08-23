@@ -432,7 +432,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  let next = stripShareMetaTags(html);
+  const hasEditorialShare =
+    /\/og\/[a-z0-9-]+\.jpe?g/i.test(html) &&
+    /property\s*=\s*["']og:title["']/i.test(html) &&
+    !/og\.grok\.me/i.test(html);
+
+  let next = hasEditorialShare ? html : stripShareMetaTags(html);
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -442,10 +447,14 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  if (!hasEditorialShare) {
+    next = insertAfterHeadOpen(
+      next,
+      grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
+    );
+  } else if (!/name\s*=\s*["']twitter:card["']/i.test(next)) {
+    next = insertAfterHeadOpen(next, `<meta name="twitter:card" content="summary_large_image">`);
+  }
 
   if (!next.includes("/grok-app-builder/extensions.js")) {
     missing.push(...grokExtensionsHeadTags(projectId));

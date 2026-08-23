@@ -103,3 +103,37 @@ export function VanderCycle({ className }: { className?: string }) {
     </span>
   );
 }
+
+export function ChileFlag({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 9 6"
+      className={cn("inline-block shrink-0 overflow-hidden rounded-[1px] shadow-[0_0_0_0.5px_rgba(0,0,0,0.2)]", className)}
+      aria-hidden
+      focusable="false"
+    >
+      <rect width="9" height="6" fill="#fff" />
+      <rect y="3" width="9" height="3" fill="#D52B1E" />
+      <rect width="3" height="3" fill="#0039A6" />
+      <path
+        fill="#fff"
+        d="M1.5.55l.247.76h.8l-.647.47.247.76L1.5 2.07l-.647.47.247-.76-.647-.47h.8z"
+      />
+    </svg>
+  );
+}
+
+export function ChileOnly({
+  className,
+  label = "Solo Chile",
+}: {
+  className?: string;
+  label?: string;
+}) {
+  return (
+    <span className={cn("inline-flex items-center gap-1.5", className)}>
+      <ChileFlag className="h-[0.85em] w-[1.28em]" />
+      <span>{label}</span>
+    </span>
+  );
+}

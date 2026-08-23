@@ -10,13 +10,23 @@ import {
 import { Under40Links, Under40Shot } from "@/components/under40-shot";
 import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
+import { ChileOnly } from "@/components/brand";
 import { cn } from "@/lib/utils";
+import { seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/under40/")({
   component: Under40Index,
-  head: () => ({
-    meta: [{ title: "100 under 40 — We Are Vander" }],
-  }),
+  head: () =>
+    seoHead({
+      title: "100V Visionarios: 100 emprendedores chilenos",
+      description:
+        "Dossier de We Are Vander: cien visionarios chilenos under 40. Edad declarada, retrato, hitos y prensa. Solo Chile.",
+      path: "/under40",
+      image: "/og/under40.jpg",
+      imageAlt: "100V Visionarios, dossier Solo Chile, ilustración de cien personas",
+      ogTitle: "Cien visionarios. Solo Chile.",
+      ogDescription: "Dossier under 40: edad declarada, retrato, hitos y prensa. Esta lista no cubre la región.",
+    }),
 });
 
 function Under40Index() {
@@ -45,9 +55,11 @@ function Under40Index() {
     <main>
       <section className="bg-ivory text-ink">
         <div className="mx-auto max-w-7xl px-4 pt-10 pb-4 lg:hidden sm:px-6">
-          <p className="kicker text-xs text-rust">{UNDER40_META.kicker}</p>
+          <p className="kicker text-xs text-rust">
+            <ChileOnly /> · agosto 2026
+          </p>
           <h1 className="headline mt-3 text-5xl leading-[0.9] sm:text-6xl">
-            100 <span className="italic">under</span> 40
+            100V Visionarios
           </h1>
         </div>
         <figure className="relative mx-auto max-w-7xl">
@@ -57,9 +69,11 @@ function Under40Index() {
             className="aspect-[5/4] w-full object-cover object-bottom sm:aspect-[2/1] lg:aspect-[16/9] lg:object-center"
           />
           <div className="pointer-events-none absolute inset-x-0 top-0 hidden px-6 pt-10 lg:block">
-            <p className="kicker text-xs text-rust">{UNDER40_META.kicker}</p>
+            <p className="kicker text-xs text-rust">
+              <ChileOnly /> · agosto 2026
+            </p>
             <h1 className="headline mt-3 max-w-3xl text-7xl leading-[0.88] xl:text-8xl">
-              100 <span className="italic">under</span> 40
+              100V Visionarios
             </h1>
           </div>
           <figcaption className="flex flex-col gap-3 border-t border-ink/10 px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
@@ -78,7 +92,7 @@ function Under40Index() {
       </section>
 
 
-      <nav className="sticky top-0 z-20 border-b border-ink bg-paper/95 px-4 py-3 backdrop-blur-sm sm:px-6" aria-label="Filtros 100 under 40">
+      <nav className="sticky top-0 z-20 border-b border-ink bg-paper/95 px-4 py-3 backdrop-blur-sm sm:px-6" aria-label="Filtros 100V Visionarios">
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <input

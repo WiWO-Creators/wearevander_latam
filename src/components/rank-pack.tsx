@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import type { ListedCompany } from "@/lib/vander-list";
 import type { Innovative } from "@/lib/innovatives";
-import { VerifiedStamp } from "@/components/verified-stamp";
 import { AdSlot } from "@/components/ad-slot";
 import { cn } from "@/lib/utils";
 
@@ -52,14 +51,18 @@ export function RankFeatured20({ companies }: { companies: ListedCompany[] }) {
     <div className="grid gap-6 sm:grid-cols-3">
       {companies.map((c) => (
         <Link key={c.slug} to="/list/$slug" params={{ slug: c.slug }} className="group block">
-          <span className="photo block aspect-[3/2] w-full">
-            <img src={c.image} alt={c.imageAlt} className="h-full w-full object-cover" />
+          <span className={cn("photo block aspect-[3/2] w-full", c.imageKind === "logo" && "bg-ivory")}>
+            <img
+              src={c.image}
+              alt={c.imageAlt}
+              className={cn("h-full w-full", c.imageKind === "logo" ? "object-contain p-8" : "object-cover")}
+            />
           </span>
           <p className="mt-3 headline text-3xl tabular-nums text-signal">{String(c.rank).padStart(2, "0")}</p>
           <h3 className="headline mt-1 text-2xl">{c.name}</h3>
           <p className="mt-1 font-body text-sm text-ink-soft">{c.blurb}</p>
           <p className="mt-2 kicker text-xs text-muted">
-            {c.sector} · {c.city}
+            {c.sector} · {c.city} · {c.country} · Evidencia {c.evidence}
           </p>
         </Link>
       ))}
@@ -98,13 +101,13 @@ export function RankRow20({ company, adAfter }: { company: ListedCompany; adAfte
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="headline text-2xl link-title sm:text-3xl">{company.name}</h2>
             <p className="kicker text-xs text-muted">
-              {company.sector} · {company.city}
+              {company.sector} · {company.city} · {company.country}
             </p>
           </div>
           <p className="mt-2 font-body text-sm leading-relaxed text-ink-soft sm:text-base">{company.blurb}</p>
-          <div className="mt-2">
-            <VerifiedStamp slug={company.slug} />
-          </div>
+          <p className="mt-2 kicker text-xs text-signal">
+            Evidencia {company.evidence} · {company.evidenceNote}
+          </p>
           <p className="mt-2 kicker text-xs text-signal sm:opacity-0 sm:transition-opacity sm:duration-200 sm:group-hover:opacity-100">
             Leer la ficha
           </p>

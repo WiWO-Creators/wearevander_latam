@@ -613,6 +613,14 @@
   object-position: 52% 42%;
 }
 
+.u40-shot[data-slug="benjamin-santa-maria"] img {
+  object-position: 50% 32%;
+}
+
+.u40-shot[data-slug="marcela-ruiz-aguilar"] img {
+  object-position: 28% 18%;
+}
+
 .u40-shot::after {
   content: "";
   position: absolute;

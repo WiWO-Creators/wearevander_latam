@@ -49,6 +49,13 @@ export type Article = {
   gallery?: { src: string; alt: string; caption: string }[];
   pullQuote: string;
   body: BodyBlock[];
+  tldr?: string[];
+  faq?: { q: string; a: string }[];
+  seoTitle?: string;
+  seoDescription?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 };
 
 export const HOUSE = {
