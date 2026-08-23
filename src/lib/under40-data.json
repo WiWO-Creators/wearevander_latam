@@ -38,7 +38,8 @@
     ],
     "url": "https://trytoku.com",
     "trust": "Alta",
-    "image": "/under40/cristina-etcheberry.jpg"
+    "image": "/under40/cristina-etcheberry.jpg",
+    "linkedin": "https://www.linkedin.com/in/cristinaetcheberry"
   },
   {
     "rank": 2,
@@ -74,7 +75,8 @@
     ],
     "url": "https://trytoku.com",
     "trust": "Alta",
-    "image": "/under40/francisca-noguera.jpg"
+    "image": "/under40/francisca-noguera.jpg",
+    "linkedin": "https://www.linkedin.com/in/franoguerar"
   },
   {
     "rank": 3,
@@ -110,7 +112,8 @@
     ],
     "url": "https://fintoc.com",
     "trust": "Alta",
-    "image": "/under40/cristobal-griffero.jpg"
+    "image": "/under40/cristobal-griffero.jpg",
+    "linkedin": "https://www.linkedin.com/in/cristobalgriffero"
   },
   {
     "rank": 4,
@@ -146,7 +149,8 @@
     ],
     "url": "https://fintoc.com",
     "trust": "Alta",
-    "image": "/under40/lukas-zorich.jpg"
+    "image": "/under40/lukas-zorich.jpg",
+    "linkedin": "https://www.linkedin.com/in/lezorich"
   },
   {
     "rank": 5,
@@ -182,7 +186,8 @@
     ],
     "url": "https://fintual.cl/equipo-inversiones/omar-larre",
     "trust": "Alta",
-    "image": "/under40/omar-larre.jpg"
+    "image": "/under40/omar-larre.jpg",
+    "linkedin": "https://www.linkedin.com/in/omarlarre"
   },
   {
     "rank": 6,
@@ -218,7 +223,8 @@
     ],
     "url": "https://fintualist.com/author/andres",
     "trust": "Alta",
-    "image": "/under40/andres-marinkovic.jpg"
+    "image": "/under40/andres-marinkovic.jpg",
+    "linkedin": "https://www.linkedin.com/in/andresmarinkovic"
   },
   {
     "rank": 7,
@@ -254,7 +260,8 @@
     ],
     "url": "https://buda.com/nosotros",
     "trust": "Alta (edad derivada)",
-    "image": "/under40/guillermo-torrealba.jpg"
+    "image": "/under40/guillermo-torrealba.jpg",
+    "linkedin": "https://www.linkedin.com/in/guillermotorrealba"
   },
   {
     "rank": 8,
@@ -290,7 +297,8 @@
     ],
     "url": "https://xepelin.com",
     "trust": "Alta",
-    "image": "/under40/sebastian-kreis.jpg"
+    "image": "/under40/sebastian-kreis.jpg",
+    "linkedin": "https://www.linkedin.com/in/sebkreis"
   },
   {
     "rank": 9,
@@ -326,7 +334,8 @@
     ],
     "url": "https://xepelin.com",
     "trust": "Media (edad sin fuente fechada)",
-    "image": "/under40/nicolas-de-camino.jpg"
+    "image": "/under40/nicolas-de-camino.jpg",
+    "linkedin": "https://www.linkedin.com/in/nicolas-de-camino"
   },
   {
     "rank": 10,
@@ -362,7 +371,8 @@
     ],
     "url": "https://xpendit.com",
     "trust": "Alta",
-    "image": "/under40/martin-del-castillo.jpg"
+    "image": "/under40/martin-del-castillo.jpg",
+    "linkedin": "https://www.linkedin.com/in/martin-del-castillo-cooper"
   },
   {
     "rank": 11,
@@ -393,7 +403,8 @@
     ],
     "url": "https://xpendit.com",
     "trust": "Media-alta",
-    "image": "/under40/nicolas-ramos.jpg"
+    "image": "/under40/nicolas-ramos.jpg",
+    "linkedin": "https://www.linkedin.com/in/nicolas-jose-ramos"
   },
   {
     "rank": 12,
@@ -422,9 +433,10 @@
         "credit": "DF MAS, octubre 2025"
       }
     ],
-    "url": "",
+    "url": "https://creditogrupalia.com",
     "trust": "Alta",
-    "image": "/under40/ramon-echeverria.jpg"
+    "image": "/under40/ramon-echeverria.jpg",
+    "linkedin": "https://www.linkedin.com/in/ram%C3%B3n-echeverr%C3%ADa-258a14199"
   },
   {
     "rank": 13,
@@ -470,7 +482,8 @@
     ],
     "url": "https://koywe.com",
     "trust": "Media (edad no verificada)",
-    "image": "/under40/ignacio-detmer-latorre.jpg"
+    "image": "/under40/ignacio-detmer-latorre.jpg",
+    "linkedin": "https://www.linkedin.com/in/ignaciodetmer"
   },
   {
     "rank": 14,
@@ -511,7 +524,8 @@
     ],
     "url": "https://polodiaz.com",
     "trust": "Alta en trayectoria, empresa y cifras. Edad omitida a petición del perfilado. Nota de consistencia: la prensa de 2024-2025 lo consignaba como CTO cofundador de Wiwo, con Juan José Díaz como CEO; el cargo de Fundador y CEO corresponde a su presentación pública actual.",
-    "image": "/under40/polo-diaz.jpg"
+    "image": "/under40/polo-diaz.jpg",
+    "linkedin": "https://www.linkedin.com/in/polodiaz"
   },
   {
     "rank": 15,
@@ -552,7 +566,8 @@
     ],
     "url": "https://vambe.ai",
     "trust": "Alta",
-    "image": "/under40/nicolas-camhi-guerrero.jpg"
+    "image": "/under40/nicolas-camhi-guerrero.jpg",
+    "linkedin": "https://www.linkedin.com/in/nicolas-camhi"
   },
   {
     "rank": 16,
@@ -588,7 +603,8 @@
     ],
     "url": "https://vambe.ai",
     "trust": "Alta",
-    "image": "/under40/matias-perez-pefaur.jpg"
+    "image": "/under40/matias-perez-pefaur.jpg",
+    "linkedin": "https://www.linkedin.com/in/matias-perez-pefaur-8abb3022b"
   },
   {
     "rank": 17,
@@ -624,7 +640,8 @@
     ],
     "url": "https://vambe.ai",
     "trust": "Alta",
-    "image": "/under40/diego-chahuan-luhrs.jpg"
+    "image": "/under40/diego-chahuan-luhrs.jpg",
+    "linkedin": "https://www.linkedin.com/in/diego-chahuan-40a3a8211"
   },
   {
     "rank": 18,
@@ -660,7 +677,8 @@
     ],
     "url": "https://examedi.com",
     "trust": "Alta",
-    "image": "/under40/ian-lee.jpg"
+    "image": "/under40/ian-lee.jpg",
+    "linkedin": "https://www.linkedin.com/in/ianleeexamedi"
   },
   {
     "rank": 19,
@@ -696,7 +714,8 @@
     ],
     "url": "https://smartplusrobotics.com",
     "trust": "Alta en edad; media en cifras de negocio",
-    "image": "/under40/ignacio-ponce-castro.jpg"
+    "image": "/under40/ignacio-ponce-castro.jpg",
+    "linkedin": "https://www.linkedin.com/in/ignacio-ponce-castro-858990235"
   },
   {
     "rank": 20,
@@ -732,7 +751,8 @@
     ],
     "url": "https://chucaw.com",
     "trust": "Alta en trayectoria; media en edad (fuentes discrepan)",
-    "image": "/under40/isis-riquelme-arredondo.jpg"
+    "image": "/under40/isis-riquelme-arredondo.jpg",
+    "linkedin": "https://www.linkedin.com/in/isis-riquelme-11517b145"
   },
   {
     "rank": 21,
@@ -763,7 +783,8 @@
     ],
     "url": "https://runwayml.com",
     "trust": "Alta",
-    "image": "/under40/cristobal-valenzuela-barrera.jpg"
+    "image": "/under40/cristobal-valenzuela-barrera.jpg",
+    "linkedin": "https://www.linkedin.com/in/cvalenzuelab"
   },
   {
     "rank": 22,
@@ -799,7 +820,8 @@
     ],
     "url": "https://buk.cl",
     "trust": "Alta",
-    "image": "/under40/teresita-moran.jpg"
+    "image": "/under40/teresita-moran.jpg",
+    "linkedin": ""
   },
   {
     "rank": 23,
@@ -835,7 +857,8 @@
     ],
     "url": "https://buk.cl",
     "trust": "Media-alta (edad derivada)",
-    "image": "/under40/jaime-arrieta-boetsch.jpg"
+    "image": "/under40/jaime-arrieta-boetsch.jpg",
+    "linkedin": "https://www.linkedin.com/in/jaime-arrieta-boetsch-ab214150"
   },
   {
     "rank": 24,
@@ -866,7 +889,8 @@
     ],
     "url": "https://skyward.cl",
     "trust": "Media (edad no verificada)",
-    "image": "/under40/felipe-torres.jpg"
+    "image": "/under40/felipe-torres.jpg",
+    "linkedin": "https://www.linkedin.com/in/fforres"
   },
   {
     "rank": 25,
@@ -895,9 +919,10 @@
         "credit": "DF MAS, diciembre 2025"
       }
     ],
-    "url": "",
+    "url": "https://www.francescocrivelli.com",
     "trust": "Alta",
-    "image": "/under40/francesco-crivelli.jpg"
+    "image": "/under40/francesco-crivelli.jpg",
+    "linkedin": "https://www.linkedin.com/in/francesco-crivelli"
   },
   {
     "rank": 26,
@@ -933,7 +958,8 @@
     ],
     "url": "https://thegrowth.pro",
     "trust": "Alta en edad; media en cifras de negocio",
-    "image": "/under40/samuel-weinstein-miranda.jpg"
+    "image": "/under40/samuel-weinstein-miranda.jpg",
+    "linkedin": "https://www.linkedin.com/in/samuel-weinstein-miranda-9a82061b9"
   },
   {
     "rank": 27,
@@ -974,7 +1000,8 @@
     ],
     "url": "https://thegrowth.pro",
     "trust": "Alta en edad; media en cifras de negocio",
-    "image": "/under40/ariel-kauderer-daniels.jpg"
+    "image": "/under40/ariel-kauderer-daniels.jpg",
+    "linkedin": ""
   },
   {
     "rank": 28,
@@ -1010,7 +1037,8 @@
     ],
     "url": "https://notco.com/cl/fundadores/matias-muchnick",
     "trust": "Alta en trayectoria; baja en edad",
-    "image": "/under40/matias-muchnick.jpg"
+    "image": "/under40/matias-muchnick.jpg",
+    "linkedin": "https://www.linkedin.com/in/mmuchnick"
   },
   {
     "rank": 29,
@@ -1046,7 +1074,8 @@
     ],
     "url": "https://neocroptech.com",
     "trust": "Alta en trayectoria; sin dato de edad",
-    "image": "/under40/francisca-castillo-castro.jpg"
+    "image": "/under40/francisca-castillo-castro.jpg",
+    "linkedin": ""
   },
   {
     "rank": 30,
@@ -1082,7 +1111,8 @@
     ],
     "url": "https://neocroptech.com",
     "trust": "Alta en trayectoria; sin dato de edad",
-    "image": "/under40/daniel-norero.jpg"
+    "image": "/under40/daniel-norero.jpg",
+    "linkedin": ""
   },
   {
     "rank": 31,
@@ -1116,9 +1146,10 @@
         "credit": "Mundo Acuicola, febrero 2026"
       }
     ],
-    "url": "",
+    "url": "https://bybug.io",
     "trust": "Alta",
-    "image": "/under40/jose-del-solar.jpg"
+    "image": "/under40/jose-del-solar.jpg",
+    "linkedin": "https://www.linkedin.com/company/bybug"
   },
   {
     "rank": 32,
@@ -1152,9 +1183,10 @@
         "credit": "La Tercera, febrero 2026"
       }
     ],
-    "url": "",
+    "url": "https://bybug.io",
     "trust": "Alta en trayectoria; media en edad",
-    "image": "/under40/daniel-troncoso.jpg"
+    "image": "/under40/daniel-troncoso.jpg",
+    "linkedin": ""
   },
   {
     "rank": 33,
@@ -1183,9 +1215,10 @@
         "credit": "El Ecosistema Startup, febrero 2026"
       }
     ],
-    "url": "",
+    "url": "https://bybug.io",
     "trust": "Media (fuente única; edad no verificada)",
-    "image": "/under40/rocio-espinoza.jpg"
+    "image": "/under40/rocio-espinoza.jpg",
+    "linkedin": "https://www.linkedin.com/in/rocio-espinosa-torres-29bb04202"
   },
   {
     "rank": 34,
@@ -1221,7 +1254,8 @@
     ],
     "url": "https://luyef.com",
     "trust": "Alta en trayectoria; sin dato de edad",
-    "image": "/under40/kris-blanchard.jpg"
+    "image": "/under40/kris-blanchard.jpg",
+    "linkedin": ""
   },
   {
     "rank": 35,
@@ -1257,7 +1291,8 @@
     ],
     "url": "https://nanoingreen.com",
     "trust": "Alta",
-    "image": "/under40/carolina-aguila-diaz.jpg"
+    "image": "/under40/carolina-aguila-diaz.jpg",
+    "linkedin": ""
   },
   {
     "rank": 36,
@@ -1293,7 +1328,8 @@
     ],
     "url": "https://proterabio.com",
     "trust": "Alta en trayectoria; sin dato de edad",
-    "image": "/under40/leonardo-alvarez.jpg"
+    "image": "/under40/leonardo-alvarez.jpg",
+    "linkedin": "https://www.linkedin.com/in/leonardoalvarezm"
   },
   {
     "rank": 37,
@@ -1329,7 +1365,8 @@
     ],
     "url": "https://doneproperly.co",
     "trust": "Alta en empresa; sin dato de edad",
-    "image": "/under40/claudio-pedreros.jpg"
+    "image": "/under40/claudio-pedreros.jpg",
+    "linkedin": ""
   },
   {
     "rank": 38,
@@ -1365,7 +1402,8 @@
     ],
     "url": "https://codebreaker.bio",
     "trust": "Media-alta en empresa; sin dato de edad. Nota editorial: chequear la investigación de El Desconcierto (2026) sobre vínculos de la empresa con el ISP antes de publicar.",
-    "image": "/under40/diego-gutierrez.jpg"
+    "image": "/under40/diego-gutierrez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 39,
@@ -1404,9 +1442,10 @@
         "credit": ""
       }
     ],
-    "url": "",
+    "url": "https://quelp.cl",
     "trust": "Media-alta",
-    "image": "/under40/alejandra-allendes.jpg"
+    "image": "/under40/alejandra-allendes.jpg",
+    "linkedin": "https://www.linkedin.com/in/alejandra-allendes"
   },
   {
     "rank": 40,
@@ -1442,7 +1481,8 @@
     ],
     "url": "https://umov.cl",
     "trust": "Alta",
-    "image": "/under40/pamela-salazar-cifuentes.jpg"
+    "image": "/under40/pamela-salazar-cifuentes.jpg",
+    "linkedin": ""
   },
   {
     "rank": 41,
@@ -1478,7 +1518,8 @@
     ],
     "url": "https://autistapp.cl",
     "trust": "Alta",
-    "image": "/under40/melissa-munoz-flandez.jpg"
+    "image": "/under40/melissa-munoz-flandez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 42,
@@ -1514,7 +1555,8 @@
     ],
     "url": "https://buhochile.com",
     "trust": "Alta",
-    "image": "/under40/ricardo-susaeta.jpg"
+    "image": "/under40/ricardo-susaeta.jpg",
+    "linkedin": ""
   },
   {
     "rank": 43,
@@ -1550,7 +1592,8 @@
     ],
     "url": "https://buhochile.com",
     "trust": "Alta",
-    "image": "/under40/manuel-aguirre-olivares.jpg"
+    "image": "/under40/manuel-aguirre-olivares.jpg",
+    "linkedin": ""
   },
   {
     "rank": 44,
@@ -1586,7 +1629,8 @@
     ],
     "url": "https://examedi.com",
     "trust": "Media-alta (edad derivada)",
-    "image": "/under40/andres-kemeny.jpg"
+    "image": "/under40/andres-kemeny.jpg",
+    "linkedin": "https://www.linkedin.com/in/andres-kemeny"
   },
   {
     "rank": 45,
@@ -1622,7 +1666,8 @@
     ],
     "url": "https://smertgroup.com",
     "trust": "Alta",
-    "image": "/under40/nicolas-uribe-espinoza.jpg"
+    "image": "/under40/nicolas-uribe-espinoza.jpg",
+    "linkedin": ""
   },
   {
     "rank": 46,
@@ -1651,9 +1696,10 @@
         "credit": "DF MAS, mayo 2025"
       }
     ],
-    "url": "",
+    "url": "https://www.melisainstitute.org/eloisa-koch",
     "trust": "Alta",
-    "image": "/under40/eloisa-koch.jpg"
+    "image": "/under40/eloisa-koch.jpg",
+    "linkedin": "https://www.linkedin.com/in/eloisa-koch-8b0b1b1b3"
   },
   {
     "rank": 47,
@@ -1684,7 +1730,8 @@
     ],
     "url": "https://microbeskin.com",
     "trust": "Media (dato de precisión de fuente institucional única)",
-    "image": "/under40/carolina-cabalin.jpg"
+    "image": "/under40/carolina-cabalin.jpg",
+    "linkedin": "https://www.linkedin.com/in/carolina-cabalin1990"
   },
   {
     "rank": 48,
@@ -1718,9 +1765,10 @@
         "credit": "El Ecosistema Startup, junio 2026"
       }
     ],
-    "url": "",
+    "url": "https://demioratech.cl",
     "trust": "Media (empresa y logros verificados; edad no verificada)",
-    "image": "/under40/alejandra-gatica-salgado.jpg"
+    "image": "/under40/alejandra-gatica-salgado.jpg",
+    "linkedin": "https://www.linkedin.com/in/alejandra-gatica-salgado-61206828b"
   },
   {
     "rank": 49,
@@ -1764,9 +1812,10 @@
         "credit": ""
       }
     ],
-    "url": "",
+    "url": "https://beapalma.cl",
     "trust": "Media-baja (edad sin verificar)",
-    "image": "/under40/beatriz-palma.jpg"
+    "image": "/under40/beatriz-palma.jpg",
+    "linkedin": "https://www.linkedin.com/in/beatrizpalmaroeschmann"
   },
   {
     "rank": 50,
@@ -1802,7 +1851,8 @@
     ],
     "url": "https://swarmob.com",
     "trust": "Alta",
-    "image": "/under40/felipe-prado-gilles.jpg"
+    "image": "/under40/felipe-prado-gilles.jpg",
+    "linkedin": "https://www.linkedin.com/in/felipe-prado-gilles"
   },
   {
     "rank": 51,
@@ -1838,7 +1888,8 @@
     ],
     "url": "https://swarmob.com",
     "trust": "Media (rol y logros verificados; edad no verificada)",
-    "image": "/under40/natalia-perez.jpg"
+    "image": "/under40/natalia-perez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 52,
@@ -1874,7 +1925,8 @@
     ],
     "url": "https://lab4u.co",
     "trust": "Alta en trayectoria; baja en edad",
-    "image": "/under40/komal-dadlani.jpg"
+    "image": "/under40/komal-dadlani.jpg",
+    "linkedin": "https://www.linkedin.com/in/komaldadlani"
   },
   {
     "rank": 53,
@@ -1910,7 +1962,8 @@
     ],
     "url": "https://poliglota.org",
     "trust": "Media-alta (edad derivada; fuera del corte estricto)",
-    "image": "/under40/carlos-aravena.jpg"
+    "image": "/under40/carlos-aravena.jpg",
+    "linkedin": "https://www.linkedin.com/in/carlos-aravena-poliglota"
   },
   {
     "rank": 54,
@@ -1946,7 +1999,8 @@
     ],
     "url": "https://girlsinquantum.com",
     "trust": "Alta",
-    "image": "/under40/elisa-torres-durney.jpg"
+    "image": "/under40/elisa-torres-durney.jpg",
+    "linkedin": "https://www.linkedin.com/in/elisa-torres-durney"
   },
   {
     "rank": 55,
@@ -1975,9 +2029,10 @@
         "credit": "Forbes Chile, julio 2026"
       }
     ],
-    "url": "",
+    "url": "https://educacion2020.cl",
     "trust": "Alta",
-    "image": "/under40/francisca-koppmann-kuester.jpg"
+    "image": "/under40/francisca-koppmann-kuester.jpg",
+    "linkedin": "https://www.linkedin.com/in/francisca-koppmann-kuester-9902861b3"
   },
   {
     "rank": 56,
@@ -2006,9 +2061,10 @@
         "credit": "Marca Chile, junio 2026"
       }
     ],
-    "url": "",
+    "url": "https://www.muud.app",
     "trust": "Media (empresa e hitos verificados; edad no verificada)",
-    "image": "/under40/melania-sanhueza.jpg"
+    "image": "/under40/melania-sanhueza.jpg",
+    "linkedin": "https://www.linkedin.com/in/melaniasanhueza"
   },
   {
     "rank": 57,
@@ -2037,9 +2093,10 @@
         "credit": "UAI, diciembre 2024"
       }
     ],
-    "url": "",
+    "url": "https://apps.apple.com/developer/martin-andres-seguel-mateu/id1736644546",
     "trust": "Media-alta en hitos; edad no verificada",
-    "image": "/under40/martin-seguel.jpg"
+    "image": "/under40/martin-seguel.jpg",
+    "linkedin": "https://www.linkedin.com/in/martin-seguel"
   },
   {
     "rank": 58,
@@ -2068,9 +2125,10 @@
         "credit": "Forbes Chile, julio 2026"
       }
     ],
-    "url": "",
+    "url": "https://www.instagram.com/izumi.naki",
     "trust": "Alta",
-    "image": "/under40/izumi-nakagawa.jpg"
+    "image": "/under40/izumi-nakagawa.jpg",
+    "linkedin": ""
   },
   {
     "rank": 59,
@@ -2099,9 +2157,10 @@
         "credit": "Forbes Chile, julio 2026"
       }
     ],
-    "url": "",
+    "url": "https://www.instagram.com/te.conlibros",
     "trust": "Alta",
-    "image": "/under40/maria-ignacia-urzua-reyes.jpg"
+    "image": "/under40/maria-ignacia-urzua-reyes.jpg",
+    "linkedin": ""
   },
   {
     "rank": 60,
@@ -2140,9 +2199,10 @@
         "credit": ""
       }
     ],
-    "url": "",
+    "url": "https://www.cubho.cl/nicholas-hooper-h",
     "trust": "Alta",
-    "image": "/under40/nicholas-hooper-h.jpg"
+    "image": "/under40/nicholas-hooper-h.jpg",
+    "linkedin": "https://www.linkedin.com/in/nicholas-hooper-h"
   },
   {
     "rank": 61,
@@ -2178,7 +2238,8 @@
     ],
     "url": "https://raindoor.cl",
     "trust": "Alta en empresa y cifras; edad derivada",
-    "image": "/under40/alejandra-acevedo.jpg"
+    "image": "/under40/alejandra-acevedo.jpg",
+    "linkedin": ""
   },
   {
     "rank": 62,
@@ -2212,9 +2273,10 @@
         "credit": "Forbes Chile, julio 2026"
       }
     ],
-    "url": "",
+    "url": "https://www.instagram.com/bwild.cl",
     "trust": "Alta en edad; media en cifras de negocio",
-    "image": "/under40/valentina-barna-fermandois.jpg"
+    "image": "/under40/valentina-barna-fermandois.jpg",
+    "linkedin": ""
   },
   {
     "rank": 63,
@@ -2243,9 +2305,10 @@
         "credit": "Forbes Chile, julio 2026"
       }
     ],
-    "url": "",
+    "url": "https://enila.cl",
     "trust": "Alta en edad; media en cifras (fuente única)",
-    "image": "/under40/aline-israel.jpg"
+    "image": "/under40/aline-israel.jpg",
+    "linkedin": ""
   },
   {
     "rank": 64,
@@ -2281,7 +2344,8 @@
     ],
     "url": "https://houm.com",
     "trust": "Alta en empresa; edad no verificada",
-    "image": "/under40/benjamin-labra.jpg"
+    "image": "/under40/benjamin-labra.jpg",
+    "linkedin": "https://www.linkedin.com/in/benjamin-labra"
   },
   {
     "rank": 65,
@@ -2317,7 +2381,8 @@
     ],
     "url": "https://simpliroute.com",
     "trust": "Alta en empresa; media-baja en edad (estimada)",
-    "image": "/under40/alvaro-echeverria.jpg"
+    "image": "/under40/alvaro-echeverria.jpg",
+    "linkedin": "https://www.linkedin.com/in/aechever"
   },
   {
     "rank": 66,
@@ -2353,7 +2418,8 @@
     ],
     "url": "https://reversso.com",
     "trust": "Alta en empresa; edad no verificada",
-    "image": "/under40/benjamin-santa-maria.jpg"
+    "image": "/under40/benjamin-santa-maria.jpg",
+    "linkedin": ""
   },
   {
     "rank": 67,
@@ -2389,7 +2455,8 @@
     ],
     "url": "https://getjusto.com",
     "trust": "Alta en empresa; edad no verificada",
-    "image": "/under40/rodrigo-segal.jpg"
+    "image": "/under40/rodrigo-segal.jpg",
+    "linkedin": "https://www.linkedin.com/in/rodrigosegal"
   },
   {
     "rank": 68,
@@ -2425,7 +2492,8 @@
     ],
     "url": "https://upgirl.cl",
     "trust": "Media (empresa verificada; edad no verificada)",
-    "image": "/under40/kim-maturana.jpg"
+    "image": "/under40/kim-maturana.jpg",
+    "linkedin": ""
   },
   {
     "rank": 69,
@@ -2461,7 +2529,8 @@
     ],
     "url": "https://pradie.cl",
     "trust": "Media-alta",
-    "image": "/under40/diego-pradenas-espinoza.jpg"
+    "image": "/under40/diego-pradenas-espinoza.jpg",
+    "linkedin": ""
   },
   {
     "rank": 70,
@@ -2490,9 +2559,10 @@
         "credit": "Forbes Chile, julio 2026"
       }
     ],
-    "url": "",
+    "url": "https://www.instagram.com/razencl",
     "trust": "Media (fuente primaria única)",
-    "image": "/under40/raimundo-zamora-baeza.jpg"
+    "image": "/under40/raimundo-zamora-baeza.jpg",
+    "linkedin": "https://www.linkedin.com/in/raimundo-zamora-b418151b1"
   },
   {
     "rank": 71,
@@ -2538,7 +2608,8 @@
     ],
     "url": "https://goodmeal.cl",
     "trust": "Alta en empresa; edad derivada",
-    "image": "/under40/rodrigo-haydar.jpg"
+    "image": "/under40/rodrigo-haydar.jpg",
+    "linkedin": "https://www.linkedin.com/in/rohaydar"
   },
   {
     "rank": 72,
@@ -2574,7 +2645,8 @@
     ],
     "url": "https://suncast.cl",
     "trust": "Alta",
-    "image": "/under40/constanza-levican-cardenas.jpg"
+    "image": "/under40/constanza-levican-cardenas.jpg",
+    "linkedin": "https://www.linkedin.com/in/constanza-levican"
   },
   {
     "rank": 73,
@@ -2610,7 +2682,8 @@
     ],
     "url": "https://bioelements.com",
     "trust": "Alta en trayectoria; media en edad (estimada)",
-    "image": "/under40/ignacio-parada-da-fonseca.jpg"
+    "image": "/under40/ignacio-parada-da-fonseca.jpg",
+    "linkedin": ""
   },
   {
     "rank": 74,
@@ -2646,7 +2719,8 @@
     ],
     "url": "https://greenglass.cl",
     "trust": "Alta",
-    "image": "/under40/oscar-munoz-cofre.jpg"
+    "image": "/under40/oscar-munoz-cofre.jpg",
+    "linkedin": ""
   },
   {
     "rank": 75,
@@ -2682,7 +2756,8 @@
     ],
     "url": "https://photio.cl",
     "trust": "Alta en trayectoria; edad derivada",
-    "image": "/under40/matias-moya.jpg"
+    "image": "/under40/matias-moya.jpg",
+    "linkedin": "https://www.linkedin.com/in/mat%C3%ADas-moya-alarc%C3%B3n-409229188"
   },
   {
     "rank": 76,
@@ -2718,7 +2793,8 @@
     ],
     "url": "https://heramaterials.com",
     "trust": "Media-alta en trayectoria; edad no verificada",
-    "image": "/under40/paloma-gonzalez-rojas.jpg"
+    "image": "/under40/paloma-gonzalez-rojas.jpg",
+    "linkedin": ""
   },
   {
     "rank": 77,
@@ -2754,7 +2830,8 @@
     ],
     "url": "https://humosdelapatagonia.cl",
     "trust": "Alta",
-    "image": "/under40/fernando-ojeda-soto.jpg"
+    "image": "/under40/fernando-ojeda-soto.jpg",
+    "linkedin": ""
   },
   {
     "rank": 78,
@@ -2785,7 +2862,8 @@
     ],
     "url": "https://aquaretorna.cl",
     "trust": "Alta",
-    "image": "/under40/felipe-nunez-lopez.jpg"
+    "image": "/under40/felipe-nunez-lopez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 79,
@@ -2816,7 +2894,8 @@
     ],
     "url": "https://yaku.cl",
     "trust": "Alta en empresa; edad derivada",
-    "image": "/under40/valentina-veloso.jpg"
+    "image": "/under40/valentina-veloso.jpg",
+    "linkedin": ""
   },
   {
     "rank": 80,
@@ -2852,7 +2931,8 @@
     ],
     "url": "https://imeko.cl",
     "trust": "Alta",
-    "image": "/under40/jennifer-araya-venegas.jpg"
+    "image": "/under40/jennifer-araya-venegas.jpg",
+    "linkedin": ""
   },
   {
     "rank": 81,
@@ -2888,7 +2968,8 @@
     ],
     "url": "https://bcn.cl/mujerescientificas/detalle/nadac_reales_del_canto",
     "trust": "Alta",
-    "image": "/under40/nadac-reales-del-canto.jpg"
+    "image": "/under40/nadac-reales-del-canto.jpg",
+    "linkedin": ""
   },
   {
     "rank": 82,
@@ -2919,7 +3000,8 @@
     ],
     "url": "https://construex.cl/exhibidores/grava_design",
     "trust": "Media-alta (cifras de fuente única)",
-    "image": "/under40/camila-briceno-albages.jpg"
+    "image": "/under40/camila-briceno-albages.jpg",
+    "linkedin": ""
   },
   {
     "rank": 83,
@@ -2955,7 +3037,8 @@
     ],
     "url": "https://cerotrade.cl",
     "trust": "Alta",
-    "image": "/under40/joaquin-gonzalez.jpg"
+    "image": "/under40/joaquin-gonzalez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 84,
@@ -2994,9 +3077,10 @@
         "credit": ""
       }
     ],
-    "url": "",
+    "url": "https://50x.energy",
     "trust": "Alta",
-    "image": "/under40/diego-siguelnitzky.jpg"
+    "image": "/under40/diego-siguelnitzky.jpg",
+    "linkedin": ""
   },
   {
     "rank": 85,
@@ -3030,9 +3114,10 @@
         "credit": "La Tercera, octubre 2025"
       }
     ],
-    "url": "https://linkedin.com/in/josemanuelmoller",
+    "url": "https://josemanuelmoller.com",
     "trust": "Alta",
-    "image": "/under40/jose-manuel-moller.jpg"
+    "image": "/under40/jose-manuel-moller.jpg",
+    "linkedin": "https://www.linkedin.com/in/josemanuelmoller"
   },
   {
     "rank": 86,
@@ -3068,7 +3153,8 @@
     ],
     "url": "https://fundacionbasura.org",
     "trust": "Alta en trayectoria; edad derivada",
-    "image": "/under40/macarena-guajardo.jpg"
+    "image": "/under40/macarena-guajardo.jpg",
+    "linkedin": ""
   },
   {
     "rank": 87,
@@ -3102,9 +3188,10 @@
         "credit": "T13, septiembre 2024"
       }
     ],
-    "url": "https://linkedin.com/in/thomas-kimber",
+    "url": "https://usa.karuneyewear.com",
     "trust": "Alta",
-    "image": "/under40/thomas-kimber.jpg"
+    "image": "/under40/thomas-kimber.jpg",
+    "linkedin": "https://linkedin.com/in/thomas-kimber"
   },
   {
     "rank": 88,
@@ -3140,7 +3227,8 @@
     ],
     "url": "https://tremendas.org",
     "trust": "Alta",
-    "image": "/under40/julieta-martinez.jpg"
+    "image": "/under40/julieta-martinez.jpg",
+    "linkedin": "https://www.linkedin.com/in/julietamartinezo"
   },
   {
     "rank": 89,
@@ -3176,7 +3264,8 @@
     ],
     "url": "https://encuentratulugar.cl",
     "trust": "Alta",
-    "image": "/under40/isidora-uribe-silva.jpg"
+    "image": "/under40/isidora-uribe-silva.jpg",
+    "linkedin": ""
   },
   {
     "rank": 90,
@@ -3212,7 +3301,8 @@
     ],
     "url": "https://fundacionparquecochamo.cl",
     "trust": "Alta",
-    "image": "/under40/samuel-santa-cruz.jpg"
+    "image": "/under40/samuel-santa-cruz.jpg",
+    "linkedin": ""
   },
   {
     "rank": 91,
@@ -3248,7 +3338,8 @@
     ],
     "url": "https://instagram.com/desiertovestido_tarapaca",
     "trust": "Alta en trayectoria; media en edad",
-    "image": "/under40/angela-astudillo.jpg"
+    "image": "/under40/angela-astudillo.jpg",
+    "linkedin": ""
   },
   {
     "rank": 92,
@@ -3284,7 +3375,8 @@
     ],
     "url": "https://juntosporlareinsercion.cl",
     "trust": "Alta en cargo; media en edad",
-    "image": "/under40/bernardita-frez.jpg"
+    "image": "/under40/bernardita-frez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 93,
@@ -3320,7 +3412,8 @@
     ],
     "url": "https://unopuntocinco.org",
     "trust": "Alta",
-    "image": "/under40/ismaela-magliotto-quevedo.jpg"
+    "image": "/under40/ismaela-magliotto-quevedo.jpg",
+    "linkedin": ""
   },
   {
     "rank": 94,
@@ -3356,7 +3449,8 @@
     ],
     "url": "https://gowheeltheworld.com",
     "trust": "Alta en trayectoria; media en edad",
-    "image": "/under40/alvaro-silberstein.jpg"
+    "image": "/under40/alvaro-silberstein.jpg",
+    "linkedin": "https://www.linkedin.com/in/alvaro-silberstein"
   },
   {
     "rank": 95,
@@ -3397,7 +3491,8 @@
     ],
     "url": "https://basepublica.cl/entrevistas/diego-gonzalez",
     "trust": "Alta",
-    "image": "/under40/diego-antonio-gonzalez.jpg"
+    "image": "/under40/diego-antonio-gonzalez.jpg",
+    "linkedin": ""
   },
   {
     "rank": 96,
@@ -3431,9 +3526,10 @@
         "credit": "TechCrunch, enero 2020"
       }
     ],
-    "url": "https://linkedin.com/in/antoniarojase",
+    "url": "https://www.attomcapital.com",
     "trust": "Alta",
-    "image": "/under40/antonia-rojas-eing.jpg"
+    "image": "/under40/antonia-rojas-eing.jpg",
+    "linkedin": "https://www.linkedin.com/in/antoniarojase"
   },
   {
     "rank": 97,
@@ -3469,7 +3565,8 @@
     ],
     "url": "https://platan.us/equipo",
     "trust": "Alta en cargo y trayectoria; edad no verificada",
-    "image": "/under40/paula-enei.jpg"
+    "image": "/under40/paula-enei.jpg",
+    "linkedin": "https://www.linkedin.com/in/paulaenei"
   },
   {
     "rank": 98,
@@ -3498,9 +3595,10 @@
         "credit": "DF MAS, septiembre 2025"
       }
     ],
-    "url": "",
+    "url": "https://wntventures.co.nz",
     "trust": "Alta",
-    "image": "/under40/maria-jose-alvarez.jpg"
+    "image": "/under40/maria-jose-alvarez.jpg",
+    "linkedin": "https://www.linkedin.com/in/mariajose-alvarez"
   },
   {
     "rank": 99,
@@ -3531,7 +3629,8 @@
     ],
     "url": "https://kapso.ai",
     "trust": "Alta",
-    "image": "/under40/andres-matte.jpg"
+    "image": "/under40/andres-matte.jpg",
+    "linkedin": "https://www.linkedin.com/in/andresmatte"
   },
   {
     "rank": 100,
@@ -3560,8 +3659,9 @@
         "credit": "DF MAS, octubre 2025"
       }
     ],
-    "url": "",
+    "url": "https://dapan.es",
     "trust": "Alta",
-    "image": "/under40/damian-panes.jpg"
+    "image": "/under40/damian-panes.jpg",
+    "linkedin": "https://www.linkedin.com/in/damianpanes"
   }
 ]

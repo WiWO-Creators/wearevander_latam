@@ -25,8 +25,15 @@ export type Under40Profile = {
   hitos: string[];
   news: Under40News[];
   url: string;
+  linkedin: string;
   trust: string;
   image: string;
+};
+
+export type Under40Link = {
+  href: string;
+  label: string;
+  kind: "linkedin" | "web";
 };
 
 export const UNDER40 = raw as Under40Profile[];
@@ -34,7 +41,7 @@ export const UNDER40 = raw as Under40Profile[];
 export const UNDER40_META = {
   title: "100 under 40",
   kicker: "Chile · agosto 2026",
-  dek: "Cien chilenas y chilenos menores de 40 que fundaron o dirigen. Cada ficha trae bio, hitos, noticias con enlace y el estatus de la edad. Ninguna edad fue inventada.",
+  dek: "Cien chilenas y chilenos menores de 40 que fundaron o dirigen. Cada ficha trae retrato, bio, hitos, prensa y un enlace a LinkedIn o a la empresa. Ninguna edad fue inventada.",
   men: 61,
   women: 39,
   verticals: 9,
@@ -105,4 +112,32 @@ export function sectorAccent(slug: string) {
 
 export function toUnder40Slug(label: string) {
   return toCatSlug(label);
+}
+
+export function hostFromUrl(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  }
+}
+
+export function under40Links(person: Under40Profile): Under40Link[] {
+  const links: Under40Link[] = [];
+  const seen = new Set<string>();
+  const push = (href: string, label: string, kind: Under40Link["kind"]) => {
+    const key = href.replace(/\/$/, "").toLowerCase();
+    if (!href || seen.has(key)) return;
+    seen.add(key);
+    links.push({ href, label, kind });
+  };
+  if (person.linkedin) {
+    push(person.linkedin, "LinkedIn", "linkedin");
+  }
+  if (person.url && !/linkedin\.com\//i.test(person.url)) {
+    push(person.url, hostFromUrl(person.url), "web");
+  } else if (person.url && !person.linkedin) {
+    push(person.url, "LinkedIn", "linkedin");
+  }
+  return links;
 }
