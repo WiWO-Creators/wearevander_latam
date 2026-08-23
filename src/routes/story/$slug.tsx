@@ -62,8 +62,8 @@ function StoryPage() {
 
   const city = articleCity(article);
   const related = relatedArticles(article.slug, 3);
-  const author = article.franchise === "contra" ? getAuthor(article.authorId) : undefined;
-  const signer = article.signedName ?? author?.name;
+  const author = getAuthor(article.authorId);
+  const signer = article.signedName ?? (article.franchise === "contra" ? author?.name : undefined);
   const updated = wasUpdated(article);
 
   return (
@@ -134,7 +134,7 @@ function StoryPage() {
         </div>
 
         <aside className="mx-auto mt-14 max-w-2xl border-t-2 border-ink px-4 py-6 sm:px-6">
-          {author && article.franchise === "contra" ? (
+          {author && (article.signedName || article.franchise === "contra") ? (
             <>
               <p className="kicker text-xs text-muted">La firma</p>
               <div className="mt-4 flex gap-4">

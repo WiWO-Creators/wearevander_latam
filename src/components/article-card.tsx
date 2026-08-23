@@ -71,7 +71,7 @@ export function ReadMeta({
 }) {
   const pace = articlePace(article);
   const updated = wasUpdated(article);
-  const who = article.franchise === "contra" && article.signedName ? article.signedName : "Team Vander";
+  const who = article.signedName ?? "Team Vander";
   const city = articleCity(article);
   return (
     <p className={cn("font-kicker text-xs tracking-wider uppercase", dark ? "text-silver" : "text-muted", className)}>
@@ -221,7 +221,7 @@ export function HorizontalCard({ article }: { article: Article }) {
           {article.dek}
         </p>
         <p className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">
-          {article.franchise === "contra" && article.signedName ? article.signedName : "Team Vander"}
+          {article.signedName ?? "Team Vander"}
           {` · ${article.readMinutes} min · ${pace === "rapida" ? "Lectura rápida" : "De fondo"} · ${formatShortDate(article.publishedAt)}`}
         </p>
       </div>

@@ -1,5 +1,6 @@
 import { FRANCHISE_ARTICLES } from "./franchises";
 import { FORMAT_ARTICLES } from "./formats";
+import { AGOSTO_ARTICLES } from "./agosto";
 
 export type SectionId = "ideas" | "work" | "design" | "climate" | "culture";
 export type PaceId = "rapida" | "fondo";
@@ -84,6 +85,14 @@ export const SECTIONS: { id: SectionId; label: string; dek: string }[] = [
 ];
 
 export const AUTHORS: Author[] = [
+  {
+    id: "daniel-pinto",
+    name: "Daniel Pinto",
+    role: "Editor",
+    city: "Santiago",
+    image: "/authors/daniel-pinto.jpg",
+    bio: "Escribe industria, energía y capital para We Are Vander. Cierre de datos de este número: 22 de agosto de 2026.",
+  },
   {
     id: "mira-solano",
     name: "Mira Solano",
@@ -587,7 +596,6 @@ const CORE_ARTICLES: Article[] = [
     image: "/photos/cdmx-reforma.jpg",
     imageAlt: "Paseo de la Reforma en Ciudad de México, hora pico laboral",
     caption: "Reforma, 08:40. El hub no está en un slide. Está en la avenida.",
-    featured: true,
     city: "Ciudad de México",
     pullQuote: "No somos el próximo Silicon Valley. Somos el lugar donde el P&L todavía tiene geografía.",
     body: [
@@ -822,6 +830,7 @@ const CORE_ARTICLES: Article[] = [
 ];
 
 export const ARTICLES: Article[] = [
+  ...AGOSTO_ARTICLES,
   ...CORE_ARTICLES,
   ...(FRANCHISE_ARTICLES as unknown as Article[]),
   ...(FORMAT_ARTICLES as unknown as Article[]),
@@ -837,7 +846,8 @@ export function getAuthor(id: string) {
 
 export function teamByline(article: Article, withPor = true) {
   const city = articleCity(article);
-  const who = withPor ? "Por Team Vander" : "Team Vander";
+  const name = article.signedName ?? "Team Vander";
+  const who = withPor ? `Por ${name}` : name;
   return city ? `${who} · ${city}` : who;
 }
 
@@ -909,24 +919,24 @@ export type Brief = {
 };
 
 export const BRIEFS: Brief[] = [
-  { id: "b1", time: "08:42", section: "ideas", slug: "latam-no-pidio-permiso", title: "Seis corresponsalías, un P&L: el número de agosto." },
-  { id: "b2", time: "08:11", section: "work", slug: "nearshoring-despues-del-anuncio", title: "Sierra Line suma 1.200 personas al segundo turno en Apodaca." },
-  { id: "b3", time: "07:38", section: "ideas", slug: "fintech-despues-del-hype", title: "Casa Quilate publica un margen neto de 4,1%." },
-  { id: "b4", time: "07:05", section: "design", slug: "buenos-aires-restriccion", title: "Bruma Studio espera un rollo que no llega. El patrón, sí." },
-  { id: "b5", time: "06:50", section: "climate", slug: "bogota-a-dos-mil-metros", title: "Páramo Grid cierra offtake de viento a 2.600 metros." },
-  { id: "b6", time: "Ayer", section: "work", slug: "el-pacifico-se-firma-en-lima", title: "Tercer Turno escribe el handoff en prosa: tres naves, un retraso." },
-  { id: "b7", time: "Ayer", section: "ideas", slug: "el-mito-miami", title: "Tres oficinas cierran Brickell. Vuelven a Paulista y Roma Norte." },
-  { id: "b8", time: "Ayer", section: "climate", slug: "triangulo-del-litio", title: "Litio: el mapa de conferencia no cabe en un contrato." },
-  { id: "b9", time: "18 ago", section: "design", slug: "medellin-sin-brochure", title: "Altura Code saca cuatro versiones al año. El mural quedó en la calle." },
-  { id: "b10", time: "17 ago", section: "ideas", slug: "corredor-es-pt", title: "México y Brasil se facturan sin pasar por Palo Alto." },
+  { id: "b1", time: "08:42", section: "ideas", slug: "tmec-horizonte-doce-meses", title: "EE.UU. no extendió el T-MEC 16 años. El horizonte ahora es de 12 meses." },
+  { id: "b2", time: "08:11", section: "ideas", slug: "ied-noventa-y-cuatro", title: "México: IED récord de US$ 23.591 M. El 94% es reinversión." },
+  { id: "b3", time: "07:38", section: "ideas", slug: "pix-problema-comercial", title: "Pix movió R$ 35,3 billones. Washington abrió investigación." },
+  { id: "b4", time: "07:05", section: "ideas", slug: "mercado-libre-dejo-de-ser-ecommerce", title: "Mercado Libre: US$ 10.200 M. En Argentina, el 64% ya es Pago." },
+  { id: "b5", time: "06:50", section: "climate", slug: "chile-vertimiento-6000-gwh", title: "Chile vertió 6.084 GWh de energía limpia en 2025." },
+  { id: "b6", time: "Ayer", section: "climate", slug: "vaca-muerta-sacar-del-pais", title: "Vaca Muerta: superávit energético de US$ 6.987 M. Faltan ductos." },
+  { id: "b7", time: "Ayer", section: "ideas", slug: "vc-mas-dinero-menos-startups", title: "VC latam: +13,8% de capital, mínimo de deals desde 2017." },
+  { id: "b8", time: "Ayer", section: "climate", slug: "data-centers-cinco-por-ciento", title: "Latam tiene el 5% de los data centers y el 100% del debate del agua." },
+  { id: "b9", time: "18 ago", section: "climate", slug: "litio-no-volvio", title: "El carbonato no volvió a 80.000. El triángulo diseñó política para un precio que no existe." },
+  { id: "b10", time: "17 ago", section: "work", slug: "ia-purgatorio-del-piloto", title: "IA en Latam: adopción sobre la media, 1,1% de la inversión mundial." },
 ];
 
 export const POPULAR_SLUGS = [
-  "latam-no-pidio-permiso",
-  "nearshoring-despues-del-anuncio",
-  "fintech-despues-del-hype",
-  "cult-of-the-analog-office",
-  "el-mito-miami",
+  "tmec-horizonte-doce-meses",
+  "ied-noventa-y-cuatro",
+  "pix-problema-comercial",
+  "mercado-libre-dejo-de-ser-ecommerce",
+  "chile-vertimiento-6000-gwh",
 ] as const;
 
 export function popularArticles(limit = 5) {
@@ -982,6 +992,7 @@ export const TAGS: TagDef[] = [
   { id: "pagos", label: "Pagos", kind: "tech" },
   { id: "nearshoring", label: "Nearshoring", kind: "tech" },
   { id: "hardware", label: "Hardware", kind: "tech" },
+  { id: "infraestructura", label: "Infraestructura", kind: "industry" },
 ];
 
 const SECTION_TAGS: Record<SectionId, string[]> = {
