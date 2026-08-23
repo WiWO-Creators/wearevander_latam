@@ -37,7 +37,7 @@ export function CatChip({
       to={to}
       params={params as never}
       className={cn(
-        "kicker inline-flex h-9 items-center gap-2 border border-ink px-3 text-xs hover:bg-ink hover:text-paper",
+        "kicker inline-flex h-9 shrink-0 items-center gap-2 border border-ink px-3 text-xs hover:bg-ink hover:text-paper",
         active && activeCls,
       )}
     >

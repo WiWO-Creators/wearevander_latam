@@ -22,7 +22,14 @@ export const Route = createFileRoute("/indice")({
 
 function IndicePage() {
   const chart = PAY_ROWS.filter((r) => r.city !== "Austin (ref.)").map((r) => ({
-    city: r.city.replace("Ciudad de México", "CDMX"),
+    city: r.city
+      .replace("Ciudad de México", "CDMX")
+      .replace("Buenos Aires", "BA")
+      .replace("São Paulo", "SP")
+      .replace("Monterrey", "MTY")
+      .replace("Santiago", "SCL")
+      .replace("Bogotá", "BOG")
+      .replace("Lima", "LIM"),
     usd: r.usd / 1000,
   }));
 
@@ -31,7 +38,7 @@ function IndicePage() {
       <section className="bg-ink px-4 py-14 text-paper sm:px-6 sm:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="kicker text-xs text-rust">Data · {ISSUE.date}</p>
-          <h1 className="headline mt-3 text-5xl sm:text-7xl">El Índice</h1>
+          <h1 className="headline mt-3 text-4xl sm:text-7xl">El Índice</h1>
           <p className="mt-5 max-w-2xl font-body text-lg leading-snug text-paper/75">
             Lo que se puede citar. Sueldos, turnos, offtakes, márgenes. Sin número, Vander opina. Con
             número, se discute. {HOUSE.credit}.
@@ -42,22 +49,17 @@ function IndicePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <p className="kicker text-xs text-rust">01 · Compensación</p>
-        <h2 className="headline mt-2 text-3xl sm:text-5xl">Qué se paga a un ingeniero senior, en dólares</h2>
+        <h2 className="headline mt-2 text-2xl sm:text-5xl">Qué se paga a un ingeniero senior, en dólares</h2>
         <p className="mt-3 max-w-2xl font-body text-base text-ink-soft">
           Total cash anual, 2026. Elaboración propia a partir de ofertas vistas en visita y de
           contrataciones recientes. Austin es referencia, no meta.
         </p>
-        <div className="mt-8 h-72 w-full border border-ink bg-paper-deep p-4">
+        <div className="mt-8 h-80 w-full border border-ink bg-paper-deep p-2 sm:h-96 sm:p-4">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={chart} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
-              <CartesianGrid stroke="currentColor" strokeOpacity={0.12} vertical={false} />
-              <XAxis dataKey="city" tick={{ fontSize: 11, fill: "currentColor" }} axisLine={false} tickLine={false} />
-              <YAxis
-                tick={{ fontSize: 11, fill: "currentColor" }}
-                axisLine={false}
-                tickLine={false}
-                unit="k"
-              />
+            <BarChart data={chart} layout="vertical" margin={{ top: 4, right: 12, left: 8, bottom: 4 }}>
+              <CartesianGrid stroke="currentColor" strokeOpacity={0.12} horizontal={false} />
+              <XAxis type="number" tick={{ fontSize: 10, fill: "currentColor" }} axisLine={false} tickLine={false} unit="k" />
+              <YAxis type="category" dataKey="city" width={46} tick={{ fontSize: 11, fill: "currentColor" }} axisLine={false} tickLine={false} />
               <Tooltip
                 cursor={{ fill: "currentColor", fillOpacity: 0.06 }}
                 formatter={(v: number) => [`US$ ${v} mil`, "Total cash"]}

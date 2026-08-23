@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   articleCity,
   formatIssueDate,
@@ -83,8 +83,8 @@ function StoryPage() {
           <p className="kicker text-xs text-rust">
             {article.kicker} · {city || getSectionLabel(article.section)}
           </p>
-          <h1 className="headline mt-4 text-4xl sm:text-6xl lg:text-7xl">{article.title}</h1>
-          <p className="mt-5 font-body text-lg leading-snug text-ink-soft sm:text-2xl">{article.dek}</p>
+          <h1 className="headline mt-3 text-[1.85rem] leading-[1.08] sm:mt-4 sm:text-6xl lg:text-7xl">{article.title}</h1>
+          <p className="mt-4 font-body text-base leading-snug text-ink-soft sm:mt-5 sm:text-2xl">{article.dek}</p>
           <div className="mt-5">
             <TagPills article={article} />
           </div>
@@ -124,13 +124,8 @@ function StoryPage() {
           </div>
         )}
 
-        <div className="mx-auto mt-10 max-w-2xl px-4 sm:px-6">
-          {article.body.map((block, i) => (
-            <div key={i}>
-              <Block block={block} drop={i === 0 && article.franchise !== "signals"} />
-              {i === 1 && <AdSlot size="inread" creative="vander20" />}
-            </div>
-          ))}
+        <div className="mx-auto mt-8 max-w-2xl px-4 sm:mt-10 sm:px-6">
+          {renderBody(article.body, article.franchise !== "signals")}
         </div>
 
         <aside className="mx-auto mt-14 max-w-2xl border-t-2 border-ink px-4 py-6 sm:px-6">
@@ -170,7 +165,7 @@ function StoryPage() {
 
       <section className="border-t border-ink px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-7xl">
-          <h2 className="headline border-b border-ink pb-2 text-3xl">Sigue leyendo</h2>
+          <h2 className="headline border-b border-ink pb-2 text-2xl sm:text-3xl">Sigue leyendo</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {related.map((a) => (
               <StackedCard key={a.slug} article={a} />
@@ -183,14 +178,53 @@ function StoryPage() {
   );
 }
 
+function renderBody(blocks: BodyBlock[], dropCap: boolean) {
+  const out: ReactNode[] = [];
+  let i = 0;
+  let dropped = false;
+  let grafs = 0;
+  while (i < blocks.length) {
+    const block = blocks[i];
+    if (block.type === "stat") {
+      const group: Extract<BodyBlock, { type: "stat" }>[] = [];
+      while (i < blocks.length && blocks[i].type === "stat") {
+        group.push(blocks[i] as Extract<BodyBlock, { type: "stat" }>);
+        i++;
+      }
+      out.push(
+        <div key={`stats-${i}`} className="my-6 grid grid-cols-3 gap-3 border-y border-ink py-3">
+          {group.map((s) => (
+            <p key={s.label} className="min-w-0">
+              <span className="headline block text-xl tabular-nums sm:text-3xl">{s.value}</span>
+              <span className="mt-1 block font-sans text-[11px] leading-tight text-muted sm:text-xs">{s.label}</span>
+            </p>
+          ))}
+        </div>,
+      );
+      continue;
+    }
+    const drop = dropCap && !dropped && block.type === "p";
+    if (drop) dropped = true;
+    if (block.type === "p") grafs += 1;
+    out.push(
+      <div key={i}>
+        <Block block={block} drop={drop} />
+        {grafs === 1 && block.type === "p" ? <AdSlot size="inread" creative="vander20" /> : null}
+      </div>,
+    );
+    i++;
+  }
+  return out;
+}
+
 function Block({ block, drop }: { block: BodyBlock; drop: boolean }) {
   if (block.type === "h2") {
-    return <h2 className="headline mt-10 mb-3 text-3xl">{block.text}</h2>;
+    return <h2 className="headline mt-8 mb-3 text-2xl sm:mt-10 sm:text-3xl">{block.text}</h2>;
   }
   if (block.type === "quote") {
     return (
-      <blockquote className="my-10 border-l-4 border-rust pl-5">
-        <p className="headline text-3xl">{block.text}</p>
+      <blockquote className="my-8 border-l-4 border-rust pl-4 sm:my-10 sm:pl-5">
+        <p className="headline text-2xl sm:text-3xl">{block.text}</p>
         {block.cite && <footer className="mt-2 kicker text-xs text-muted">{block.cite}</footer>}
       </blockquote>
     );
@@ -199,18 +233,13 @@ function Block({ block, drop }: { block: BodyBlock; drop: boolean }) {
     return <p className="mt-8 mb-2 font-sans text-sm font-semibold tracking-tight text-rust">— {block.text}</p>;
   }
   if (block.type === "a") {
-    return <p className="mb-5 font-body text-lg leading-relaxed text-ink">{block.text}</p>;
+    return <p className="mb-5 font-body text-base leading-relaxed text-ink sm:text-lg">{block.text}</p>;
   }
   if (block.type === "stat") {
-    return (
-      <p className="my-6 flex items-baseline justify-between gap-4 border-y border-ink py-3">
-        <span className="kicker text-xs text-muted">{block.label}</span>
-        <span className="headline text-3xl tabular-nums">{block.value}</span>
-      </p>
-    );
+    return null;
   }
   return (
-    <p className={`mb-5 font-body text-lg leading-relaxed text-ink ${drop ? "drop-cap" : ""}`}>
+    <p className={`mb-5 font-body text-base leading-relaxed text-ink sm:text-lg ${drop ? "drop-cap" : ""}`}>
       {block.text}
     </p>
   );

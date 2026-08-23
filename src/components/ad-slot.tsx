@@ -6,7 +6,7 @@ type CreativeId = "vander20" | "boletin" | "briefing" | "anuncia";
 
 function LiveUnit({ size }: { size: AdSize }) {
   if (size === "leaderboard") return <AdsterraLeaderboard />;
-  if (size === "billboard") return <AdsterraNative height={280} />;
+  if (size === "billboard") return <AdsterraNative />;
   return <AdsterraBanner spec={ADSTERRA.mpu} />;
 }
 
@@ -33,8 +33,10 @@ export function AdSlot({
         data-ad-size={size}
       >
         <div
-          className="flex w-full items-center justify-center"
-          style={{ minHeight: size === "leaderboard" ? 90 : 250 }}
+          className={cn(
+            "flex w-full items-center justify-center",
+            size === "leaderboard" ? "min-h-[50px] sm:min-h-[90px]" : "min-h-[180px] sm:min-h-[250px]",
+          )}
         >
           <LiveUnit size={size} />
         </div>

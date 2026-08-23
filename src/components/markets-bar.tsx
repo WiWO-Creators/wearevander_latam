@@ -49,8 +49,8 @@ export function MarketsBar() {
 
   return (
     <div className="border-b border-paper/10 bg-ink text-paper">
-      <div className="ticker mx-auto flex max-w-7xl items-center gap-4 px-4 py-1.5 sm:px-6">
-        <span className="kicker shrink-0 text-xs text-silver">{live ? "Mercados" : "Mercados · cierre"}</span>
+      <div className="ticker mx-auto flex max-w-7xl items-center gap-3 px-3 py-1 sm:gap-4 sm:px-6 sm:py-1.5">
+        <span className="kicker shrink-0 text-[10px] text-silver sm:text-xs">{live ? "Mercados" : "Cierre"}</span>
         <div className="ticker-mask min-w-0 flex-1 overflow-hidden">
           <div className="ticker-track">
             {tape.map((q, i) => (

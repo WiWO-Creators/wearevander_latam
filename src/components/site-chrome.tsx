@@ -49,9 +49,9 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
 
   return (
     <header>
-      <div className="sticky top-0 z-40">
+      <div className="sticky top-0 z-40 pt-[env(safe-area-inset-top)]">
         <div className="bg-ink text-paper">
-          <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 sm:px-6">
+          <div className="mx-auto flex max-w-7xl items-center gap-1 px-3 sm:gap-2 sm:px-6">
             <button
               type="button"
               className="press grid size-11 shrink-0 place-items-center lg:hidden"
@@ -61,7 +61,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
             >
               {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
             </button>
-            <Link to="/" className="logo-mark shrink-0 py-2.5">
+            <Link to="/" className="logo-mark min-w-0 flex-1 py-2.5 lg:flex-none lg:shrink-0">
               <Wordmark />
               <span className="sr-only">{HOUSE.name}</span>
             </Link>
@@ -173,8 +173,8 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
       </div>
 
       <div className="border-b border-rule bg-paper">
-        <div className="ticker mx-auto flex max-w-7xl items-center gap-4 px-4 py-2 sm:px-6">
-          <span className="kicker shrink-0 text-xs text-rust">Al minuto</span>
+        <div className="ticker mx-auto flex max-w-7xl items-center gap-3 px-3 py-1.5 sm:gap-4 sm:px-6 sm:py-2">
+          <span className="kicker shrink-0 text-[10px] text-rust sm:text-xs">Minuto</span>
           <div className="ticker-mask min-w-0 flex-1 overflow-hidden">
             <div className="ticker-track font-sans text-sm font-medium tracking-tight text-ink">
               {ticker.map((b, i) => (
@@ -263,7 +263,7 @@ function MoreMenu({ pathname }: { pathname: string }) {
 
 function MobileNav({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink text-paper lg:hidden">
+    <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink text-paper lg:hidden pt-[env(safe-area-inset-top)]">
       <div className="sticky top-0 z-10 flex items-center justify-between bg-ink px-4 py-3">
         <Link to="/" onClick={onClose} className="logo-mark">
           <Wordmark className="h-7 sm:h-8" />
@@ -280,51 +280,51 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                 to="/section/$section"
                 params={{ section: s.id }}
                 onClick={onClose}
-                className="flex min-h-14 items-center headline text-4xl"
+                className="flex min-h-12 items-center headline text-3xl"
               >
                 {s.label}
               </Link>
             </li>
           ))}
           <li className="menu-item border-b border-paper/15">
-            <Link to="/list" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/list" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Vander <span className="italic text-signal">20</span>
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/innovatives" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/innovatives" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               <span className="italic text-innov">50</span>
               <span className="ml-2">Innovatives</span>
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/signals" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/signals" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Signals
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/contra" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/contra" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Contra
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/indice" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/indice" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               El Índice
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/about" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/about" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Redacción
             </Link>
           </li>
           <li className="menu-item border-b border-paper/15">
-            <Link to="/obituarios" onClick={onClose} className="flex min-h-14 items-center headline text-4xl">
+            <Link to="/obituarios" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Obituarios
             </Link>
           </li>
         </ul>
         <ul className="mt-6 flex flex-col">
-          {MORE_LINKS.map((item) => (
+          {MORE_LINKS.filter((item) => item.to !== "/obituarios").map((item) => (
             <li key={item.to} className="menu-item border-b border-paper/15">
               <Link
                 to={item.to}

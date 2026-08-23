@@ -33,6 +33,7 @@
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
   }
 
   body {
@@ -84,8 +85,14 @@
   .kicker {
     font-family: var(--font-kicker);
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 640px) {
+    .kicker {
+      letter-spacing: 0.18em;
+    }
   }
 
   .headline {
@@ -100,11 +107,40 @@
     font-family: var(--font-display);
     font-weight: 600;
     float: left;
-    font-size: 4.9rem;
+    font-size: 3.2rem;
     line-height: 0.82;
-    padding-right: 0.14em;
-    padding-top: 0.08em;
+    padding-right: 0.12em;
+    padding-top: 0.06em;
     color: var(--color-ink);
+  }
+
+  @media (min-width: 640px) {
+    .drop-cap::first-letter {
+      font-size: 4.9rem;
+      padding-right: 0.14em;
+      padding-top: 0.08em;
+    }
+  }
+
+  .chip-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .chip-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .chip-row {
+      flex-wrap: wrap;
+      overflow: visible;
+    }
   }
 
   .hairline {

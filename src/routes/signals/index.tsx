@@ -42,7 +42,7 @@ function SignalsPage() {
 
       <nav className="border-b border-ink bg-paper px-4 py-4 sm:px-6" aria-label="Categorías Signals">
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Industria</p>
             {industry.map((t) => (
               <CatChip
@@ -54,7 +54,7 @@ function SignalsPage() {
               />
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Tecnología</p>
             {tech.map((t) => (
               <CatChip
@@ -66,7 +66,7 @@ function SignalsPage() {
               />
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Lectura</p>
             {pace.map((t) => (
               <CatChip

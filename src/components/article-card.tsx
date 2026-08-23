@@ -98,13 +98,13 @@ export function CoverHero({ article }: { article: Article }) {
           <Photo
             src={article.image}
             alt={article.imageAlt}
-            className="aspect-[4/5] w-full sm:aspect-video lg:aspect-auto lg:h-full lg:min-h-[32rem]"
+            className="aspect-[16/10] w-full sm:aspect-video lg:aspect-auto lg:h-full lg:min-h-[32rem]"
           />
         </Link>
-        <div className="flex flex-col justify-end px-4 py-8 sm:px-8 lg:col-span-5 lg:px-10 lg:py-12">
+        <div className="flex flex-col justify-end px-4 py-6 sm:px-8 sm:py-8 lg:col-span-5 lg:px-10 lg:py-12">
           <div className="rise">
             <p className="kicker text-xs text-rust">Portada · {city || "Latam"}</p>
-            <h1 className="headline mt-4 max-w-xl text-4xl text-paper sm:text-6xl lg:text-6xl">
+            <h1 className="headline mt-3 max-w-xl text-[1.85rem] leading-[1.06] text-paper sm:mt-4 sm:text-6xl lg:text-6xl">
               <Link to="/story/$slug" params={{ slug: article.slug }} className="hover:text-rust">
                 {article.title}
               </Link>

@@ -24,7 +24,7 @@ export function AdsterraBanner({
   );
 }
 
-export function AdsterraNative({ height = 280 }: { height?: number }) {
+export function AdsterraNative({ height = 200 }: { height?: number }) {
   const srcDoc = useMemo(() => nativeSrcDoc(), []);
   return <IsolatedFrame srcDoc={srcDoc} width="100%" height={height} />;
 }

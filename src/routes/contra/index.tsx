@@ -45,7 +45,7 @@ function ContraPage() {
 
       <nav className="border-b border-ink bg-paper-deep px-4 py-4 sm:px-6" aria-label="Categorías Contra">
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Tema</p>
             {themes.map((t) => (
               <CatChip
@@ -66,7 +66,7 @@ function ContraPage() {
               />
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Firma</p>
             {authors.map((a) => (
               <CatChip

@@ -23,7 +23,7 @@ function ListPage() {
         <div className="mx-auto max-w-7xl">
           <p className="kicker text-xs text-signal">Ranking {ISSUE.date} · Latam · Protocolo</p>
           <h1 className="mt-5 max-w-3xl">
-            <Vander20Mark className="h-16 sm:h-28 lg:h-32" />
+            <Vander20Mark className="h-12 max-w-full sm:h-28 lg:h-32" />
           </h1>
           <p className="mt-6 max-w-2xl font-body text-lg leading-snug text-paper/75">
             Las veinte compañías que reescriben cómo se siente un negocio en América Latina. No las más
@@ -42,7 +42,7 @@ function ListPage() {
 
       <nav className="border-b border-ink bg-paper-deep px-4 py-4 sm:px-6" aria-label="Categorías Vander 20">
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Sector</p>
             {sectors.map((s) => (
               <CatChip
@@ -55,7 +55,7 @@ function ListPage() {
               />
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Ciudad</p>
             {cities.map((c) => (
               <CatChip

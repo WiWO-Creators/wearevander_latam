@@ -23,12 +23,12 @@ function InnovativesPage() {
         <div className="mx-auto max-w-7xl">
           <p className="kicker text-xs text-innov">Anual {ISSUE.date.split(" ").at(-1)} · Latam · Gesto nuevo</p>
           <h1 className="mt-5 max-w-3xl">
-            <InnovativesMark wide className="h-16 sm:h-24 lg:h-28" />
+            <InnovativesMark wide className="h-10 max-w-full sm:h-24 lg:h-28" />
           </h1>
           <p className="mt-6 max-w-2xl font-body text-lg leading-snug text-paper/75">
             Las 50 empresas más innovadoras de América Latina. No las más ruidosas: las que se pueden
             visitar. Distinto al Vander 20: acá cuenta el gesto nuevo. Metodología pública. Cada ficha
-            tiene mesa, fecha de visita y evidencia. {HOUSE.credit}.
+            tiene ciudad, fecha de visita y evidencia. {HOUSE.credit}.
           </p>
           <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
             <RankStat n="50" label="Compañías visitadas" />
@@ -41,7 +41,7 @@ function InnovativesPage() {
 
       <nav className="border-b border-ink bg-paper-deep px-4 py-4 sm:px-6" aria-label="Categorías 50 Innovatives">
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">Sector</p>
             {sectors.map((s) => (
               <CatChip
@@ -54,7 +54,7 @@ function InnovativesPage() {
               />
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="chip-row items-center">
             <p className="kicker mr-2 text-xs text-muted">País</p>
             {countries.map((c) => (
               <CatChip

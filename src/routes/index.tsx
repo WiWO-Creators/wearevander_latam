@@ -88,7 +88,7 @@ function Home() {
           </div>
           <div className="mt-8 grid gap-8 lg:grid-cols-2">
             <div>
-              <p className="kicker border-b border-ink pb-2 text-xs text-muted">Ing. senior, US$ anual</p>
+              <p className="border-b border-ink pb-2 font-sans text-xs font-semibold uppercase tracking-wide text-muted">US$ anual</p>
               <ul>
                 {PAY_ROWS.slice(0, 6).map((r) => (
                   <li key={r.city} className="flex items-baseline justify-between gap-3 border-b border-rule py-2">
@@ -99,7 +99,7 @@ function Home() {
               </ul>
             </div>
             <div>
-              <p className="kicker border-b border-ink pb-2 text-xs text-muted">Segundo turno · altas</p>
+              <p className="border-b border-ink pb-2 font-sans text-xs font-semibold uppercase tracking-wide text-muted">Segundo turno</p>
               <ul>
                 {SHIFT_ROWS.map((r) => (
                   <li key={r.plant} className="flex items-baseline justify-between gap-3 border-b border-rule py-2">
@@ -117,7 +117,7 @@ function Home() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Link to="/signals" className="logo-mark block max-w-xs">
-              <SignalsMark className="h-12 sm:h-14" />
+              <SignalsMark className="h-10 max-w-full sm:h-14" />
             </Link>
             <p className="mt-4 max-w-xs font-body text-sm leading-relaxed text-ink-soft">
               Lo que todavía no es tendencia. 300 palabras. Un indicador, un lugar, una frase.
@@ -172,7 +172,7 @@ function Home() {
             <div>
               <p className="kicker text-xs text-innov">Anual · 50 compañías visitadas</p>
               <Link to="/innovatives" className="logo-mark mt-3 block max-w-xl">
-                <InnovativesMark wide className="h-14 sm:h-20" />
+                <InnovativesMark wide className="h-10 max-w-full sm:h-20" />
               </Link>
               <p className="mt-3 max-w-lg font-body text-sm text-paper/60">
                 Innovación que se puede visitar. Metodología pública. Distinto al Vander 20: acá cuenta el gesto nuevo, no el código de casa.
@@ -221,7 +221,7 @@ function Home() {
             <div>
               <p className="kicker text-xs text-signal">Código de casa · 20 visitadas</p>
               <Link to="/list" className="logo-mark mt-3 block max-w-xl">
-                <Vander20Mark className="h-16 sm:h-24" />
+                <Vander20Mark className="h-12 max-w-full sm:h-24" />
               </Link>
               <p className="mt-3 max-w-lg font-body text-sm text-paper/60">
                 No es un ranking de innovación. Es el argumento de cómo se siente un negocio cuando el protocolo manda. Cada ficha fue visitada.
