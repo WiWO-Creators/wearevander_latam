@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /54aa2f4cf4f47f587705.txt
+
+Sitemap: https://wearevanderlatam.vercel.app/sitemap.xml
