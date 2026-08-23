@@ -159,19 +159,19 @@ export function RailItem({ article }: { article: Article }) {
   const city = articleCity(article);
   const pace = articlePace(article);
   return (
-    <article className="grid grid-cols-12 gap-3 border-b border-rule py-3 last:border-b-0">
-      <div className="col-span-8">
+    <article className="grid grid-cols-12 items-start gap-4 border-b border-rule py-5 last:border-b-0">
+      <div className="col-span-9">
         <p className="kicker text-xs text-rust">{article.kicker}</p>
-        <h3 className="headline mt-1 text-lg leading-[1.12] sm:text-xl">
+        <h3 className="headline mt-2 text-2xl leading-[1.08] sm:text-[1.85rem]">
           <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
             {article.title}
           </Link>
         </h3>
-        <p className="mt-1 font-kicker text-xs tracking-wider text-muted uppercase">
+        <p className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">
           {city} · {article.readMinutes} min · {pace === "rapida" ? "Rápida" : "De fondo"}
         </p>
       </div>
-      <Link to="/story/$slug" params={{ slug: article.slug }} className="group col-span-4">
+      <Link to="/story/$slug" params={{ slug: article.slug }} className="group col-span-3">
         <Photo src={article.image} alt="" className="aspect-square w-full sm:aspect-[4/3]" />
       </Link>
     </article>
