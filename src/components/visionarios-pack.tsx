@@ -265,13 +265,9 @@ export function VisionariosProfile({ volume, slug }: { volume: VisionarioVolume;
   return (
     <main>
       <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-12 lg:items-stretch">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5">
-            <Under40Shot
-              person={person}
-              sizes="hero"
-              className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-auto lg:h-full lg:min-h-[36rem]"
-            />
+            <Under40Shot person={person} className="aspect-[4/5] w-full sm:aspect-[4/5]" />
           </div>
           <div className="flex flex-col justify-end px-4 py-10 sm:px-8 lg:col-span-7 lg:px-12 lg:py-14">
             <Link to={volume.path} className="kicker inline-flex items-center gap-2 text-xs text-rust hover:underline">
