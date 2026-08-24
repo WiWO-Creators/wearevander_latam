@@ -3,6 +3,7 @@ import { VOLUMES } from "@/lib/visionarios";
 import { CountryMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
 import { seoHead } from "@/lib/seo";
+import { VolumeFaces } from "@/components/visionarios-pack";
 
 export const Route = createFileRoute("/visionarios/")({
   component: VisionariosHub,
@@ -43,7 +44,8 @@ function VisionariosHub() {
             <p className="kicker text-xs text-rust">
               <CountryMark id={v.id} /> · Vol. {v.volume}
             </p>
-            <h2 className="headline mt-3 text-4xl group-hover:text-rust sm:text-5xl">{v.name}</h2>
+            <VolumeFaces volume={v} className="mt-5" />
+            <h2 className="headline mt-5 text-4xl group-hover:text-rust sm:text-5xl">{v.name}</h2>
             <p className="mt-4 font-body text-sm leading-snug text-ink-soft">{v.dek}</p>
             <p className="mt-6 font-kicker text-xs uppercase tracking-wider text-muted">
               {v.women} mujeres · {v.men} hombres · {v.people.length || 100} fichas

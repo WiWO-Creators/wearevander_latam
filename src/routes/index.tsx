@@ -23,6 +23,7 @@ import {
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
 import { Vander20Mark, InnovativesMark, ContraMark, SignalsMark, CountryMark } from "@/components/brand";
+import { VolumeFaces } from "@/components/visionarios-pack";
 import { SignalsField } from "@/components/signals-field";
 import { VerifiedStamp } from "@/components/verified-stamp";
 import { LiveDesk } from "@/components/live-desk";
@@ -301,11 +302,7 @@ function Home() {
             {VOLUMES.map((v) => (
               <li key={v.id}>
                 <Link to={v.path} className="group block">
-                  <img
-                    src={v.illustration}
-                    alt=""
-                    className="aspect-[16/9] w-full object-cover"
-                  />
+                  <VolumeFaces volume={v} />
                   <p className="kicker mt-3 text-[10px] text-rust">
                     <CountryMark id={v.id} /> · Vol. {v.volume}
                   </p>

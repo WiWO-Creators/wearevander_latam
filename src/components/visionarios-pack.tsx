@@ -17,7 +17,39 @@ import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
 import { hostFromUrl } from "@/lib/under40";
 import { seoHead } from "@/lib/seo";
+import { VOLUME_PHOTO_SLUGS } from "@/lib/visionarios-photos";
 import { cn } from "@/lib/utils";
+
+function photoSrc(id: VisionarioVolume["id"], slug: string) {
+  return id === "cl" ? `/under40/${slug}.jpg` : `/visionarios/${id}/${slug}.jpg`;
+}
+
+/** Contact sheet of real portraits — replaces the crowd illustration on collection cards. */
+export function VolumeFaces({
+  volume,
+  className,
+}: {
+  volume: VisionarioVolume;
+  className?: string;
+}) {
+  const slugs = VOLUME_PHOTO_SLUGS[volume.id] as readonly string[];
+  const take = slugs.slice(0, 32);
+  return (
+    <div
+      className={cn("grid aspect-[16/9] grid-cols-8 grid-rows-4 gap-px overflow-hidden bg-ink", className)}
+      aria-hidden
+    >
+      {take.map((slug) => (
+        <img
+          key={slug}
+          src={photoSrc(volume.id, slug)}
+          alt=""
+          className="h-full w-full object-cover object-[center_18%]"
+        />
+      ))}
+    </div>
+  );
+}
 
 export function volumeHead(volume: VisionarioVolume) {
   return seoHead({
