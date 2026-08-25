@@ -33,11 +33,11 @@ function SectionPage() {
   const [lead, ...rest] = stories;
 
   return (
-    <main className="px-4 py-8 sm:px-6 sm:py-10">
+    <main className="px-5 py-10 sm:px-8 sm:py-14">
       <div className="mx-auto max-w-7xl">
         <p className="kicker text-xs text-rust">Sección · Team Vander</p>
         <h1 className="headline mt-2 text-6xl sm:text-8xl">{meta.label}</h1>
-        <p className="mt-4 max-w-2xl font-body text-lg text-ink-soft">{meta.dek}</p>
+        <p className="mt-5 max-w-3xl font-body text-xl leading-snug text-ink-soft sm:text-2xl">{meta.dek}</p>
         <div className="mt-8 h-px bg-ink" />
         {lead && (
           <div className="mt-8">

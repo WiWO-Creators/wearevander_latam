@@ -201,6 +201,16 @@ export function getArticle(slug: string) {
   return ARTICLES.find((a) => a.slug === slug);
 }
 
+export function articleContext(article: Article, max = 4500) {
+  const parts: string[] = [`Título: ${article.title}`, `Bajada: ${article.dek}`];
+  for (const block of article.body) {
+    if (block.type === "p" || block.type === "h2" || block.type === "quote") {
+      parts.push(block.text);
+    }
+  }
+  return parts.join("\n\n").slice(0, max);
+}
+
 export function articlesBySection(section: SectionId) {
   return ARTICLES.filter((a) => a.section === section).sort((a, b) =>
     a.publishedAt < b.publishedAt ? 1 : -1,

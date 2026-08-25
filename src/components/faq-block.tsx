@@ -13,7 +13,7 @@ export function FaqBlock({
         {items.map((f) => (
           <div key={f.q}>
             <dt className="headline text-xl sm:text-2xl">{f.q}</dt>
-            <dd className="mt-2 font-body text-base leading-relaxed text-ink-soft">{f.a}</dd>
+            <dd className="mt-2 reading text-ink-soft">{f.a}</dd>
           </div>
         ))}
       </dl>
@@ -28,7 +28,7 @@ export function Tldr({ items }: { items: string[] }) {
       <p className="kicker text-xs text-rust">TL;DR</p>
       <ul className="mt-3 space-y-2">
         {items.map((t) => (
-          <li key={t} className="font-body text-sm leading-snug text-ink">
+          <li key={t} className="font-body text-base leading-snug text-ink sm:text-lg">
             {t}
           </li>
         ))}

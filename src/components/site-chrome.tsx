@@ -7,6 +7,7 @@ import { UserButton } from "@/lib/auth/gates";
 import { Wordmark, VanderCycle } from "@/components/brand";
 import { AdSlot } from "@/components/ad-slot";
 import { MarketsBar } from "@/components/markets-bar";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
 const MORE_LINKS = [
@@ -66,7 +67,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
     <header>
       <div className="sticky top-0 z-40 pt-[env(safe-area-inset-top)]">
         <div
-          className="relative bg-ink text-paper"
+          className="relative bg-void text-bleed"
           onMouseLeave={() => setMega(null)}
         >
           <div className="mx-auto flex max-w-7xl items-center gap-1 px-3 sm:gap-2 sm:px-6">
@@ -87,12 +88,13 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
               <DesktopNav pathname={pathname} mega={mega} setMega={setMega} />
             </nav>
             <div className="ml-auto flex shrink-0 items-center gap-1">
+              <ThemeToggle />
               <Link to="/search" aria-label="Buscar" className="press grid size-11 place-items-center">
                 <Search className="size-5" strokeWidth={1.5} />
               </Link>
               <a
                 href="#boletin"
-                className="press kicker hidden h-11 items-center bg-rust px-4 text-xs text-paper hover:bg-paper hover:text-ink sm:inline-flex"
+                className="press kicker hidden h-11 items-center bg-rust px-4 text-xs text-bleed hover:bg-bleed hover:text-void sm:inline-flex"
               >
                 Suscribirse
               </a>
@@ -259,7 +261,7 @@ function MegaPanel({
   onClose: () => void;
 }) {
   return (
-    <div className="absolute inset-x-0 top-full z-50 border-t border-paper/15 bg-paper text-ink shadow-[0_18px_40px_rgba(10,10,10,0.18)]">
+    <div className="absolute inset-x-0 top-full z-50 border-t border-bleed/15 bg-paper text-ink shadow-[0_18px_40px_rgba(10,10,10,0.18)]">
       <div className="mx-auto max-w-7xl px-6 py-8">
         {id === "secciones" ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
@@ -342,19 +344,22 @@ function MegaPanel({
 
 function MobileNav({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink text-paper lg:hidden pt-[env(safe-area-inset-top)]">
-      <div className="sticky top-0 z-10 flex items-center justify-between bg-ink px-4 py-3">
+    <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-void text-bleed lg:hidden pt-[env(safe-area-inset-top)]">
+      <div className="sticky top-0 z-10 flex items-center justify-between bg-void px-4 py-3">
         <Link to="/" onClick={onClose} className="logo-mark">
           <Wordmark className="h-7 sm:h-8" />
         </Link>
-        <button type="button" className="press grid size-11 place-items-center" aria-label="Cerrar menú" onClick={onClose}>
-          <X className="size-6" strokeWidth={1.5} />
-        </button>
+        <div className="flex items-center">
+          <ThemeToggle />
+          <button type="button" className="press grid size-11 place-items-center" aria-label="Cerrar menú" onClick={onClose}>
+            <X className="size-6" strokeWidth={1.5} />
+          </button>
+        </div>
       </div>
       <nav className="flex flex-1 flex-col px-4 pb-10 pt-2">
         <ul className="flex flex-col">
           {SECTIONS.map((s) => (
-            <li key={s.id} className="menu-item border-b border-paper/15">
+            <li key={s.id} className="menu-item border-b border-bleed/15">
               <Link
                 to="/section/$section"
                 params={{ section: s.id }}
@@ -365,48 +370,48 @@ function MobileNav({ onClose }: { onClose: () => void }) {
               </Link>
             </li>
           ))}
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/list" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Vander <span className="italic text-signal">20</span>
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/innovatives" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               <span className="italic text-innov">50</span>
               <span className="ml-2">Innovatives</span>
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/visionarios" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               100V Visionarios
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/signals" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Signals
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/contra" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Contra
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/channels" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Channels
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/indice" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               El Índice
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/about" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Redacción
             </Link>
           </li>
-          <li className="menu-item border-b border-paper/15">
+          <li className="menu-item border-b border-bleed/15">
             <Link to="/obituarios" onClick={onClose} className="flex min-h-12 items-center headline text-3xl">
               Obituarios
             </Link>
@@ -414,7 +419,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
         </ul>
         <ul className="mt-6 flex flex-col">
           {MORE_LINKS.filter((item) => item.to !== "/obituarios").map((item) => (
-            <li key={item.to} className="menu-item border-b border-paper/15">
+            <li key={item.to} className="menu-item border-b border-bleed/15">
               <Link
                 to={item.to}
                 onClick={onClose}
@@ -445,7 +450,7 @@ function AuthSlot() {
   if (isPending || !user) return null;
   return (
     <div className="hidden items-center gap-3 lg:flex">
-      <div className="font-kicker text-xs text-paper [&_button]:text-paper [&_span]:text-paper">
+      <div className="font-kicker text-xs text-bleed [&_button]:text-bleed [&_span]:text-bleed">
         <UserButton />
       </div>
     </div>
@@ -454,7 +459,7 @@ function AuthSlot() {
 
 function Footer() {
   return (
-    <footer className="border-t border-ink bg-ink px-4 py-14 text-paper sm:px-6">
+    <footer className="border-t border-void bg-void px-4 py-14 text-bleed sm:px-6">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Link to="/" aria-label={HOUSE.name} className="inline-block">
@@ -463,7 +468,7 @@ function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8">
           <div>
-            <p className="kicker text-xs text-paper/45">Secciones</p>
+            <p className="kicker text-xs text-bleed/45">Secciones</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               {SECTIONS.map((s) => (
                 <li key={s.id}>
@@ -500,7 +505,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <p className="kicker text-xs text-paper/45">La casa</p>
+            <p className="kicker text-xs text-bleed/45">La casa</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               <li>
                 <Link to="/channels" className="link-title">
@@ -540,7 +545,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <p className="kicker text-xs text-paper/45">Corresponsalías</p>
+            <p className="kicker text-xs text-bleed/45">Corresponsalías</p>
             <ul className="mt-3 space-y-2 font-sans text-base font-medium">
               {DESKS.map((d) => (
                 <li key={d.id}>
@@ -553,7 +558,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-paper/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-bleed/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="kicker text-xs text-paper/40">
           © {ISSUE.date.split(" ").at(-1)} {HOUSE.name}. {HOUSE.credit}.
         </p>

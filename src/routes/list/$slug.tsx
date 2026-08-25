@@ -9,6 +9,7 @@ import { Vander20Mark } from "@/components/brand";
 import { JsonLd } from "@/components/json-ld";
 import { Crumbs } from "@/components/faq-block";
 import { seoHead, breadcrumbSchema, articleSchema } from "@/lib/seo";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/list/$slug")({
   component: CompanyPage,
@@ -113,15 +114,22 @@ function CompanyPage() {
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-12">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-12 sm:px-8 lg:grid-cols-12">
         <article className="lg:col-span-8">
+          <ShareBar
+            url={`/list/${company.slug}`}
+            title={`${company.name} es #${company.rank} del Vander 20`}
+            dek={company.blurb}
+            layout="row"
+            className="mb-8"
+          />
           <img
             src={company.image}
             alt={company.imageAlt}
             className={company.imageKind === "logo" ? "aspect-video w-full bg-ivory object-contain p-12" : "aspect-video w-full object-cover"}
           />
           {company.profile.split("\n\n").map((para) => (
-            <p key={para.slice(0, 40)} className="mt-6 font-body text-lg leading-relaxed text-ink">
+            <p key={para.slice(0, 40)} className="mt-7 reading text-ink">
               {para}
             </p>
           ))}

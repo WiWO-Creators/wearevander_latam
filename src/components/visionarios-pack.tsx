@@ -18,6 +18,7 @@ import { HOUSE } from "@/lib/content";
 import { hostFromUrl } from "@/lib/under40";
 import { seoHead } from "@/lib/seo";
 import { VOLUME_PHOTO_SLUGS } from "@/lib/visionarios-photos";
+import { ShareBar } from "@/components/share-bar";
 import { cn } from "@/lib/utils";
 
 function photoSrc(id: VisionarioVolume["id"], slug: string) {
@@ -339,15 +340,22 @@ export function VisionariosProfile({ volume, slug }: { volume: VisionarioVolume;
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <p className="font-body text-lg leading-relaxed text-ink">{person.bio}</p>
+      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12">
+        <div className="lg:col-span-8">
+          <ShareBar
+            url={`${volume.path}/${person.slug}`}
+            title={person.name}
+            dek={person.role}
+            layout="row"
+            className="mb-8"
+          />
+          <p className="reading text-ink">{person.bio}</p>
           {person.hitos.length > 0 && (
             <>
               <h2 className="headline mt-10 text-3xl">Hitos</h2>
               <ul className="mt-4 space-y-3">
                 {person.hitos.map((h) => (
-                  <li key={h} className="border-l-2 border-rust pl-4 font-body text-base leading-snug text-ink-soft">
+                  <li key={h} className="border-l-2 border-rust pl-4 font-body text-lg leading-snug text-ink-soft">
                     {h}
                   </li>
                 ))}
@@ -355,7 +363,7 @@ export function VisionariosProfile({ volume, slug }: { volume: VisionarioVolume;
             </>
           )}
         </div>
-        <aside className="lg:col-span-5">
+        <aside className="lg:col-span-4">
           <p className="kicker border-b border-ink pb-2 text-xs text-rust">En la prensa</p>
           <ul>
             {person.news.map((n) => (

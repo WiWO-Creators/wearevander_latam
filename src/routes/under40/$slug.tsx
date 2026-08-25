@@ -6,6 +6,7 @@ import { Under40Shot, Under40Verify } from "@/components/under40-shot";
 import { ChileOnly } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
 import { HOUSE } from "@/lib/content";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/under40/$slug")({
   component: Under40ProfilePage,
@@ -97,11 +98,18 @@ function Under40ProfilePage() {
         </div>
       </section>
 
-      <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <article className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
+        <ShareBar
+          url={`/under40/${person.slug}`}
+          title={person.name}
+          dek={person.role}
+          layout="row"
+          className="mb-8"
+        />
         {person.age ? (
           <p className="font-kicker text-xs uppercase tracking-wider text-muted">{person.age}</p>
         ) : null}
-        <p className="mt-4 font-body text-lg leading-relaxed text-ink">{person.bio}</p>
+        <p className="mt-4 reading text-ink">{person.bio}</p>
 
         {person.hitos.length > 0 && (
           <section className="mt-14">
@@ -110,7 +118,7 @@ function Under40ProfilePage() {
               {person.hitos.map((h, i) => (
                 <li key={h} className="grid grid-cols-[3rem_1fr] gap-4 border-t border-rule py-4">
                   <span className="headline text-xl text-rust tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                  <p className="font-body text-base leading-relaxed text-ink-soft">{h}</p>
+                  <p className="font-body text-lg leading-relaxed text-ink-soft">{h}</p>
                 </li>
               ))}
             </ol>

@@ -8,6 +8,7 @@ import { HILLTOP_ZONES, HILLTOP_SERVE } from "@/lib/ads";
 import appCss from "../styles.css?url";
 
 import { SITE } from "@/lib/seo";
+import { THEME_BOOT } from "@/lib/theme";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -35,8 +36,9 @@ export const Route = createRootRoute({
 
 function RootDocument() {
   return (
-    <html lang="es" className="antialiased" suppressHydrationWarning>
+    <html lang="es" className="antialiased" data-theme="light" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
         <HeadContent />
         <meta name="54aa2f4cf4f47f587705966a8169135a213fe0c6" content="54aa2f4cf4f47f587705966a8169135a213fe0c6" />
       </head>

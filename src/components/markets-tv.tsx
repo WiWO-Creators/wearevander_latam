@@ -18,8 +18,8 @@ const SRC = `https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale
 
 export function TradingViewTape({ label }: { label?: string }) {
   return (
-    <div className="overflow-hidden border-b border-paper/10 bg-ink text-paper">
-      <p className="px-3 pt-1 font-sans text-[10px] tracking-wide text-paper/45 sm:px-6">
+    <div className="overflow-hidden border-b border-bleed/10 bg-void text-bleed">
+      <p className="px-3 pt-1 font-sans text-[10px] tracking-wide text-bleed/45 sm:px-6">
         {label ? `${label} · ` : ""}Datos de mercado: TradingView
       </p>
       <iframe

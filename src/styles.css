@@ -24,6 +24,9 @@
   --color-field: #d9d4c6;
   --color-canary: #f1d247;
 
+  --color-void: #0a0a0a;
+  --color-bleed: #f6f1e6;
+
   --radius-none: 0px;
   --radius-sm: 0px;
   --radius-md: 0px;
@@ -82,6 +85,41 @@
   }
 }
 
+html[data-theme="paper"] {
+  --color-paper: #f3efe4;
+  --color-paper-deep: #ebe6d6;
+  --color-ivory: #f7f1e2;
+  --color-dust: #e4ddcc;
+  --color-field: #ddd4c0;
+  --color-rule: #d0c9b8;
+  --color-ink: #16130f;
+  --color-ink-soft: #2c261e;
+  --color-muted: #6e675c;
+}
+
+html[data-theme="ink"] {
+  color-scheme: dark;
+  --color-paper: #141311;
+  --color-paper-deep: #1c1a16;
+  --color-ivory: #1a1814;
+  --color-dust: #1e1c18;
+  --color-field: #1a1814;
+  --color-rule: #2e2b26;
+  --color-silver: #6a655c;
+  --color-ink: #efe9dc;
+  --color-ink-soft: #d4cdc0;
+  --color-muted: #9a9386;
+  --color-canary: #c9ae2e;
+}
+
+html[data-theme="ink"] .bg-rust {
+  color: var(--color-bleed);
+}
+
+html[data-theme="paper"] body {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.32  0 0 0 0 0.28  0 0 0 0 0.18  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
 @layer utilities {
   .kicker {
     font-family: var(--font-kicker);
@@ -116,10 +154,28 @@
 
   @media (min-width: 640px) {
     .drop-cap::first-letter {
-      font-size: 4.9rem;
-      padding-right: 0.14em;
+      font-size: 5.4rem;
+      padding-right: 0.16em;
       padding-top: 0.08em;
     }
+  }
+
+  .reading {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.72;
+    letter-spacing: -0.011em;
+  }
+
+  @media (min-width: 640px) {
+    .reading {
+      font-size: 1.3125rem;
+      line-height: 1.74;
+    }
+  }
+
+  .measure {
+    max-width: 46rem;
   }
 
   .chip-row {
