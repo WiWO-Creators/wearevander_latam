@@ -135,12 +135,12 @@ function InnovativeCompany() {
           ) : null}
         </div>
         {company.sources.length > 0 && (
-          <div className="mt-10">
-            <p className="kicker text-xs text-muted">Fuentes</p>
-            <ul className="mt-3 space-y-2">
+          <div className="mt-10 border-t border-rule pt-6">
+            <p className="kicker text-[11px] tracking-[0.18em] text-muted">Fuentes</p>
+            <ul className="mt-4 space-y-2">
               {company.sources.map((s) => (
                 <li key={s.url}>
-                  <a href={s.url} target="_blank" rel="noreferrer" className="font-body text-sm text-ink-soft hover:text-ink hover:underline">
+                  <a href={s.url} target="_blank" rel="noreferrer" className="font-sans text-[12.5px] leading-snug text-muted hover:text-ink hover:underline sm:text-[13px]">
                     {s.title}
                   </a>
                 </li>

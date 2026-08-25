@@ -263,6 +263,16 @@ function renderBody(blocks: BodyBlock[], dropCap: boolean) {
   let grafs = 0;
   while (i < blocks.length) {
     const block = blocks[i];
+    if (block.type === "h2" && isSourcesHeading(block.text)) {
+      const items: BodyBlock[] = [];
+      i += 1;
+      while (i < blocks.length && blocks[i].type !== "h2") {
+        items.push(blocks[i]);
+        i += 1;
+      }
+      out.push(<SourcesBlock key="sources" title={block.text} items={items} />);
+      continue;
+    }
     if (block.type === "stat") {
       const group: Extract<BodyBlock, { type: "stat" }>[] = [];
       while (i < blocks.length && blocks[i].type === "stat") {
@@ -293,6 +303,49 @@ function renderBody(blocks: BodyBlock[], dropCap: boolean) {
     i++;
   }
   return out;
+}
+
+function isSourcesHeading(text: string) {
+  return /^(fuentes|referencias|notas)\b/i.test(text.trim());
+}
+
+function SourcesBlock({ title, items }: { title: string; items: BodyBlock[] }) {
+  const lines = items.filter((b): b is Extract<BodyBlock, { type: "p" | "a" }> => b.type === "p" || b.type === "a");
+  if (lines.length === 0) return null;
+  return (
+    <aside className="mt-14 border-t border-rule pt-6">
+      <h2 className="kicker text-[11px] tracking-[0.18em] text-muted">{title}</h2>
+      <ol className="mt-4 space-y-2.5">
+        {lines.map((line, i) => (
+          <li key={i} className="font-sans text-[12.5px] leading-snug text-muted sm:text-[13px]">
+            {linkifySource(line.text)}
+          </li>
+        ))}
+      </ol>
+    </aside>
+  );
+}
+
+function linkifySource(text: string) {
+  const parts = text.split(/(https?:\/\/[^\s]+)/g);
+  return parts.map((part, i) => {
+    if (!part.startsWith("http")) return <span key={i}>{part}</span>;
+    const trimmed = part.replace(/[),.;:]+$/g, "");
+    const trail = part.slice(trimmed.length);
+    return (
+      <span key={i}>
+        <a
+          href={trimmed}
+          target="_blank"
+          rel="noreferrer"
+          className="break-all underline decoration-rule underline-offset-2 hover:text-ink"
+        >
+          {trimmed}
+        </a>
+        {trail}
+      </span>
+    );
+  });
 }
 
 function Block({ block, drop }: { block: BodyBlock; drop: boolean }) {
