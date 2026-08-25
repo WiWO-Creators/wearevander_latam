@@ -12,7 +12,7 @@ import {
   wasUpdated,
   type BodyBlock,
 } from "@/lib/content";
-import { StackedCard, TagPills, ReadMeta } from "@/components/article-card";
+import { StackedCard, StoryMeta } from "@/components/article-card";
 import { SaveButton } from "@/components/save-button";
 import { Newsletter } from "@/components/newsletter";
 import { AdSlot } from "@/components/ad-slot";
@@ -142,22 +142,19 @@ function StoryPage() {
             {article.dek}
           </p>
           {article.tldr ? <Tldr items={article.tldr} /> : null}
-          <div className="mt-6">
-            <TagPills article={article} />
-          </div>
+          <StoryMeta article={article} showAuthor={false} className="mt-6" />
           <div className="mt-7 flex flex-wrap items-end justify-between gap-4 border-y border-ink py-4">
             <div>
               <p className="headline text-2xl">{signer ?? "Team Vander"}</p>
-              <p className="font-kicker text-xs tracking-wider text-muted uppercase">
+              <p className="mt-1 font-sans text-[12px] text-muted">
                 {article.franchise === "contra" ? "Opinión firmada" : HOUSE.credit}
                 {city ? ` · ${city}` : ""}
+                <span className="mx-2 opacity-30">·</span>
+                {article.readMinutes} min
+                <span className="mx-2 opacity-30">·</span>
+                {formatIssueDate(article.publishedAt)}
+                {updated ? ` · actualizada ${formatIssueDate(articleUpdated(article))}` : ""}
               </p>
-              <ReadMeta article={article} className="mt-1" />
-              {updated && (
-                <p className="mt-1 font-kicker text-xs tracking-wider text-muted uppercase">
-                  Publicada {formatIssueDate(article.publishedAt)} · Actualizada {formatIssueDate(articleUpdated(article))}
-                </p>
-              )}
             </div>
             <SaveButton slug={article.slug} saved={saved} onChange={setSaved} />
           </div>

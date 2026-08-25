@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import {
   articleCity,
-  articlePace,
   articleTags,
   articleUpdated,
   formatShortDate,
@@ -32,10 +31,11 @@ function Photo({
 export function TagPills({ article, dark = false }: { article: Article; dark?: boolean }) {
   const tags = articleTags(article);
   return (
-    <ul className="flex flex-wrap gap-x-3 gap-y-1">
+    <ul className="flex flex-wrap items-center gap-1.5">
       {tags.map((id) => {
         const tag = getTag(id);
         if (!tag) return null;
+        const pace = tag.kind === "pace";
         return (
           <li key={id}>
             <Link
@@ -48,8 +48,14 @@ export function TagPills({ article, dark = false }: { article: Article; dark?: b
               }
               params={{ tag: id }}
               className={cn(
-                "kicker text-xs hover:text-rust",
-                tag.kind === "pace" ? "text-rust" : dark ? "text-silver" : "text-muted",
+                "inline-flex h-6 items-center border px-2 font-kicker text-[10px] tracking-[0.08em] uppercase",
+                pace
+                  ? dark
+                    ? "border-rust/50 text-rust"
+                    : "border-rust/40 text-rust"
+                  : dark
+                    ? "border-paper/20 text-silver hover:text-paper"
+                    : "border-rule text-muted hover:border-ink hover:text-ink",
               )}
             >
               {tag.label}
@@ -65,24 +71,52 @@ export function ReadMeta({
   article,
   className,
   dark = false,
+  showAuthor = true,
 }: {
   article: Article;
   className?: string;
   dark?: boolean;
+  showAuthor?: boolean;
 }) {
-  const pace = articlePace(article);
   const updated = wasUpdated(article);
   const who = article.signedName ?? "Team Vander";
   const city = articleCity(article);
+  const bits = [
+    showAuthor ? who : null,
+    showAuthor ? city : null,
+    `${article.readMinutes} min`,
+    formatShortDate(article.publishedAt),
+    updated ? `act. ${formatShortDate(articleUpdated(article))}` : null,
+  ].filter(Boolean) as string[];
   return (
-    <p className={cn("font-kicker text-xs tracking-wider uppercase", dark ? "text-silver" : "text-muted", className)}>
-      {who}
-      {city ? ` · ${city}` : ""}
-      {` · ${article.readMinutes} min de lectura`}
-      {` · ${pace === "rapida" ? "Lectura rápida" : "De fondo"}`}
-      {` · ${formatShortDate(article.publishedAt)}`}
-      {updated ? ` · Actualizada ${formatShortDate(articleUpdated(article))}` : ""}
+    <p className={cn("font-sans text-[12px] leading-none", dark ? "text-silver" : "text-muted", className)}>
+      {bits.map((bit, i) => (
+        <span key={`${bit}-${i}`}>
+          {i > 0 ? <span className="mx-2 opacity-30">·</span> : null}
+          <span className={i === 0 && showAuthor ? (dark ? "text-paper/80" : "text-ink") : undefined}>{bit}</span>
+        </span>
+      ))}
     </p>
+  );
+}
+
+export function StoryMeta({
+  article,
+  dark = false,
+  showAuthor = true,
+  className,
+}: {
+  article: Article;
+  dark?: boolean;
+  showAuthor?: boolean;
+  className?: string;
+}) {
+  return (
+    <div className={cn("flex flex-wrap items-center gap-x-3 gap-y-2", className)}>
+      <TagPills article={article} dark={dark} />
+      <span className={cn("hidden h-3 w-px sm:block", dark ? "bg-paper/20" : "bg-rule")} aria-hidden />
+      <ReadMeta article={article} dark={dark} showAuthor={showAuthor} />
+    </div>
   );
 }
 
@@ -116,10 +150,7 @@ export function CoverHero({ article }: { article: Article }) {
             <p className="mt-5 max-w-md font-body text-base leading-snug text-paper/80 sm:text-lg">
               {article.dek}
             </p>
-            <div className="mt-6">
-              <TagPills article={article} dark />
-            </div>
-            <ReadMeta article={article} dark className="mt-4" />
+            <StoryMeta article={article} dark className="mt-6" />
             <Link
               to="/story/$slug"
               params={{ slug: article.slug }}
@@ -147,17 +178,13 @@ export function HeroStory({ article }: { article: Article }) {
         </Link>
       </h2>
       <p className="mt-4 max-w-2xl font-body text-base leading-snug text-ink-soft sm:text-lg">{article.dek}</p>
-      <div className="mt-3">
-        <TagPills article={article} />
-      </div>
-      <ReadMeta article={article} className="mt-2" />
+      <StoryMeta article={article} className="mt-4" />
     </article>
   );
 }
 
 export function RailItem({ article }: { article: Article }) {
   const city = articleCity(article);
-  const pace = articlePace(article);
   return (
     <article className="grid grid-cols-12 items-start gap-4 border-b border-rule py-5 last:border-b-0">
       <div className="col-span-9">
@@ -167,8 +194,10 @@ export function RailItem({ article }: { article: Article }) {
             {article.title}
           </Link>
         </h3>
-        <p className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">
-          {city} · {article.readMinutes} min · {pace === "rapida" ? "Rápida" : "De fondo"}
+        <p className="mt-2 font-sans text-[12px] text-muted">
+          {city}
+          <span className="mx-2 opacity-30">·</span>
+          {article.readMinutes} min
         </p>
       </div>
       <Link to="/story/$slug" params={{ slug: article.slug }} className="group col-span-3">
@@ -216,16 +245,12 @@ export function StackedCard({
           {article.dek}
         </p>
       </Link>
-      <div className="mt-2">
-        <TagPills article={article} />
-      </div>
-      <ReadMeta article={article} className="mt-2" />
+      <StoryMeta article={article} className="mt-4" />
     </article>
   );
 }
 
 export function HorizontalCard({ article }: { article: Article }) {
-  const pace = articlePace(article);
   return (
     <article className="grid grid-cols-12 items-start gap-4 border-t border-rule py-4 first:border-t-0 first:pt-0">
       <Link to="/story/$slug" params={{ slug: article.slug }} className="group col-span-4">
@@ -241,9 +266,12 @@ export function HorizontalCard({ article }: { article: Article }) {
         <p className="mt-2 hidden font-body text-sm leading-snug text-ink-soft sm:line-clamp-2 sm:block sm:text-base">
           {article.dek}
         </p>
-        <p className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">
+        <p className="mt-3 font-sans text-[12px] text-muted">
           {article.signedName ?? "Team Vander"}
-          {` · ${article.readMinutes} min · ${pace === "rapida" ? "Lectura rápida" : "De fondo"} · ${formatShortDate(article.publishedAt)}`}
+          <span className="mx-2 opacity-30">·</span>
+          {article.readMinutes} min
+          <span className="mx-2 opacity-30">·</span>
+          {formatShortDate(article.publishedAt)}
         </p>
       </div>
     </article>
@@ -260,7 +288,7 @@ export function TextCard({ article }: { article: Article }) {
           {article.title}
         </Link>
       </h3>
-      <p className="mt-1 font-kicker text-xs tracking-wider text-muted uppercase">
+      <p className="mt-1 font-sans text-[12px] text-muted">
         {city} · {article.readMinutes} min
       </p>
     </article>
@@ -296,9 +324,7 @@ export function MiniLead({ article }: { article: Article }) {
         <Photo src={article.image} alt={article.imageAlt} className="aspect-[3/2] w-full" />
         <p className="kicker mt-2.5 text-xs text-rust">{city}</p>
         <h3 className="headline link-title mt-1.5 text-xl leading-[1.12] sm:text-2xl">{article.title}</h3>
-        <p className="mt-1 font-kicker text-xs tracking-wider text-muted uppercase">
-          {article.readMinutes} min de lectura
-        </p>
+        <p className="mt-1.5 font-sans text-[12px] text-muted">{article.readMinutes} min</p>
       </Link>
     </article>
   );
@@ -331,9 +357,7 @@ export function SignalRow({ article }: { article: Article }) {
         </Link>
       </h3>
       <p className="mt-1 font-body text-sm leading-snug text-ink-soft">{article.dek}</p>
-      <div className="mt-2">
-        <TagPills article={article} />
-      </div>
+      <StoryMeta article={article} className="mt-3" showAuthor={false} />
     </article>
   );
 }
