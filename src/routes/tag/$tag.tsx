@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesByTag, getTag, TAGS } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { HorizontalCard } from "@/components/article-card";
 
 export const Route = createFileRoute("/tag/$tag")({
   component: TagPage,
+  // La etiqueta junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: ({ params }) => {
     const tag = getTag(params.tag);
     return {
@@ -15,7 +18,7 @@ export const Route = createFileRoute("/tag/$tag")({
 function TagPage() {
   const { tag: id } = Route.useParams();
   const tag = getTag(id);
-  const stories = articlesByTag(id);
+  const stories = articlesByTag(Route.useLoaderData(), id);
 
   if (!tag) {
     return (
@@ -53,7 +56,7 @@ function TagPage() {
         </ul>
         <div className="mt-6">
           {stories.map((a) => (
-            <HorizontalCard key={a.slug} article={a} />
+            <HorizontalCard key={a.id} article={a} />
           ))}
         </div>
       </div>

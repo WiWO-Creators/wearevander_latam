@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesByFranchiseAuthor, franchiseAuthors, getAuthor } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { HorizontalCard } from "@/components/article-card";
 import { ContraMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
@@ -7,6 +8,8 @@ import { CatChip, EmptyCat } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/contra/autor/$autor")({
   component: ContraAuthorPage,
+  // La firma junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: ({ params }) => {
     const author = getAuthor(params.autor);
     return {
@@ -17,9 +20,10 @@ export const Route = createFileRoute("/contra/autor/$autor")({
 
 function ContraAuthorPage() {
   const { autor } = Route.useParams();
+  const articles = Route.useLoaderData();
   const author = getAuthor(autor);
-  const essays = articlesByFranchiseAuthor("contra", autor);
-  const all = franchiseAuthors("contra");
+  const essays = articlesByFranchiseAuthor(articles, "contra", autor);
+  const all = franchiseAuthors(articles, "contra");
 
   if (!author || essays.length === 0) {
     return (
@@ -74,7 +78,7 @@ function ContraAuthorPage() {
       </nav>
       <section className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         {essays.map((a) => (
-          <HorizontalCard key={a.slug} article={a} />
+          <HorizontalCard key={a.id} article={a} />
         ))}
       </section>
       <Newsletter />

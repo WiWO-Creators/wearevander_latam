@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesByFranchiseTag, franchiseTags, getTag } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { HorizontalCard } from "@/components/article-card";
 import { ContraMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
@@ -7,6 +8,8 @@ import { CatChip, EmptyCat } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/contra/tag/$tag")({
   component: ContraTagPage,
+  // El tema junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: ({ params }) => {
     const tag = getTag(params.tag);
     return {
@@ -17,10 +20,11 @@ export const Route = createFileRoute("/contra/tag/$tag")({
 
 function ContraTagPage() {
   const { tag: id } = Route.useParams();
+  const articles = Route.useLoaderData();
   const tag = getTag(id);
-  const essays = articlesByFranchiseTag("contra", id);
+  const essays = articlesByFranchiseTag(articles, "contra", id);
   const kind = tag?.kind ?? "industry";
-  const siblings = franchiseTags("contra", kind);
+  const siblings = franchiseTags(articles, "contra", kind);
 
   if (!tag) {
     return (
@@ -69,7 +73,7 @@ function ContraTagPage() {
       </nav>
       <section className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         {essays.map((a) => (
-          <HorizontalCard key={a.slug} article={a} />
+          <HorizontalCard key={a.id} article={a} />
         ))}
       </section>
       <Newsletter />

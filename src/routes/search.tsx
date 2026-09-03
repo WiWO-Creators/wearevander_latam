@@ -1,11 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { searchArticles } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { HorizontalCard } from "@/components/article-card";
 import { HOUSE } from "@/lib/content";
 
 export const Route = createFileRoute("/search")({
   component: SearchPage,
+  // El buscador mira el número entero, incluido lo que publicó el orquestador.
+  loader: () => getArticles(),
   validateSearch: (s: Record<string, unknown>): { q?: string } => ({
     q: typeof s.q === "string" && s.q.length > 0 ? s.q : undefined,
   }),
@@ -18,7 +21,8 @@ function SearchPage() {
   const { q: qParam } = Route.useSearch();
   const q = qParam ?? "";
   const navigate = Route.useNavigate();
-  const results = useMemo(() => searchArticles(q), [q]);
+  const articles = Route.useLoaderData();
+  const results = useMemo(() => searchArticles(articles, q), [articles, q]);
 
   return (
     <main className="px-4 py-8 sm:px-6 sm:py-10">
@@ -40,7 +44,7 @@ function SearchPage() {
         </p>
         <div className="mt-6">
           {results.map((a) => (
-            <HorizontalCard key={a.slug} article={a} />
+            <HorizontalCard key={a.id} article={a} />
           ))}
         </div>
         {q && results.length === 0 && (

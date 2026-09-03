@@ -1,5 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { articlesByFranchise, franchiseTags, HOUSE } from "@/lib/content";
+import {
+  articleCity,
+  articleImage,
+  articleImageAlt,
+  articlesByFranchise,
+  franchiseTags,
+  HOUSE,
+} from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { SignalRow, TagPills } from "@/components/article-card";
 import { SignalsMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
@@ -8,16 +16,19 @@ import { CatChip } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/signals/")({
   component: SignalsPage,
+  // La franquicia junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: () => ({
     meta: [{ title: "Signals by Vander — We Are Vander" }],
   }),
 });
 
 function SignalsPage() {
-  const notes = articlesByFranchise("signals");
-  const industry = franchiseTags("signals", "industry");
-  const tech = franchiseTags("signals", "tech");
-  const pace = franchiseTags("signals", "pace");
+  const articles = Route.useLoaderData();
+  const notes = articlesByFranchise(articles, "signals");
+  const industry = franchiseTags(articles, "signals", "industry");
+  const tech = franchiseTags(articles, "signals", "tech");
+  const pace = franchiseTags(articles, "signals", "pace");
   const lead = notes[0];
 
   return (
@@ -84,21 +95,21 @@ function SignalsPage() {
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
           <p className="kicker text-xs text-rust">La señal de hoy</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-12">
-            <Link to="/story/$slug" params={{ slug: lead.slug }} className="photo block lg:col-span-7">
-              <img src={lead.image} alt={lead.imageAlt} className="aspect-[16/10] w-full object-cover" />
+            <Link to="/story/$slug" params={{ slug: lead.id }} className="photo block lg:col-span-7">
+              <img src={articleImage(lead)} alt={articleImageAlt(lead)} className="aspect-[16/10] w-full object-cover" />
             </Link>
             <div className="lg:col-span-5">
               <h2 className="headline text-4xl sm:text-5xl">
-                <Link to="/story/$slug" params={{ slug: lead.slug }} className="link-title">
+                <Link to="/story/$slug" params={{ slug: lead.id }} className="link-title">
                   {lead.title}
                 </Link>
               </h2>
-              <p className="mt-3 font-body text-base text-ink-soft">{lead.dek}</p>
+              <p className="mt-3 font-body text-base text-ink-soft">{lead.summary}</p>
               <div className="mt-4">
                 <TagPills article={lead} />
               </div>
               <p className="mt-3 kicker text-xs text-muted">
-                {lead.city} · {lead.readMinutes} min · Lectura rápida
+                {articleCity(lead)} · {lead.readingMinutes} min · Lectura rápida
               </p>
             </div>
           </div>
@@ -109,7 +120,7 @@ function SignalsPage() {
         <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
           <p className="kicker mb-4 text-xs text-muted">Todas las señales</p>
           {notes.map((a) => (
-            <SignalRow key={a.slug} article={a} />
+            <SignalRow key={a.id} article={a} />
           ))}
         </div>
       </SignalsField>

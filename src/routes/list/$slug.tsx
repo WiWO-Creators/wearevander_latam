@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesMentioning, HOUSE } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { adjacentCompanies, getCompany, VANDER_LIST } from "@/lib/vander-list";
 import { toCatSlug } from "@/lib/taxonomy";
 import { HorizontalCard } from "@/components/article-card";
@@ -13,6 +14,9 @@ import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/list/$slug")({
   component: CompanyPage,
+  // Las notas que mencionan a la compañía pueden ser del orquestador: la ficha
+  // del ranking es del sitio, pero lo que se escribió sobre ella no.
+  loader: () => getArticles(),
   head: ({ params }) => {
     const company = getCompany(params.slug);
     if (!company) {
@@ -37,6 +41,7 @@ export const Route = createFileRoute("/list/$slug")({
 
 function CompanyPage() {
   const { slug } = Route.useParams();
+  const articles = Route.useLoaderData();
   const company = getCompany(slug);
   if (!company) {
     return (
@@ -51,7 +56,7 @@ function CompanyPage() {
   }
 
   const { prev, next } = adjacentCompanies(company.slug);
-  const related = articlesMentioning(company.name, 4);
+  const related = articlesMentioning(articles, company.name, 4);
 
   return (
     <main>
@@ -189,7 +194,7 @@ function CompanyPage() {
               <h2 className="headline border-b border-ink pb-2 text-3xl">En el número</h2>
               <div className="mt-2">
                 {related.map((a) => (
-                  <HorizontalCard key={a.slug} article={a} />
+                  <HorizontalCard key={a.id} article={a} />
                 ))}
               </div>
             </section>

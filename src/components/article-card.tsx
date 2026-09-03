@@ -1,6 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import {
   articleCity,
+  articleFranchise,
+  articleImage,
+  articleImageAlt,
+  articleKicker,
+  articleSignedName,
   articleTags,
   articleUpdated,
   formatShortDate,
@@ -40,9 +45,9 @@ export function TagPills({ article, dark = false }: { article: Article; dark?: b
           <li key={id}>
             <Link
               to={
-                article.franchise === "signals"
+                articleFranchise(article) === "signals"
                   ? "/signals/tag/$tag"
-                  : article.franchise === "contra"
+                  : articleFranchise(article) === "contra"
                     ? "/contra/tag/$tag"
                     : "/tag/$tag"
               }
@@ -79,12 +84,12 @@ export function ReadMeta({
   showAuthor?: boolean;
 }) {
   const updated = wasUpdated(article);
-  const who = article.signedName ?? "Team Vander";
+  const who = articleSignedName(article) || "Team Vander";
   const city = articleCity(article);
   const bits = [
     showAuthor ? who : null,
     showAuthor ? city : null,
-    `${article.readMinutes} min`,
+    `${article.readingMinutes} min`,
     formatShortDate(article.publishedAt),
     updated ? `act. ${formatShortDate(articleUpdated(article))}` : null,
   ].filter(Boolean) as string[];
@@ -127,12 +132,12 @@ export function CoverHero({ article }: { article: Article }) {
       <div className="lg:grid lg:grid-cols-12 lg:items-stretch">
         <Link
           to="/story/$slug"
-          params={{ slug: article.slug }}
+          params={{ slug: article.id }}
           className="group relative block lg:col-span-7"
         >
           <Photo
-            src={article.image}
-            alt={article.imageAlt}
+            src={articleImage(article)}
+            alt={articleImageAlt(article)}
             className="aspect-[16/10] w-full sm:aspect-video lg:aspect-auto lg:h-full lg:min-h-[32rem]"
           />
         </Link>
@@ -143,17 +148,17 @@ export function CoverHero({ article }: { article: Article }) {
               Portada · {city || "Latam"}
             </p>
             <h1 className="headline mt-3 max-w-xl text-[1.85rem] leading-[1.06] text-paper sm:mt-4 sm:text-6xl lg:text-6xl">
-              <Link to="/story/$slug" params={{ slug: article.slug }} className="hover:text-rust">
+              <Link to="/story/$slug" params={{ slug: article.id }} className="hover:text-rust">
                 {article.title}
               </Link>
             </h1>
             <p className="mt-5 max-w-md font-body text-base leading-snug text-paper/80 sm:text-lg">
-              {article.dek}
+              {article.summary}
             </p>
             <StoryMeta article={article} dark className="mt-6" />
             <Link
               to="/story/$slug"
-              params={{ slug: article.slug }}
+              params={{ slug: article.id }}
               className="press kicker mt-8 inline-flex h-11 items-center border border-paper/30 px-5 text-xs text-paper hover:bg-paper hover:text-ink"
             >
               Leer la portada
@@ -168,16 +173,16 @@ export function CoverHero({ article }: { article: Article }) {
 export function HeroStory({ article }: { article: Article }) {
   return (
     <article>
-      <Link to="/story/$slug" params={{ slug: article.slug }} className="group block">
-        <Photo src={article.image} alt={article.imageAlt} className="aspect-video w-full" />
+      <Link to="/story/$slug" params={{ slug: article.id }} className="group block">
+        <Photo src={articleImage(article)} alt={articleImageAlt(article)} className="aspect-video w-full" />
       </Link>
-      <p className="kicker mt-3 text-xs text-rust">{article.kicker}</p>
+      <p className="kicker mt-3 text-xs text-rust">{articleKicker(article)}</p>
       <h2 className="headline mt-2 text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
-        <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
+        <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
           {article.title}
         </Link>
       </h2>
-      <p className="mt-4 max-w-2xl font-body text-base leading-snug text-ink-soft sm:text-lg">{article.dek}</p>
+      <p className="mt-4 max-w-2xl font-body text-base leading-snug text-ink-soft sm:text-lg">{article.summary}</p>
       <StoryMeta article={article} className="mt-4" />
     </article>
   );
@@ -188,20 +193,20 @@ export function RailItem({ article }: { article: Article }) {
   return (
     <article className="grid grid-cols-12 items-start gap-4 border-b border-rule py-5 last:border-b-0">
       <div className="col-span-9">
-        <p className="kicker text-xs text-rust">{article.kicker}</p>
+        <p className="kicker text-xs text-rust">{articleKicker(article)}</p>
         <h3 className="headline mt-2 text-2xl leading-[1.08] sm:text-[1.85rem]">
-          <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
+          <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
             {article.title}
           </Link>
         </h3>
         <p className="mt-2 font-sans text-[12px] text-muted">
           {city}
           <span className="mx-2 opacity-30">·</span>
-          {article.readMinutes} min
+          {article.readingMinutes} min
         </p>
       </div>
-      <Link to="/story/$slug" params={{ slug: article.slug }} className="group col-span-3">
-        <Photo src={article.image} alt="" className="aspect-square w-full sm:aspect-[4/3]" />
+      <Link to="/story/$slug" params={{ slug: article.id }} className="group col-span-3">
+        <Photo src={articleImage(article)} alt="" className="aspect-square w-full sm:aspect-[4/3]" />
       </Link>
     </article>
   );
@@ -216,15 +221,15 @@ export function StackedCard({
 }) {
   return (
     <article>
-      <Link to="/story/$slug" params={{ slug: article.slug }} className="group block">
+      <Link to="/story/$slug" params={{ slug: article.id }} className="group block">
         <Photo
-          src={article.image}
-          alt={article.imageAlt}
+          src={articleImage(article)}
+          alt={articleImageAlt(article)}
           className={cn("w-full", large ? "aspect-video" : "aspect-[3/2]")}
         />
         <p className="kicker mt-3 flex items-center gap-1.5 text-xs text-rust">
           <VanderBug className="size-3" />
-          {article.kicker}
+          {articleKicker(article)}
         </p>
         <h3
           className={cn(
@@ -242,7 +247,7 @@ export function StackedCard({
             large ? "max-w-2xl text-base sm:text-lg" : "line-clamp-2 text-sm",
           )}
         >
-          {article.dek}
+          {article.summary}
         </p>
       </Link>
       <StoryMeta article={article} className="mt-4" />
@@ -253,23 +258,23 @@ export function StackedCard({
 export function HorizontalCard({ article }: { article: Article }) {
   return (
     <article className="grid grid-cols-12 items-start gap-4 border-t border-rule py-4 first:border-t-0 first:pt-0">
-      <Link to="/story/$slug" params={{ slug: article.slug }} className="group col-span-4">
-        <Photo src={article.image} alt={article.imageAlt} className="aspect-[4/3] w-full" />
+      <Link to="/story/$slug" params={{ slug: article.id }} className="group col-span-4">
+        <Photo src={articleImage(article)} alt={articleImageAlt(article)} className="aspect-[4/3] w-full" />
       </Link>
       <div className="col-span-8">
-        <p className="kicker text-xs text-rust">{article.kicker}</p>
+        <p className="kicker text-xs text-rust">{articleKicker(article)}</p>
         <h3 className="headline mt-2 text-2xl leading-[1.1] sm:text-3xl lg:text-4xl">
-          <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
+          <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
             {article.title}
           </Link>
         </h3>
         <p className="mt-2 hidden font-body text-sm leading-snug text-ink-soft sm:line-clamp-2 sm:block sm:text-base">
-          {article.dek}
+          {article.summary}
         </p>
         <p className="mt-3 font-sans text-[12px] text-muted">
-          {article.signedName ?? "Team Vander"}
+          {articleSignedName(article) || "Team Vander"}
           <span className="mx-2 opacity-30">·</span>
-          {article.readMinutes} min
+          {article.readingMinutes} min
           <span className="mx-2 opacity-30">·</span>
           {formatShortDate(article.publishedAt)}
         </p>
@@ -282,14 +287,14 @@ export function TextCard({ article }: { article: Article }) {
   const city = articleCity(article);
   return (
     <article className="border-t border-rule py-3">
-      <p className="kicker text-xs text-rust">{article.kicker}</p>
+      <p className="kicker text-xs text-rust">{articleKicker(article)}</p>
       <h3 className="headline mt-1 text-lg">
-        <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
+        <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
           {article.title}
         </Link>
       </h3>
       <p className="mt-1 font-sans text-[12px] text-muted">
-        {city} · {article.readMinutes} min
+        {city} · {article.readingMinutes} min
       </p>
     </article>
   );
@@ -304,10 +309,10 @@ export function NumberedItem({ article, rank }: { article: Article; rank: number
       </span>
       <div className="col-span-10">
         <p className="kicker text-xs text-muted">
-          {city} · {article.readMinutes} min
+          {city} · {article.readingMinutes} min
         </p>
         <h3 className="headline mt-0.5 text-base sm:text-lg">
-          <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
+          <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
             {article.title}
           </Link>
         </h3>
@@ -320,11 +325,11 @@ export function MiniLead({ article }: { article: Article }) {
   const city = articleCity(article);
   return (
     <article>
-      <Link to="/story/$slug" params={{ slug: article.slug }} className="group block">
-        <Photo src={article.image} alt={article.imageAlt} className="aspect-[3/2] w-full" />
+      <Link to="/story/$slug" params={{ slug: article.id }} className="group block">
+        <Photo src={articleImage(article)} alt={articleImageAlt(article)} className="aspect-[3/2] w-full" />
         <p className="kicker mt-2.5 text-xs text-rust">{city}</p>
         <h3 className="headline link-title mt-1.5 text-xl leading-[1.12] sm:text-2xl">{article.title}</h3>
-        <p className="mt-1.5 font-sans text-[12px] text-muted">{article.readMinutes} min</p>
+        <p className="mt-1.5 font-sans text-[12px] text-muted">{article.readingMinutes} min</p>
       </Link>
     </article>
   );
@@ -348,15 +353,15 @@ export function SignalRow({ article }: { article: Article }) {
     <article className="border-t border-ink/15 py-4 first:border-t-0 first:pt-0">
       <p className="kicker flex items-center gap-2 text-xs text-muted">
         <span className="inline-block size-1.5 rounded-full bg-ink/50" />
-        Signals · {article.readMinutes} min · {formatShortDate(article.publishedAt)}
+        Signals · {article.readingMinutes} min · {formatShortDate(article.publishedAt)}
         {wasUpdated(article) ? ` · Actualizada ${formatShortDate(articleUpdated(article))}` : ""}
       </p>
       <h3 className="headline mt-1 text-xl sm:text-2xl">
-        <Link to="/story/$slug" params={{ slug: article.slug }} className="link-title">
+        <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
           {article.title}
         </Link>
       </h3>
-      <p className="mt-1 font-body text-sm leading-snug text-ink-soft">{article.dek}</p>
+      <p className="mt-1 font-body text-sm leading-snug text-ink-soft">{article.summary}</p>
       <StoryMeta article={article} className="mt-3" showAuthor={false} />
     </article>
   );

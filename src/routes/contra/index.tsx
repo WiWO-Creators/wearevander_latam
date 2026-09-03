@@ -1,10 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  articleImage,
+  articleImageAlt,
+  articleSignedName,
   articlesByFranchise,
   franchiseAuthors,
   franchiseTags,
   HOUSE,
 } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { HorizontalCard, TagPills } from "@/components/article-card";
 import { ContraMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
@@ -12,18 +16,21 @@ import { CatChip } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/contra/")({
   component: ContraPage,
+  // La franquicia junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: () => ({
     meta: [{ title: "Contra la corriente — We Are Vander" }],
   }),
 });
 
 function ContraPage() {
-  const essays = articlesByFranchise("contra");
+  const articles = Route.useLoaderData();
+  const essays = articlesByFranchise(articles, "contra");
   const lead = essays[0];
   const rest = essays.slice(1);
-  const authors = franchiseAuthors("contra");
-  const themes = franchiseTags("contra").filter((t) => t.kind !== "pace");
-  const pace = franchiseTags("contra", "pace");
+  const authors = franchiseAuthors(articles, "contra");
+  const themes = franchiseTags(articles, "contra").filter((t) => t.kind !== "pace");
+  const pace = franchiseTags(articles, "contra", "pace");
 
   return (
     <main>
@@ -93,18 +100,18 @@ function ContraPage() {
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
           <p className="kicker text-xs text-rust">La tesis de la semana</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-12">
-            <Link to="/story/$slug" params={{ slug: lead.slug }} className="photo block lg:col-span-7">
-              <img src={lead.image} alt={lead.imageAlt} className="aspect-[16/10] w-full object-cover" />
+            <Link to="/story/$slug" params={{ slug: lead.id }} className="photo block lg:col-span-7">
+              <img src={articleImage(lead)} alt={articleImageAlt(lead)} className="aspect-[16/10] w-full object-cover" />
             </Link>
             <div className="lg:col-span-5">
               <h2 className="headline text-4xl sm:text-6xl">
-                <Link to="/story/$slug" params={{ slug: lead.slug }} className="link-title">
+                <Link to="/story/$slug" params={{ slug: lead.id }} className="link-title">
                   {lead.title}
                 </Link>
               </h2>
-              <p className="mt-4 font-body text-lg text-ink-soft">{lead.dek}</p>
+              <p className="mt-4 font-body text-lg text-ink-soft">{lead.summary}</p>
               <p className="mt-3 kicker text-xs text-muted">
-                {lead.signedName} · {lead.readMinutes} min de lectura · De fondo
+                {articleSignedName(lead)} · {lead.readingMinutes} min de lectura · De fondo
               </p>
               <div className="mt-3">
                 <TagPills article={lead} />
@@ -119,7 +126,7 @@ function ContraPage() {
           <h2 className="headline border-b border-ink pb-2 text-3xl">Todas las columnas</h2>
           <div className="mt-2">
             {rest.map((a) => (
-              <HorizontalCard key={a.slug} article={a} />
+              <HorizontalCard key={a.id} article={a} />
             ))}
           </div>
         </div>

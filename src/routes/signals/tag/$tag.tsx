@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { articlesByFranchiseTag, franchiseTags, getTag } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { SignalRow } from "@/components/article-card";
 import { SignalsMark } from "@/components/brand";
 import { Newsletter } from "@/components/newsletter";
@@ -8,6 +9,8 @@ import { CatChip, EmptyCat } from "@/components/rank-pack";
 
 export const Route = createFileRoute("/signals/tag/$tag")({
   component: SignalsTagPage,
+  // La categoría junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: ({ params }) => {
     const tag = getTag(params.tag);
     return {
@@ -18,10 +21,11 @@ export const Route = createFileRoute("/signals/tag/$tag")({
 
 function SignalsTagPage() {
   const { tag: id } = Route.useParams();
+  const articles = Route.useLoaderData();
   const tag = getTag(id);
-  const notes = articlesByFranchiseTag("signals", id);
+  const notes = articlesByFranchiseTag(articles, "signals", id);
   const kind = tag?.kind ?? "industry";
-  const siblings = franchiseTags("signals", kind);
+  const siblings = franchiseTags(articles, "signals", kind);
   const kindLabel = kind === "pace" ? "Lectura" : kind === "tech" ? "Tecnología" : "Industria";
 
   if (!tag) {
@@ -74,7 +78,7 @@ function SignalsTagPage() {
       <SignalsField>
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           {notes.map((a) => (
-            <SignalRow key={a.slug} article={a} />
+            <SignalRow key={a.id} article={a} />
           ))}
         </div>
       </SignalsField>

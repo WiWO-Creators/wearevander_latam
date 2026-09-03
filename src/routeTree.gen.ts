@@ -74,6 +74,10 @@ import { Route as VisionariosArgentinaMetodologiaRouteImport } from './routes/vi
 import { Route as VisionariosColombiaIndexRouteImport } from './routes/visionarios/colombia/index'
 import { Route as VisionariosColombiaSlugRouteImport } from './routes/visionarios/colombia/$slug'
 import { Route as VisionariosColombiaMetodologiaRouteImport } from './routes/visionarios/colombia/metodologia'
+import { Route as ApiWiwoV1ArticlesRouteImport } from './routes/api/wiwo/v1/articles'
+import { Route as ApiWiwoV1ManifestRouteImport } from './routes/api/wiwo/v1/manifest'
+import { Route as ApiWiwoV1MediaRouteImport } from './routes/api/wiwo/v1/media'
+import { Route as ApiWiwoV1MediaIdRouteImport } from './routes/api/wiwo/v1/media.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -405,6 +409,26 @@ const VisionariosColombiaMetodologiaRoute =
     path: '/metodologia',
     getParentRoute: () => VisionariosColombiaRoute,
   } as any)
+const ApiWiwoV1ArticlesRoute = ApiWiwoV1ArticlesRouteImport.update({
+  id: '/api/wiwo/v1/articles',
+  path: '/api/wiwo/v1/articles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiWiwoV1ManifestRoute = ApiWiwoV1ManifestRouteImport.update({
+  id: '/api/wiwo/v1/manifest',
+  path: '/api/wiwo/v1/manifest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiWiwoV1MediaRoute = ApiWiwoV1MediaRouteImport.update({
+  id: '/api/wiwo/v1/media',
+  path: '/api/wiwo/v1/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiWiwoV1MediaIdRoute = ApiWiwoV1MediaIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiWiwoV1MediaRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -472,6 +496,10 @@ export interface FileRoutesByFullPath {
   '/signals/tag/': typeof SignalsTagIndexRoute
   '/visionarios/argentina/': typeof VisionariosArgentinaIndexRoute
   '/visionarios/colombia/': typeof VisionariosColombiaIndexRoute
+  '/api/wiwo/v1/articles': typeof ApiWiwoV1ArticlesRoute
+  '/api/wiwo/v1/manifest': typeof ApiWiwoV1ManifestRoute
+  '/api/wiwo/v1/media': typeof ApiWiwoV1MediaRouteWithChildren
+  '/api/wiwo/v1/media/$id': typeof ApiWiwoV1MediaIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -524,6 +552,10 @@ export interface FileRoutesByTo {
   '/signals/tag': typeof SignalsTagIndexRoute
   '/visionarios/argentina': typeof VisionariosArgentinaIndexRoute
   '/visionarios/colombia': typeof VisionariosColombiaIndexRoute
+  '/api/wiwo/v1/articles': typeof ApiWiwoV1ArticlesRoute
+  '/api/wiwo/v1/manifest': typeof ApiWiwoV1ManifestRoute
+  '/api/wiwo/v1/media': typeof ApiWiwoV1MediaRouteWithChildren
+  '/api/wiwo/v1/media/$id': typeof ApiWiwoV1MediaIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -592,6 +624,10 @@ export interface FileRoutesById {
   '/signals/tag/': typeof SignalsTagIndexRoute
   '/visionarios/argentina/': typeof VisionariosArgentinaIndexRoute
   '/visionarios/colombia/': typeof VisionariosColombiaIndexRoute
+  '/api/wiwo/v1/articles': typeof ApiWiwoV1ArticlesRoute
+  '/api/wiwo/v1/manifest': typeof ApiWiwoV1ManifestRoute
+  '/api/wiwo/v1/media': typeof ApiWiwoV1MediaRouteWithChildren
+  '/api/wiwo/v1/media/$id': typeof ApiWiwoV1MediaIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -661,6 +697,10 @@ export interface FileRouteTypes {
     | '/signals/tag/'
     | '/visionarios/argentina/'
     | '/visionarios/colombia/'
+    | '/api/wiwo/v1/articles'
+    | '/api/wiwo/v1/manifest'
+    | '/api/wiwo/v1/media'
+    | '/api/wiwo/v1/media/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -713,6 +753,10 @@ export interface FileRouteTypes {
     | '/signals/tag'
     | '/visionarios/argentina'
     | '/visionarios/colombia'
+    | '/api/wiwo/v1/articles'
+    | '/api/wiwo/v1/manifest'
+    | '/api/wiwo/v1/media'
+    | '/api/wiwo/v1/media/$id'
   id:
     | '__root__'
     | '/'
@@ -780,6 +824,10 @@ export interface FileRouteTypes {
     | '/signals/tag/'
     | '/visionarios/argentina/'
     | '/visionarios/colombia/'
+    | '/api/wiwo/v1/articles'
+    | '/api/wiwo/v1/manifest'
+    | '/api/wiwo/v1/media'
+    | '/api/wiwo/v1/media/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -805,6 +853,9 @@ export interface RootRouteChildren {
   StorySlugRoute: typeof StorySlugRoute
   TagTagRoute: typeof TagTagRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiWiwoV1ArticlesRoute: typeof ApiWiwoV1ArticlesRoute
+  ApiWiwoV1ManifestRoute: typeof ApiWiwoV1ManifestRoute
+  ApiWiwoV1MediaRoute: typeof ApiWiwoV1MediaRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -1264,6 +1315,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VisionariosColombiaMetodologiaRouteImport
       parentRoute: typeof VisionariosColombiaRoute
     }
+    '/api/wiwo/v1/articles': {
+      id: '/api/wiwo/v1/articles'
+      path: '/api/wiwo/v1/articles'
+      fullPath: '/api/wiwo/v1/articles'
+      preLoaderRoute: typeof ApiWiwoV1ArticlesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/wiwo/v1/manifest': {
+      id: '/api/wiwo/v1/manifest'
+      path: '/api/wiwo/v1/manifest'
+      fullPath: '/api/wiwo/v1/manifest'
+      preLoaderRoute: typeof ApiWiwoV1ManifestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/wiwo/v1/media': {
+      id: '/api/wiwo/v1/media'
+      path: '/api/wiwo/v1/media'
+      fullPath: '/api/wiwo/v1/media'
+      preLoaderRoute: typeof ApiWiwoV1MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/wiwo/v1/media/$id': {
+      id: '/api/wiwo/v1/media/$id'
+      path: '/$id'
+      fullPath: '/api/wiwo/v1/media/$id'
+      preLoaderRoute: typeof ApiWiwoV1MediaIdRouteImport
+      parentRoute: typeof ApiWiwoV1MediaRoute
+    }
   }
 }
 
@@ -1505,6 +1584,18 @@ const ApiMarketsRouteWithChildren = ApiMarketsRoute._addFileChildren(
   ApiMarketsRouteChildren,
 )
 
+interface ApiWiwoV1MediaRouteChildren {
+  ApiWiwoV1MediaIdRoute: typeof ApiWiwoV1MediaIdRoute
+}
+
+const ApiWiwoV1MediaRouteChildren: ApiWiwoV1MediaRouteChildren = {
+  ApiWiwoV1MediaIdRoute: ApiWiwoV1MediaIdRoute,
+}
+
+const ApiWiwoV1MediaRouteWithChildren = ApiWiwoV1MediaRoute._addFileChildren(
+  ApiWiwoV1MediaRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -1528,6 +1619,9 @@ const rootRouteChildren: RootRouteChildren = {
   StorySlugRoute: StorySlugRoute,
   TagTagRoute: TagTagRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiWiwoV1ArticlesRoute: ApiWiwoV1ArticlesRoute,
+  ApiWiwoV1ManifestRoute: ApiWiwoV1ManifestRoute,
+  ApiWiwoV1MediaRoute: ApiWiwoV1MediaRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

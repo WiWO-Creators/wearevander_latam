@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { getArticle, type Article } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { getSavedSlugs } from "@/lib/server/magazine";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { RedirectToSignIn } from "@/lib/auth/gates";
@@ -8,6 +9,9 @@ import { HorizontalCard } from "@/components/article-card";
 
 export const Route = createFileRoute("/saved")({
   component: SavedPage,
+  // El estante puede tener guardada una nota publicada por el orquestador, que
+  // no está en el archivo del repositorio.
+  loader: () => getArticles(),
   head: () => ({
     meta: [{ title: "Guardados — We Are Vander" }],
   }),
@@ -15,6 +19,7 @@ export const Route = createFileRoute("/saved")({
 
 function SavedPage() {
   const { user, isPending } = useCurrentUserState();
+  const articles = Route.useLoaderData();
   const [slugs, setSlugs] = useState<string[] | null>(null);
 
   useEffect(() => {
@@ -35,7 +40,7 @@ function SavedPage() {
   if (!user) return <RedirectToSignIn />;
 
   const stories = (slugs ?? [])
-    .map((slug) => getArticle(slug))
+    .map((slug) => getArticle(articles, slug))
     .filter((a): a is Article => a != null);
 
   return (
@@ -52,7 +57,7 @@ function SavedPage() {
         ) : (
           <div className="mt-6">
             {stories.map((a) => (
-              <HorizontalCard key={a.slug} article={a} />
+              <HorizontalCard key={a.id} article={a} />
             ))}
           </div>
         )}

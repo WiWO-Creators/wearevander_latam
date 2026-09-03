@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SECTIONS, articlesBySection, type SectionId } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { HeroStory, StackedCard } from "@/components/article-card";
 
 export const Route = createFileRoute("/section/$section")({
   component: SectionPage,
+  // La sección junta también lo que publicó el orquestador, que vive en la base.
+  loader: () => getArticles(),
   head: ({ params }) => {
     const meta = SECTIONS.find((s) => s.id === params.section);
     return {
@@ -18,6 +21,7 @@ function isSection(id: string): id is SectionId {
 
 function SectionPage() {
   const { section } = Route.useParams();
+  const articles = Route.useLoaderData();
   if (!isSection(section)) {
     return (
       <main className="mx-auto max-w-2xl px-6 py-20 text-center">
@@ -29,7 +33,7 @@ function SectionPage() {
     );
   }
   const meta = SECTIONS.find((s) => s.id === section)!;
-  const stories = articlesBySection(section);
+  const stories = articlesBySection(articles, section);
   const [lead, ...rest] = stories;
 
   return (
@@ -47,7 +51,7 @@ function SectionPage() {
         {rest.length > 0 && (
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((a) => (
-              <StackedCard key={a.slug} article={a} />
+              <StackedCard key={a.id} article={a} />
             ))}
           </div>
         )}

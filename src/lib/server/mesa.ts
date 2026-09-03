@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getSql } from "@/lib/db";
 import { articleContext, getArticle } from "@/lib/content";
+import { allSiteArticles } from "@/lib/articles";
 
 export type MesaComment = {
   id: string;
@@ -124,7 +125,9 @@ async function seatGrok(
 ): Promise<MesaComment | null> {
   const apiKey = process.env.XAI_API_KEY;
   if (!apiKey) return null;
-  const article = getArticle(slug);
+  // La lista se pide acá y no en la función de servidor de arriba porque esto ya
+  // corre en el servidor: es el caso para el que existe allSiteArticles.
+  const article = getArticle(await allSiteArticles(), slug);
   if (!article) return null;
 
   const res = await fetch("https://api.x.ai/v1/chat/completions", {

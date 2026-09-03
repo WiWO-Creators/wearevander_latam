@@ -1,13 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  ARTICLES,
   HOUSE,
   ISSUE,
+  articleSignedName,
   articlesByFormat,
   articlesByFranchise,
   latestArticles,
   popularArticles,
+  type Article,
 } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 import { VANDER_LIST } from "@/lib/vander-list";
 import { INNOVATIVES } from "@/lib/innovatives";
 import { VOLUMES } from "@/lib/visionarios";
@@ -32,6 +34,9 @@ import { seoHead, orgSchema, websiteSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   component: Home,
+  // La portada arma el número con las dos fuentes: el archivo del repositorio y
+  // lo que publicó el orquestador. El orden lo sigue poniendo el archivo.
+  loader: () => getArticles(),
   head: () =>
     seoHead({
       title: "We Are Vander — negocios de América Latina",
@@ -46,25 +51,26 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const ordered = latestArticles(36);
-  const hero = ARTICLES.find((a) => a.featured) ?? ordered[0];
-  const used = new Set<string>([hero.slug]);
+  const articles = Route.useLoaderData();
+  const ordered = latestArticles(articles, 36);
+  const hero = articles.find((a) => a.featured) ?? ordered[0];
+  const used = new Set<string>([hero.id]);
 
-  const interview = articlesByFormat("interview")[0];
-  if (interview) used.add(interview.slug);
+  const interview = articlesByFormat(articles, "interview")[0];
+  if (interview) used.add(interview.id);
   const lead = interview ?? take(ordered, used, 1)[0];
   const rail = take(ordered, used, 5);
-  const popular = popularArticles(5);
-  const signals = articlesByFranchise("signals").slice(0, 4);
-  const contra = articlesByFranchise("contra")[0];
-  const obits = articlesByFormat("obituario").slice(0, 4);
-  const flash = articlesByFormat("flash")[0];
-  const visual = articlesByFormat("visual")[0];
+  const popular = popularArticles(articles, 5);
+  const signals = articlesByFranchise(articles, "signals").slice(0, 4);
+  const contra = articlesByFranchise(articles, "contra")[0];
+  const obits = articlesByFormat(articles, "obituario").slice(0, 4);
+  const flash = articlesByFormat(articles, "flash")[0];
+  const visual = articlesByFormat(articles, "visual")[0];
   const ninety = [flash, visual].filter((a): a is NonNullable<typeof a> => Boolean(a));
   if (ninety.length === 0) {
     ninety.push(...take(ordered, used, 2));
   } else {
-    ninety.forEach((a) => used.add(a.slug));
+    ninety.forEach((a) => used.add(a.id));
   }
   const fiftyLead = INNOVATIVES.slice(0, 3);
   const fiftyRest = INNOVATIVES.slice(3, 10);
@@ -84,7 +90,7 @@ function Home() {
         <aside className={lead ? "min-w-0 lg:col-span-4 lg:border-l lg:border-rule lg:pl-5" : "min-w-0 lg:col-span-12"}>
           <p className="kicker mb-1 text-xs text-muted">En portada</p>
           {rail.map((a) => (
-            <RailItem key={a.slug} article={a} />
+            <RailItem key={a.id} article={a} />
           ))}
         </aside>
       </section>
@@ -155,7 +161,7 @@ function Home() {
           </div>
           <div className="lg:col-span-8">
             {signals.map((a) => (
-              <SignalRow key={a.slug} article={a} />
+              <SignalRow key={a.id} article={a} />
             ))}
           </div>
         </div>
@@ -167,7 +173,7 @@ function Home() {
             <h2 className="kicker border-b border-ink pb-2 text-xs text-rust">Lo más leído</h2>
             <ol>
               {popular.map((a, i) => (
-                <li key={a.slug}>
+                <li key={a.id}>
                   <NumberedItem article={a} rank={i + 1} />
                 </li>
               ))}
@@ -180,7 +186,7 @@ function Home() {
               </p>
               <div className="pt-2">
                 {ninety.map((a) => (
-                  <HorizontalCard key={a.slug} article={a} />
+                  <HorizontalCard key={a.id} article={a} />
                 ))}
               </div>
             </div>
@@ -332,15 +338,15 @@ function Home() {
               <p className="mt-4 max-w-md font-body text-sm leading-relaxed text-ink">
                 Opinión firmada, abiertamente contraria al consenso. El carácter de la casa.
               </p>
-              <p className="kicker mt-6 text-xs text-ink">{contra.signedName}</p>
+              <p className="kicker mt-6 text-xs text-ink">{articleSignedName(contra)}</p>
               <h2 className="headline mt-2 text-3xl leading-[1.08] sm:text-5xl">
-                <Link to="/story/$slug" params={{ slug: contra.slug }} className="link-title">
+                <Link to="/story/$slug" params={{ slug: contra.id }} className="link-title">
                   {contra.title}
                 </Link>
               </h2>
-              <p className="mt-3 max-w-xl font-body text-base leading-snug text-ink/80">{contra.dek}</p>
+              <p className="mt-3 max-w-xl font-body text-base leading-snug text-ink/80">{contra.summary}</p>
               <p className="mt-3 font-kicker text-xs uppercase tracking-wider text-ink/50">
-                {contra.readMinutes} min de lectura · De fondo
+                {contra.readingMinutes} min de lectura · De fondo
               </p>
               <Link to="/contra" className="kicker mt-5 inline-block text-xs text-ink hover:text-rust">
                 Todas las columnas
@@ -368,14 +374,14 @@ function Home() {
           </div>
           <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {obits.map((a) => (
-              <article key={a.slug}>
+              <article key={a.id}>
                 <p className="kicker text-xs text-silver">Q.E.P.D.</p>
                 <h3 className="headline mt-2 text-xl">
-                  <Link to="/story/$slug" params={{ slug: a.slug }} className="link-title">
+                  <Link to="/story/$slug" params={{ slug: a.id }} className="link-title">
                     {a.title}
                   </Link>
                 </h3>
-                <p className="mt-2 font-body text-sm text-paper/60">{a.dek}</p>
+                <p className="mt-2 font-body text-sm text-paper/60">{a.summary}</p>
               </article>
             ))}
           </div>
@@ -389,8 +395,8 @@ function Home() {
   );
 }
 
-function take(pool: typeof ARTICLES, used: Set<string>, n: number) {
-  const out = pool.filter((a) => !used.has(a.slug)).slice(0, n);
-  out.forEach((a) => used.add(a.slug));
+function take(pool: Article[], used: Set<string>, n: number) {
+  const out = pool.filter((a) => !used.has(a.id)).slice(0, n);
+  out.forEach((a) => used.add(a.id));
   return out;
 }
