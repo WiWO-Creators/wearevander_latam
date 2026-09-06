@@ -7,7 +7,7 @@
     "nf3": "0.3.17"
   },
   "scripts": {
-    "dev": "node node_modules/vite/bin/vite.js dev --host 0.0.0.0 --port 8085",
+    "dev": "vite dev --host 0.0.0.0 --port 8080",
     "build": "vite build && npm run db:migrate",
     "db:migrate": "node scripts/migrate.mjs",
     "build:dev": "vite build --mode development",
