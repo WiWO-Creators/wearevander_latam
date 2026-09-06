@@ -158,14 +158,14 @@ export function VisionariosIndex({ volume }: { volume: VisionarioVolume }) {
         </figure>
       </section>
 
-      <nav className="sticky top-0 z-20 border-b border-ink bg-paper/95 px-4 py-3 backdrop-blur-sm sm:px-6" aria-label={`Filtros 100V ${volume.name}`}>
+      <nav className="z-20 border-b border-ink bg-paper/95 px-4 py-3 backdrop-blur-sm sm:px-6 lg:sticky lg:top-14" aria-label={`Filtros 100V ${volume.name}`}>
         <div className="mx-auto flex max-w-7xl flex-col gap-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Buscar un nombre, una empresa, una ciudad"
-              className="h-11 flex-1 border border-ink/20 bg-paper px-3 font-body text-sm outline-none focus:border-ink"
+              className="h-11 flex-1 border border-ink/20 bg-paper px-3 font-body text-base outline-none focus:border-ink sm:text-sm"
             />
             <Link to={methodTo} className="kicker text-xs text-rust hover:underline">
               Cómo se armó
@@ -469,7 +469,7 @@ function FilterChip({
       type="button"
       onClick={onClick}
       className={cn(
-        "kicker inline-flex h-9 shrink-0 items-center border px-3 text-xs",
+        "kicker inline-flex h-10 shrink-0 items-center border px-3 text-[11px] sm:h-9 sm:text-xs",
         active
           ? ink
             ? "border-ink bg-ink text-paper"

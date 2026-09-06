@@ -48,9 +48,39 @@ export function ShareBar({
     void copy();
   }
 
+  if (layout === "row") {
+    return (
+      <div className={cn("flex items-stretch gap-2", className)}>
+        <button
+          type="button"
+          onClick={() => void nativeShare()}
+          className="press inline-flex h-11 flex-1 items-center justify-center gap-2 border border-ink font-kicker text-[11px] tracking-[0.12em] uppercase hover:bg-void hover:text-bleed"
+        >
+          <Share2 className="size-4" strokeWidth={1.75} />
+          Compartir
+        </button>
+        <button
+          type="button"
+          onClick={() => void copy()}
+          className="press inline-flex h-11 items-center justify-center border border-ink px-4 font-kicker text-[11px] tracking-[0.12em] uppercase hover:bg-void hover:text-bleed"
+        >
+          {copied ? "Copiado" : "Copiar"}
+        </button>
+        <a
+          href={`https://api.whatsapp.com/send?text=${text}%20${encoded}`}
+          target="_blank"
+          rel="noreferrer"
+          className="press inline-flex h-11 items-center justify-center border border-ink px-4 font-kicker text-[11px] tracking-[0.12em] uppercase hover:bg-void hover:text-bleed"
+        >
+          WA
+        </a>
+      </div>
+    );
+  }
+
   return (
-    <div className={cn(layout === "rail" ? "flex flex-col gap-0.5" : "flex flex-wrap items-center gap-x-3 gap-y-1", className)}>
-      <p className={cn("kicker text-[10px] text-muted", layout === "row" ? "mr-1" : "mb-2")}>Compartir</p>
+    <div className={cn("flex flex-col gap-0.5", className)}>
+      <p className="kicker mb-2 text-[10px] text-muted">Compartir</p>
       <button
         type="button"
         onClick={() => void copy()}
@@ -83,14 +113,6 @@ export function ShareBar({
       >
         WhatsApp
       </a>
-      <button
-        type="button"
-        onClick={() => void nativeShare()}
-        className="press kicker inline-flex h-9 items-center gap-1.5 text-[11px] tracking-wider text-ink hover:text-rust lg:hidden"
-      >
-        <Share2 className="size-3.5" strokeWidth={1.75} />
-        Enviar
-      </button>
     </div>
   );
 }

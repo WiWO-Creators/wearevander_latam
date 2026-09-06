@@ -44,7 +44,7 @@ export function AdsterraLeaderboard() {
   }, []);
 
   if (wide === null) {
-    return <div style={{ width: "100%", height: 90 }} aria-hidden />;
+    return <div style={{ width: "100%", height: 50 }} aria-hidden />;
   }
 
   return wide ? <AdsterraBanner spec={ADSTERRA.leaderboard} /> : <AdsterraBanner spec={ADSTERRA.mobile} />;

@@ -25,8 +25,7 @@ export function TradingViewTape({ label }: { label?: string }) {
       <iframe
         title="Cinta de mercados · TradingView"
         src={SRC}
-        className="block w-full border-0"
-        style={{ height: 72 }}
+        className="block h-[46px] w-full border-0 sm:h-[72px]"
         loading="lazy"
         referrerPolicy="origin-when-cross-origin"
       />

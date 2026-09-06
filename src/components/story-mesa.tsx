@@ -125,7 +125,7 @@ export function StoryMesa({ slug }: { slug: string }) {
           onChange={(e) => setName(e.target.value)}
           maxLength={40}
           required
-          className="mt-1 h-11 w-full border-b border-ink bg-transparent font-sans text-sm outline-none"
+          className="mt-1 h-11 w-full border-b border-ink bg-transparent font-sans text-base outline-none sm:text-sm"
           placeholder="Cómo te firmás"
         />
         <label className="kicker mt-5 block text-[10px] text-muted" htmlFor="mesa-body">
@@ -171,7 +171,7 @@ export function StoryMesa({ slug }: { slug: string }) {
             value={ask}
             onChange={(e) => setAsk(e.target.value)}
             maxLength={400}
-            className="mt-1 h-11 w-full border-b border-ink bg-transparent font-sans text-sm outline-none"
+            className="mt-1 h-11 w-full border-b border-ink bg-transparent font-sans text-base outline-none sm:text-sm"
             placeholder="¿Qué cifra sostiene el argumento?"
           />
         </div>

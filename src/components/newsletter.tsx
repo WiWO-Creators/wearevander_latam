@@ -59,7 +59,7 @@ export function Newsletter({ compact = false }: { compact?: boolean }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Tu correo"
-            className="h-11 flex-1 border border-paper/40 bg-transparent px-3 font-sans text-sm text-paper placeholder:text-paper/40 outline-none focus:border-rust"
+            className="h-11 flex-1 border border-paper/40 bg-transparent px-3 font-sans text-base text-paper placeholder:text-paper/40 outline-none focus:border-rust sm:text-sm"
           />
           <button
             type="submit"

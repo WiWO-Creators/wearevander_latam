@@ -11,7 +11,7 @@ export function Wordmark({
     <img
       src="/brand/vander-wordmark.png"
       alt={alt}
-      className={cn("h-7 w-auto max-w-[9.75rem] object-contain object-left sm:h-11 sm:max-w-[14rem]", className)}
+      className={cn("h-7 w-auto max-w-[11.5rem] object-contain object-left sm:h-11 sm:max-w-[14rem]", className)}
     />
   );
 }

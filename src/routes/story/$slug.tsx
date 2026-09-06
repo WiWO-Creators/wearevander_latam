@@ -147,7 +147,7 @@ function StoryPage() {
         ])}
       />
       <article id="historia">
-        <div className="mx-auto max-w-4xl px-5 pt-8 sm:px-8 sm:pt-14">
+        <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-8 sm:pt-14">
           <Crumbs
             items={[
               { label: "Inicio", href: "/" },
@@ -169,7 +169,7 @@ function StoryPage() {
             <VanderBug />
             {articleKicker(article)} · {city || articleSectionLabel(article)}
           </p>
-          <h1 className="headline mt-3 text-4xl leading-[1.05] sm:mt-5 sm:text-6xl lg:text-7xl">
+          <h1 className="headline mt-3 text-[clamp(2.05rem,8vw,2.75rem)] leading-[1.05] sm:mt-5 sm:text-6xl lg:text-7xl">
             {article.title}
           </h1>
           <p className="mt-5 font-body text-lg leading-snug text-ink-soft sm:mt-6 sm:text-2xl sm:leading-snug">
@@ -208,13 +208,13 @@ function StoryPage() {
             className="aspect-[16/9] w-full object-cover"
             loading="eager"
           />
-          <figcaption className="mt-2 px-5 font-kicker text-xs tracking-wider text-muted uppercase sm:px-0">
+          <figcaption className="mt-2 px-4 font-kicker text-xs tracking-wider text-muted uppercase sm:px-0">
             {articleCaption(article)}
           </figcaption>
         </figure>
 
         {gallery.length > 0 && (
-          <div className="mx-auto mt-6 grid max-w-[90rem] gap-4 px-5 sm:grid-cols-3 sm:px-6">
+          <div className="mx-auto mt-6 grid max-w-[90rem] gap-4 px-4 sm:grid-cols-3 sm:px-6">
             {gallery.map((g) => (
               <figure key={g.src + g.caption}>
                 <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
@@ -224,7 +224,7 @@ function StoryPage() {
           </div>
         )}
 
-        <div className="mx-auto mt-10 max-w-7xl px-5 sm:mt-14 sm:px-8">
+        <div className="mx-auto mt-10 max-w-7xl px-4 sm:mt-14 sm:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
             <aside className="hidden lg:col-span-2 lg:block">
               <div className="sticky top-28">

@@ -95,11 +95,11 @@ export function RankFeatured50({ companies }: { companies: Innovative[] }) {
 export function RankRow20({ company, adAfter }: { company: ListedCompany; adAfter?: boolean }) {
   return (
     <li>
-      <Link to="/list/$slug" params={{ slug: company.slug }} className="group grid grid-cols-12 gap-3 border-t border-ink py-6">
-        <span className="col-span-2 headline text-4xl tabular-nums text-signal sm:text-5xl">
+      <Link to="/list/$slug" params={{ slug: company.slug }} className="group grid grid-cols-12 gap-3 border-t border-ink py-5 sm:py-6">
+        <span className="col-span-2 headline text-3xl leading-none tabular-nums text-signal sm:text-5xl">
           {String(company.rank).padStart(2, "0")}
         </span>
-        <div className="col-span-10">
+        <div className="col-span-10 min-w-0">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="headline text-2xl link-title sm:text-3xl">{company.name}</h2>
             <p className="kicker text-xs text-muted">
@@ -128,10 +128,10 @@ export function RankRow50({ company, adAfter }: { company: Innovative; adAfter?:
   return (
     <li className="group border-t border-ink py-6">
       <Link to="/innovatives/$slug" params={{ slug: company.slug }} className="grid grid-cols-12 gap-3">
-        <span className="col-span-2 headline text-4xl tabular-nums text-innov sm:text-5xl">
+        <span className="col-span-2 headline text-3xl leading-none tabular-nums text-innov sm:text-5xl">
           {String(company.rank).padStart(2, "0")}
         </span>
-        <div className="col-span-10">
+        <div className="col-span-10 min-w-0">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="headline text-2xl sm:text-3xl">
               {company.name}

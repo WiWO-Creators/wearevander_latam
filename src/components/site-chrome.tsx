@@ -65,12 +65,12 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
 
   return (
     <header>
-      <div className="sticky top-0 z-40 pt-[env(safe-area-inset-top)]">
+      <div className="sticky top-0 z-40 bg-void pt-[env(safe-area-inset-top)] text-bleed">
         <div
-          className="relative bg-void text-bleed"
+          className="relative"
           onMouseLeave={() => setMega(null)}
         >
-          <div className="mx-auto flex max-w-7xl items-center gap-1 px-3 sm:gap-2 sm:px-6">
+          <div className="mx-auto flex max-w-7xl items-center gap-0.5 px-2 sm:gap-2 sm:px-6">
             <button
               type="button"
               className="press grid size-11 shrink-0 place-items-center lg:hidden"
@@ -80,15 +80,15 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
             >
               {open ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
             </button>
-            <Link to="/" className="logo-mark min-w-0 flex-1 py-2.5 lg:flex-none lg:shrink-0">
+            <Link to="/" className="logo-mark min-w-0 flex-1 py-2 lg:flex-none lg:shrink-0 lg:py-2.5">
               <Wordmark />
               <span className="sr-only">{HOUSE.name}</span>
             </Link>
             <nav className="hidden min-w-0 flex-1 lg:block" aria-label="Secciones">
               <DesktopNav pathname={pathname} mega={mega} setMega={setMega} />
             </nav>
-            <div className="ml-auto flex shrink-0 items-center gap-1">
-              <ThemeToggle />
+            <div className="ml-auto flex shrink-0 items-center">
+              <ThemeToggle className="hidden lg:grid" />
               <Link to="/search" aria-label="Buscar" className="press grid size-11 place-items-center">
                 <Search className="size-5" strokeWidth={1.5} />
               </Link>
@@ -103,6 +103,11 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
           </div>
           {mega ? <MegaPanel id={mega} pathname={pathname} onClose={() => setMega(null)} /> : null}
         </div>
+        <div className="hidden lg:block">
+          <MarketsBar />
+        </div>
+      </div>
+      <div className="lg:hidden">
         <MarketsBar />
       </div>
 
@@ -110,7 +115,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
         <div className="ticker mx-auto flex max-w-7xl items-center gap-3 px-3 py-1.5 sm:gap-4 sm:px-6 sm:py-2">
           <span className="kicker shrink-0 text-[10px] text-rust sm:text-xs">Minuto</span>
           <div className="ticker-mask min-w-0 flex-1 overflow-hidden">
-            <div className="ticker-track font-sans text-sm font-medium tracking-tight text-ink">
+            <div className="ticker-track font-sans text-[13px] font-medium tracking-tight text-ink sm:text-sm">
               {ticker.map((b, i) => (
                 <Link
                   key={`${b.id}-${i}`}
@@ -129,7 +134,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => voi
       </div>
       {pathname !== "/login" && pathname !== "/" && (
         <div className="border-b border-rule bg-paper">
-          <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+          <div className="mx-auto max-w-7xl px-3 py-2 sm:px-6 sm:py-3">
             <AdSlot size="leaderboard" creative={pathname.startsWith("/list") ? "briefing" : "vander20"} />
           </div>
         </div>
@@ -356,7 +361,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
           </button>
         </div>
       </div>
-      <nav className="flex flex-1 flex-col px-4 pb-10 pt-2">
+      <nav className="flex flex-1 flex-col px-4 pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-2">
         <ul className="flex flex-col">
           {SECTIONS.map((s) => (
             <li key={s.id} className="menu-item border-b border-bleed/15">
@@ -459,7 +464,7 @@ function AuthSlot() {
 
 function Footer() {
   return (
-    <footer className="border-t border-void bg-void px-4 py-14 text-bleed sm:px-6">
+    <footer className="border-t border-void bg-void px-4 py-14 pb-[max(3.5rem,env(safe-area-inset-bottom))] text-bleed sm:px-6">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Link to="/" aria-label={HOUSE.name} className="inline-block">
@@ -562,7 +567,7 @@ function Footer() {
         <p className="kicker text-xs text-paper/40">
           © {ISSUE.date.split(" ").at(-1)} {HOUSE.name}. {HOUSE.credit}.
         </p>
-        <p className="kicker text-xs text-paper/40">
+        <p className="font-sans text-[11px] leading-relaxed text-paper/40 sm:text-xs">
           {ISSUE.title}. {ISSUE.desks.join(" · ")}.
         </p>
       </div>

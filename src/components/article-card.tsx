@@ -156,7 +156,7 @@ export function CoverHero({ article }: { article: Article }) {
               <VanderBug />
               Portada · {city || "Latam"}
             </p>
-            <h1 className="headline mt-3 max-w-xl text-[1.85rem] leading-[1.06] text-paper sm:mt-4 sm:text-6xl lg:text-6xl">
+            <h1 className="headline mt-3 max-w-xl text-[clamp(1.9rem,8vw,2.5rem)] leading-[1.06] text-paper sm:mt-4 sm:text-6xl lg:text-6xl">
               <Link to="/story/$slug" params={{ slug: article.id }} className="hover:text-rust">
                 {article.title}
               </Link>
@@ -168,7 +168,7 @@ export function CoverHero({ article }: { article: Article }) {
             <Link
               to="/story/$slug"
               params={{ slug: article.id }}
-              className="press kicker mt-8 inline-flex h-11 items-center border border-paper/30 px-5 text-xs text-paper hover:bg-paper hover:text-ink"
+              className="press kicker mt-6 inline-flex h-11 w-full items-center justify-center border border-paper/30 px-5 text-xs text-paper hover:bg-paper hover:text-ink sm:mt-8 sm:w-auto"
             >
               Leer la portada
             </Link>
@@ -200,10 +200,10 @@ export function HeroStory({ article }: { article: Article }) {
 export function RailItem({ article }: { article: Article }) {
   const city = articleCity(article);
   return (
-    <article className="grid grid-cols-12 items-start gap-4 border-b border-rule py-5 last:border-b-0">
-      <div className="col-span-9">
-        <p className="kicker text-xs text-rust">{articleKicker(article)}</p>
-        <h3 className="headline mt-2 text-2xl leading-[1.08] sm:text-[1.85rem]">
+    <article className="grid grid-cols-12 items-start gap-3 border-b border-rule py-4 last:border-b-0 sm:gap-4 sm:py-5">
+      <div className="col-span-8 min-w-0 sm:col-span-9">
+        <p className="kicker text-[10px] text-rust sm:text-xs">{articleKicker(article)}</p>
+        <h3 className="headline mt-1.5 text-[1.35rem] leading-[1.1] sm:mt-2 sm:text-[1.85rem]">
           <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
             {article.title}
           </Link>
@@ -214,7 +214,7 @@ export function RailItem({ article }: { article: Article }) {
           {article.readingMinutes} min
         </p>
       </div>
-      <Link to="/story/$slug" params={{ slug: article.id }} className="group col-span-3">
+      <Link to="/story/$slug" params={{ slug: article.id }} className="group col-span-4 sm:col-span-3">
         <Photo src={articleImage(article)} alt="" className="aspect-square w-full sm:aspect-[4/3]" />
       </Link>
     </article>
@@ -266,13 +266,13 @@ export function StackedCard({
 
 export function HorizontalCard({ article }: { article: Article }) {
   return (
-    <article className="grid grid-cols-12 items-start gap-4 border-t border-rule py-4 first:border-t-0 first:pt-0">
+    <article className="grid grid-cols-12 items-start gap-3 border-t border-rule py-4 first:border-t-0 first:pt-0 sm:gap-4">
       <Link to="/story/$slug" params={{ slug: article.id }} className="group col-span-4">
         <Photo src={articleImage(article)} alt={articleImageAlt(article)} className="aspect-[4/3] w-full" />
       </Link>
-      <div className="col-span-8">
-        <p className="kicker text-xs text-rust">{articleKicker(article)}</p>
-        <h3 className="headline mt-2 text-2xl leading-[1.1] sm:text-3xl lg:text-4xl">
+      <div className="col-span-8 min-w-0">
+        <p className="kicker text-[10px] text-rust sm:text-xs">{articleKicker(article)}</p>
+        <h3 className="headline mt-1.5 text-[1.35rem] leading-[1.12] sm:mt-2 sm:text-3xl lg:text-4xl">
           <Link to="/story/$slug" params={{ slug: article.id }} className="link-title">
             {article.title}
           </Link>

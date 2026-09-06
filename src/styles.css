@@ -77,6 +77,11 @@
 
   img {
     display: block;
+    max-width: 100%;
+  }
+
+  iframe {
+    max-width: 100%;
   }
 
   :focus-visible {
@@ -184,8 +189,10 @@ html[data-theme="paper"] body {
     gap: 0.5rem;
     overflow-x: auto;
     padding-bottom: 2px;
+    overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    touch-action: pan-x;
   }
 
   .chip-row::-webkit-scrollbar {
@@ -219,9 +226,11 @@ html[data-theme="paper"] body {
       filter 420ms ease;
   }
 
-  .group:hover .photo img {
-    transform: scale(1.045);
-    filter: brightness(1.05);
+  @media (hover: hover) {
+    .group:hover .photo img {
+      transform: scale(1.045);
+      filter: brightness(1.05);
+    }
   }
 
   .link-title {
@@ -296,6 +305,16 @@ html[data-theme="paper"] body {
 
   .ticker-mask {
     mask-image: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 32px), transparent);
+  }
+
+  .channel-rail {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .channel-rail::-webkit-scrollbar {
+    display: none;
   }
 
   .rise {
@@ -446,6 +465,20 @@ html[data-theme="paper"] body {
 .tv-tape .tradingview-widget-container__widget,
 .tv-tape iframe {
   height: 78px !important;
+}
+
+@media (max-width: 639px) {
+  .tv-tape iframe {
+    height: 46px !important;
+  }
+
+  .headline {
+    overflow-wrap: anywhere;
+  }
+
+  .ad-unit iframe {
+    max-width: 100%;
+  }
 }
 
 .channel-rail {
