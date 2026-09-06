@@ -21,14 +21,22 @@ function Photo({
   src,
   alt,
   className,
+  priority = false,
 }: {
   src: string;
   alt: string;
   className?: string;
+  priority?: boolean;
 }) {
   return (
     <span className={cn("photo block", className)}>
-      <img src={src} alt={alt} />
+      <img
+        src={src}
+        alt={alt}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={priority ? "high" : "low"}
+      />
     </span>
   );
 }
@@ -138,6 +146,7 @@ export function CoverHero({ article }: { article: Article }) {
           <Photo
             src={articleImage(article)}
             alt={articleImageAlt(article)}
+            priority
             className="aspect-[16/10] w-full sm:aspect-video lg:aspect-auto lg:h-full lg:min-h-[32rem]"
           />
         </Link>

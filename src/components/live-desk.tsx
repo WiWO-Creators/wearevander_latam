@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
@@ -15,18 +15,44 @@ function Player({
   line,
   controls,
 }: (typeof FEEDS)[number] & { controls: boolean }) {
+  const [on, setOn] = useState(false);
+  const box = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) setOn(true);
+      },
+      { rootMargin: "180px", threshold: 0.15 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   const src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=${controls ? 1 : 0}`;
+  const thumb = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+
   return (
     <figure className="w-[14.25rem] shrink-0 sm:w-[16rem]">
-      <div className="aspect-video w-full overflow-hidden bg-ink ring-1 ring-paper/10">
-        <iframe
-          title={`${name} en vivo`}
-          src={src}
-          className="h-full w-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          referrerPolicy="strict-origin-when-cross-origin"
-        />
+      <div ref={box} className="relative aspect-video w-full overflow-hidden bg-ink ring-1 ring-paper/10">
+        {on ? (
+          <iframe
+            title={`${name} en vivo`}
+            src={src}
+            className="h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        ) : (
+          <button type="button" className="relative block h-full w-full" onClick={() => setOn(true)} aria-label={`Reproducir ${name}`}>
+            <img src={thumb} alt="" className="h-full w-full object-cover opacity-80" loading="lazy" decoding="async" />
+            <span className="absolute inset-0 m-auto size-10 border border-paper/70" aria-hidden />
+          </button>
+        )}
       </div>
       <figcaption className="mt-2 flex items-center gap-2">
         <span className="size-1 shrink-0 bg-rust" />

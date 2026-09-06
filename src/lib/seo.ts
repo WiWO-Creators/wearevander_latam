@@ -61,7 +61,13 @@ export function seoHead(input: SeoInput) {
     meta: [
       { title },
       { name: "description", content: desc },
-      ...(input.noindex ? [{ name: "robots", content: "noindex,follow" }] : []),
+      {
+        name: "robots",
+        content: input.noindex
+          ? "noindex,follow"
+          : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      },
+      { name: "googlebot", content: input.noindex ? "noindex,follow" : "index,follow,max-image-preview:large" },
       { property: "og:type", content: input.type ?? "website" },
       { property: "og:url", content: url },
       { property: "og:title", content: ogTitle },
@@ -82,7 +88,11 @@ export function seoHead(input: SeoInput) {
       ...(input.published ? [{ property: "article:published_time", content: input.published }] : []),
       ...(input.modified ? [{ property: "article:modified_time", content: input.modified }] : []),
     ],
-    links: [{ rel: "canonical", href: url }],
+    links: [
+      { rel: "canonical", href: url },
+      { rel: "alternate", hrefLang: "es-419", href: url },
+      { rel: "alternate", hrefLang: "x-default", href: url },
+    ],
   };
 }
 
@@ -97,6 +107,16 @@ export function orgSchema() {
     description: SITE.description,
     foundingDate: "2024",
     areaServed: "Latin America",
+    inLanguage: "es",
+    publishingPrinciples: abs("/list/metodologia"),
+    knowsAbout: [
+      "startups de América Latina",
+      "fintech LatAm",
+      "Vander 20",
+      "50 Innovatives",
+      "100V Visionarios",
+    ],
+    sameAs: ["https://x.com/polodiazpinto"],
   };
 }
 
@@ -106,8 +126,8 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: SITE.name,
     url: SITE.url,
-    inLanguage: "es",
-    publisher: { "@type": "Organization", name: SITE.publisher },
+    inLanguage: "es-419",
+    publisher: { "@type": "NewsMediaOrganization", name: SITE.publisher, url: SITE.url },
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE.url}/search?q={search_term_string}`,
@@ -138,6 +158,7 @@ export function articleSchema(opts: {
   dateModified?: string;
   author: string;
   section?: string;
+  keywords?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -152,10 +173,17 @@ export function articleSchema(opts: {
       "@type": "NewsMediaOrganization",
       name: SITE.name,
       logo: { "@type": "ImageObject", url: abs("/icon-512.png") },
+      url: SITE.url,
     },
     mainEntityOfPage: canonical(opts.path),
     articleSection: opts.section ?? "Ideas",
-    inLanguage: "es",
+    inLanguage: "es-419",
+    isAccessibleForFree: true,
+    keywords: opts.keywords?.join(", "),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "[data-tldr]"],
+    },
   };
 }
 

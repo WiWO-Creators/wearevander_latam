@@ -18,6 +18,7 @@ export const Route = createRootRoute({
       { title: SITE.name },
       { name: "description", content: SITE.description },
       { name: "theme-color", content: "#ce3134" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -25,6 +26,22 @@ export const Route = createRootRoute({
       { rel: "apple-touch-icon", href: "/icon-180.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
+      { rel: "alternate", type: "application/rss+xml", title: "We Are Vander", href: "/rss.xml" },
+      { rel: "describedby", href: "/llms.txt" },
+      {
+        rel: "preload",
+        href: "/fonts/instrument-serif-400-3.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/inter-tight-400-7.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
     ],
     scripts: HILLTOP_ZONES.popunder
       ? [{ src: `${HILLTOP_SERVE}/${HILLTOP_ZONES.popunder}`, defer: true }]

@@ -1,0 +1,16 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { sitemapXml } from "@/lib/feed";
+
+export const Route = createFileRoute("/api/sitemap")({
+  server: {
+    handlers: {
+      GET: () =>
+        new Response(sitemapXml(), {
+          headers: {
+            "content-type": "application/xml; charset=utf-8",
+            "cache-control": "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        }),
+    },
+  },
+});

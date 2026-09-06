@@ -55,6 +55,8 @@ export function RankFeatured20({ companies }: { companies: ListedCompany[] }) {
             <img
               src={c.image}
               alt={c.imageAlt}
+              loading="lazy"
+              decoding="async"
               className={cn("h-full w-full", c.imageKind === "logo" ? "object-contain p-8" : "object-cover")}
             />
           </span>
@@ -76,7 +78,7 @@ export function RankFeatured50({ companies }: { companies: Innovative[] }) {
       {companies.map((c) => (
         <Link key={c.slug} to="/innovatives/$slug" params={{ slug: c.slug }} className="group block">
           <span className="photo innov-logo block aspect-[3/2] w-full bg-ivory">
-            <img src={c.image} alt={c.name} className="h-full w-full object-contain p-6" />
+            <img src={c.image} alt={c.name} className="h-full w-full object-contain p-6" loading="lazy" decoding="async" />
           </span>
           <p className="mt-3 headline text-3xl tabular-nums text-innov">{String(c.rank).padStart(2, "0")}</p>
           <h3 className="headline mt-1 text-2xl">{c.name}</h3>

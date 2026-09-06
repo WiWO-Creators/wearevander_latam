@@ -27,7 +27,7 @@ export function TradingViewTape({ label }: { label?: string }) {
         src={SRC}
         className="block w-full border-0"
         style={{ height: 72 }}
-        loading="eager"
+        loading="lazy"
         referrerPolicy="origin-when-cross-origin"
       />
     </div>

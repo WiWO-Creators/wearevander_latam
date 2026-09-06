@@ -21,12 +21,16 @@ import { Route as ListRouteImport } from './routes/list'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ObituariosRouteImport } from './routes/obituarios'
 import { Route as PisoRouteImport } from './routes/piso'
+import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignalsRouteImport } from './routes/signals'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Under40RouteImport } from './routes/under40'
 import { Route as VisionariosRouteImport } from './routes/visionarios'
 import { Route as ApiMarketsRouteImport } from './routes/api/markets'
+import { Route as ApiRssRouteImport } from './routes/api/rss'
+import { Route as ApiSitemapRouteImport } from './routes/api/sitemap'
 import { Route as ContraIndexRouteImport } from './routes/contra/index'
 import { Route as ContraAutorRouteImport } from './routes/contra/autor'
 import { Route as ContraTagRouteImport } from './routes/contra/tag'
@@ -139,6 +143,11 @@ const PisoRoute = PisoRouteImport.update({
   path: '/piso',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RssDotxmlRoute = RssDotxmlRouteImport.update({
+  id: '/rss.xml',
+  path: '/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SavedRoute = SavedRouteImport.update({
   id: '/saved',
   path: '/saved',
@@ -154,6 +163,11 @@ const SignalsRoute = SignalsRouteImport.update({
   path: '/signals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Under40Route = Under40RouteImport.update({
   id: '/under40',
   path: '/under40',
@@ -167,6 +181,16 @@ const VisionariosRoute = VisionariosRouteImport.update({
 const ApiMarketsRoute = ApiMarketsRouteImport.update({
   id: '/api/markets',
   path: '/api/markets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiRssRoute = ApiRssRouteImport.update({
+  id: '/api/rss',
+  path: '/api/rss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSitemapRoute = ApiSitemapRouteImport.update({
+  id: '/api/sitemap',
+  path: '/api/sitemap',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContraIndexRoute = ContraIndexRouteImport.update({
@@ -443,12 +467,16 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
   '/piso': typeof PisoRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/under40': typeof Under40RouteWithChildren
   '/visionarios': typeof VisionariosRouteWithChildren
   '/api/markets': typeof ApiMarketsRouteWithChildren
+  '/api/rss': typeof ApiRssRoute
+  '/api/sitemap': typeof ApiSitemapRoute
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
@@ -511,9 +539,13 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
   '/piso': typeof PisoRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/markets': typeof ApiMarketsRouteWithChildren
+  '/api/rss': typeof ApiRssRoute
+  '/api/sitemap': typeof ApiSitemapRoute
   '/innovatives/$slug': typeof InnovativesSlugRoute
   '/innovatives/metodologia': typeof InnovativesMetodologiaRoute
   '/list/$slug': typeof ListSlugRoute
@@ -571,12 +603,16 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/obituarios': typeof ObituariosRoute
   '/piso': typeof PisoRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/signals': typeof SignalsRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/under40': typeof Under40RouteWithChildren
   '/visionarios': typeof VisionariosRouteWithChildren
   '/api/markets': typeof ApiMarketsRouteWithChildren
+  '/api/rss': typeof ApiRssRoute
+  '/api/sitemap': typeof ApiSitemapRoute
   '/contra/autor': typeof ContraAutorRouteWithChildren
   '/contra/tag': typeof ContraTagRouteWithChildren
   '/innovatives/$slug': typeof InnovativesSlugRoute
@@ -644,12 +680,16 @@ export interface FileRouteTypes {
     | '/login'
     | '/obituarios'
     | '/piso'
+    | '/rss.xml'
     | '/saved'
     | '/search'
     | '/signals'
+    | '/sitemap.xml'
     | '/under40'
     | '/visionarios'
     | '/api/markets'
+    | '/api/rss'
+    | '/api/sitemap'
     | '/contra/autor'
     | '/contra/tag'
     | '/innovatives/$slug'
@@ -712,9 +752,13 @@ export interface FileRouteTypes {
     | '/login'
     | '/obituarios'
     | '/piso'
+    | '/rss.xml'
     | '/saved'
     | '/search'
+    | '/sitemap.xml'
     | '/api/markets'
+    | '/api/rss'
+    | '/api/sitemap'
     | '/innovatives/$slug'
     | '/innovatives/metodologia'
     | '/list/$slug'
@@ -771,12 +815,16 @@ export interface FileRouteTypes {
     | '/login'
     | '/obituarios'
     | '/piso'
+    | '/rss.xml'
     | '/saved'
     | '/search'
     | '/signals'
+    | '/sitemap.xml'
     | '/under40'
     | '/visionarios'
     | '/api/markets'
+    | '/api/rss'
+    | '/api/sitemap'
     | '/contra/autor'
     | '/contra/tag'
     | '/innovatives/$slug'
@@ -843,12 +891,16 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   ObituariosRoute: typeof ObituariosRoute
   PisoRoute: typeof PisoRoute
+  RssDotxmlRoute: typeof RssDotxmlRoute
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
   SignalsRoute: typeof SignalsRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Under40Route: typeof Under40RouteWithChildren
   VisionariosRoute: typeof VisionariosRouteWithChildren
   ApiMarketsRoute: typeof ApiMarketsRouteWithChildren
+  ApiRssRoute: typeof ApiRssRoute
+  ApiSitemapRoute: typeof ApiSitemapRoute
   SectionSectionRoute: typeof SectionSectionRoute
   StorySlugRoute: typeof StorySlugRoute
   TagTagRoute: typeof TagTagRoute
@@ -944,6 +996,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PisoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rss.xml': {
+      id: '/rss.xml'
+      path: '/rss.xml'
+      fullPath: '/rss.xml'
+      preLoaderRoute: typeof RssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/saved': {
       id: '/saved'
       path: '/saved'
@@ -965,6 +1024,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/under40': {
       id: '/under40'
       path: '/under40'
@@ -984,6 +1050,20 @@ declare module '@tanstack/react-router' {
       path: '/api/markets'
       fullPath: '/api/markets'
       preLoaderRoute: typeof ApiMarketsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/rss': {
+      id: '/api/rss'
+      path: '/api/rss'
+      fullPath: '/api/rss'
+      preLoaderRoute: typeof ApiRssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/sitemap': {
+      id: '/api/sitemap'
+      path: '/api/sitemap'
+      fullPath: '/api/sitemap'
+      preLoaderRoute: typeof ApiSitemapRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contra/': {
@@ -1609,12 +1689,16 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   ObituariosRoute: ObituariosRoute,
   PisoRoute: PisoRoute,
+  RssDotxmlRoute: RssDotxmlRoute,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
   SignalsRoute: SignalsRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   Under40Route: Under40RouteWithChildren,
   VisionariosRoute: VisionariosRouteWithChildren,
   ApiMarketsRoute: ApiMarketsRouteWithChildren,
+  ApiRssRoute: ApiRssRoute,
+  ApiSitemapRoute: ApiSitemapRoute,
   SectionSectionRoute: SectionSectionRoute,
   StorySlugRoute: StorySlugRoute,
   TagTagRoute: TagTagRoute,

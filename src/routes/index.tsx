@@ -218,7 +218,7 @@ function Home() {
             {fiftyLead.map((c) => (
               <Link key={c.slug} to="/innovatives/$slug" params={{ slug: c.slug }} className="group block">
                 <span className="photo innov-logo block aspect-[3/2] w-full bg-ivory">
-                  <img src={c.image} alt={c.name} className="h-full w-full object-contain p-5" />
+                  <img src={c.image} alt={c.name} className="h-full w-full object-contain p-5" loading="lazy" decoding="async" />
                 </span>
                 <p className="mt-3 headline text-3xl tabular-nums text-innov">{String(c.rank).padStart(2, "0")}</p>
                 <h3 className="headline mt-1 text-2xl">{c.name}</h3>
@@ -329,6 +329,8 @@ function Home() {
                 src="/illustrations/contra.jpg"
                 alt="Una figura camina contra la corriente de ejecutivos idénticos"
                 className="aspect-[16/9] w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
             <div className="lg:col-span-7">

@@ -77,11 +77,15 @@ export function MarketsBar() {
     };
   }, []);
 
-  if (snap?.mode === "native") {
+  if (!snap) {
+    return <div className="h-10 border-b border-bleed/10 bg-void" aria-hidden />;
+  }
+
+  if (snap.mode === "native") {
     const anyOk = snap.instruments.some((i) => i.status === "ok" || i.status === "stale");
     if (!anyOk) return null;
     return <NativeTape snap={snap} />;
   }
 
-  return <TradingViewTape label={snap?.session_label} />;
+  return <TradingViewTape label={snap.session_label} />;
 }

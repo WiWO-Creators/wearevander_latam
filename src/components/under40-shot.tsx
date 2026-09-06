@@ -39,6 +39,9 @@ export function Under40Shot({
       <img
         src={person.image}
         alt={person.name}
+        loading={sizes === "hero" ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={sizes === "hero" ? "high" : "low"}
         onError={(e) => {
           e.currentTarget.style.display = "none";
         }}

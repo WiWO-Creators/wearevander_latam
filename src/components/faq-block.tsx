@@ -24,7 +24,7 @@ export function FaqBlock({
 export function Tldr({ items }: { items: string[] }) {
   if (!items.length) return null;
   return (
-    <aside className="mt-8 border border-ink bg-paper-deep px-4 py-5 sm:px-6">
+    <aside className="mt-8 border border-ink bg-paper-deep px-4 py-5 sm:px-6" data-tldr>
       <p className="kicker text-xs text-rust">TL;DR</p>
       <ul className="mt-3 space-y-2">
         {items.map((t) => (

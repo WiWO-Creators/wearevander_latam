@@ -18,6 +18,7 @@ import {
   articleSectionId,
   articleSectionLabel,
   articleSignedName,
+  articleTags,
   articleUpdated,
   blockCite,
   blockHead,
@@ -134,6 +135,7 @@ function StoryPage() {
           dateModified: article.updatedAt,
           author: articleSignedName(article) || author?.name || "Team Vander",
           section: articleSectionLabel(article),
+          keywords: articleTags(article),
         })}
       />
       {faq.length ? <JsonLd data={faqSchema(faq)} /> : null}
@@ -215,7 +217,7 @@ function StoryPage() {
           <div className="mx-auto mt-6 grid max-w-[90rem] gap-4 px-5 sm:grid-cols-3 sm:px-6">
             {gallery.map((g) => (
               <figure key={g.src + g.caption}>
-                <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" />
+                <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" decoding="async" />
                 <figcaption className="mt-2 font-kicker text-xs tracking-wider text-muted uppercase">{g.caption}</figcaption>
               </figure>
             ))}
