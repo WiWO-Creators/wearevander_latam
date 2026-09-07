@@ -5,6 +5,7 @@ import { SiteChrome } from "@/components/site-chrome";
 import { BrandPreloader } from "@/components/brand-preloader";
 import { AppErrorComponent } from "@/lib/error-component";
 import { HILLTOP_ZONES, HILLTOP_SERVE } from "@/lib/ads";
+import { scriptsDeAnalitica } from "@/lib/analytics";
 import appCss from "../styles.css?url";
 
 import { SITE } from "@/lib/seo";
@@ -43,9 +44,16 @@ export const Route = createRootRoute({
         crossOrigin: "anonymous",
       },
     ],
-    scripts: HILLTOP_ZONES.popunder
-      ? [{ src: `${HILLTOP_SERVE}/${HILLTOP_ZONES.popunder}`, defer: true }]
-      : [],
+    // La medición va PRIMERO y la publicidad después: gtag mide la vista de
+    // página al ejecutarse, y el popunder de HilltopAds puede llevarse la
+    // pestaña antes de que eso ocurra. Con el orden al revés se pierden
+    // justamente las visitas que peor se comportan, que son las que hay que ver.
+    scripts: [
+      ...scriptsDeAnalitica(),
+      ...(HILLTOP_ZONES.popunder
+        ? [{ src: `${HILLTOP_SERVE}/${HILLTOP_ZONES.popunder}`, defer: true }]
+        : []),
+    ],
   }),
   errorComponent: AppErrorComponent,
   component: RootDocument,
