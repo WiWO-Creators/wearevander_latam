@@ -12,6 +12,7 @@ import type { WiwoBlock, WiwoJson, WiwoSiteArticle } from "@wiwo/contract";
 import { AGOSTO_ARTICLES } from "./agosto";
 import { FONDO_ARTICLES } from "./fondo";
 import { FONDO2_ARTICLES } from "./fondo2";
+import { FONDO3_ARTICLES } from "./fondo3";
 import { MELIMAFIA } from "./melimafia";
 
 export type SectionId = "ideas" | "work" | "design" | "climate" | "culture";
@@ -172,6 +173,7 @@ export const AUTHORS: Author[] = [
  */
 export const ARTICLES: Article[] = [
   MELIMAFIA,
+  ...FONDO3_ARTICLES,
   ...AGOSTO_ARTICLES,
   ...FONDO_ARTICLES,
   ...FONDO2_ARTICLES,
@@ -408,6 +410,10 @@ export type Brief = {
 };
 
 export const BRIEFS: Brief[] = [
+  { id: "b0a", time: "11:40", section: "ideas", slug: "hacer-cosas-que-no-escalan-no-es-una-etapa", title: "Hacer cosas que no escalan no es una etapa. Acá es el negocio." },
+  { id: "b0b", time: "11:12", section: "ideas", slug: "porter-conto-cinco-fuerzas-en-america-latina-hay-una-sexta", title: "Porter contó cinco fuerzas. En América Latina hay una sexta." },
+  { id: "b0c", time: "10:48", section: "ideas", slug: "default-alive-es-una-pregunta-sobre-la-tasa-de-interes", title: "Default alive es una pregunta sobre la tasa de interés." },
+  { id: "b0d", time: "10:15", section: "work", slug: "la-venta-la-hace-el-fundador", title: "La venta la hace el fundador. Y acá no puede dejar de hacerla." },
   { id: "b1", time: "09:10", section: "ideas", slug: "el-credito-es-el-producto-el-software-es-el-envase", title: "El crédito es el producto. El software es el envase." },
   { id: "b2", time: "08:42", section: "ideas", slug: "tmec-horizonte-doce-meses", title: "EE.UU. no extendió el T-MEC 16 años. El horizonte ahora es de 12 meses." },
   { id: "b3", time: "08:11", section: "ideas", slug: "ied-noventa-y-cuatro", title: "México: IED récord de US$ 23.591 M. El 94% es reinversión." },
