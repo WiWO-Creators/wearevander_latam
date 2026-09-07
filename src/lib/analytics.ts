@@ -49,7 +49,18 @@ function arranqueDeGa(id: string): string {
     "window.dataLayer = window.dataLayer || [];",
     "function gtag(){dataLayer.push(arguments);}",
     "gtag('js', new Date());",
-    `gtag('config', '${id}');`,
+    // `send_page_view:false` NO apaga la medición: la MUEVE.
+    //
+    // Este sitio es una aplicación de una sola página: se navega con Link y el
+    // documento no se vuelve a cargar nunca. El arranque de Google que viene por
+    // omisión manda UNA vista al cargar y después queda ciego, así que quien
+    // entra por la portada y lee cuatro notas cuenta como una vista de la
+    // portada y ninguna nota. Con esto, TODAS las vistas —incluida la primera—
+    // las manda medicion-de-vistas.tsx cuando cambia la ruta.
+    //
+    // Apagarla acá y no filtrar después es lo que evita contar dos veces la
+    // primera: no hay forma de saber desde el componente si gtag ya la mandó.
+    `gtag('config', '${id}', { send_page_view: false });`,
   ].join("\n");
 }
 
@@ -75,4 +86,121 @@ export function scriptsDeAnalitica(
     { src: `${GA_SERVE}?id=${limpio}`, async: true },
     { children: arranqueDeGa(limpio) },
   ];
+}
+
+/** Lo que gtag deja colgado del navegador. No hay tipos oficiales. */
+type Gtag = (...args: unknown[]) => void;
+
+/** gtag, si está. Ausente en el servidor, sin propiedad, o con un bloqueador. */
+function gtag(): Gtag | null {
+  const suelto = (globalThis as { gtag?: Gtag }).gtag;
+  return typeof suelto === "function" ? suelto : null;
+}
+
+/**
+ * Qué clase de página es, deducida de su dirección.
+ *
+ * Sirve para poder preguntar "cuánto pesa el archivo contra la portada" sin
+ * tener que enumerar veinticinco rutas en cada informe. Se deduce del camino y
+ * no se declara ruta por ruta porque una ruta nueva tiene que quedar medida
+ * aunque nadie se acuerde de anotarla; el peor caso es que caiga en "otra".
+ */
+export function tipoDePagina(ruta: string): string {
+  if (ruta === "/") return "portada";
+  const primero = ruta.split("/").filter(Boolean)[0] ?? "";
+  if (primero === "story") return "nota";
+  if (["section", "tag", "indice", "list", "search"].includes(primero)) {
+    return "navegacion";
+  }
+  if (["contra", "signals", "innovatives", "visionarios", "under40"].includes(primero)) {
+    return "franquicia";
+  }
+  if (["about", "anuncia", "channels", "piso", "obituarios"].includes(primero)) {
+    return "institucional";
+  }
+  if (["login", "saved", "briefing"].includes(primero)) return "cuenta";
+  return "otra";
+}
+
+/**
+ * Una vista de página.
+ *
+ * Se manda a mano en cada cambio de ruta. Ver `send_page_view:false` arriba.
+ *
+ * @param ruta El camino, sin dominio y sin parámetros de campaña.
+ * @param titulo El título del documento, para que el informe se lea.
+ */
+export function medirVista(ruta: string, titulo: string): void {
+  const enviar = gtag();
+  if (!enviar) return;
+
+  enviar("event", "page_view", {
+    page_path: ruta,
+    page_title: titulo,
+    page_location: globalThis.location?.href,
+    tipo_de_pagina: tipoDePagina(ruta),
+    ...(depuracionEncendida() ? { debug_mode: true } : {}),
+  });
+}
+
+/**
+ * Lo que se sabe de una nota y vale la pena medir.
+ *
+ * Son las dimensiones con las que ESTE sitio piensa su propio archivo —sección,
+ * firma, ritmo, formato, franquicia— más la única que el sitio no usa para
+ * dibujar nada y sirve para lo nuestro: de dónde vino la nota.
+ */
+export interface DimensionesDeNota {
+  nota: string;
+  seccion: string;
+  firma: string;
+  ritmo: string;
+  formato: string;
+  franquicia: string;
+  minutos: number;
+  /** `archivo` si es del repositorio, `orquestador` si la publicó doom. */
+  origen: "archivo" | "orquestador";
+}
+
+/**
+ * Mide la lectura de una nota, con sus dimensiones editoriales.
+ *
+ * Va como evento propio y no como parámetros de la vista de página por dos
+ * razones. La primera es de orden: la vista se manda apenas cambia la ruta y la
+ * nota se resuelve después, así que meterlas en el mismo evento obligaría a
+ * demorar TODAS las vistas del sitio por las que son notas. La segunda es que
+ * así el conteo de tráfico y el de lectura no se pisan: si algún día esto se
+ * mide mal, se ve en un evento y no ensucia las vistas.
+ *
+ * `origen` es la razón de ser de todo esto: separa lo que publicó el orquestador
+ * de lo que ya estaba en el repositorio. Sin esa marca no hay forma de contestar
+ * si lo que estamos publicando rinde, porque en el informe queda mezclado con
+ * las cincuenta y una notas que el sitio trajo de nacimiento.
+ */
+export function medirNota(dimensiones: DimensionesDeNota): void {
+  const enviar = gtag();
+  if (!enviar) return;
+
+  enviar("event", "nota_vista", {
+    ...dimensiones,
+    ...(depuracionEncendida() ? { debug_mode: true } : {}),
+  });
+}
+
+/**
+ * True si la dirección pide modo depuración (`?ga_debug=1`).
+ *
+ * Existe para poder comprobar la instalación en minutos, en el DebugView de
+ * Google, en vez de esperar a que los informes se procesen —que puede ser un
+ * día—. Sin esto, la única forma de saber si el tag quedó bien puesto es
+ * esperar; y ya sabemos que una etiqueta mal pegada carga sin dar ningún error.
+ */
+function depuracionEncendida(): boolean {
+  try {
+    return new URLSearchParams(globalThis.location?.search ?? "").has(
+      "ga_debug",
+    );
+  } catch {
+    return false;
+  }
 }

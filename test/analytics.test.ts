@@ -1,10 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { scriptsDeAnalitica } from "../src/lib/analytics.ts";
+import { scriptsDeAnalitica, tipoDePagina } from "../src/lib/analytics.ts";
 
 /**
  * Responsabilidad: fijar que el sitio no emite medición salvo con una propiedad
- * de GA4 bien formada, y que cuando la emite lo hace en el orden que gtag exige.
+ * de GA4 bien formada, que cuando la emite lo hace en el orden que gtag exige, y
+ * que NO deja que gtag cuente la vista por su cuenta.
  * Usado por: `npm test`.
  * Vive fuera de `src/` porque tsconfig compila esa carpeta y ahi un import con
  * extension .ts no esta permitido, mientras que Node la exige para resolverlo.
@@ -45,7 +46,7 @@ test("con una propiedad válida emite el archivo y el arranque, en ese orden", (
     "https://www.googletagmanager.com/gtag/js?id=G-108JF25LF1",
   );
   assert.equal(scripts[0].async, true);
-  assert.match(scripts[1].children ?? "", /gtag\('config', 'G-108JF25LF1'\)/);
+  assert.match(scripts[1].children ?? "", /gtag\('config', 'G-108JF25LF1'/);
   assert.match(scripts[1].children ?? "", /dataLayer/);
 });
 
@@ -54,4 +55,31 @@ test("le saca los espacios a la propiedad antes de usarla", () => {
 
   assert.equal(scripts.length, 2);
   assert.ok(!scripts[0].src?.includes(" "));
+});
+
+test("apaga la vista automática de gtag: este sitio no recarga nunca", () => {
+  const [, arranque] = scriptsDeAnalitica("G-108JF25LF1");
+
+  // Es lo que evita contar dos veces la primera vista. Si alguien saca esto,
+  // la portada queda inflada y las notas siguen sin medirse: el arranque de
+  // Google manda UNA vista y después queda ciego, porque se navega con Link.
+  assert.match(arranque.children ?? "", /send_page_view:\s*false/);
+});
+
+test("clasifica cada ruta del sitio por lo que es", () => {
+  assert.equal(tipoDePagina("/"), "portada");
+  assert.equal(tipoDePagina("/story/una-nota"), "nota");
+  assert.equal(tipoDePagina("/section/ideas"), "navegacion");
+  assert.equal(tipoDePagina("/tag/ai"), "navegacion");
+  assert.equal(tipoDePagina("/contra"), "franquicia");
+  assert.equal(tipoDePagina("/under40"), "franquicia");
+  assert.equal(tipoDePagina("/about"), "institucional");
+  assert.equal(tipoDePagina("/saved"), "cuenta");
+});
+
+test("una ruta que nadie anotó cae en «otra» en vez de romper", () => {
+  // Una sección nueva tiene que quedar medida aunque nadie se acuerde de
+  // sumarla acá. El peor caso es que se agrupe mal, no que se pierda.
+  assert.equal(tipoDePagina("/ruta-que-todavia-no-existe"), "otra");
+  assert.equal(tipoDePagina(""), "otra");
 });

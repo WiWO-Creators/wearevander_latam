@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteChrome } from "@/components/site-chrome";
 import { BrandPreloader } from "@/components/brand-preloader";
+import { MedicionDeVistas } from "@/components/medicion-de-vistas";
 import { AppErrorComponent } from "@/lib/error-component";
 import { HILLTOP_ZONES, HILLTOP_SERVE } from "@/lib/ads";
 import { scriptsDeAnalitica } from "@/lib/analytics";
@@ -70,6 +71,9 @@ function RootDocument() {
       <body className="bg-paper text-ink">
         <PreviewHostBridge />
         <BrandPreloader />
+        {/* Una vista por cambio de ruta. Sin esto el sitio mide una sola vez
+            por sesión: no recarga nunca. */}
+        <MedicionDeVistas />
         <AuthProvider>
           <SiteChrome>
             <Outlet />

@@ -36,6 +36,8 @@ import {
   HOUSE,
 } from "@/lib/content";
 import { getArticles } from "@/lib/articles";
+import { medirNota } from "@/lib/analytics";
+import { dimensionesDeNota } from "@/lib/analytics-nota";
 import { StackedCard, StoryMeta } from "@/components/article-card";
 import { SaveButton } from "@/components/save-button";
 import { Newsletter } from "@/components/newsletter";
@@ -99,6 +101,15 @@ function StoryPage() {
       cancelled = true;
     };
   }, [slug]);
+
+  // La lectura de la nota, con sus dimensiones editoriales. Va aparte de la
+  // vista de pagina —que MedicionDeVistas ya mando al cambiar la ruta— porque
+  // la nota se resuelve despues: meterlas en el mismo evento demoraria TODAS
+  // las vistas del sitio por las que son notas.
+  useEffect(() => {
+    if (!article) return;
+    medirNota(dimensionesDeNota(article));
+  }, [article]);
 
   if (!article) {
     return (
