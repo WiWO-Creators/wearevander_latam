@@ -26,9 +26,7 @@
  * Se lee con `?.` porque este módulo también se carga fuera de Vite —en las
  * pruebas, que corren con Node a secas— y ahí `import.meta.env` no existe.
  */
-export const GA_MEASUREMENT_ID = (
-  import.meta.env?.VITE_GA_MEASUREMENT_ID ?? ""
-).trim();
+export const GA_MEASUREMENT_ID = (import.meta.env?.VITE_GA_MEASUREMENT_ID ?? "").trim();
 
 /** De dónde se baja gtag.js. */
 const GA_SERVE = "https://www.googletagmanager.com/gtag/js";
@@ -82,10 +80,7 @@ export function scriptsDeAnalitica(
   const limpio = id.trim();
   if (!/^G-[A-Z0-9]+$/i.test(limpio)) return [];
 
-  return [
-    { src: `${GA_SERVE}?id=${limpio}`, async: true },
-    { children: arranqueDeGa(limpio) },
-  ];
+  return [{ src: `${GA_SERVE}?id=${limpio}`, async: true }, { children: arranqueDeGa(limpio) }];
 }
 
 /** Lo que gtag deja colgado del navegador. No hay tipos oficiales. */
@@ -147,16 +142,25 @@ export function medirVista(ruta: string, titulo: string): void {
  * Lo que se sabe de una nota y vale la pena medir.
  *
  * Son las dimensiones con las que ESTE sitio piensa su propio archivo —sección,
- * firma, ritmo, formato, franquicia— más la única que el sitio no usa para
- * dibujar nada y sirve para lo nuestro: de dónde vino la nota.
+ * volanta, firma, ritmo, franquicia, plaza— más la única que el sitio no usa
+ * para dibujar nada y sirve para lo nuestro: de dónde vino la nota.
+ *
+ * NO ESTÁ `formato`, y se sacó a propósito: ninguna de las notas del archivo lo
+ * declara, y `lib/formats.ts` es una lista vacía con el comentario «Formatos
+ * inventados retirados». Mandarlo era gastar una dimensión personalizada de las
+ * cincuenta que da GA4 para que devolviera una sola fila, siempre la misma.
+ * Si algún día el sitio vuelve a usar formatos, se agrega acá y se registra.
  */
 export interface DimensionesDeNota {
   nota: string;
   seccion: string;
+  /** La volanta: es lo que más granularidad real tiene en este archivo. */
+  volanta: string;
   firma: string;
   ritmo: string;
-  formato: string;
   franquicia: string;
+  /** La plaza desde donde está escrita. */
+  plaza: string;
   minutos: number;
   /** `archivo` si es del repositorio, `orquestador` si la publicó doom. */
   origen: "archivo" | "orquestador";
@@ -197,9 +201,7 @@ export function medirNota(dimensiones: DimensionesDeNota): void {
  */
 function depuracionEncendida(): boolean {
   try {
-    return new URLSearchParams(globalThis.location?.search ?? "").has(
-      "ga_debug",
-    );
+    return new URLSearchParams(globalThis.location?.search ?? "").has("ga_debug");
   } catch {
     return false;
   }
